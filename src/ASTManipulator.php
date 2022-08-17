@@ -21,7 +21,7 @@ class ASTManipulator
     protected function addResultTypes(DocumentAST &$documentAST): void
     {
         $resultTypes = array_map(
-            fn ($provider) => data_get($provider, 'result_type', self::DEFAULT_RESULT_TYPE),
+            fn (&$provider) => data_get($provider, 'result_type', self::DEFAULT_RESULT_TYPE),
             config('searchlight.providers', [])
         );
 
