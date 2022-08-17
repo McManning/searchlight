@@ -2,6 +2,7 @@
     "name": "mcmanning/searchlight",
     "description": "Searchkit GraphQL API support for Lighthouse",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Chase McManning",
