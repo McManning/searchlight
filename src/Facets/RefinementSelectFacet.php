@@ -137,8 +137,14 @@ class RefinementSelectFacet implements IFacet
      *
      * @return array GraphQL type `RefinementSelectFacet`
      */
-    public function toSKFacetSet(array $response): array
+    public function toSKFacetSet(array $bucket): array
     {
+        // Bucket is in the form:
+        // ^ array:3 [
+        //     "doc_count_error_upper_bound" => 0
+        //     "sum_other_doc_count" => 0
+        //     "buckets" => []
+        //   ]
         return [
             'type' => 'RefinementSelectFacet',
 
@@ -148,7 +154,7 @@ class RefinementSelectFacet implements IFacet
             'entries' => array_map(fn ($entry) => [
                 'label' => $entry['key'],
                 'count' => $entry['doc_count'],
-            ], $response['buckets'])
+            ], $bucket['buckets'])
         ];
     }
 }

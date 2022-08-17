@@ -161,16 +161,29 @@ class SearchResponse
      */
     public function getFacet(string $identifier): ?array
     {
-        $facets = $this->provider->get('facets', []);
-
-        foreach ($facets as $facet) {
-            if ($facet->getIdentifier() === $identifier)  {
-                return $facet->toSKFacetSet(
-                    $this->getRawResponse()
-                );
-            }
+        if (isset($this->aggregations[$identifier])) {
+            [$facet, $bucket] = $this->aggregations[$identifier];
+            return $facet->toSKFacetSet($bucket);
         }
 
+        // TODO: Error?
         return null;
+
+        // $facets = $this->provider->get('facets', []);
+
+        // $this->aggregations[$id] = [$facet, $buckets[$id]];
+
+        // foreach ($facets as $facet) {
+        //     if ($facet->getIdentifier() === $identifier)  {
+        //         if (isset($this->aggregations[$identifier])) {
+        //             return $this->
+        //         }
+        //         return $facet->toSKFacetSet(
+        //             $this->getRawResponse()
+        //         );
+        //     }
+        // }
+
+        // return null;
     }
 }
