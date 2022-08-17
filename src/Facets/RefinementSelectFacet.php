@@ -7,7 +7,7 @@ use McManning\Searchlight\Exceptions\ConfigurationException;
 
 class RefinementSelectFacet implements IFacet
 {
-    const DEFAULT_SIZE = 100;
+    const DEFAULT_SIZE = 5;
     const DEFAULT_DISPLAY = 'ListFacet';
 
     const SORT_BY_VALUE = 0;

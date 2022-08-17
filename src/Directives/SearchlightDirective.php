@@ -83,7 +83,7 @@ GQL;
         // Construct a request to Elastic
         $this->request = new SearchRequest($this->provider);
 
-        $this->request->setBaseFilters($this->provider->get('base_filters'));
+        $this->request->setBaseFilters($this->provider->get('base_filters', []));
         $this->request->setFilterCriteria($filters);
         $this->request->setQuery($query);
         $this->request->setHits($size, $from);

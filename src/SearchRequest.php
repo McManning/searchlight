@@ -57,10 +57,10 @@ class SearchRequest
 
     public function __construct(ConfigProvider $provider)
     {
-        // $this->dispatcher = $dispatcher;
         $this->provider = $provider;
 
         $builder = ClientBuilder::create();
+        // $builder->setSSLVerification(false);
         $builder->setHosts([
             $provider->get('host'),
         ]);
@@ -72,7 +72,6 @@ class SearchRequest
         }
 
         // TODO: https://github.com/jeskew/amazon-es-php
-
         $this->client = $builder->build();
     }
 
@@ -160,23 +159,9 @@ class SearchRequest
         }
 
         $query = $this->buildElasticQuery();
+        $this->lastElasticQuery = $query;
 
-        $debug = false;
-
-        if ($debug) echo json_encode($query, JSON_PRETTY_PRINT);
-
-        try {
-
-            $this->lastElasticQuery = $query;
-            $this->response = $this->ExecuteSearch($query);
-
-            if ($debug) echo json_encode($this->response->getRawResponse(), JSON_PRETTY_PRINT);
-
-        } catch (\Exception $e) {
-            var_dump($e);
-        }
-
-        if ($debug) exit;
+        $this->response = $this->executeSearch($query);
 
         Event::dispatch(new ExecuteSearch($this, $this->response));
 
@@ -199,16 +184,9 @@ class SearchRequest
         return $this->disabledFilters;
     }
 
-    protected function ExecuteSearch(array $query): SearchResponse
+    protected function executeSearch(array $query): SearchResponse
     {
-        $uri = $this->provider->get('index', '') . '/_search';
-
-        // TODO: Just abusing the proxy class for now until I have something nice setup.
-        // Elastic SDK is an option if it works with OpenSearch's HTTP Basic auth.
-        // Ideally, something that nicely handles error responses would be good.
-
         try {
-
             $results = $this->client->search([
                 'index' => $this->provider->get('index'),
                 'body' => $query,
@@ -219,8 +197,10 @@ class SearchRequest
             ]);
         }
         catch (\Exception $e) {
-            dd($e);
-            // TODO: Encapsulate error to ES error classes and propagate safely.
+            // Rethrow any service exceptions
+            throw new GenericException(
+                'Failed to execute search', null, null, [], null, $e
+            );
         }
 
         return new SearchResponse(
@@ -283,6 +263,7 @@ class SearchRequest
         foreach ($this->filterCriteria as $identifier => $criteria) {
             $filter = $this->findFilterTemplate($identifier);
 
+            // TODO: Better code here. This branching is terrible.
             if ($filter) {
                 $baseFilters = array_merge($baseFilters, $filter->getFilters($criteria));
 
@@ -300,7 +281,7 @@ class SearchRequest
                     }
                 }
                 else {
-                    throw new GenericException('TODO: Better... code here... this branching is ass');
+                    throw new GenericException('Unknown filter identifier: ' . $identifier);
                 }
             }
         }
@@ -333,6 +314,7 @@ class SearchRequest
 
         $aggFacets = [];
 
+        // TODO:
         // There's also a bunch of logic for activating facets when rules are satisfied as a processing step
         // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/facets/VisibilityRules/index.ts#L7
 

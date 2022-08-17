@@ -28,7 +28,7 @@ class RangeFacet implements IFacet
 
         $this->min = data_get($args, 'min');
         $this->max = data_get($args, 'max');
-        $this->interval = data_get($args, 'interval');
+        $this->interval = data_get($args, 'interval', 1);
         $this->minDocCount = data_get($args, 'min_doc_count', 0);
 
         if (!$this->identifier) {
