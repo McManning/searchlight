@@ -47,8 +47,9 @@ jobs:
       env:
         ELASTIC_SEARCH_URL: http://localhost:${{ job.services.elasticsearch.ports[9200] }}
       run: |
-        echo $ELASTIC_SEARCH_URL
-        curl -fsSL "$ELASTIC_SEARCH_URL/_cat/health?h=status"
+        curl -XPUT "$ELASTIC_SEARCH_URL/imdb_movies"
+        curl -H "Content-Type: application/json" -XPUT "$ELASTIC_SEARCH_URL/imdb_movies/_mapping?pretty" --data-binary "@tests/Data/mapping.json"
+        curl -H "Content-Type: application/json" -XPOST "$ELASTIC_SEARCH_URL/imdb_movies/_bulk?pretty" --data-binary "@tests/Data/imdb_movies.json"
 
     - name: Run test suite
       env:
