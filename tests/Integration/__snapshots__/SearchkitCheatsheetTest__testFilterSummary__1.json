@@ -1,0 +1,79 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "query": "",
+                "appliedFilters": []
+            },
+            "hits": {
+                "items": []
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 100,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 1000,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,504 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "query": "",
+                "appliedFilters": [
+                    {
+                        "id": "metascore_0_100",
+                        "identifier": "metascore",
+                        "display": "RangeSliderFacet",
+                        "label": "Metascore",
+                        "min": 0,
+                        "max": 100
+                    }
+                ]
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0111161"
+                    },
+                    {
+                        "id": "tt0068646"
+                    },
+                    {
+                        "id": "tt0468569"
+                    },
+                    {
+                        "id": "tt0944947"
+                    },
+                    {
+                        "id": "tt0110912"
+                    },
+                    {
+                        "id": "tt0137523"
+                    },
+                    {
+                        "id": "tt0167260"
+                    },
+                    {
+                        "id": "tt1375666"
+                    },
+                    {
+                        "id": "tt0120737"
+                    },
+                    {
+                        "id": "tt0133093"
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 1000,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0111161",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1994,
+                                        "directors": [
+                                            "Frank Darabont"
+                                        ],
+                                        "writers": [
+                                            "Stephen King",
+                                            "Frank Darabont"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Shawshank Redemption",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Tim Robbins",
+                                            "Morgan Freeman",
+                                            "Bob Gunton",
+                                            "William Sadler"
+                                        ],
+                                        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0111161",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0068646",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1972,
+                                        "directors": [
+                                            "Francis Ford Coppola"
+                                        ],
+                                        "writers": [
+                                            "Mario Puzo",
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Godfather",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Marlon Brando",
+                                            "Al Pacino",
+                                            "James Caan",
+                                            "Richard S. Castellano"
+                                        ],
+                                        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0068646",
+                                        "metascore": 100,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1972-03-24T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0468569",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2008,
+                                        "directors": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "writers": [
+                                            "Jonathan Nolan",
+                                            "Christopher Nolan",
+                                            "Christopher Nolan",
+                                            "David S. Goyer",
+                                            "Bob Kane"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Dark Knight",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Christian Bale",
+                                            "Heath Ledger",
+                                            "Aaron Eckhart",
+                                            "Michael Caine"
+                                        ],
+                                        "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0468569",
+                                        "metascore": 82,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+                                        "released": "2008-07-18T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0944947",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2011,
+                                        "directors": [],
+                                        "writers": [
+                                            "David Benioff",
+                                            "D.B. Weiss"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "series",
+                                        "title": "Game of Thrones",
+                                        "rated": "TV-MA",
+                                        "actors": [
+                                            "Peter Dinklage",
+                                            "Lena Headey",
+                                            "Maisie Williams",
+                                            "Emilia Clarke"
+                                        ],
+                                        "plot": "Seven noble families fight for control of the mythical land of Westeros.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0944947",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA5NzY4MTM0N15BMl5BanBnXkFtZTcwMTA0MDkxOQ@@._V1_SX300.jpg",
+                                        "released": "2011-04-17T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0110912",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1994,
+                                        "directors": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino",
+                                            "Roger Avary",
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Pulp Fiction",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Tim Roth",
+                                            "Amanda Plummer",
+                                            "Laura Lovelace",
+                                            "John Travolta"
+                                        ],
+                                        "plot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0110912",
+                                        "metascore": 94,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0137523",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Chuck Palahniuk",
+                                            "Jim Uhls"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Fight Club",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Edward Norton",
+                                            "Brad Pitt",
+                                            "Helena Bonham Carter",
+                                            "Meat Loaf"
+                                        ],
+                                        "plot": "An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...",
+                                        "genres": [
+                                            "Drama"
+                                        ],
+                                        "id": "tt0137523",
+                                        "metascore": 66,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1999-10-15T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0167260",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2003,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "J.R.R. Tolkien",
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "New Zealand"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Lord of the Rings: The Return of the King",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Noel Appleby",
+                                            "Alexandra Astin",
+                                            "Sean Astin",
+                                            "David Aston"
+                                        ],
+                                        "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0167260",
+                                        "metascore": 94,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg",
+                                        "released": "2003-12-17T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1375666",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2010,
+                                        "directors": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "writers": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Inception",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Leonardo DiCaprio",
+                                            "Joseph Gordon-Levitt",
+                                            "Ellen Page",
+                                            "Tom Hardy"
+                                        ],
+                                        "plot": "A skilled extractor is offered a chance to regain his old life as payment for a task considered to be impossible.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt1375666",
+                                        "metascore": 74,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+                                        "released": "2010-07-16T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0120737",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2001,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "J.R.R. Tolkien",
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson"
+                                        ],
+                                        "countries": [
+                                            "New Zealand",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Lord of the Rings: The Fellowship of the Ring",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Alan Howard",
+                                            "Elijah Wood",
+                                            "Noel Appleby",
+                                            "Sean Astin"
+                                        ],
+                                        "plot": "A meek hobbit of The Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0120737",
+                                        "metascore": 92,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg",
+                                        "released": "2001-12-19T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0133093",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "writers": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Australia"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Matrix",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Keanu Reeves",
+                                            "Laurence Fishburne",
+                                            "Carrie-Anne Moss",
+                                            "Hugo Weaving"
+                                        ],
+                                        "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0133093",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
+                                        "released": "1999-03-31T00:00:00+01:00"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

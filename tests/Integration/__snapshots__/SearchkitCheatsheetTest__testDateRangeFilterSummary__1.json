@@ -1,0 +1,622 @@
+{
+    "errors": [
+        {
+            "message": "Unknown filter identifier: released",
+            "extensions": {
+                "category": "graphql"
+            },
+            "locations": [
+                {
+                    "line": 10,
+                    "column": 17
+                }
+            ],
+            "path": [
+                "results",
+                "summary"
+            ],
+            "trace": [
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/SearchRequest.php",
+                    "line": 161,
+                    "call": "McManning\\Searchlight\\SearchRequest::buildElasticQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/Directives\/SearchlightDirective.php",
+                    "line": 103,
+                    "call": "McManning\\Searchlight\\SearchRequest::search()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
+                    "line": 67,
+                    "call": "McManning\\Searchlight\\Directives\\SearchlightDirective::McManning\\Searchlight\\Directives\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
+                    "line": 53,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::GraphQL\\Executor\\Promise\\Adapter\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromiseAdapter.php",
+                    "line": 149,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::runQueue()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/GraphQL.php",
+                    "line": 105,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromiseAdapter::wait()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 268,
+                    "call": "GraphQL\\GraphQL::executeQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 203,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeParsedQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 162,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::parseAndExecuteQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 121,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperation()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Utils.php",
+                    "line": 99,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::Nuwave\\Lighthouse\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 120,
+                    "call": "Nuwave\\Lighthouse\\Support\\Utils::applyEach()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Controllers\/GraphQLController.php",
+                    "line": 32,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperationOrOperations()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                    "line": 48,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Controllers\\GraphQLController::__invoke()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                    "line": 262,
+                    "call": "Illuminate\\Routing\\ControllerDispatcher::dispatch()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                    "line": 205,
+                    "call": "Illuminate\\Routing\\Route::runController()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 721,
+                    "call": "Illuminate\\Routing\\Route::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 128,
+                    "call": "Illuminate\\Routing\\Router::Illuminate\\Routing\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AttemptAuthentication.php",
+                    "line": 34,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AttemptAuthentication::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AcceptJson.php",
+                    "line": 27,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AcceptJson::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 103,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 723,
+                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 698,
+                    "call": "Illuminate\\Routing\\Router::runRouteWithinStack()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 662,
+                    "call": "Illuminate\\Routing\\Router::runRoute()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 651,
+                    "call": "Illuminate\\Routing\\Router::dispatchToRoute()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 167,
+                    "call": "Illuminate\\Routing\\Router::dispatch()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 128,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::Illuminate\\Foundation\\Http\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+                    "line": 21,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
+                    "line": 31,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+                    "line": 21,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
+                    "line": 40,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
+                    "line": 27,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 103,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 142,
+                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 111,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::sendRequestThroughRouter()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 510,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 476,
+                    "call": "Orchestra\\Testbench\\TestCase::call()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 335,
+                    "call": "Orchestra\\Testbench\\TestCase::json()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/TestCase.php",
+                    "line": 222,
+                    "call": "Orchestra\\Testbench\\TestCase::postJson()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Testing\/MakesGraphQLRequests.php",
+                    "line": 62,
+                    "call": "Tests\\TestCase::postGraphQL()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/Integration\/SearchkitCheatsheetTest.php",
+                    "line": 275,
+                    "call": "Tests\\TestCase::graphQL()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 1490,
+                    "call": "Tests\\SearchkitCheatsheetTest::testDateRangeFilterSummary()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 1110,
+                    "call": "PHPUnit\\Framework\\TestCase::runTest()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php",
+                    "line": 703,
+                    "call": "PHPUnit\\Framework\\TestCase::runBare()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 838,
+                    "call": "PHPUnit\\Framework\\TestResult::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
+                    "line": 626,
+                    "call": "PHPUnit\\Framework\\TestCase::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
+                    "line": 626,
+                    "call": "PHPUnit\\Framework\\TestSuite::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php",
+                    "line": 659,
+                    "call": "PHPUnit\\Framework\\TestSuite::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
+                    "line": 235,
+                    "call": "PHPUnit\\TextUI\\TestRunner::doRun()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
+                    "line": 194,
+                    "call": "PHPUnit\\TextUI\\Command::run()"
+                },
+                {
+                    "file": "phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit",
+                    "line": 97,
+                    "call": "PHPUnit\\TextUI\\Command::main()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/bin\/phpunit",
+                    "line": 115,
+                    "function": "include('phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit')"
+                }
+            ]
+        },
+        {
+            "message": "Unknown filter identifier: released",
+            "extensions": {
+                "category": "graphql"
+            },
+            "locations": [
+                {
+                    "line": 23,
+                    "column": 17
+                }
+            ],
+            "path": [
+                "results",
+                "hits"
+            ],
+            "trace": [
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/SearchRequest.php",
+                    "line": 161,
+                    "call": "McManning\\Searchlight\\SearchRequest::buildElasticQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/Directives\/SearchlightDirective.php",
+                    "line": 122,
+                    "call": "McManning\\Searchlight\\SearchRequest::search()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
+                    "line": 67,
+                    "call": "McManning\\Searchlight\\Directives\\SearchlightDirective::McManning\\Searchlight\\Directives\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
+                    "line": 53,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::GraphQL\\Executor\\Promise\\Adapter\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromiseAdapter.php",
+                    "line": 149,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::runQueue()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/GraphQL.php",
+                    "line": 105,
+                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromiseAdapter::wait()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 268,
+                    "call": "GraphQL\\GraphQL::executeQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 203,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeParsedQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 162,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::parseAndExecuteQuery()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 121,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperation()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Utils.php",
+                    "line": 99,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::Nuwave\\Lighthouse\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
+                    "line": 120,
+                    "call": "Nuwave\\Lighthouse\\Support\\Utils::applyEach()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Controllers\/GraphQLController.php",
+                    "line": 32,
+                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperationOrOperations()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
+                    "line": 48,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Controllers\\GraphQLController::__invoke()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                    "line": 262,
+                    "call": "Illuminate\\Routing\\ControllerDispatcher::dispatch()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
+                    "line": 205,
+                    "call": "Illuminate\\Routing\\Route::runController()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 721,
+                    "call": "Illuminate\\Routing\\Route::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 128,
+                    "call": "Illuminate\\Routing\\Router::Illuminate\\Routing\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AttemptAuthentication.php",
+                    "line": 34,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AttemptAuthentication::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AcceptJson.php",
+                    "line": 27,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AcceptJson::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 103,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 723,
+                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 698,
+                    "call": "Illuminate\\Routing\\Router::runRouteWithinStack()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 662,
+                    "call": "Illuminate\\Routing\\Router::runRoute()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
+                    "line": 651,
+                    "call": "Illuminate\\Routing\\Router::dispatchToRoute()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 167,
+                    "call": "Illuminate\\Routing\\Router::dispatch()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 128,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::Illuminate\\Foundation\\Http\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+                    "line": 21,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
+                    "line": 31,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
+                    "line": 21,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
+                    "line": 40,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
+                    "line": 27,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 167,
+                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
+                    "line": 103,
+                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 142,
+                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
+                    "line": 111,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::sendRequestThroughRouter()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 510,
+                    "call": "Illuminate\\Foundation\\Http\\Kernel::handle()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 476,
+                    "call": "Orchestra\\Testbench\\TestCase::call()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
+                    "line": 335,
+                    "call": "Orchestra\\Testbench\\TestCase::json()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/TestCase.php",
+                    "line": 222,
+                    "call": "Orchestra\\Testbench\\TestCase::postJson()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Testing\/MakesGraphQLRequests.php",
+                    "line": 62,
+                    "call": "Tests\\TestCase::postGraphQL()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/Integration\/SearchkitCheatsheetTest.php",
+                    "line": 275,
+                    "call": "Tests\\TestCase::graphQL()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 1490,
+                    "call": "Tests\\SearchkitCheatsheetTest::testDateRangeFilterSummary()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 1110,
+                    "call": "PHPUnit\\Framework\\TestCase::runTest()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php",
+                    "line": 703,
+                    "call": "PHPUnit\\Framework\\TestCase::runBare()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+                    "line": 838,
+                    "call": "PHPUnit\\Framework\\TestResult::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
+                    "line": 626,
+                    "call": "PHPUnit\\Framework\\TestCase::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
+                    "line": 626,
+                    "call": "PHPUnit\\Framework\\TestSuite::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php",
+                    "line": 659,
+                    "call": "PHPUnit\\Framework\\TestSuite::run()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
+                    "line": 235,
+                    "call": "PHPUnit\\TextUI\\TestRunner::doRun()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
+                    "line": 194,
+                    "call": "PHPUnit\\TextUI\\Command::run()"
+                },
+                {
+                    "file": "phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit",
+                    "line": 97,
+                    "call": "PHPUnit\\TextUI\\Command::main()"
+                },
+                {
+                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/bin\/phpunit",
+                    "line": 115,
+                    "function": "include('phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit')"
+                }
+            ]
+        }
+    ],
+    "data": {
+        "results": {
+            "summary": null,
+            "hits": null
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": []
+        }
+    }
+}

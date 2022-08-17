@@ -2,19 +2,19 @@
 
 use GraphQL\Error\DebugFlag;
 use GraphQL\Type\Schema;
-
-use McManning\Searchlight\ServiceProvider as SearchlightServiceProvider;
-use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
+use Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables;
+use Illuminate\Contracts\Config\Repository;
+use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
 use Nuwave\Lighthouse\LighthouseServiceProvider;
 use Nuwave\Lighthouse\CacheControl\CacheControlServiceProvider;
-
-use Illuminate\Contracts\Config\Repository;
 use Nuwave\Lighthouse\Testing\UsesTestSchema;
-
 use Nuwave\Lighthouse\Schema\SchemaBuilder;
 use Nuwave\Lighthouse\Testing\MocksResolvers;
+use Spatie\Snapshots\MatchesSnapshots;
+
+use McManning\Searchlight\ServiceProvider as SearchlightServiceProvider;
 
 /**
  * Base test case for setting up a Lighthouse instance configured for Searchlight.
@@ -27,13 +27,32 @@ class TestCase extends BaseTestCase
     use MakesGraphQLRequests;
     use UsesTestSchema;
     use MocksResolvers;
+    use MatchesSnapshots;
 
     /**
      * A dummy query type definition that is added to tests by default.
      */
     public const PLACEHOLDER_QUERY = '
-        type Query {
-            foo: Int
+        type ResultHit implements SKHit {
+            id: ID!
+            fields: HitFields!
+        }
+
+        type HitFields {
+            type: String
+            title: String
+            year: String
+            rated: String
+            released: String
+            genres: String
+            directors: String
+            writers: String
+            actors: String
+            countries: String
+            plot: String
+            poster: String
+            id: String
+            metascore: String
         }
     ';
 
@@ -74,6 +93,9 @@ class TestCase extends BaseTestCase
      */
     protected function getEnvironmentSetUp($app): void
     {
+        // $app->useEnvironmentPath(__DIR__.'/..');
+        // $app->bootstrapWith([LoadEnvironmentVariables::class]);
+
         /** @var Repository */
         $config = $app->make(Repository::class);
 
@@ -117,6 +139,12 @@ class TestCase extends BaseTestCase
 
         $config->set('lighthouse.cache.enable', false);
         // $config->set('lighthouse.guard', null);
+
+        // Configuration assumes Docker networking.
+        // $config->set('searchlight.providers.default.host', 'elasticsearch:9200');
+        // $config->set('searchlight.providers.default.index', 'imdb');
+
+        $config->set('searchlight', require(__DIR__.'/Fixtures/searchlight.php'));
     }
 
     /**
@@ -141,4 +169,203 @@ class TestCase extends BaseTestCase
 
         return $schemaBuilder->schema();
     }
+
+    /**
+     * Ensure a GraphQL response contains an error starting with the given prefix.
+     *
+     * In the case of multiple errors returned, this only tests against the first
+     * error as that is typically the one that is presented to API consumers.
+     *
+     * @param string $prefix            Expected start of the error message string
+     * @param string $assertionMessage  Custom message to show on assertion failure.
+     *                                  If omitted, a default assertion message will be used.
+     */
+    protected function assertGraphQLError(string $prefix, string $assertionMessage = '')
+    {
+        $actual = $this->response->getContent();
+        $response = json_decode($actual, true);
+
+        $this->assertArrayHasKey(
+            'errors',
+            $response,
+            "Expected response with errors but got [{$actual}]"
+        );
+
+        $this->assertNotEmpty(
+            $response['errors'],
+            "Expected response with at least one error but got [{$actual}]"
+        );
+
+        $error = $response['errors'][0]['message'];
+
+        $this->assertStringStartsWith(
+            $prefix,
+            $error,
+            $assertionMessage ?? "Failed to find the text [{$prefix}] within the first error [{$error}]"
+        );
+    }
+
+    /**
+     * Execute a POST to the GraphQL endpoint.
+     *
+     * Use this over graphQL() when you need more control or want to
+     * test how your server behaves on incorrect inputs.
+     *
+     * @param  array<mixed, mixed>  $data  JSON-serializable payload
+     * @param  array<string, string>  $headers  HTTP headers to pass to the POST request
+     *
+     * @return \Illuminate\Testing\TestResponse
+     */
+    protected function postGraphQL(array $data, array $headers = [])
+    {
+        $this->response = $this->postJson(
+            $this->graphQLEndpointUrl(),
+            $data,
+            $headers
+        );
+
+        return $this->response;
+    }
+
+    /** Assert a specific hit was returned */
+    protected function assertHit(array $hit, string $message = '')
+    {
+        $hits = data_get($this->response->json(), 'data.*.hits', [[]]);
+        $this->assertContains($hit, $hits[0], $message);
+    }
+
+    /** Assert that the search returned at least one hit */
+    protected function assertHasHits(string $message = '')
+    {
+        $total = data_get($this->response->json(), 'data.*.summary.total', [0]);
+        $this->assertGreaterThan(0, $total[0], $message);
+    }
+
+    /** Assert that a specific hit was the *first* returned */
+    protected function assertTopHit(array $expected, string $message = '')
+    {
+        $hits = data_get($this->response->json(), 'data.*.hits.items', [[]]);
+        $this->assertSame($expected, $hits[0][0], $message);
+    }
+
+    /** Assert that the search returned exactly as many hits as we expected */
+    protected function assertTotalHits(int $expected, string $message = '')
+    {
+        $actual = data_get($this->response->json(), 'data.*.summary.total', [0]);
+        $this->assertSame($expected, $actual[0], $message);
+    }
+
+    // protected function assertTopHitHighlightsFields(array $expected, string $message = '')
+    // {
+    //     $actual = array_map(
+    //         function ($highlight) { return $highlight['field']; },
+    //         $this->results['results'][0]['highlights']
+    //     );
+
+    //     $this->assertContains($expected, $actual, $message);
+    // }
+
+    // protected function assertTopHitHighlightsField(string $expected, string $message = '')
+    // {
+    //     $actual = array_map(
+    //         function ($highlight) { return $highlight['field']; },
+    //         $this->results['results'][0]['highlights']
+    //     );
+
+    //     $this->assertContains($expected, $actual, $message);
+    // }
+
+    // protected function assertTopHitContainsFragment(string $field, string $expectedFragment, string $message = '')
+    // {
+    //     $actual = $this->extractHighlight(0, $field);
+    //     $this->assertSame($expectedFragment, $actual, $message);
+    // }
+
+    // protected function extractHighlight(int $hit, string $field): ?string
+    // {
+    //     foreach ($this->results['results'][$hit]['highlights'] as $highlight) {
+    //         if ($highlight['field'] === $field) {
+    //             return $highlight['fragments'][0];
+    //         }
+    //     }
+
+    //     return null;
+    // }
+
+    // protected function assertHasNonzeroMaxScore(string $message = '')
+    // {
+    //     $this->assertGreaterThan(0.0001, $this->results['maxScore'], $message);
+    // }
+
+    /**
+     * Snapshot comparison of a GraphQL response payload
+     */
+    protected function assertSnapshot()
+    {
+        // Switching to Spatie's lib as a test
+        $response = $this->response->json();
+
+        // Omit timing information from the comparison
+        unset($response['extensions']['searchlight_inspection']['took']);
+        foreach ($response['extensions']['searchlight_inspection']['trips'] as &$trip) {
+            unset($trip['response']['took']);
+        }
+
+        $this->assertMatchesJsonSnapshot($response);
+
+        // if (!$this->hasSnapshot()) {
+        //     $this->createSnapshot();
+        //     $this->markTestSkipped(
+        //         'Snapshot created for '
+        //         . class_basename($this) . '_'
+        //         . $this->getName(false)
+        //     );
+        // }
+
+        // $this->createSnapshot('-ACTUAL', false);
+
+        // // TODO: Load JSON, compare, see diff!
+        // $this->markTestSkipped('Creating comparative snapshot of ACTUAL');
+    }
+
+    // protected function hasSnapshot(): bool
+    // {
+    //     return file_exists($this->getSnapshotFilename());
+    // }
+
+    // /**
+    //  * Get the snapshot file associated with the current test
+    //  */
+    // protected function getSnapshotFilename(string $suffix = ''): string
+    // {
+    //     return __DIR__ . '/__snapshots__/'
+    //         . class_basename($this) . '_'
+    //         . $this->getName(false) . $suffix
+    //         . '.json';
+    // }
+
+    // /**
+    //  * Write a snapshot file of the response JSON
+    //  */
+    // protected function createSnapshot(string $suffix = '', bool $omitExtensions = true)
+    // {
+    //     $filename = $this->getSnapshotFilename($suffix);
+    //     $dir = dirname($filename);
+
+    //     if (!is_dir($dir)) {
+    //         mkdir($dir);
+    //     }
+
+    //     $response = $this->response->json();
+
+    //     // Do not track extensions (search analytics)
+    //     if ($omitExtensions) {
+    //         unset($response['extensions']);
+    //     }
+
+    //     file_put_contents(
+    //         $filename,
+    //         json_encode($response, JSON_PRETTY_PRINT)
+    //     );
+    // }
 }

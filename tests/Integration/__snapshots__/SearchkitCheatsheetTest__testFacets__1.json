@@ -1,0 +1,1220 @@
+{
+    "data": {
+        "results": {
+            "facets": [
+                {
+                    "identifier": "type",
+                    "label": "Type",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "movie",
+                            "count": 852
+                        }
+                    ]
+                },
+                {
+                    "identifier": "rated",
+                    "label": "Rated",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Approved",
+                            "count": 24
+                        },
+                        {
+                            "label": "G",
+                            "count": 26
+                        },
+                        {
+                            "label": "NC-17",
+                            "count": 3
+                        },
+                        {
+                            "label": "Not Rated",
+                            "count": 49
+                        },
+                        {
+                            "label": "PG",
+                            "count": 106
+                        }
+                    ]
+                },
+                {
+                    "identifier": "genres",
+                    "label": "Genres",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Action",
+                            "count": 185
+                        },
+                        {
+                            "label": "Adventure",
+                            "count": 181
+                        },
+                        {
+                            "label": "Animation",
+                            "count": 58
+                        },
+                        {
+                            "label": "Biography",
+                            "count": 63
+                        },
+                        {
+                            "label": "Comedy",
+                            "count": 191
+                        }
+                    ]
+                },
+                {
+                    "identifier": "directors",
+                    "label": "Directors",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Aamir Khan",
+                            "count": 1
+                        },
+                        {
+                            "label": "Adam Elliot",
+                            "count": 1
+                        },
+                        {
+                            "label": "Adam McKay",
+                            "count": 1
+                        },
+                        {
+                            "label": "Adam Shankman",
+                            "count": 1
+                        },
+                        {
+                            "label": "Akira Kurosawa",
+                            "count": 5
+                        }
+                    ]
+                },
+                {
+                    "identifier": "writers",
+                    "label": "Writers",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "A.J. Quinnell",
+                            "count": 1
+                        },
+                        {
+                            "label": "Aaron Sorkin",
+                            "count": 3
+                        },
+                        {
+                            "label": "Aaron Stockard",
+                            "count": 2
+                        },
+                        {
+                            "label": "Abby Mann",
+                            "count": 1
+                        },
+                        {
+                            "label": "Abdel Raouf Dafri",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "identifier": "actors",
+                    "label": "Actors",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Aamir Khan",
+                            "count": 3
+                        },
+                        {
+                            "label": "Aaron Eckhart",
+                            "count": 2
+                        },
+                        {
+                            "label": "Aaron Taylor-Johnson",
+                            "count": 1
+                        },
+                        {
+                            "label": "Abbie Cornish",
+                            "count": 1
+                        },
+                        {
+                            "label": "Abdel Ahmed Ghili",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "identifier": "countries",
+                    "label": "Countries",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Algeria",
+                            "count": 1
+                        },
+                        {
+                            "label": "Argentina",
+                            "count": 3
+                        },
+                        {
+                            "label": "Australia",
+                            "count": 14
+                        },
+                        {
+                            "label": "Austria",
+                            "count": 2
+                        },
+                        {
+                            "label": "Bahamas",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "identifier": "imdbrating",
+                    "label": "IMDb Rating",
+                    "type": "RangeFacet",
+                    "display": "RangeSliderFacet",
+                    "entries": [
+                        {
+                            "label": "0",
+                            "count": 0
+                        },
+                        {
+                            "label": "1",
+                            "count": 0
+                        },
+                        {
+                            "label": "2",
+                            "count": 0
+                        },
+                        {
+                            "label": "3",
+                            "count": 0
+                        },
+                        {
+                            "label": "4",
+                            "count": 0
+                        },
+                        {
+                            "label": "5",
+                            "count": 0
+                        },
+                        {
+                            "label": "6",
+                            "count": 14
+                        },
+                        {
+                            "label": "7",
+                            "count": 476
+                        },
+                        {
+                            "label": "8",
+                            "count": 352
+                        },
+                        {
+                            "label": "9",
+                            "count": 10
+                        },
+                        {
+                            "label": "10",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "identifier": "metascore",
+                    "label": "Metascore",
+                    "type": "RangeFacet",
+                    "display": "RangeSliderFacet",
+                    "entries": [
+                        {
+                            "label": "0",
+                            "count": 0
+                        },
+                        {
+                            "label": "5",
+                            "count": 0
+                        },
+                        {
+                            "label": "10",
+                            "count": 0
+                        },
+                        {
+                            "label": "15",
+                            "count": 0
+                        },
+                        {
+                            "label": "20",
+                            "count": 0
+                        },
+                        {
+                            "label": "25",
+                            "count": 1
+                        },
+                        {
+                            "label": "30",
+                            "count": 4
+                        },
+                        {
+                            "label": "35",
+                            "count": 4
+                        },
+                        {
+                            "label": "40",
+                            "count": 4
+                        },
+                        {
+                            "label": "45",
+                            "count": 15
+                        },
+                        {
+                            "label": "50",
+                            "count": 25
+                        },
+                        {
+                            "label": "55",
+                            "count": 58
+                        },
+                        {
+                            "label": "60",
+                            "count": 76
+                        },
+                        {
+                            "label": "65",
+                            "count": 93
+                        },
+                        {
+                            "label": "70",
+                            "count": 102
+                        },
+                        {
+                            "label": "75",
+                            "count": 79
+                        },
+                        {
+                            "label": "80",
+                            "count": 88
+                        },
+                        {
+                            "label": "85",
+                            "count": 61
+                        },
+                        {
+                            "label": "90",
+                            "count": 43
+                        },
+                        {
+                            "label": "95",
+                            "count": 13
+                        },
+                        {
+                            "label": "100",
+                            "count": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "rated": {
+                                        "terms": {
+                                            "field": "rated",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "directors": {
+                                        "terms": {
+                                            "field": "directors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "writers": {
+                                        "terms": {
+                                            "field": "writers.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "actors": {
+                                        "terms": {
+                                            "field": "actors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "countries": {
+                                        "terms": {
+                                            "field": "countries.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            },
+                                            "include": ".*"
+                                        }
+                                    },
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    },
+                                    "metascore": {
+                                        "histogram": {
+                                            "field": "metascore",
+                                            "interval": 5,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 100
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": {
+                                            "bool": {
+                                                "should": [
+                                                    {
+                                                        "term": {
+                                                            "type": "movie"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": {
+                                    "bool": {
+                                        "should": [
+                                            {
+                                                "term": {
+                                                    "type": "movie"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 852,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0111161",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1994,
+                                        "directors": [
+                                            "Frank Darabont"
+                                        ],
+                                        "writers": [
+                                            "Stephen King",
+                                            "Frank Darabont"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Shawshank Redemption",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Tim Robbins",
+                                            "Morgan Freeman",
+                                            "Bob Gunton",
+                                            "William Sadler"
+                                        ],
+                                        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0111161",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0068646",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1972,
+                                        "directors": [
+                                            "Francis Ford Coppola"
+                                        ],
+                                        "writers": [
+                                            "Mario Puzo",
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Godfather",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Marlon Brando",
+                                            "Al Pacino",
+                                            "James Caan",
+                                            "Richard S. Castellano"
+                                        ],
+                                        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0068646",
+                                        "metascore": 100,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1972-03-24T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0468569",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2008,
+                                        "directors": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "writers": [
+                                            "Jonathan Nolan",
+                                            "Christopher Nolan",
+                                            "Christopher Nolan",
+                                            "David S. Goyer",
+                                            "Bob Kane"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Dark Knight",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Christian Bale",
+                                            "Heath Ledger",
+                                            "Aaron Eckhart",
+                                            "Michael Caine"
+                                        ],
+                                        "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0468569",
+                                        "metascore": 82,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+                                        "released": "2008-07-18T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0110912",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1994,
+                                        "directors": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino",
+                                            "Roger Avary",
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Pulp Fiction",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Tim Roth",
+                                            "Amanda Plummer",
+                                            "Laura Lovelace",
+                                            "John Travolta"
+                                        ],
+                                        "plot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0110912",
+                                        "metascore": 94,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0137523",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Chuck Palahniuk",
+                                            "Jim Uhls"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Fight Club",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Edward Norton",
+                                            "Brad Pitt",
+                                            "Helena Bonham Carter",
+                                            "Meat Loaf"
+                                        ],
+                                        "plot": "An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...",
+                                        "genres": [
+                                            "Drama"
+                                        ],
+                                        "id": "tt0137523",
+                                        "metascore": 66,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1999-10-15T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0167260",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2003,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "J.R.R. Tolkien",
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "New Zealand"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Lord of the Rings: The Return of the King",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Noel Appleby",
+                                            "Alexandra Astin",
+                                            "Sean Astin",
+                                            "David Aston"
+                                        ],
+                                        "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0167260",
+                                        "metascore": 94,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg",
+                                        "released": "2003-12-17T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1375666",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2010,
+                                        "directors": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "writers": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Inception",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Leonardo DiCaprio",
+                                            "Joseph Gordon-Levitt",
+                                            "Ellen Page",
+                                            "Tom Hardy"
+                                        ],
+                                        "plot": "A skilled extractor is offered a chance to regain his old life as payment for a task considered to be impossible.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt1375666",
+                                        "metascore": 74,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+                                        "released": "2010-07-16T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0120737",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2001,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "J.R.R. Tolkien",
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson"
+                                        ],
+                                        "countries": [
+                                            "New Zealand",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Lord of the Rings: The Fellowship of the Ring",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Alan Howard",
+                                            "Elijah Wood",
+                                            "Noel Appleby",
+                                            "Sean Astin"
+                                        ],
+                                        "plot": "A meek hobbit of The Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0120737",
+                                        "metascore": 92,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg",
+                                        "released": "2001-12-19T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0133093",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "writers": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Australia"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Matrix",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Keanu Reeves",
+                                            "Laurence Fishburne",
+                                            "Carrie-Anne Moss",
+                                            "Hugo Weaving"
+                                        ],
+                                        "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0133093",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
+                                        "released": "1999-03-31T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0071562",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1974,
+                                        "directors": [
+                                            "Francis Ford Coppola"
+                                        ],
+                                        "writers": [
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo",
+                                            "Mario Puzo"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Godfather: Part II",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert Duvall",
+                                            "Diane Keaton",
+                                            "Robert De Niro"
+                                        ],
+                                        "plot": "The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0071562",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1974-12-20T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        },
+                        "aggregations": {
+                            "facet_bucket_all": {
+                                "doc_count": 852,
+                                "rated": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 634,
+                                    "buckets": [
+                                        {
+                                            "key": "Approved",
+                                            "doc_count": 24
+                                        },
+                                        {
+                                            "key": "G",
+                                            "doc_count": 26
+                                        },
+                                        {
+                                            "key": "NC-17",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Not Rated",
+                                            "doc_count": 49
+                                        },
+                                        {
+                                            "key": "PG",
+                                            "doc_count": 106
+                                        }
+                                    ]
+                                },
+                                "actors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 3384,
+                                    "buckets": [
+                                        {
+                                            "key": "Aamir Khan",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Aaron Eckhart",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Aaron Taylor-Johnson",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Abbie Cornish",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Abdel Ahmed Ghili",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1462,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 185
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 181
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 58
+                                        },
+                                        {
+                                            "key": "Biography",
+                                            "doc_count": 63
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 191
+                                        }
+                                    ]
+                                },
+                                "directors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 937,
+                                    "buckets": [
+                                        {
+                                            "key": "Aamir Khan",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Elliot",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam McKay",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Shankman",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Akira Kurosawa",
+                                            "doc_count": 5
+                                        }
+                                    ]
+                                },
+                                "metascore": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 15,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 20,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 25,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 30,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 35,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 40,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 45,
+                                            "doc_count": 15
+                                        },
+                                        {
+                                            "key": 50,
+                                            "doc_count": 25
+                                        },
+                                        {
+                                            "key": 55,
+                                            "doc_count": 58
+                                        },
+                                        {
+                                            "key": 60,
+                                            "doc_count": 76
+                                        },
+                                        {
+                                            "key": 65,
+                                            "doc_count": 93
+                                        },
+                                        {
+                                            "key": 70,
+                                            "doc_count": 102
+                                        },
+                                        {
+                                            "key": 75,
+                                            "doc_count": 79
+                                        },
+                                        {
+                                            "key": 80,
+                                            "doc_count": 88
+                                        },
+                                        {
+                                            "key": 85,
+                                            "doc_count": 61
+                                        },
+                                        {
+                                            "key": 90,
+                                            "doc_count": 43
+                                        },
+                                        {
+                                            "key": 95,
+                                            "doc_count": 13
+                                        },
+                                        {
+                                            "key": 100,
+                                            "doc_count": 3
+                                        }
+                                    ]
+                                },
+                                "countries": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1222,
+                                    "buckets": [
+                                        {
+                                            "key": "Algeria",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Argentina",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Australia",
+                                            "doc_count": 14
+                                        },
+                                        {
+                                            "key": "Austria",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Bahamas",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "writers": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 2016,
+                                    "buckets": [
+                                        {
+                                            "key": "A.J. Quinnell",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Sorkin",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Aaron Stockard",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Abby Mann",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Abdel Raouf Dafri",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 852
+                                        }
+                                    ]
+                                },
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 14
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 476
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 352
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 10
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,493 @@
+{
+    "data": {
+        "results": {
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0113277"
+                    },
+                    {
+                        "id": "tt0061811"
+                    },
+                    {
+                        "id": "tt0087800"
+                    },
+                    {
+                        "id": "tt0468569"
+                    },
+                    {
+                        "id": "tt0388795"
+                    },
+                    {
+                        "id": "tt0187393"
+                    },
+                    {
+                        "id": "tt0147800"
+                    },
+                    {
+                        "id": "tt0032455"
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "should": [
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title",
+                                                "genres",
+                                                "directors",
+                                                "writers",
+                                                "actors",
+                                                "countries",
+                                                "plot"
+                                            ],
+                                            "type": "best_fields",
+                                            "operator": "and"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title",
+                                                "genres",
+                                                "directors",
+                                                "writers",
+                                                "actors",
+                                                "countries",
+                                                "plot"
+                                            ],
+                                            "type": "cross_fields"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title",
+                                                "genres",
+                                                "directors",
+                                                "writers",
+                                                "actors",
+                                                "countries",
+                                                "plot"
+                                            ],
+                                            "type": "phrase"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title",
+                                                "genres",
+                                                "directors",
+                                                "writers",
+                                                "actors",
+                                                "countries",
+                                                "plot"
+                                            ],
+                                            "type": "phrase_prefix"
+                                        }
+                                    }
+                                ],
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 8,
+                                "relation": "eq"
+                            },
+                            "max_score": 32.396683,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0113277",
+                                    "_score": 32.396683,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Michael Mann"
+                                        ],
+                                        "writers": [
+                                            "Michael Mann"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Heat",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert De Niro",
+                                            "Val Kilmer",
+                                            "Jon Voight"
+                                        ],
+                                        "plot": "A group of professional bank robbers start to feel the heat from police when they unknowingly leave a clue at their latest heist.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0113277",
+                                        "metascore": 76,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM1NDc4ODkxNV5BMl5BanBnXkFtZTcwNTI4ODE3MQ@@._V1_SX300.jpg",
+                                        "released": "1995-12-15T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0061811",
+                                    "_score": 16.143806,
+                                    "_source": {
+                                        "year": 1967,
+                                        "directors": [
+                                            "Norman Jewison"
+                                        ],
+                                        "writers": [
+                                            "Stirling Silliphant",
+                                            "John Ball"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "In the Heat of the Night",
+                                        "rated": "Approved",
+                                        "actors": [
+                                            "Sidney Poitier",
+                                            "Rod Steiger",
+                                            "Warren Oates",
+                                            "Lee Grant"
+                                        ],
+                                        "plot": "An African American police detective is asked to investigate a murder in a racially hostile southern town.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt0061811",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTk3NjkxMDc1MV5BMl5BanBnXkFtZTcwMDIwMjI0NA@@._V1_SX300.jpg",
+                                        "released": "1967-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0087800",
+                                    "_score": 6.5948377,
+                                    "_source": {
+                                        "year": 1984,
+                                        "directors": [
+                                            "Wes Craven"
+                                        ],
+                                        "writers": [
+                                            "Wes Craven"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "A Nightmare on Elm Street",
+                                        "rated": "R",
+                                        "actors": [
+                                            "John Saxon",
+                                            "Ronee Blakley",
+                                            "Heather Langenkamp",
+                                            "Amanda Wyss"
+                                        ],
+                                        "plot": "In the dreams of his victims, a spectral child murderer stalks the children of the members of the lynch mob that killed him.",
+                                        "genres": [
+                                            "Horror"
+                                        ],
+                                        "id": "tt0087800",
+                                        "metascore": 78,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxOTk4NjMzOV5BMl5BanBnXkFtZTcwOTQ3NDAzMg@@._V1_SX300.jpg",
+                                        "released": "1984-11-16T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0468569",
+                                    "_score": 5.48076,
+                                    "_source": {
+                                        "year": 2008,
+                                        "directors": [
+                                            "Christopher Nolan"
+                                        ],
+                                        "writers": [
+                                            "Jonathan Nolan",
+                                            "Christopher Nolan",
+                                            "Christopher Nolan",
+                                            "David S. Goyer",
+                                            "Bob Kane"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Dark Knight",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Christian Bale",
+                                            "Heath Ledger",
+                                            "Aaron Eckhart",
+                                            "Michael Caine"
+                                        ],
+                                        "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0468569",
+                                        "metascore": 82,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+                                        "released": "2008-07-18T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0388795",
+                                    "_score": 5.48076,
+                                    "_source": {
+                                        "year": 2005,
+                                        "directors": [
+                                            "Ang Lee"
+                                        ],
+                                        "writers": [
+                                            "Annie Proulx",
+                                            "Larry McMurtry",
+                                            "Diana Ossana"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Canada"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Brokeback Mountain",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Heath Ledger",
+                                            "Jake Gyllenhaal",
+                                            "Randy Quaid",
+                                            "Valerie Planche"
+                                        ],
+                                        "plot": "The story of a forbidden and secretive relationship between two cowboys and their lives over the years.",
+                                        "genres": [
+                                            "Drama",
+                                            "Romance"
+                                        ],
+                                        "id": "tt0388795",
+                                        "metascore": 87,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY5NTAzNTc1NF5BMl5BanBnXkFtZTYwNDY4MDc3._V1_SX300.jpg",
+                                        "released": "2006-01-13T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0187393",
+                                    "_score": 5.48076,
+                                    "_source": {
+                                        "year": 2000,
+                                        "directors": [
+                                            "Roland Emmerich"
+                                        ],
+                                        "writers": [
+                                            "Robert Rodat"
+                                        ],
+                                        "countries": [
+                                            "Germany",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Patriot",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Mel Gibson",
+                                            "Heath Ledger",
+                                            "Joely Richardson",
+                                            "Jason Isaacs"
+                                        ],
+                                        "plot": "Peaceful farmer Benjamin Martin is driven to lead the Colonial Militia during the American Revolution when a sadistic British officer murders his son.",
+                                        "genres": [
+                                            "Action",
+                                            "Drama",
+                                            "War"
+                                        ],
+                                        "id": "tt0187393",
+                                        "metascore": 63,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkzMjE4ODU0MV5BMl5BanBnXkFtZTYwNTI2OTk2._V1_SX300.jpg",
+                                        "released": "2000-06-28T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0147800",
+                                    "_score": 5.219291,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "Gil Junger"
+                                        ],
+                                        "writers": [
+                                            "Karen McCullah",
+                                            "Kirsten Smith"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "10 Things I Hate About You",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Heath Ledger",
+                                            "Julia Stiles",
+                                            "Joseph Gordon-Levitt",
+                                            "Larisa Oleynik"
+                                        ],
+                                        "plot": "A new kid must find a guy to date the meanest girl in school, the older sister of the girl he has a crush on, who cannot date until her older sister does.",
+                                        "genres": [
+                                            "Comedy",
+                                            "Drama",
+                                            "Romance"
+                                        ],
+                                        "id": "tt0147800",
+                                        "metascore": 70,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTI4MzU5OTc2MF5BMl5BanBnXkFtZTYwNzQxMjc5._V1_SX300.jpg",
+                                        "released": "1999-03-31T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0032455",
+                                    "_score": 1.475604,
+                                    "_source": {
+                                        "year": 1940,
+                                        "directors": [
+                                            "Norman Ferguson",
+                                            "James Algar",
+                                            "Samuel Armstrong",
+                                            "Ford Beebe Jr.",
+                                            "Jim Handley",
+                                            "T. Hee",
+                                            "Wilfred Jackson",
+                                            "Hamilton Luske",
+                                            "Bill Roberts",
+                                            "Paul Satterfield",
+                                            "Ben Sharpsteen"
+                                        ],
+                                        "writers": [
+                                            "Joe Grant",
+                                            "Dick Huemer",
+                                            "Lee Blair",
+                                            "Elmer Plummer",
+                                            "Phil Dike",
+                                            "Sylvia Moberly-Holland",
+                                            "Norman Wright",
+                                            "Albert Heath",
+                                            "Bianca Majolie",
+                                            "Graham Heid",
+                                            "Perce Pearce",
+                                            "Carl Fallberg",
+                                            "William Martin",
+                                            "Leo Thiele",
+                                            "Robert Sterner",
+                                            "John McLeish",
+                                            "Otto Englander",
+                                            "Webb Smith",
+                                            "Erdman Penner",
+                                            "Joseph Sabo",
+                                            "Bill Peet",
+                                            "Vernon Stallings",
+                                            "Campbell Grant",
+                                            "Arthur Heinemann",
+                                            "Phil Dike"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Fantasia",
+                                        "rated": "G",
+                                        "actors": [
+                                            "Leopold Stokowski",
+                                            "Deems Taylor"
+                                        ],
+                                        "plot": "A collection of animated interpretations of great works of Western classical music.",
+                                        "genres": [
+                                            "Animation",
+                                            "Family",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0032455",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM2Nzk5ODU5NF5BMl5BanBnXkFtZTcwMjQ1ODYxMQ@@._V1_SX300.jpg",
+                                        "released": "1940-12-25T00:00:00+01:00"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
