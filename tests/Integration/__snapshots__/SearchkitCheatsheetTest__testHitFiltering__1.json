@@ -1,0 +1,298 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "total": 4
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0114369",
+                        "fields": {
+                            "title": "Se7en",
+                            "released": "1995-09-22T00:00:00+01:00",
+                            "metascore": "65"
+                        }
+                    },
+                    {
+                        "id": "tt0112573",
+                        "fields": {
+                            "title": "Braveheart",
+                            "released": "1995-05-24T00:00:00+01:00",
+                            "metascore": "68"
+                        }
+                    },
+                    {
+                        "id": "tt0112864",
+                        "fields": {
+                            "title": "Die Hard: With a Vengeance",
+                            "released": "1995-05-19T00:00:00+01:00",
+                            "metascore": "58"
+                        }
+                    },
+                    {
+                        "id": "tt0113189",
+                        "fields": {
+                            "title": "GoldenEye",
+                            "released": "1995-11-17T00:00:00Z",
+                            "metascore": "65"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "bool": {
+                                            "should": [
+                                                {
+                                                    "term": {
+                                                        "type": "movie"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "range": {
+                                            "metascore": {
+                                                "gte": 0,
+                                                "lte": 70
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "range": {
+                                            "released": {
+                                                "gte": "1995-01-01T00:00:00.000Z",
+                                                "lte": "1996-01-01T00:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 4,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114369",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Andrew Kevin Walker"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Se7en",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Morgan Freeman",
+                                            "Andrew Kevin Walker",
+                                            "Daniel Zacapa",
+                                            "Brad Pitt"
+                                        ],
+                                        "plot": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi.",
+                                        "genres": [
+                                            "Crime",
+                                            "Mystery",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0114369",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQwNTU3MTE4NF5BMl5BanBnXkFtZTcwOTgxNDM2Mg@@._V1_SX300.jpg",
+                                        "released": "1995-09-22T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112573",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Mel Gibson"
+                                        ],
+                                        "writers": [
+                                            "Randall Wallace"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Braveheart",
+                                        "rated": "R",
+                                        "actors": [
+                                            "James Robinson",
+                                            "Sean Lawlor",
+                                            "Sandy Nelson",
+                                            "James Cosmo"
+                                        ],
+                                        "plot": "When his secret bride is executed for assaulting an English soldier who tried to rape her, a commoner begins a revolt and leads Scottish warriors against the cruel English tyrant who rules Scotland with an iron fist.",
+                                        "genres": [
+                                            "Action",
+                                            "Biography",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0112573",
+                                        "metascore": 68,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNjA4ODYxMDU3Nl5BMl5BanBnXkFtZTcwMzkzMTk3OA@@._V1_SX300.jpg",
+                                        "released": "1995-05-24T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112864",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "John McTiernan"
+                                        ],
+                                        "writers": [
+                                            "Jonathan Hensleigh",
+                                            "Roderick Thorp"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Die Hard: With a Vengeance",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Bruce Willis",
+                                            "Jeremy Irons",
+                                            "Samuel L. Jackson",
+                                            "Graham Greene"
+                                        ],
+                                        "plot": "John McClane and a Harlem store owner are targeted by German terrorist Simon Gruber in New York City, where he plans to rob the Federal Reserve Building.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0112864",
+                                        "metascore": 58,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BOTgyNDM4Mjg0OF5BMl5BanBnXkFtZTcwMjQxNTEzMQ@@._V1_SX300.jpg",
+                                        "released": "1995-05-19T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0113189",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Martin Campbell"
+                                        ],
+                                        "writers": [
+                                            "Ian Fleming",
+                                            "Michael France",
+                                            "Jeffrey Caine",
+                                            "Bruce Feirstein"
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "GoldenEye",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Pierce Brosnan",
+                                            "Sean Bean",
+                                            "Izabella Scorupco",
+                                            "Famke Janssen"
+                                        ],
+                                        "plot": "James Bond teams up with the lone survivor of a destroyed Russian research center to stop the hijacking of a nuclear space weapon by a fellow agent believed to be dead.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0113189",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzk2OTg4MTk1NF5BMl5BanBnXkFtZTcwNjExNTgzNA@@._V1_SX300.jpg",
+                                        "released": "1995-11-17T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

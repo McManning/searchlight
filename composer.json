@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "McManning\\Searchlight\\ServiceProvider"
+                "McManning\\Searchlight\\SearchlightServiceProvider"
             ]
         }
     }

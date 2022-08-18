@@ -25,9 +25,6 @@
                         "id": "tt0468569"
                     },
                     {
-                        "id": "tt0944947"
-                    },
-                    {
                         "id": "tt0110912"
                     },
                     {
@@ -44,6 +41,9 @@
                     },
                     {
                         "id": "tt0133093"
+                    },
+                    {
+                        "id": "tt0071562"
                     }
                 ]
             }
@@ -57,6 +57,11 @@
                     "query": {
                         "size": 10,
                         "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
                         "_source": {
                             "includes": [
                                 "type",
@@ -87,6 +92,23 @@
                             "bool": {
                                 "filter": []
                             }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "bool": {
+                                            "should": [
+                                                {
+                                                    "term": {
+                                                        "type": "movie"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     },
                     "response": {
@@ -99,7 +121,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 1000,
+                                "value": 852,
                                 "relation": "eq"
                             },
                             "max_score": 1,
@@ -219,42 +241,6 @@
                                         "metascore": 82,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
                                         "released": "2008-07-18T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0944947",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2011,
-                                        "directors": [],
-                                        "writers": [
-                                            "David Benioff",
-                                            "D.B. Weiss"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "UK"
-                                        ],
-                                        "type": "series",
-                                        "title": "Game of Thrones",
-                                        "rated": "TV-MA",
-                                        "actors": [
-                                            "Peter Dinklage",
-                                            "Lena Headey",
-                                            "Maisie Williams",
-                                            "Emilia Clarke"
-                                        ],
-                                        "plot": "Seven noble families fight for control of the mythical land of Westeros.",
-                                        "genres": [
-                                            "Adventure",
-                                            "Drama",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt0944947",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA5NzY4MTM0N15BMl5BanBnXkFtZTcwMTA0MDkxOQ@@._V1_SX300.jpg",
-                                        "released": "2011-04-17T00:00:00+01:00"
                                     }
                                 },
                                 {
@@ -491,6 +477,44 @@
                                         "metascore": 73,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
                                         "released": "1999-03-31T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0071562",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1974,
+                                        "directors": [
+                                            "Francis Ford Coppola"
+                                        ],
+                                        "writers": [
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo",
+                                            "Mario Puzo"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Godfather: Part II",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert Duvall",
+                                            "Diane Keaton",
+                                            "Robert De Niro"
+                                        ],
+                                        "plot": "The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0071562",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1974-12-20T00:00:00Z"
                                     }
                                 }
                             ]

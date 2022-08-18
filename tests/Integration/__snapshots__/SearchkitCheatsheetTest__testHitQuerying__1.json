@@ -58,6 +58,11 @@
                     "query": {
                         "size": 10,
                         "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
                         "_source": {
                             "includes": [
                                 "type",

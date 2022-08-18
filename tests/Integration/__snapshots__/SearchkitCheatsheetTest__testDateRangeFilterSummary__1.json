@@ -1,622 +1,525 @@
 {
-    "errors": [
-        {
-            "message": "Unknown filter identifier: released",
-            "extensions": {
-                "category": "graphql"
-            },
-            "locations": [
-                {
-                    "line": 10,
-                    "column": 17
-                }
-            ],
-            "path": [
-                "results",
-                "summary"
-            ],
-            "trace": [
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/SearchRequest.php",
-                    "line": 161,
-                    "call": "McManning\\Searchlight\\SearchRequest::buildElasticQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/Directives\/SearchlightDirective.php",
-                    "line": 103,
-                    "call": "McManning\\Searchlight\\SearchRequest::search()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
-                    "line": 67,
-                    "call": "McManning\\Searchlight\\Directives\\SearchlightDirective::McManning\\Searchlight\\Directives\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
-                    "line": 53,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::GraphQL\\Executor\\Promise\\Adapter\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromiseAdapter.php",
-                    "line": 149,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::runQueue()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/GraphQL.php",
-                    "line": 105,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromiseAdapter::wait()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 268,
-                    "call": "GraphQL\\GraphQL::executeQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 203,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeParsedQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 162,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::parseAndExecuteQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 121,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperation()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Utils.php",
-                    "line": 99,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::Nuwave\\Lighthouse\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 120,
-                    "call": "Nuwave\\Lighthouse\\Support\\Utils::applyEach()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Controllers\/GraphQLController.php",
-                    "line": 32,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperationOrOperations()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
-                    "line": 48,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Controllers\\GraphQLController::__invoke()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-                    "line": 262,
-                    "call": "Illuminate\\Routing\\ControllerDispatcher::dispatch()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-                    "line": 205,
-                    "call": "Illuminate\\Routing\\Route::runController()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 721,
-                    "call": "Illuminate\\Routing\\Route::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 128,
-                    "call": "Illuminate\\Routing\\Router::Illuminate\\Routing\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AttemptAuthentication.php",
-                    "line": 34,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AttemptAuthentication::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AcceptJson.php",
-                    "line": 27,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AcceptJson::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 103,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 723,
-                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 698,
-                    "call": "Illuminate\\Routing\\Router::runRouteWithinStack()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 662,
-                    "call": "Illuminate\\Routing\\Router::runRoute()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 651,
-                    "call": "Illuminate\\Routing\\Router::dispatchToRoute()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 167,
-                    "call": "Illuminate\\Routing\\Router::dispatch()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 128,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::Illuminate\\Foundation\\Http\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-                    "line": 21,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
-                    "line": 31,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-                    "line": 21,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
-                    "line": 40,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
-                    "line": 27,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 103,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 142,
-                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 111,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::sendRequestThroughRouter()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 510,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 476,
-                    "call": "Orchestra\\Testbench\\TestCase::call()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 335,
-                    "call": "Orchestra\\Testbench\\TestCase::json()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/TestCase.php",
-                    "line": 222,
-                    "call": "Orchestra\\Testbench\\TestCase::postJson()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Testing\/MakesGraphQLRequests.php",
-                    "line": 62,
-                    "call": "Tests\\TestCase::postGraphQL()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/Integration\/SearchkitCheatsheetTest.php",
-                    "line": 275,
-                    "call": "Tests\\TestCase::graphQL()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 1490,
-                    "call": "Tests\\SearchkitCheatsheetTest::testDateRangeFilterSummary()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 1110,
-                    "call": "PHPUnit\\Framework\\TestCase::runTest()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php",
-                    "line": 703,
-                    "call": "PHPUnit\\Framework\\TestCase::runBare()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 838,
-                    "call": "PHPUnit\\Framework\\TestResult::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
-                    "line": 626,
-                    "call": "PHPUnit\\Framework\\TestCase::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
-                    "line": 626,
-                    "call": "PHPUnit\\Framework\\TestSuite::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php",
-                    "line": 659,
-                    "call": "PHPUnit\\Framework\\TestSuite::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
-                    "line": 235,
-                    "call": "PHPUnit\\TextUI\\TestRunner::doRun()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
-                    "line": 194,
-                    "call": "PHPUnit\\TextUI\\Command::run()"
-                },
-                {
-                    "file": "phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit",
-                    "line": 97,
-                    "call": "PHPUnit\\TextUI\\Command::main()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/bin\/phpunit",
-                    "line": 115,
-                    "function": "include('phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit')"
-                }
-            ]
-        },
-        {
-            "message": "Unknown filter identifier: released",
-            "extensions": {
-                "category": "graphql"
-            },
-            "locations": [
-                {
-                    "line": 23,
-                    "column": 17
-                }
-            ],
-            "path": [
-                "results",
-                "hits"
-            ],
-            "trace": [
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/SearchRequest.php",
-                    "line": 161,
-                    "call": "McManning\\Searchlight\\SearchRequest::buildElasticQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/src\/Directives\/SearchlightDirective.php",
-                    "line": 122,
-                    "call": "McManning\\Searchlight\\SearchRequest::search()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
-                    "line": 67,
-                    "call": "McManning\\Searchlight\\Directives\\SearchlightDirective::McManning\\Searchlight\\Directives\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromise.php",
-                    "line": 53,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::GraphQL\\Executor\\Promise\\Adapter\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/Executor\/Promise\/Adapter\/SyncPromiseAdapter.php",
-                    "line": 149,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromise::runQueue()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/webonyx\/graphql-php\/src\/GraphQL.php",
-                    "line": 105,
-                    "call": "GraphQL\\Executor\\Promise\\Adapter\\SyncPromiseAdapter::wait()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 268,
-                    "call": "GraphQL\\GraphQL::executeQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 203,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeParsedQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 162,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::parseAndExecuteQuery()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 121,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperation()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Utils.php",
-                    "line": 99,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::Nuwave\\Lighthouse\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/GraphQL.php",
-                    "line": 120,
-                    "call": "Nuwave\\Lighthouse\\Support\\Utils::applyEach()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Controllers\/GraphQLController.php",
-                    "line": 32,
-                    "call": "Nuwave\\Lighthouse\\GraphQL::executeOperationOrOperations()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/ControllerDispatcher.php",
-                    "line": 48,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Controllers\\GraphQLController::__invoke()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-                    "line": 262,
-                    "call": "Illuminate\\Routing\\ControllerDispatcher::dispatch()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Route.php",
-                    "line": 205,
-                    "call": "Illuminate\\Routing\\Route::runController()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 721,
-                    "call": "Illuminate\\Routing\\Route::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 128,
-                    "call": "Illuminate\\Routing\\Router::Illuminate\\Routing\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AttemptAuthentication.php",
-                    "line": 34,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AttemptAuthentication::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Support\/Http\/Middleware\/AcceptJson.php",
-                    "line": 27,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Nuwave\\Lighthouse\\Support\\Http\\Middleware\\AcceptJson::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 103,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 723,
-                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 698,
-                    "call": "Illuminate\\Routing\\Router::runRouteWithinStack()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 662,
-                    "call": "Illuminate\\Routing\\Router::runRoute()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Routing\/Router.php",
-                    "line": 651,
-                    "call": "Illuminate\\Routing\\Router::dispatchToRoute()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 167,
-                    "call": "Illuminate\\Routing\\Router::dispatch()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 128,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::Illuminate\\Foundation\\Http\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-                    "line": 21,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ConvertEmptyStringsToNull.php",
-                    "line": 31,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TransformsRequest.php",
-                    "line": 21,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/TrimStrings.php",
-                    "line": 40,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Middleware\/ValidatePostSize.php",
-                    "line": 27,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 167,
-                    "call": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Pipeline\/Pipeline.php",
-                    "line": 103,
-                    "call": "Illuminate\\Pipeline\\Pipeline::Illuminate\\Pipeline\\{closure}()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 142,
-                    "call": "Illuminate\\Pipeline\\Pipeline::then()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Http\/Kernel.php",
-                    "line": 111,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::sendRequestThroughRouter()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 510,
-                    "call": "Illuminate\\Foundation\\Http\\Kernel::handle()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 476,
-                    "call": "Orchestra\\Testbench\\TestCase::call()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/laravel\/framework\/src\/Illuminate\/Foundation\/Testing\/Concerns\/MakesHttpRequests.php",
-                    "line": 335,
-                    "call": "Orchestra\\Testbench\\TestCase::json()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/TestCase.php",
-                    "line": 222,
-                    "call": "Orchestra\\Testbench\\TestCase::postJson()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/nuwave\/lighthouse\/src\/Testing\/MakesGraphQLRequests.php",
-                    "line": 62,
-                    "call": "Tests\\TestCase::postGraphQL()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/tests\/Integration\/SearchkitCheatsheetTest.php",
-                    "line": 275,
-                    "call": "Tests\\TestCase::graphQL()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 1490,
-                    "call": "Tests\\SearchkitCheatsheetTest::testDateRangeFilterSummary()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 1110,
-                    "call": "PHPUnit\\Framework\\TestCase::runTest()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestResult.php",
-                    "line": 703,
-                    "call": "PHPUnit\\Framework\\TestCase::runBare()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
-                    "line": 838,
-                    "call": "PHPUnit\\Framework\\TestResult::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
-                    "line": 626,
-                    "call": "PHPUnit\\Framework\\TestCase::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/Framework\/TestSuite.php",
-                    "line": 626,
-                    "call": "PHPUnit\\Framework\\TestSuite::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestRunner.php",
-                    "line": 659,
-                    "call": "PHPUnit\\Framework\\TestSuite::run()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
-                    "line": 235,
-                    "call": "PHPUnit\\TextUI\\TestRunner::doRun()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/src\/TextUI\/Command.php",
-                    "line": 194,
-                    "call": "PHPUnit\\TextUI\\Command::run()"
-                },
-                {
-                    "file": "phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit",
-                    "line": 97,
-                    "call": "PHPUnit\\TextUI\\Command::main()"
-                },
-                {
-                    "file": "\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/bin\/phpunit",
-                    "line": 115,
-                    "function": "include('phpvfscomposer:\/\/\/srv\/www\/orapps\/wwwroot\/searchlight\/vendor\/phpunit\/phpunit\/phpunit')"
-                }
-            ]
-        }
-    ],
     "data": {
         "results": {
-            "summary": null,
-            "hits": null
+            "summary": {
+                "query": "",
+                "appliedFilters": [
+                    {
+                        "id": "released_1995-01-01T00:00:00.000Z_1996-01-01T00:00:00.000Z",
+                        "identifier": "released",
+                        "display": "DateRange",
+                        "label": "Released",
+                        "dateMin": "1995-01-01T00:00:00.000Z",
+                        "dateMax": "1996-01-01T00:00:00.000Z"
+                    }
+                ]
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0114369"
+                    },
+                    {
+                        "id": "tt0114814"
+                    },
+                    {
+                        "id": "tt0112573"
+                    },
+                    {
+                        "id": "tt0114709"
+                    },
+                    {
+                        "id": "tt0113277"
+                    },
+                    {
+                        "id": "tt0112641"
+                    },
+                    {
+                        "id": "tt0112864"
+                    },
+                    {
+                        "id": "tt0112471"
+                    },
+                    {
+                        "id": "tt0112384"
+                    },
+                    {
+                        "id": "tt0113189"
+                    }
+                ]
+            }
         }
     },
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "trips": []
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "name": [],
+                                "description": [],
+                                "category": [],
+                                "kind": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "range": {
+                                            "released": {
+                                                "gte": "1995-01-01T00:00:00.000Z",
+                                                "lte": "1996-01-01T00:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "response": {
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 12,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114369",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Andrew Kevin Walker"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Se7en",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Morgan Freeman",
+                                            "Andrew Kevin Walker",
+                                            "Daniel Zacapa",
+                                            "Brad Pitt"
+                                        ],
+                                        "plot": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi.",
+                                        "genres": [
+                                            "Crime",
+                                            "Mystery",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0114369",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQwNTU3MTE4NF5BMl5BanBnXkFtZTcwOTgxNDM2Mg@@._V1_SX300.jpg",
+                                        "released": "1995-09-22T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114814",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Bryan Singer"
+                                        ],
+                                        "writers": [
+                                            "Christopher McQuarrie"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Usual Suspects",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Stephen Baldwin",
+                                            "Gabriel Byrne",
+                                            "Benicio Del Toro",
+                                            "Kevin Pollak"
+                                        ],
+                                        "plot": "A boat has been destroyed, criminals are dead, and the key to this mystery lies with the only survivor and his twisted, convoluted story beginning with five career crooks in a seemingly random police lineup.",
+                                        "genres": [
+                                            "Crime",
+                                            "Mystery",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0114814",
+                                        "metascore": 77,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzI1MjI5MDQyOV5BMl5BanBnXkFtZTcwNzE4Mjg3NA@@._V1_SX300.jpg",
+                                        "released": "1995-08-16T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112573",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Mel Gibson"
+                                        ],
+                                        "writers": [
+                                            "Randall Wallace"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Braveheart",
+                                        "rated": "R",
+                                        "actors": [
+                                            "James Robinson",
+                                            "Sean Lawlor",
+                                            "Sandy Nelson",
+                                            "James Cosmo"
+                                        ],
+                                        "plot": "When his secret bride is executed for assaulting an English soldier who tried to rape her, a commoner begins a revolt and leads Scottish warriors against the cruel English tyrant who rules Scotland with an iron fist.",
+                                        "genres": [
+                                            "Action",
+                                            "Biography",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0112573",
+                                        "metascore": 68,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNjA4ODYxMDU3Nl5BMl5BanBnXkFtZTcwMzkzMTk3OA@@._V1_SX300.jpg",
+                                        "released": "1995-05-24T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114709",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "John Lasseter"
+                                        ],
+                                        "writers": [
+                                            "John Lasseter",
+                                            "Pete Docter",
+                                            "Andrew Stanton",
+                                            "Joe Ranft",
+                                            "Joss Whedon",
+                                            "Andrew Stanton",
+                                            "Joel Cohen",
+                                            "Alec Sokolow"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Toy Story",
+                                        "rated": "G",
+                                        "actors": [
+                                            "Tom Hanks",
+                                            "Tim Allen",
+                                            "Don Rickles",
+                                            "Jim Varney"
+                                        ],
+                                        "plot": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+                                        "genres": [
+                                            "Animation",
+                                            "Adventure",
+                                            "Comedy"
+                                        ],
+                                        "id": "tt0114709",
+                                        "metascore": 92,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTgwMjI4MzU5N15BMl5BanBnXkFtZTcwMTMyNTk3OA@@._V1_SX300.jpg",
+                                        "released": "1995-11-22T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0113277",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Michael Mann"
+                                        ],
+                                        "writers": [
+                                            "Michael Mann"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Heat",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert De Niro",
+                                            "Val Kilmer",
+                                            "Jon Voight"
+                                        ],
+                                        "plot": "A group of professional bank robbers start to feel the heat from police when they unknowingly leave a clue at their latest heist.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0113277",
+                                        "metascore": 76,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM1NDc4ODkxNV5BMl5BanBnXkFtZTcwNTI4ODE3MQ@@._V1_SX300.jpg",
+                                        "released": "1995-12-15T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112641",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Martin Scorsese"
+                                        ],
+                                        "writers": [
+                                            "Nicholas Pileggi",
+                                            "Nicholas Pileggi",
+                                            "Martin Scorsese"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "France"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Casino",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Robert De Niro",
+                                            "Sharon Stone",
+                                            "Joe Pesci",
+                                            "James Woods"
+                                        ],
+                                        "plot": "Greed, deception, money, power, and murder occur between two mobster best friends and a trophy wife over a gambling empire.",
+                                        "genres": [
+                                            "Biography",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0112641",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMzMjkwMTk4Nl5BMl5BanBnXkFtZTYwNjYxMjk5._V1_SX300.jpg",
+                                        "released": "1995-11-22T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112864",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "John McTiernan"
+                                        ],
+                                        "writers": [
+                                            "Jonathan Hensleigh",
+                                            "Roderick Thorp"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Die Hard: With a Vengeance",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Bruce Willis",
+                                            "Jeremy Irons",
+                                            "Samuel L. Jackson",
+                                            "Graham Greene"
+                                        ],
+                                        "plot": "John McClane and a Harlem store owner are targeted by German terrorist Simon Gruber in New York City, where he plans to rob the Federal Reserve Building.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0112864",
+                                        "metascore": 58,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BOTgyNDM4Mjg0OF5BMl5BanBnXkFtZTcwMjQxNTEzMQ@@._V1_SX300.jpg",
+                                        "released": "1995-05-19T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112471",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Richard Linklater"
+                                        ],
+                                        "writers": [
+                                            "Richard Linklater",
+                                            "Kim Krizan"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Austria",
+                                            "Switzerland"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Before Sunrise",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Ethan Hawke",
+                                            "Julie Delpy",
+                                            "Andrea Eckert",
+                                            "Hanno P\u00f6schl"
+                                        ],
+                                        "plot": "A young man and woman meet on a train in Europe, and wind up spending one evening together in Vienna. Unfortunately, both know that this will probably be their only night together.",
+                                        "genres": [
+                                            "Drama",
+                                            "Romance"
+                                        ],
+                                        "id": "tt0112471",
+                                        "metascore": 77,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQyMTM3MTQxMl5BMl5BanBnXkFtZTcwMDAzNjQ4Mg@@._V1_SX300.jpg",
+                                        "released": "1995-01-27T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112384",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Ron Howard"
+                                        ],
+                                        "writers": [
+                                            "Jim Lovell",
+                                            "Jeffrey Kluger",
+                                            "William Broyles Jr.",
+                                            "Al Reinert"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Apollo 13",
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Tom Hanks",
+                                            "Bill Paxton",
+                                            "Kevin Bacon",
+                                            "Gary Sinise"
+                                        ],
+                                        "plot": "Three astronauts must devise a strategy to return to Earth safely after their spacecraft undergoes massive internal damage.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "History"
+                                        ],
+                                        "id": "tt0112384",
+                                        "metascore": 77,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SX300.jpg",
+                                        "released": "1995-06-30T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0113189",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "Martin Campbell"
+                                        ],
+                                        "writers": [
+                                            "Ian Fleming",
+                                            "Michael France",
+                                            "Jeffrey Caine",
+                                            "Bruce Feirstein"
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "GoldenEye",
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Pierce Brosnan",
+                                            "Sean Bean",
+                                            "Izabella Scorupco",
+                                            "Famke Janssen"
+                                        ],
+                                        "plot": "James Bond teams up with the lone survivor of a destroyed Russian research center to stop the hijacking of a nuclear space weapon by a fellow agent believed to be dead.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0113189",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzk2OTg4MTk1NF5BMl5BanBnXkFtZTcwNjExNTgzNA@@._V1_SX300.jpg",
+                                        "released": "1995-11-17T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
         }
     }
 }

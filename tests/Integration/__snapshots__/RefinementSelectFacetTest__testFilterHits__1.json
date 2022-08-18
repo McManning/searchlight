@@ -2,78 +2,78 @@
     "data": {
         "results": {
             "summary": {
-                "total": 1000
+                "total": 11
             },
             "hits": {
                 "items": [
                     {
-                        "id": "tt0111161",
+                        "id": "tt0383385",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Shawshank Redemption"
+                            "type": "game",
+                            "title": "Grand Theft Auto: San Andreas"
                         }
                     },
                     {
-                        "id": "tt0068646",
+                        "id": "tt0802999",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Godfather"
+                            "type": "game",
+                            "title": "Grand Theft Auto IV"
                         }
                     },
                     {
-                        "id": "tt0468569",
+                        "id": "tt1568322",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Dark Knight"
+                            "type": "game",
+                            "title": "Batman: Arkham City"
                         }
                     },
                     {
-                        "id": "tt0944947",
+                        "id": "tt1540125",
                         "fields": {
-                            "type": "series",
-                            "title": "Game of Thrones"
+                            "type": "game",
+                            "title": "Mass Effect 2"
                         }
                     },
                     {
-                        "id": "tt0110912",
+                        "id": "tt1282022",
                         "fields": {
-                            "type": "movie",
-                            "title": "Pulp Fiction"
+                            "type": "game",
+                            "title": "Batman: Arkham Asylum"
                         }
                     },
                     {
-                        "id": "tt0137523",
+                        "id": "tt0374692",
                         "fields": {
-                            "type": "movie",
-                            "title": "Fight Club"
+                            "type": "game",
+                            "title": "Half-Life 2"
                         }
                     },
                     {
-                        "id": "tt0167260",
+                        "id": "tt0314123",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Lord of the Rings: The Return of the King"
+                            "type": "game",
+                            "title": "Grand Theft Auto: Vice City"
                         }
                     },
                     {
-                        "id": "tt1375666",
+                        "id": "tt1814884",
                         "fields": {
-                            "type": "movie",
-                            "title": "Inception"
+                            "type": "game",
+                            "title": "The Elder Scrolls V: Skyrim"
                         }
                     },
                     {
-                        "id": "tt0120737",
+                        "id": "tt1125798",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Lord of the Rings: The Fellowship of the Ring"
+                            "type": "game",
+                            "title": "Call of Duty 4: Modern Warfare"
                         }
                     },
                     {
-                        "id": "tt0133093",
+                        "id": "tt1073668",
                         "fields": {
-                            "type": "movie",
-                            "title": "The Matrix"
+                            "type": "game",
+                            "title": "Mass Effect"
                         }
                     }
                 ]
@@ -88,6 +88,11 @@
                     "query": {
                         "size": 10,
                         "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
                         "_source": {
                             "includes": [
                                 "type",
@@ -118,6 +123,23 @@
                             "bool": {
                                 "filter": []
                             }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "bool": {
+                                            "should": [
+                                                {
+                                                    "term": {
+                                                        "type": "game"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     },
                     "response": {
@@ -130,7 +152,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 1000,
+                                "value": 11,
                                 "relation": "eq"
                             },
                             "max_score": 1,
@@ -138,390 +160,388 @@
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt0111161",
+                                    "_id": "tt0383385",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 1994,
+                                        "year": 2004,
                                         "directors": [
-                                            "Frank Darabont"
+                                            "Dan Houser",
+                                            "Navid Khonsari"
                                         ],
                                         "writers": [
-                                            "Stephen King",
-                                            "Frank Darabont"
+                                            "Dan Houser",
+                                            "James Worrall",
+                                            "DJ Pooh",
+                                            "Dan Houser"
                                         ],
                                         "countries": [
+                                            "UK",
                                             "USA"
                                         ],
-                                        "type": "movie",
-                                        "title": "The Shawshank Redemption",
-                                        "rated": "R",
+                                        "type": "game",
+                                        "title": "Grand Theft Auto: San Andreas",
+                                        "rated": null,
                                         "actors": [
-                                            "Tim Robbins",
-                                            "Morgan Freeman",
-                                            "Bob Gunton",
-                                            "William Sadler"
+                                            "Young Maylay",
+                                            "Faizon Love",
+                                            "Yolanda Whittaker",
+                                            "Clifton Powell"
                                         ],
-                                        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                                        "plot": "A family tragedy prompts a man to return home, only to find it overrun by crime and corruption, which he must regain control of the streets before it gets even worse.",
                                         "genres": [
-                                            "Crime",
-                                            "Drama"
+                                            "Action",
+                                            "Adventure",
+                                            "Comedy"
                                         ],
-                                        "id": "tt0111161",
-                                        "metascore": 80,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
-                                        "released": "1994-10-14T00:00:00+01:00"
+                                        "id": "tt0383385",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTcyMDc2NDE4OV5BMl5BanBnXkFtZTcwNTg5NTcyMQ@@._V1_SX300.jpg",
+                                        "released": "2004-10-26T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt0068646",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 1972,
-                                        "directors": [
-                                            "Francis Ford Coppola"
-                                        ],
-                                        "writers": [
-                                            "Mario Puzo",
-                                            "Francis Ford Coppola",
-                                            "Mario Puzo"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Godfather",
-                                        "rated": "R",
-                                        "actors": [
-                                            "Marlon Brando",
-                                            "Al Pacino",
-                                            "James Caan",
-                                            "Richard S. Castellano"
-                                        ],
-                                        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-                                        "genres": [
-                                            "Crime",
-                                            "Drama"
-                                        ],
-                                        "id": "tt0068646",
-                                        "metascore": 100,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg",
-                                        "released": "1972-03-24T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0468569",
+                                    "_id": "tt0802999",
                                     "_score": 1,
                                     "_source": {
                                         "year": 2008,
                                         "directors": [
-                                            "Christopher Nolan"
+                                            "Rod Edge",
+                                            "John Zurhellen"
                                         ],
                                         "writers": [
-                                            "Jonathan Nolan",
-                                            "Christopher Nolan",
-                                            "Christopher Nolan",
-                                            "David S. Goyer",
-                                            "Bob Kane"
+                                            "Dan Houser",
+                                            "Rupert Humphries",
+                                            "John Zurhellen"
                                         ],
                                         "countries": [
-                                            "USA",
-                                            "UK"
+                                            "UK",
+                                            "USA"
                                         ],
-                                        "type": "movie",
-                                        "title": "The Dark Knight",
-                                        "rated": "PG-13",
+                                        "type": "game",
+                                        "title": "Grand Theft Auto IV",
+                                        "rated": null,
                                         "actors": [
-                                            "Christian Bale",
-                                            "Heath Ledger",
-                                            "Aaron Eckhart",
-                                            "Michael Caine"
+                                            "Michael Hollick",
+                                            "Jason Zumwalt",
+                                            "Timothy Adams",
+                                            "Moti Margolin"
                                         ],
-                                        "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
+                                        "plot": "Niko Bellic comes to Liberty City, America to live the good life, but ends up having to assist his dangerously indebted cousin Roman with his financial troubles, by any  means necessary.",
                                         "genres": [
                                             "Action",
-                                            "Crime",
-                                            "Drama"
+                                            "Comedy",
+                                            "Crime"
                                         ],
-                                        "id": "tt0468569",
-                                        "metascore": 82,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-                                        "released": "2008-07-18T00:00:00+01:00"
+                                        "id": "tt0802999",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY4OTY0ODE1OF5BMl5BanBnXkFtZTcwMDY0MjAxNA@@._V1_SX300.jpg",
+                                        "released": "2008-04-29T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt0944947",
+                                    "_id": "tt1568322",
                                     "_score": 1,
                                     "_source": {
                                         "year": 2011,
-                                        "directors": [],
-                                        "writers": [
-                                            "David Benioff",
-                                            "D.B. Weiss"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "UK"
-                                        ],
-                                        "type": "series",
-                                        "title": "Game of Thrones",
-                                        "rated": "TV-MA",
-                                        "actors": [
-                                            "Peter Dinklage",
-                                            "Lena Headey",
-                                            "Maisie Williams",
-                                            "Emilia Clarke"
-                                        ],
-                                        "plot": "Seven noble families fight for control of the mythical land of Westeros.",
-                                        "genres": [
-                                            "Adventure",
-                                            "Drama",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt0944947",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA5NzY4MTM0N15BMl5BanBnXkFtZTcwMTA0MDkxOQ@@._V1_SX300.jpg",
-                                        "released": "2011-04-17T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0110912",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 1994,
                                         "directors": [
-                                            "Quentin Tarantino"
+                                            "Sefton Hill"
                                         ],
                                         "writers": [
-                                            "Quentin Tarantino",
-                                            "Roger Avary",
-                                            "Quentin Tarantino"
+                                            "Bob Kane",
+                                            "Paul Dini",
+                                            "Paul Crocker",
+                                            "Sefton Hill"
                                         ],
                                         "countries": [
                                             "USA"
                                         ],
-                                        "type": "movie",
-                                        "title": "Pulp Fiction",
-                                        "rated": "R",
+                                        "type": "game",
+                                        "title": "Batman: Arkham City",
+                                        "rated": null,
                                         "actors": [
-                                            "Tim Roth",
-                                            "Amanda Plummer",
-                                            "Laura Lovelace",
-                                            "John Travolta"
+                                            "Kevin Conroy",
+                                            "Grey DeLisle",
+                                            "Troy Baker",
+                                            "Kimberly Brooks"
                                         ],
-                                        "plot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                                        "genres": [
-                                            "Crime",
-                                            "Drama",
-                                            "Thriller"
-                                        ],
-                                        "id": "tt0110912",
-                                        "metascore": 94,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SX300.jpg",
-                                        "released": "1994-10-14T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0137523",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 1999,
-                                        "directors": [
-                                            "David Fincher"
-                                        ],
-                                        "writers": [
-                                            "Chuck Palahniuk",
-                                            "Jim Uhls"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Germany"
-                                        ],
-                                        "type": "movie",
-                                        "title": "Fight Club",
-                                        "rated": "R",
-                                        "actors": [
-                                            "Edward Norton",
-                                            "Brad Pitt",
-                                            "Helena Bonham Carter",
-                                            "Meat Loaf"
-                                        ],
-                                        "plot": "An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...",
-                                        "genres": [
-                                            "Drama"
-                                        ],
-                                        "id": "tt0137523",
-                                        "metascore": 66,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX300.jpg",
-                                        "released": "1999-10-15T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0167260",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2003,
-                                        "directors": [
-                                            "Peter Jackson"
-                                        ],
-                                        "writers": [
-                                            "J.R.R. Tolkien",
-                                            "Fran Walsh",
-                                            "Philippa Boyens",
-                                            "Peter Jackson"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "New Zealand"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Lord of the Rings: The Return of the King",
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Noel Appleby",
-                                            "Alexandra Astin",
-                                            "Sean Astin",
-                                            "David Aston"
-                                        ],
-                                        "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+                                        "plot": "When part of Gotham is turned into a private reserve for criminals, all hell is sure to break loose, and the Dark Knight is the only one who can stop it.",
                                         "genres": [
                                             "Action",
-                                            "Adventure",
+                                            "Crime",
                                             "Fantasy"
                                         ],
-                                        "id": "tt0167260",
-                                        "metascore": 94,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg",
-                                        "released": "2003-12-17T00:00:00Z"
+                                        "id": "tt1568322",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDE4NzIwNzA0OF5BMl5BanBnXkFtZTcwMzk4MzU5Ng@@._V1_SX300.jpg",
+                                        "released": "2011-10-18T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1375666",
+                                    "_id": "tt1540125",
                                     "_score": 1,
                                     "_source": {
                                         "year": 2010,
                                         "directors": [
-                                            "Christopher Nolan"
+                                            "Casey Hudson"
                                         ],
                                         "writers": [
-                                            "Christopher Nolan"
+                                            "Chris Hepler",
+                                            "Drew Karpyshyn",
+                                            "Brian Kindregan",
+                                            "Lukas Kristjanson",
+                                            "Chris L'Etoile",
+                                            "Cathleen Rootsaert",
+                                            "Patrick Weekes"
                                         ],
                                         "countries": [
                                             "USA",
-                                            "UK"
+                                            "Canada"
                                         ],
-                                        "type": "movie",
-                                        "title": "Inception",
-                                        "rated": "PG-13",
+                                        "type": "game",
+                                        "title": "Mass Effect 2",
+                                        "rated": null,
                                         "actors": [
-                                            "Leonardo DiCaprio",
-                                            "Joseph Gordon-Levitt",
-                                            "Ellen Page",
-                                            "Tom Hardy"
+                                            "Shohreh Aghdashloo",
+                                            "Maggie Baird",
+                                            "Adam Baldwin",
+                                            "Michael Beattie"
                                         ],
-                                        "plot": "A skilled extractor is offered a chance to regain his old life as payment for a task considered to be impossible.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Mystery"
-                                        ],
-                                        "id": "tt1375666",
-                                        "metascore": 74,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-                                        "released": "2010-07-16T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0120737",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2001,
-                                        "directors": [
-                                            "Peter Jackson"
-                                        ],
-                                        "writers": [
-                                            "J.R.R. Tolkien",
-                                            "Fran Walsh",
-                                            "Philippa Boyens",
-                                            "Peter Jackson"
-                                        ],
-                                        "countries": [
-                                            "New Zealand",
-                                            "USA"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Lord of the Rings: The Fellowship of the Ring",
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Alan Howard",
-                                            "Elijah Wood",
-                                            "Noel Appleby",
-                                            "Sean Astin"
-                                        ],
-                                        "plot": "A meek hobbit of The Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt0120737",
-                                        "metascore": 92,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg",
-                                        "released": "2001-12-19T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0133093",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 1999,
-                                        "directors": [
-                                            "Andy Wachowski",
-                                            "Lana Wachowski"
-                                        ],
-                                        "writers": [
-                                            "Andy Wachowski",
-                                            "Lana Wachowski"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Australia"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Matrix",
-                                        "rated": "R",
-                                        "actors": [
-                                            "Keanu Reeves",
-                                            "Laurence Fishburne",
-                                            "Carrie-Anne Moss",
-                                            "Hugo Weaving"
-                                        ],
-                                        "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                        "plot": "After being revived from death and having to join a pro-human organization without a choice, Commander Shepard must assemble a team, battle a new threat, and make tough choices in order to save the galaxy from total annihilation once more.",
                                         "genres": [
                                             "Action",
                                             "Adventure",
                                             "Sci-Fi"
                                         ],
-                                        "id": "tt0133093",
-                                        "metascore": 73,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
-                                        "released": "1999-03-31T00:00:00+01:00"
+                                        "id": "tt1540125",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MTQwMjM1N15BMl5BanBnXkFtZTcwNjMzNjc2Mw@@._V1_SX300.jpg",
+                                        "released": "2010-01-26T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1282022",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2009,
+                                        "directors": [
+                                            "Sefton Hill",
+                                            "Paul Boulden",
+                                            "Jamie Walker"
+                                        ],
+                                        "writers": [
+                                            "Bob Kane"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "Batman: Arkham Asylum",
+                                        "rated": null,
+                                        "actors": [
+                                            "Kevin Conroy",
+                                            "Kimberly Brooks",
+                                            "Tom Kane",
+                                            "Mark Hamill"
+                                        ],
+                                        "plot": "You control Batman as he fights to subdue The Joker and his fellows when they seize control of the forensic mental hospital.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt1282022",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTUyMzMzMTU0MF5BMl5BanBnXkFtZTcwNDM3MTcxMw@@._V1_SX300.jpg",
+                                        "released": "2009-08-25T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0374692",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2004,
+                                        "directors": [
+                                            "David Speyrer"
+                                        ],
+                                        "writers": [
+                                            "Marc Laidlaw"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "Half-Life 2",
+                                        "rated": null,
+                                        "actors": [
+                                            "Robert Guillaume",
+                                            "Robert Culp",
+                                            "Louis Gossett Jr.",
+                                            "Michelle Forbes"
+                                        ],
+                                        "plot": "Assume the role of Gordon Freeman as he fights to free humanity from the oppressive Combine.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0374692",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNzEwNDk5NzIxM15BMl5BanBnXkFtZTgwNDA3NzE2MDE@._V1_SX300.jpg",
+                                        "released": "2004-11-16T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0314123",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2002,
+                                        "directors": [
+                                            "Navid Khonsari"
+                                        ],
+                                        "writers": [
+                                            "Dan Houser",
+                                            "James Worrall",
+                                            "Dan Houser"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "game",
+                                        "title": "Grand Theft Auto: Vice City",
+                                        "rated": null,
+                                        "actors": [
+                                            "Ray Liotta",
+                                            "William Fichtner",
+                                            "Tom Sizemore",
+                                            "Dennis Hopper"
+                                        ],
+                                        "plot": "After being released from jail, Tommy Vercetti left Liberty City for Vice City--a city overrun by the mob. Now, Tommy is out to make the Vice City his home.",
+                                        "genres": [
+                                            "Action",
+                                            "Comedy",
+                                            "Crime"
+                                        ],
+                                        "id": "tt0314123",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTczNTI5ODI3NF5BMl5BanBnXkFtZTgwNjMyMDU0MDE@._V1_SX300.jpg",
+                                        "released": "2002-11-08T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1814884",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2011,
+                                        "directors": [
+                                            "Todd Howard"
+                                        ],
+                                        "writers": [],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "The Elder Scrolls V: Skyrim",
+                                        "rated": null,
+                                        "actors": [
+                                            "Max von Sydow",
+                                            "Christopher Plummer",
+                                            "Joan Allen",
+                                            "Michael Hogan"
+                                        ],
+                                        "plot": "The Empire of Tamriel is on the edge. The High King of Skyrim has been murdered. Alliances form as claims to the throne are made. In the midst of this conflict, a far more dangerous, ...",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Drama"
+                                        ],
+                                        "id": "tt1814884",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU3OTY0MTA2NF5BMl5BanBnXkFtZTgwNDczMDU0MDE@._V1_SX300.jpg",
+                                        "released": "2011-11-11T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1125798",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2007,
+                                        "directors": [
+                                            "Keith Arem"
+                                        ],
+                                        "writers": [
+                                            "Jesse Stern"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "Call of Duty 4: Modern Warfare",
+                                        "rated": null,
+                                        "actors": [
+                                            "Billy Murray",
+                                            "Craig Fairbrass",
+                                            "David Sobolov",
+                                            "Zach Hanks"
+                                        ],
+                                        "plot": "The Call of Duty series returns this time into a modern day setting. The player takes control of a character nicknamed \"Soap,\" for the majority of the campaign and will need to progress through many modern warfare scenarios.",
+                                        "genres": [
+                                            "Action",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt1125798",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjI3ODYxMDQwMl5BMl5BanBnXkFtZTgwMjc2NzE2MDE@._V1_SX300.jpg",
+                                        "released": "2007-11-05T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1073668",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 2007,
+                                        "directors": [
+                                            "Casey Hudson"
+                                        ],
+                                        "writers": [
+                                            "Drew Karpyshyn",
+                                            "Lukas Kristjanson",
+                                            "Chris L'Etoile",
+                                            "Mike Laidlaw",
+                                            "Mac Walters",
+                                            "Patrick Weekes"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Canada"
+                                        ],
+                                        "type": "game",
+                                        "title": "Mass Effect",
+                                        "rated": null,
+                                        "actors": [
+                                            "Steven Barr",
+                                            "Kimberly Brooks",
+                                            "Keith David",
+                                            "Seth Green"
+                                        ],
+                                        "plot": "In a future time, you play an emotionally scarred soldier who must stop a plot to exterminate humanity throughout the galaxy.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Mystery",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt1073668",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTI4NzYxMDM2Ml5BMl5BanBnXkFtZTcwMzA1MTU2MQ@@._V1_SX300.jpg",
+                                        "released": "2007-11-20T00:00:00Z"
                                     }
                                 }
                             ]

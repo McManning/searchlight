@@ -14,7 +14,7 @@ use Nuwave\Lighthouse\Schema\SchemaBuilder;
 use Nuwave\Lighthouse\Testing\MocksResolvers;
 use Spatie\Snapshots\MatchesSnapshots;
 
-use McManning\Searchlight\ServiceProvider as SearchlightServiceProvider;
+use McManning\Searchlight\SearchlightServiceProvider;
 
 /**
  * Base test case for setting up a Lighthouse instance configured for Searchlight.
@@ -170,6 +170,27 @@ class TestCase extends BaseTestCase
         return $schemaBuilder->schema();
     }
 
+    protected function assertNotGraphQLError(?string $assertionMessage = null)
+    {
+        $actual = $this->response->getContent();
+        $response = json_decode($actual, true);
+
+        $this->assertArrayNotHasKey(
+            'errors',
+            $response,
+            $assertionMessage ?? "Expected response without errors but got [{$actual}]"
+        );
+
+        // TODO: Under some test conditions we end up with a payload with
+        // { message, exception, file, line, trace, extensions } which
+        // does not align with the expected GraphQL error response.
+        $this->assertArrayNotHasKey(
+            'exception',
+            $response,
+            $assertionMessage ?? "Expected response without errors but got [{$actual}]"
+        );
+    }
+
     /**
      * Ensure a GraphQL response contains an error starting with the given prefix.
      *
@@ -302,7 +323,8 @@ class TestCase extends BaseTestCase
      */
     protected function assertSnapshot()
     {
-        // Switching to Spatie's lib as a test
+        $this->assertNotGraphQLError();
+
         $response = $this->response->json();
 
         // Omit timing information from the comparison
@@ -312,60 +334,5 @@ class TestCase extends BaseTestCase
         }
 
         $this->assertMatchesJsonSnapshot($response);
-
-        // if (!$this->hasSnapshot()) {
-        //     $this->createSnapshot();
-        //     $this->markTestSkipped(
-        //         'Snapshot created for '
-        //         . class_basename($this) . '_'
-        //         . $this->getName(false)
-        //     );
-        // }
-
-        // $this->createSnapshot('-ACTUAL', false);
-
-        // // TODO: Load JSON, compare, see diff!
-        // $this->markTestSkipped('Creating comparative snapshot of ACTUAL');
     }
-
-    // protected function hasSnapshot(): bool
-    // {
-    //     return file_exists($this->getSnapshotFilename());
-    // }
-
-    // /**
-    //  * Get the snapshot file associated with the current test
-    //  */
-    // protected function getSnapshotFilename(string $suffix = ''): string
-    // {
-    //     return __DIR__ . '/__snapshots__/'
-    //         . class_basename($this) . '_'
-    //         . $this->getName(false) . $suffix
-    //         . '.json';
-    // }
-
-    // /**
-    //  * Write a snapshot file of the response JSON
-    //  */
-    // protected function createSnapshot(string $suffix = '', bool $omitExtensions = true)
-    // {
-    //     $filename = $this->getSnapshotFilename($suffix);
-    //     $dir = dirname($filename);
-
-    //     if (!is_dir($dir)) {
-    //         mkdir($dir);
-    //     }
-
-    //     $response = $this->response->json();
-
-    //     // Do not track extensions (search analytics)
-    //     if ($omitExtensions) {
-    //         unset($response['extensions']);
-    //     }
-
-    //     file_put_contents(
-    //         $filename,
-    //         json_encode($response, JSON_PRETTY_PRINT)
-    //     );
-    // }
 }
