@@ -71,13 +71,13 @@ class RefinementSelectFacet implements IFacet
         $condition = $this->multipleSelect ? 'should' : 'must';
 
         $field = $this->field;
-        return [
+        return [[
             'bool' => [
                 $condition => array_map(fn (FilterCriteria $filter) => [
                     'term' => [ $field => $filter->value ]
                 ], $filters)
             ]
-        ];
+        ]];
     }
 
     /**

@@ -1,8 +1,9 @@
 <?php
 
-use McManning\Searchlight\Facets\RangeFacet;
 use McManning\Searchlight\Queries\MultiMatchQuery;
 use McManning\Searchlight\Facets\RefinementSelectFacet;
+use McManning\Searchlight\Facets\RangeFacet;
+use McManning\Searchlight\Facets\DateRangeFacet;
 use McManning\Searchlight\Filters\TermFilter;
 
 return [
@@ -101,11 +102,11 @@ return [
                     'label' => 'Rated',
                     'field' => 'rated',
                 ]),
-                // new DateRangeFacet([
-                //     'identifier' => 'released',
-                //     'label' => 'Released',
-                //     'field' => 'released',
-                // ]),
+                new DateRangeFacet([
+                    'identifier' => 'released',
+                    'label' => 'Released',
+                    'field' => 'released',
+                ]),
                 new RefinementSelectFacet([
                     'identifier' => 'genres',
                     'label' => 'Genres',

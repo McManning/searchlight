@@ -196,7 +196,7 @@ class SearchRequest
                 ]
             ]);
         }
-        catch (\Exception $e) {
+        catch (\Throwable $e) {
             // Rethrow any service exceptions
             throw new GenericException(
                 'Failed to execute search', null, null, [], null, $e
@@ -334,7 +334,10 @@ class SearchRequest
                     throw new GenericException('Unsupported facet: ' . $id);
                 }
 
-                $aggFacets[$id] = $facet->getAggregation($criteria);
+                $agg = $facet->getAggregation($criteria);
+                if ($agg) {
+                    $aggFacets[$id] = $agg;
+                }
             }
         }
         else if ($this->usesFacets) {
@@ -342,9 +345,13 @@ class SearchRequest
             // Add all configured facets as aggregations.
             $facets = $this->provider->get('facets', []);
             foreach ($facets as $facet) {
-                $aggFacets[$facet->getIdentifier()] = $facet->getAggregation(
+                $agg = $facet->getAggregation(
                     new FacetCriteria($facet->getIdentifier())
                 );
+
+                if ($agg) {
+                    $aggFacets[$facet->getIdentifier()] = $agg;
+                }
             }
         }
 

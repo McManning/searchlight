@@ -96,8 +96,6 @@ final class SearchkitCheatsheetTest extends TestCase
 
     public function testHitFiltering()
     {
-        $this->markTestSkipped('TODO: Omitted. Need DateRangeFacet implemented');
-
         $this->graphQL('
         query {
             results(
