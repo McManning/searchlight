@@ -8,7 +8,7 @@ use Nuwave\Lighthouse\Events\RegisterDirectiveNamespaces;
 use Nuwave\Lighthouse\Events\ManipulateAST;
 use Nuwave\Lighthouse\Events\BuildSchemaString;
 
-class ServiceProvider extends IlluminateServiceProvider
+class SearchlightServiceProvider extends IlluminateServiceProvider
 {
     public function register(): void
     {
