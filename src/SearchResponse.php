@@ -52,7 +52,7 @@ class SearchResponse
             fn (array &$hit) => [
                 'id' => $hit['_id'],
                 'fields' => $hit['_source'],
-                'highlight' => isset($hit['highlight']) ? $hit['highlight'] : null,
+                'highlights' => $this->getHighlights($hit),
 
                 // TODO: How is scoring reported in searchkit? And what else is omitted?
                 'score' => $hit['_score'],
@@ -95,11 +95,25 @@ class SearchResponse
 
     public function getTotalHits(): int
     {
-        return $this->body['hits']['total']['value'];
+        return data_get($this->body, 'hits.total.value', 0);
     }
 
     /** @var Array<string, Array<IFacet, mixed>> Mapping between a facet and aggregation response */
     protected array $aggregations = [];
+
+    /**
+     * Extract highlight information from a hit when available
+     * 
+     * @return array GraphQL type `[SKHighlight!]!`
+     */
+    protected function getHighlights(array $hit): array
+    {
+        $highlights = data_get($hit, 'highlight', []);
+        return array_map(fn ($field) => [
+            'field' => $field,
+            'fragments' => $highlights[$field]
+        ], array_keys($highlights));
+    }
 
     protected function postProcessAggregations()
     {
