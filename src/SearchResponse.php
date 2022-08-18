@@ -49,7 +49,7 @@ class SearchResponse
     {
         // Convert an Elastic hit to a concrete of `SKHit`
         $items = array_map(
-            fn (array &$hit) => [
+            fn (array $hit) => [
                 'id' => $hit['_id'],
                 'fields' => $hit['_source'],
                 'highlights' => $this->getHighlights($hit),
@@ -103,7 +103,7 @@ class SearchResponse
 
     /**
      * Extract highlight information from a hit when available
-     * 
+     *
      * @return array GraphQL type `[SKHighlight!]!`
      */
     protected function getHighlights(array $hit): array
