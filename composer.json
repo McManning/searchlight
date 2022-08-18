@@ -14,7 +14,7 @@
     ],
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "ci": "vendor/bin/phpunit -d --without-creating-snapshots"
+        "ci": "CREATE_SNAPSHOTS=false vendor/bin/phpunit"
     },
     "autoload": {
         "psr-4": {
