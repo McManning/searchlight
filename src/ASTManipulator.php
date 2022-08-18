@@ -21,7 +21,7 @@ class ASTManipulator
     protected function addResultTypes(DocumentAST &$documentAST): void
     {
         $resultTypes = array_map(
-            fn (&$provider) => data_get($provider, 'result_type', self::DEFAULT_RESULT_TYPE),
+            fn ($provider) => data_get($provider, 'result_type', self::DEFAULT_RESULT_TYPE),
             config('searchlight.providers', [])
         );
 
@@ -51,7 +51,7 @@ GRAPHQL
 
         $providers = array_filter(
             config('searchlight.providers', []),
-            fn (&$p) => data_get($p, 'query_type') !== null
+            fn ($p) => data_get($p, 'query_type') !== null
         );
 
         foreach ($providers as $name => &$provider) {
