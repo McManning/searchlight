@@ -242,6 +242,11 @@ class SearchRequest
         return $this->lastElasticQuery;
     }
 
+    protected function hasFilters(): bool
+    {
+        return count($this->filterCriteria) > 0;
+    }
+
     protected function buildElasticQuery(): array
     {
         // Ref: https://github.com/searchkit/searchkit/blob/77b5fc9664a27b2ff66e509c4486c29c675d30d9/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts
@@ -358,9 +363,19 @@ class SearchRequest
                             ]
                         ],
                     ]
+                    // TODO: There should also be separate facet buckets
+                    // for disjoint facets. i.e. Category should show all
+                    // possible value matches (combined with the post_filter)
+                    // but it, itself, should not be filtered.
+
+                    // This is driven by the "excludeOwnFilters" feature
+                    // (refinement select uses it if multiple_select is true)
+                    // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/FacetsFns.ts#L25
                 ]
             ];
+        }
 
+        if ($facetFilters) {
             $postFilter = [
                 'post_filter' => [
                     'bool' => [

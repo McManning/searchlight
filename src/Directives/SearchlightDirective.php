@@ -75,18 +75,12 @@ GQL;
         /** @var null|string[] */
         $fields = data_get($args, 'queryOptions.fields', null);
 
-        /** @var array GraphQL type `SKPageInput` */
-        $page = data_get($args, 'page', []);
-        $from = data_get($page, 'from', 0);
-        $size = data_get($page, 'size', $this->provider->get('paging.size', 10));
-
         // Construct a request to Elastic
         $this->request = new SearchRequest($this->provider);
 
         $this->request->setBaseFilters($this->provider->get('base_filters', []));
         $this->request->setFilterCriteria($filters);
         $this->request->setQuery($query);
-        $this->request->setHits($size, $from);
 
         if ($fields !== null) {
             $this->request->setFields($fields);
@@ -106,18 +100,12 @@ GQL;
 
             // SKHitResults
             'hits' => function ($root, array $args): Deferred {
-                /** @var array GraphQL type `SKPageInput` */
-                $page = data_get($args, 'page', []);
+                $from = data_get($args, 'page.from', 0);
+                $size = data_get($args, 'page.size', $this->provider->get('paging.size', 10));
+                $sortBy = data_get($args, 'sortBy', $this->provider->get('sort.default'));
 
-                // Optional, as it may be defined at the query level rather than at hits
-                if ($page) {
-                    $from = data_get($page, 'from', 0);
-                    $size = data_get($page, 'size', $this->provider->get('paging.size'));
-                    $sortBy = data_get($args, 'sortBy', $this->provider->get('sort.default'));
-
-                    $this->request->setHits($size, $from, $sortBy);
-                }
-
+                $this->request->setHits($size, $from, $sortBy);
+                
                 return new Deferred(function ()  {
                     $results = $this->request->search();
 
