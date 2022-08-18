@@ -68,7 +68,7 @@ $type(
     query: String,
     queryOptions: SKQueryOptions,
     filters: [SKFiltersSet],
-    page: SKPageInput
+    # page: SKPageInput - OMIT, page is defined (and documented) at the hits level
 ): $resultType @searchlight(provider: "$name")
 GRAPHQL
             );
