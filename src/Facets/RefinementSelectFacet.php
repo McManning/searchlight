@@ -91,7 +91,7 @@ class RefinementSelectFacet implements IFacet
             'order' => $this->getAggregationOrder(),
         ];
 
-        $query = $criteria->getQuery();
+        $query = $criteria->getQueryAsRegex();
         if ($query) {
             $terms['include'] = $query;
         }

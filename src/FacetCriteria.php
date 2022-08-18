@@ -16,12 +16,43 @@ class FacetCriteria
         $this->size = $size;
     }
 
-    public function getQuery(): ?string
+    /**
+     * Convert query text into a regex string for Elastic
+     *
+     * Examples:
+     *
+     * - `"Al"` to `"([a-zA-Z]+ )+?[aA][lL].*"`
+     * - `"foo/FIZz + buZZ?"` to `"([a-zA-Z]+ )+?[fF][oO][oO]\/FIZ[zZ] \+ [bB][uU]ZZ\?.*"`
+     */
+    public function getQueryAsRegex(): ?string
     {
-        // TODO: searchkit post-processes the query string with a createRegexQuery() method:
-        // https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/facets/utils/index.ts#L1
-        // Applies to: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html#_filtering_values_with_regular_expressions_2
-        return $this->query;
+        if (!$this->query) {
+            return null;
+        }
+
+        $re = '';
+
+        foreach (mb_str_split($this->query) as $char) {
+            // Escape possible regex tokens
+            $char = preg_quote($char, '/');
+
+            // Unicode-safe type check for a lowercase letter
+            if (preg_match('/\p{Ll}/u', $char)) {
+                // Transform each lowercase character into [aA]
+                $re .= '[' . $char . mb_strtoupper($char) . ']';
+            } else {
+                $re .= $char;
+            }
+        }
+
+        $re .= '.*';
+        if (strlen($re) > 2) {
+            // TODO: Prefix unicode? I presume this exists to match "McManning"
+            // in the string "Chase McManning" but is this the best way of doing that?
+            $re = '([a-zA-Z]+ )+?' . $re;
+        }
+
+        return $re;
     }
 
     public function getIdentifier(): string
