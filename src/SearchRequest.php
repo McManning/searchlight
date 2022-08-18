@@ -64,7 +64,7 @@ class SearchRequest
         $builder->setHosts([
             $provider->get('host'),
         ]);
-
+        
         $username = $provider->get('http_basic_auth.username');
         $password = $provider->get('http_basic_auth.password');
         if ($username && $password) {
@@ -161,22 +161,8 @@ class SearchRequest
 
         $query = $this->buildElasticQuery();
 
-        $debug = false;
-
-        if ($debug) echo json_encode($query, JSON_PRETTY_PRINT);
-
-        try {
-
-            $this->lastElasticQuery = $query;
-            $this->response = $this->ExecuteSearch($query);
-
-            if ($debug) echo json_encode($this->response->getRawResponse(), JSON_PRETTY_PRINT);
-
-        } catch (\Exception $e) {
-            var_dump($e);
-        }
-
-        if ($debug) exit;
+        $this->lastElasticQuery = $query;
+        $this->response = $this->executeSearch($query);
 
         Event::dispatch(new ExecuteSearch($this, $this->response));
 
@@ -199,16 +185,9 @@ class SearchRequest
         return $this->disabledFilters;
     }
 
-    protected function ExecuteSearch(array $query): SearchResponse
+    protected function executeSearch(array $query): SearchResponse
     {
-        $uri = $this->provider->get('index', '') . '/_search';
-
-        // TODO: Just abusing the proxy class for now until I have something nice setup.
-        // Elastic SDK is an option if it works with OpenSearch's HTTP Basic auth.
-        // Ideally, something that nicely handles error responses would be good.
-
         try {
-
             $results = $this->client->search([
                 'index' => $this->provider->get('index'),
                 'body' => $query,
@@ -219,7 +198,7 @@ class SearchRequest
             ]);
         }
         catch (\Exception $e) {
-            dd($e);
+            dd($e, $this->client);
             // TODO: Encapsulate error to ES error classes and propagate safely.
         }
 
@@ -262,6 +241,11 @@ class SearchRequest
         return $this->lastElasticQuery;
     }
 
+    protected function hasFilters(): bool 
+    {
+        return count($this->filterCriteria) > 0;
+    }
+
     protected function buildElasticQuery(): array
     {
         // Ref: https://github.com/searchkit/searchkit/blob/77b5fc9664a27b2ff66e509c4486c29c675d30d9/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts
@@ -294,7 +278,7 @@ class SearchRequest
                 $facet = $this->findFacetTemplate($identifier);
                 if ($facet) {
                     $facetFilters = array_merge($facetFilters, $facet->getFilters($criteria));
-
+                    
                     foreach ($criteria as $c) {
                         $this->appliedFilters[] = $facet->toSKSelectedFilter($c);
                     }
@@ -376,9 +360,19 @@ class SearchRequest
                             ]
                         ],
                     ]
+                    // TODO: There should also be separate facet buckets
+                    // for disjoint facets. i.e. Category should show all
+                    // possible value matches (combined with the post_filter)
+                    // but it, itself, should not be filtered. 
+
+                    // This is driven by the "excludeOwnFilters" feature
+                    // (refinement select uses it if multiple_select is true)
+                    // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/FacetsFns.ts#L25
                 ]
             ];
+        }
 
+        if ($facetFilters) {
             $postFilter = [
                 'post_filter' => [
                     'bool' => [
