@@ -26,7 +26,10 @@ class SearchRequest
 
     protected string $query = '';
 
-    /** @var Array<string, FilterCriteria[]> Criteria grouped by identifier */
+    /** @var Array<string, IFilter> Combination of facets and filters that are usable */
+    protected array $availableFilters = [];
+
+    /** @var Array<string, FilterCriteria[]> Criteria grouped by valid IFilter */
     protected array $filterCriteria = [];
 
     /** @var FacetCriteria[] */
@@ -37,12 +40,6 @@ class SearchRequest
 
     /** @var mixed[] Raw Lucene base filters to apply to all queries */
     protected array $baseFilters = [];
-
-    /** @var mixed[] */
-    protected array $appliedFilters;
-
-    /** @var mixed[] */
-    protected array $disabledFilters;
 
     protected ?SearchResponse $response = null;
 
@@ -59,8 +56,9 @@ class SearchRequest
     {
         $this->provider = $provider;
 
+        $this->initializeAvailableFilters();
+
         $builder = ClientBuilder::create();
-        // $builder->setSSLVerification(false);
         $builder->setHosts([
             $provider->get('host'),
         ]);
@@ -71,6 +69,8 @@ class SearchRequest
             $builder->setBasicAuthentication($username, $password);
         }
 
+        $this->baseFilters = $provider->get('base_filters', []);
+
         // TODO: https://github.com/jeskew/amazon-es-php
         $this->client = $builder->build();
     }
@@ -80,31 +80,38 @@ class SearchRequest
         $this->usesFacets = $enable;
     }
 
-    /**
-     * @param array[] Base Lucene filters to apply to all queries
-     */
-    public function setBaseFilters(array $baseFilters)
-    {
-        $this->baseFilters = $baseFilters;
-    }
-
     public function setQuery(string $query)
     {
         $this->query = $query;
     }
 
     /**
-     * @param FilterCriteria[] $filters
+     * @param FilterCriteria[] $criteria
      */
-    public function setFilterCriteria(array $filters)
+    public function setFilterCriteria(array $criteria)
     {
-        foreach ($filters as $filter) {
-            if (!isset($this->filterCriteria[$filter->identifier])) {
-                $this->filterCriteria[$filter->identifier] = [];
-            }
+        foreach ($criteria as $entry) {
+            $filter = $this->findFilter($entry->identifier);
 
-            $this->filterCriteria[$filter->identifier][] = $filter;
+            if ($filter) {
+                $this->addFilterCriteria($filter, $entry);
+            } else {
+                throw new GenericException(
+                    'Unknown filter identifier: ' . $entry->identifier
+                );
+            }
         }
+    }
+
+    protected function addFilterCriteria(IFilter $filter, FilterCriteria $criteria)
+    {
+        $id = $filter->getIdentifier();
+
+        if (!isset($this->filterCriteria[$id])) {
+            $this->filterCriteria[$id] = [];
+        }
+
+        $this->filterCriteria[$id][] = $criteria;
     }
 
     public function getSize(): int
@@ -140,16 +147,21 @@ class SearchRequest
         $this->fields = $fields;
     }
 
-    public function setHits(?int $size, ?int $from, ?string $sortId = null)
-    {
-        $this->size = $size;
-        $this->from = $from;
-        $this->sortId = $sortId;
-    }
-
     public function addFacetCriteria(FacetCriteria $criteria)
     {
         $this->facetCriteria[] = $criteria;
+    }
+
+    public function setPage(?int $size, ?int $from)
+    {
+        $this->size = $size;
+        $this->from = $from;
+    }
+
+    public function setSortBy(?string $sortId)
+    {
+        $this->sortId = $sortId;
+        // TODO: Validate against known sorts.
     }
 
     public function search(): SearchResponse
@@ -170,10 +182,29 @@ class SearchRequest
 
     /**
      * Retrieve filter data that was last applied to the request
+     *
+     * @return array GraphQL type `[SKSelectedFilter!]!`
      */
     public function getAppliedFilters(): array
     {
-        return $this->appliedFilters;
+        $active = $this->getActiveFilters();
+
+        $applied = [];
+        foreach ($active as $filter) {
+            $id = $filter->getIdentifier();
+
+            if (isset($this->filterCriteria[$id])) {
+                $applied = array_merge(
+                    $applied,
+                    array_map(
+                        fn ($c) => $filter->toSKSelectedFilter($c),
+                        $this->filterCriteria[$id]
+                    )
+                );
+            }
+        }
+
+        return $applied;
     }
 
     /**
@@ -181,7 +212,8 @@ class SearchRequest
      */
     public function getDisabledFilters(): array
     {
-        return $this->disabledFilters;
+        // TODO!
+        return [];
     }
 
     protected function executeSearch(array $query): SearchResponse
@@ -211,30 +243,42 @@ class SearchRequest
         );
     }
 
-    protected function findFacetTemplate(string $identifier): ?IFacet
+    protected function findFilter(string $identifier): ?IFilter
     {
-        $facets = $this->provider->get('facets', []);
+        $filters = array_merge(
+            $this->provider->get('filters', []),
+            $this->provider->get('facets', [])
+        );
 
-        foreach ($facets as $facet) {
-            if ($facet->getIdentifier() === $identifier) {
-                return $facet;
+        foreach ($filters as $filter) {
+            if ($filter instanceof IFilter && $filter->getIdentifier() === $identifier) {
+                return $filter;
             }
         }
 
         return null;
     }
 
-    protected function findFilterTemplate(string $identifier): ?IFilter
+    protected function initializeAvailableFilters()
     {
-        $filters = $this->provider->get('filters', []);
+        // Facets and filters are combined as one set
+        $filters = array_merge(
+            $this->provider->get('filters', []),
+            $this->provider->get('facets', [])
+        );
 
         foreach ($filters as $filter) {
-            if ($filter->getIdentifier() === $identifier) {
-                return $filter;
-            }
-        }
+            $id = $filter->getIdentifier();
 
-        return null;
+            if (isset($this->availableFilters[$id])) {
+                throw new GenericException(
+                    'Duplicate identifier: "' . $id .
+                    '". Identifiers must be unique across both facets and filters'
+                );
+            }
+
+            $this->availableFilters[$id] = $filter;
+        }
     }
 
     public function getLastElasticQuery(): ?array
@@ -247,49 +291,117 @@ class SearchRequest
         return count($this->filterCriteria) > 0;
     }
 
-    protected function buildElasticQuery(): array
+    /**
+     * @return Array<IFilter>
+     */
+    protected function getActiveFilters(): array
     {
-        // Ref: https://github.com/searchkit/searchkit/blob/77b5fc9664a27b2ff66e509c4486c29c675d30d9/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts
+        /** @var Array<IFilter> */
+        $active = [];
 
-        $this->appliedFilters = [];
-        $this->disabledFilters = [];
+        foreach ($this->filterCriteria as $identifier => $criteria) {
+            if (isset($this->availableFilters[$identifier])) {
+                $active[] = $this->availableFilters[$identifier];
+            }
+        }
 
+        return $active;
+    }
+
+    /**
+     * Transform a set of `IFilter` to ElasticSearch filters
+     *
+     * @var Array<IFilter> $facets
+     */
+    protected function transformFilters(array $filters): array
+    {
+        $transformed = [];
+        foreach ($filters as $filter) {
+            if (isset($this->filterCriteria[$filter->getIdentifier()])) {
+                $transformed = array_merge($transformed, $filter->getFilters(
+                    $this->filterCriteria[$filter->getIdentifier()]
+                ));
+            }
+        }
+
+        return $transformed;
+    }
+
+    /**
+     * Generate ElasticSearch aggregation buckets based on
+     * the provider's facets and the current filtering criteria.
+     */
+    protected function buildAggregations(): array
+    {
+        /** @var IFacet[] */
+        $facets = $this->provider->get('facets', []);
+
+        // If the request includes an explicit subset of facets:
+        // filter down to only the defined subset
+        if (!empty($this->facetCriteria)) {
+            $identifiers = array_map(
+                fn (FacetCriteria $criteria) => $criteria->getIdentifier(),
+                $this->facetCriteria
+            );
+
+            $facets = array_filter(
+                $facets,
+                fn (IFacet $f) => in_array($f->getIdentifier(), $identifiers)
+            );
+        }
+
+        // One bucket represents the combination of *all* facet filtering
+        $buckets = [
+            'facet_bucket_all' => [
+                'aggs' => [],
+                'filter' => [
+                    'bool' => [
+                        'must' => $this->transformFilters($this->getActiveFilters()),
+                    ],
+                ],
+            ],
+        ];
+
+        // Generate an ElasticSearch aggregation from each active facet
+        foreach ($facets as $facet) {
+            $id = $facet->getIdentifier();
+            $agg = $facet->getAggregation(
+                $this->getFacetCriteria($facet->getIdentifier())
+            );
+
+            // If the facet can't be combined with other aggs into the same bucket:
+            // add a new unique bucket just for this facet and exclude its filters
+            if ($facet->excludesOwnFilters() && $this->hasFilters()) {
+                $buckets['facet_bucket_' . $id] = [
+                    'aggs' => [$id => $agg],
+                    'filter' => [
+                        'bool' => [
+                            'must' => $this->transformFilters(array_filter(
+                                $facets,
+                                fn (IFilter $f) => $f->getIdentifier() !== $id
+                            )),
+                        ],
+                    ],
+                ];
+            } else {
+                // Otherwise we add it to the combined bucket
+                if ($agg) {
+                    $buckets['facet_bucket_all']['aggs'][$id] = $agg;
+                }
+            }
+        }
+
+        return ['aggs' => $buckets];
+    }
+
+    protected function buildQuery(): array
+    {
         /** @var IQuery */
         $queryBuilder = $this->provider->get('query');
         $queryFilter = $queryBuilder->getFilter($this->query);
 
-        // Start with base Lucene filters, if provided
+        // Start with raw Lucene filters if we got 'em
         $baseFilters = $this->baseFilters;
-
-        $facetFilters = [];
-
-        // If the API consumer supplied filter criteria to the search then
-        // map each one to either a filter or facet as an applied filter
-        foreach ($this->filterCriteria as $identifier => $criteria) {
-            $filter = $this->findFilterTemplate($identifier);
-
-            // TODO: Better code here. This branching is terrible.
-            if ($filter) {
-                $baseFilters = array_merge($baseFilters, $filter->getFilters($criteria));
-
-                foreach ($criteria as $c) {
-                    $this->appliedFilters[] = $filter->toSKSelectedFilter($c);
-                }
-            }
-            else {
-                $facet = $this->findFacetTemplate($identifier);
-                if ($facet) {
-                    $facetFilters = array_merge($facetFilters, $facet->getFilters($criteria));
-
-                    foreach ($criteria as $c) {
-                        $this->appliedFilters[] = $facet->toSKSelectedFilter($c);
-                    }
-                }
-                else {
-                    throw new GenericException('Unknown filter identifier: ' . $identifier);
-                }
-            }
-        }
 
         // Combine base filters + query filter
         $query = [];
@@ -317,76 +429,33 @@ class SearchRequest
             );
         }
 
-        $aggFacets = [];
+        return $query;
+    }
 
+    protected function buildElasticQuery(): array
+    {
         // TODO:
         // There's also a bunch of logic for activating facets when rules are satisfied as a processing step
         // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/facets/VisibilityRules/index.ts#L7
 
-        // If there were supplied facet criteria to the search,
-        // then the facets applied will only match the input criteria.
-        if ($this->facetCriteria) {
-            foreach ($this->facetCriteria as $criteria) {
-                $id = $criteria->getIdentifier();
-
-                $facet = $this->findFacetTemplate($id);
-                if (!$facet) {
-                    throw new GenericException('Unsupported facet: ' . $id);
-                }
-
-                $agg = $facet->getAggregation($criteria);
-                if ($agg) {
-                    $aggFacets[$id] = $agg;
-                }
-            }
-        }
-        else if ($this->usesFacets) {
-            // There was no input criteria but we want to include all faceting in the results.
-            // Add all configured facets as aggregations.
-            $facets = $this->provider->get('facets', []);
-            foreach ($facets as $facet) {
-                $agg = $facet->getAggregation(
-                    new FacetCriteria($facet->getIdentifier())
-                );
-
-                if ($agg) {
-                    $aggFacets[$facet->getIdentifier()] = $agg;
-                }
-            }
-        }
+        $query = $this->buildQuery();
+        $sort = $this->buildSort();
+        $highlighting = $this->buildHighlighting();
 
         $aggs = [];
-        $postFilter = [];
-
         if ($this->usesFacets) {
-            $aggs = [
-                'aggs' => [
-                    'facet_bucket_all' => [
-                        'aggs' => (object)$aggFacets,
-
-                        'filter' => [
-                            'bool' => [
-                                'must' => $facetFilters
-                            ]
-                        ],
-                    ]
-                    // TODO: There should also be separate facet buckets
-                    // for disjoint facets. i.e. Category should show all
-                    // possible value matches (combined with the post_filter)
-                    // but it, itself, should not be filtered.
-
-                    // This is driven by the "excludeOwnFilters" feature
-                    // (refinement select uses it if multiple_select is true)
-                    // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/FacetsFns.ts#L25
-                ]
-            ];
+            $aggs = $this->buildAggregations();
         }
 
-        if ($facetFilters) {
+        // Apply all FilterCriteria as a post_filter. This is to ensure
+        // we filter results *after* aggregations are computed.
+        $postFilter = [];
+        $activeFilters = $this->getActiveFilters();
+        if ($activeFilters) {
             $postFilter = [
                 'post_filter' => [
                     'bool' => [
-                        'must' => $facetFilters
+                        'must' => $this->transformFilters($activeFilters)
                     ]
                 ]
             ];
@@ -403,24 +472,24 @@ class SearchRequest
             'from' => $this->from,
         ];
 
-        $highlight = [];
-        if (true) { // TODO: Condition (probably just whether or not the array config is empty)
-                    // TODO: searchkit does a direct copy of "advanced" config for highlights right into ES.
-                    // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts#L78
-            $highlight = [
-                'highlight' => [
-                    'fields' => [
-                        'name' => (object)[],
-                        'description' => (object)[],
-                        'category' => (object)[],
-                        'kind' => (object)[],
-                    ]
-                ]
-            ];
-        }
+        return array_merge(
+            $paging,
+            $sort,
+            $source,
+            $highlighting,
+            $aggs,
+            $query,
+            $postFilter,
+        );
+    }
 
+    protected function buildSort(): array
+    {
         $sort = [];
         if ($this->sortId !== null) {
+            // TODO: Needs to fallback to sort.default if not supplied
+            // (and if default is omitted, then don't do anything)
+
             $sortOptions = $this->provider->get('sort.options', []);
             $field = data_get($sortOptions, [$this->sortId, 'field'], '_score');
             $rules = data_get($sortOptions, [$this->sortId, 'sort'], 'desc');
@@ -430,14 +499,41 @@ class SearchRequest
             ];
         }
 
-        return array_merge(
-            $paging,
-            $sort,
-            $source,
-            $highlight,
-            $aggs,
-            $query,
-            $postFilter,
-        );
+        return $sort;
+    }
+
+    protected function buildHighlighting(): array
+    {
+        $highlight = [];
+
+        // if (true) { // TODO: Condition (probably just whether or not the array config is empty)
+        //             // TODO: searchkit does a direct copy of "advanced" config for highlights right into ES.
+        //             // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts#L78
+        //     $highlight = [
+        //         'highlight' => [
+        //             'fields' => [
+        //                 'name' => (object)[],
+        //                 'description' => (object)[],
+        //                 'category' => (object)[],
+        //                 'kind' => (object)[],
+        //             ]
+        //         ]
+        //     ];
+
+        //     // TODO: Pull from query fields. Combine with the override rule(s).
+        // }
+
+        return $highlight;
+    }
+
+    protected function getFacetCriteria(string $identifier): FacetCriteria
+    {
+        foreach ($this->facetCriteria as $criteria) {
+            if ($criteria->getIdentifier() === $identifier) {
+                return $criteria;
+            }
+        }
+
+        return new FacetCriteria($identifier);
     }
 }

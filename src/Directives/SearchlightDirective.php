@@ -78,7 +78,6 @@ GQL;
         // Construct a request to Elastic
         $this->request = new SearchRequest($this->provider);
 
-        $this->request->setBaseFilters($this->provider->get('base_filters', []));
         $this->request->setFilterCriteria($filters);
         $this->request->setQuery($query);
 
@@ -104,8 +103,9 @@ GQL;
                 $size = data_get($args, 'page.size', $this->provider->get('paging.size', 10));
                 $sortBy = data_get($args, 'sortBy', $this->provider->get('sort.default'));
 
-                $this->request->setHits($size, $from, $sortBy);
-                
+                $this->request->setPage($size, $from);
+                $this->request->setSortBy($sortBy);
+
                 return new Deferred(function ()  {
                     $results = $this->request->search();
 

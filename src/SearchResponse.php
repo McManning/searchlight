@@ -120,14 +120,27 @@ class SearchResponse
         $facets = $this->provider->get('facets', []);
 
         $data = $this->getRawResponse();
-        $buckets = data_get($data, 'aggregations.facet_bucket_all', []);
+        $buckets = data_get($data, 'aggregations', []);
+
+        // Flatten different aggregation buckets into a single set of fields
+        $flattened = [];
+        foreach ($buckets as $key => &$data) {
+            if (strpos($key, 'facet_bucket_') === 0) {
+
+                // Ignore metadata from ElasticSearch
+                unset($data['doc_count']);
+                unset($data['meta']);
+
+                $flattened = array_merge($flattened, $data);
+            }
+        }
 
         $this->aggregations = [];
         foreach ($facets as $facet) {
             $id = $facet->getIdentifier();
 
-            if (isset($buckets[$id])) {
-                $this->aggregations[$id] = [$facet, $buckets[$id]];
+            if (isset($flattened[$id])) {
+                $this->aggregations[$id] = [$facet, $flattened[$id]];
             }
         }
     }

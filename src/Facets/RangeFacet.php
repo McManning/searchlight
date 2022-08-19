@@ -1,11 +1,12 @@
 <?php namespace McManning\Searchlight\Facets;
 
 use McManning\Searchlight\Interfaces\IFacet;
+use McManning\Searchlight\Interfaces\IFilter;
 use McManning\Searchlight\FacetCriteria;
 use McManning\Searchlight\FilterCriteria;
 use McManning\Searchlight\Exceptions\ConfigurationException;
 
-class RangeFacet implements IFacet
+class RangeFacet implements IFacet, IFilter
 {
     const DEFAULT_DISPLAY = 'RangeSliderFacet';
 
@@ -139,5 +140,13 @@ class RangeFacet implements IFacet
                 'count' => $entry['doc_count'],
             ], $response['buckets'])
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function excludesOwnFilters(): bool
+    {
+        return false;
     }
 }

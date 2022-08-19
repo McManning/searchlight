@@ -1,11 +1,12 @@
 <?php namespace McManning\Searchlight\Facets;
 
 use McManning\Searchlight\Interfaces\IFacet;
+use McManning\Searchlight\Interfaces\IFilter;
 use McManning\Searchlight\FacetCriteria;
 use McManning\Searchlight\FilterCriteria;
 use McManning\Searchlight\Exceptions\ConfigurationException;
 
-class HierarchicalMenuFacet implements IFacet
+class HierarchicalMenuFacet implements IFacet, IFilter
 {
     const DEFAULT_DISPLAY = 'HierarchicalMenu';
 
@@ -74,14 +75,14 @@ class HierarchicalMenuFacet implements IFacet
      */
     public function getAggregation(FacetCriteria $criteria): array
     {
-        // TODO: Reference implementation is complex. 
+        // TODO: Reference implementation is complex.
         // Essentially needs to ask the query manager for applied parent filters
         // https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/facets/HierarchicalMenuFacet.ts#L33
 
         /*
             Roughly speaking:
 
-            {   
+            {
                 [$this->identifier]: {
                     filter: {
                         match_all: {}
@@ -89,7 +90,7 @@ class HierarchicalMenuFacet implements IFacet
                     aggs: {
                         'lvl_1': {
                             filter: {
-                                match_all: {} 
+                                match_all: {}
                                     OR
                                 bool: {
                                     must: {
@@ -108,13 +109,14 @@ class HierarchicalMenuFacet implements IFacet
                             }
                         },
                         'lvl_2': {
-                            ... same as above ... 
+                            ... same as above ...
                         }
                     }
-                }   
+                }
             }
 
         */
+        return [];
     }
 
     /**
@@ -183,10 +185,18 @@ class HierarchicalMenuFacet implements IFacet
                 // NOTE: Reference impl does not implement isSelected in retval
                 // https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/facets/HierarchicalMenuFacet.ts#L104
                 'isSelected' => $isSelected,
-                'entries' => $isSelected 
-                    ? $this->buildEntries($level + 1, $id) 
+                'entries' => $isSelected
+                    ? $this->buildEntries($level + 1, $id)
                     : null,
             ];
         }, $buckets);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function excludesOwnFilters(): bool
+    {
+        return false;
     }
 }

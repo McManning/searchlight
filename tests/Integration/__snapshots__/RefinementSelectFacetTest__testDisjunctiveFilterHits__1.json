@@ -27,6 +27,316 @@
                     }
                 ]
             },
+            "facets": [
+                {
+                    "identifier": "type",
+                    "label": "Type",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "episode",
+                            "count": 2
+                        },
+                        {
+                            "label": "game",
+                            "count": 3
+                        },
+                        {
+                            "label": "movie",
+                            "count": 149
+                        },
+                        {
+                            "label": "series",
+                            "count": 29
+                        }
+                    ]
+                },
+                {
+                    "identifier": "rated",
+                    "label": "Rated",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "TV-14",
+                            "count": 2
+                        }
+                    ]
+                },
+                {
+                    "identifier": "genres",
+                    "label": "Genres",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Action",
+                            "count": 3
+                        },
+                        {
+                            "label": "Adventure",
+                            "count": 1
+                        },
+                        {
+                            "label": "Comedy",
+                            "count": 3
+                        },
+                        {
+                            "label": "Crime",
+                            "count": 4
+                        },
+                        {
+                            "label": "Drama",
+                            "count": 2
+                        }
+                    ]
+                },
+                {
+                    "identifier": "directors",
+                    "label": "Director",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Dan Houser",
+                            "count": 1
+                        },
+                        {
+                            "label": "John Zurhellen",
+                            "count": 1
+                        },
+                        {
+                            "label": "Navid Khonsari",
+                            "count": 2
+                        },
+                        {
+                            "label": "Paul McGuigan",
+                            "count": 1
+                        },
+                        {
+                            "label": "Rod Edge",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "identifier": "writers",
+                    "label": "Writer",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "DJ Pooh",
+                            "count": 1
+                        },
+                        {
+                            "label": "Dan Houser",
+                            "count": 3
+                        },
+                        {
+                            "label": "James Worrall",
+                            "count": 2
+                        },
+                        {
+                            "label": "John Zurhellen",
+                            "count": 1
+                        },
+                        {
+                            "label": "Mark Gatiss",
+                            "count": 2
+                        }
+                    ]
+                },
+                {
+                    "identifier": "actors",
+                    "label": "Actor",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "Benedict Cumberbatch",
+                            "count": 2
+                        },
+                        {
+                            "label": "Clifton Powell",
+                            "count": 1
+                        },
+                        {
+                            "label": "Dennis Hopper",
+                            "count": 1
+                        },
+                        {
+                            "label": "Faizon Love",
+                            "count": 1
+                        },
+                        {
+                            "label": "Jason Zumwalt",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "identifier": "countries",
+                    "label": "Country",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "UK",
+                            "count": 5
+                        },
+                        {
+                            "label": "USA",
+                            "count": 3
+                        }
+                    ]
+                },
+                {
+                    "identifier": "imdbrating",
+                    "label": "IMDb Rating",
+                    "type": "RangeFacet",
+                    "display": "RangeSliderFacet",
+                    "entries": [
+                        {
+                            "label": "0",
+                            "count": 0
+                        },
+                        {
+                            "label": "1",
+                            "count": 0
+                        },
+                        {
+                            "label": "2",
+                            "count": 0
+                        },
+                        {
+                            "label": "3",
+                            "count": 0
+                        },
+                        {
+                            "label": "4",
+                            "count": 0
+                        },
+                        {
+                            "label": "5",
+                            "count": 0
+                        },
+                        {
+                            "label": "6",
+                            "count": 0
+                        },
+                        {
+                            "label": "7",
+                            "count": 0
+                        },
+                        {
+                            "label": "8",
+                            "count": 0
+                        },
+                        {
+                            "label": "9",
+                            "count": 5
+                        },
+                        {
+                            "label": "10",
+                            "count": 0
+                        }
+                    ]
+                },
+                {
+                    "identifier": "metascore",
+                    "label": "Metascore",
+                    "type": "RangeFacet",
+                    "display": "RangeSliderFacet",
+                    "entries": [
+                        {
+                            "label": "0",
+                            "count": 0
+                        },
+                        {
+                            "label": "5",
+                            "count": 0
+                        },
+                        {
+                            "label": "10",
+                            "count": 0
+                        },
+                        {
+                            "label": "15",
+                            "count": 0
+                        },
+                        {
+                            "label": "20",
+                            "count": 0
+                        },
+                        {
+                            "label": "25",
+                            "count": 0
+                        },
+                        {
+                            "label": "30",
+                            "count": 0
+                        },
+                        {
+                            "label": "35",
+                            "count": 0
+                        },
+                        {
+                            "label": "40",
+                            "count": 0
+                        },
+                        {
+                            "label": "45",
+                            "count": 0
+                        },
+                        {
+                            "label": "50",
+                            "count": 0
+                        },
+                        {
+                            "label": "55",
+                            "count": 0
+                        },
+                        {
+                            "label": "60",
+                            "count": 0
+                        },
+                        {
+                            "label": "65",
+                            "count": 0
+                        },
+                        {
+                            "label": "70",
+                            "count": 0
+                        },
+                        {
+                            "label": "75",
+                            "count": 0
+                        },
+                        {
+                            "label": "80",
+                            "count": 0
+                        },
+                        {
+                            "label": "85",
+                            "count": 0
+                        },
+                        {
+                            "label": "90",
+                            "count": 0
+                        },
+                        {
+                            "label": "95",
+                            "count": 0
+                        },
+                        {
+                            "label": "100",
+                            "count": 0
+                        }
+                    ]
+                }
+            ],
             "hits": {
                 "items": [
                     {
@@ -71,7 +381,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 2,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -322,7 +632,7 @@
                         }
                     },
                     "response": {
-                        "took": 2,
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,

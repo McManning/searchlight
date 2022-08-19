@@ -1,11 +1,12 @@
 <?php namespace McManning\Searchlight\Facets;
 
 use McManning\Searchlight\Interfaces\IFacet;
+use McManning\Searchlight\Interfaces\IFilter;
 use McManning\Searchlight\FacetCriteria;
 use McManning\Searchlight\FilterCriteria;
 use McManning\Searchlight\Exceptions\ConfigurationException;
 
-class DateRangeFacet implements IFacet
+class DateRangeFacet implements IFacet, IFilter
 {
     const DEFAULT_DISPLAY = 'DateRange';
 
@@ -108,5 +109,13 @@ class DateRangeFacet implements IFacet
             'display' => $this->display,
             'entries' => null,
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function excludesOwnFilters(): bool
+    {
+        return false;
     }
 }

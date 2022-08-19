@@ -1,7 +1,6 @@
 <?php namespace McManning\Searchlight\Interfaces;
 
 use McManning\Searchlight\FacetCriteria;
-use McManning\Searchlight\FilterCriteria;
 
 interface IFacet
 {
@@ -9,12 +8,10 @@ interface IFacet
     public function getLabel(): string;
 
     /**
-     * Create ElasticSearch filters from input criteria
+     * Create ElasticSearch aggregations from input criteria
      *
-     * @param FilterCriteria[] $criteria
+     * @param FacetCriteria $criteria
      */
-    public function getFilters(array $criteria): array;
-
     public function getAggregation(FacetCriteria $criteria): array;
 
     /**
@@ -25,7 +22,10 @@ interface IFacet
     public function toSKFacetSet(array $response): array;
 
     /**
-     * @return array Concrete type that implements GraphQL interface `SKSelectedFilter`
+     * Should this facet create a separate aggregations bucket that applies
+     * all selected filters *except* those associated with this Facet instance.
+     *
+     * This should return `true` for facets that support multiple disjunctive values
      */
-    public function toSKSelectedFilter(FilterCriteria $criteria): array;
+    public function excludesOwnFilters(): bool;
 }

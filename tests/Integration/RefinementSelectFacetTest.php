@@ -136,6 +136,16 @@ final class RefinementSelectFacetTest extends TestCase
                         }
                     }
                 }
+                facets {
+                    identifier
+                    label
+                    type
+                    display
+                    entries {
+                        label
+                        count
+                    }
+                }
                 hits {
                     items {
                         id

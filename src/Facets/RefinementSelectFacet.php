@@ -1,11 +1,12 @@
 <?php namespace McManning\Searchlight\Facets;
 
 use McManning\Searchlight\Interfaces\IFacet;
+use McManning\Searchlight\Interfaces\IFilter;
 use McManning\Searchlight\FacetCriteria;
 use McManning\Searchlight\FilterCriteria;
 use McManning\Searchlight\Exceptions\ConfigurationException;
 
-class RefinementSelectFacet implements IFacet
+class RefinementSelectFacet implements IFacet, IFilter
 {
     const DEFAULT_SIZE = 5;
     const DEFAULT_DISPLAY = 'ListFacet';
@@ -139,12 +140,6 @@ class RefinementSelectFacet implements IFacet
      */
     public function toSKFacetSet(array $bucket): array
     {
-        // Bucket is in the form:
-        // ^ array:3 [
-        //     "doc_count_error_upper_bound" => 0
-        //     "sum_other_doc_count" => 0
-        //     "buckets" => []
-        //   ]
         return [
             'type' => 'RefinementSelectFacet',
 
@@ -156,5 +151,15 @@ class RefinementSelectFacet implements IFacet
                 'count' => $entry['doc_count'],
             ], $bucket['buckets'])
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Returns true if multiple disjunctive values can be selected by setting `multiple_select`.
+     */
+    public function excludesOwnFilters(): bool
+    {
+        return $this->multipleSelect === true;
     }
 }
