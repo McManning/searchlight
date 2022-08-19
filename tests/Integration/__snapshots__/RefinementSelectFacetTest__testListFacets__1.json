@@ -3,6 +3,30 @@
         "results": {
             "facets": [
                 {
+                    "identifier": "type",
+                    "label": "Type",
+                    "type": "RefinementSelectFacet",
+                    "display": "ListFacet",
+                    "entries": [
+                        {
+                            "label": "episode",
+                            "count": 4
+                        },
+                        {
+                            "label": "game",
+                            "count": 11
+                        },
+                        {
+                            "label": "movie",
+                            "count": 852
+                        },
+                        {
+                            "label": "series",
+                            "count": 133
+                        }
+                    ]
+                },
+                {
                     "identifier": "rated",
                     "label": "Rated",
                     "type": "RefinementSelectFacet",
@@ -39,7 +63,7 @@
                 },
                 {
                     "identifier": "directors",
-                    "label": "Directors",
+                    "label": "Director",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -67,7 +91,7 @@
                 },
                 {
                     "identifier": "writers",
-                    "label": "Writers",
+                    "label": "Writer",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -95,7 +119,7 @@
                 },
                 {
                     "identifier": "actors",
-                    "label": "Actors",
+                    "label": "Actor",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -123,7 +147,7 @@
                 },
                 {
                     "identifier": "countries",
-                    "label": "Countries",
+                    "label": "Country",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -295,6 +319,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
+            "took": 0,
             "trips": [
                 {
                     "query": {
@@ -319,38 +344,11 @@
                             ]
                         },
                         "aggs": {
-                            "facet_bucket_type": {
-                                "aggs": {
-                                    "type": {
-                                        "terms": {
-                                            "field": "type",
-                                            "size": 5,
-                                            "order": {
-                                                "_key": "asc"
-                                            }
-                                        }
-                                    }
-                                },
-                                "filter": {
-                                    "bool": {
-                                        "must": []
-                                    }
-                                }
-                            },
                             "facet_bucket_all": {
                                 "aggs": {
                                     "rated": {
                                         "terms": {
                                             "field": "rated",
-                                            "size": 5,
-                                            "order": {
-                                                "_key": "asc"
-                                            }
-                                        }
-                                    },
-                                    "genres": {
-                                        "terms": {
-                                            "field": "genres.keyword",
                                             "size": 5,
                                             "order": {
                                                 "_key": "asc"
@@ -433,6 +431,54 @@
                                         ]
                                     }
                                 }
+                            },
+                            "facet_bucket_type": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "aggs": {
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "should": [
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         },
                         "query": {
@@ -459,6 +505,7 @@
                         }
                     },
                     "response": {
+                        "took": 0,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -531,32 +578,6 @@
                                         {
                                             "key": "Clifton Powell",
                                             "doc_count": 1
-                                        }
-                                    ]
-                                },
-                                "genres": {
-                                    "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 7,
-                                    "buckets": [
-                                        {
-                                            "key": "Action",
-                                            "doc_count": 10
-                                        },
-                                        {
-                                            "key": "Adventure",
-                                            "doc_count": 5
-                                        },
-                                        {
-                                            "key": "Comedy",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Crime",
-                                            "doc_count": 5
-                                        },
-                                        {
-                                            "key": "Drama",
-                                            "doc_count": 2
                                         }
                                     ]
                                 },
@@ -767,6 +788,35 @@
                                         {
                                             "key": 10,
                                             "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "doc_count": 11,
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 7,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 10
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Crime",
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": "Drama",
+                                            "doc_count": 2
                                         }
                                     ]
                                 }

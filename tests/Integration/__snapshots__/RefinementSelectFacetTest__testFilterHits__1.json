@@ -2,78 +2,78 @@
     "data": {
         "results": {
             "summary": {
-                "total": 11
+                "total": 397
             },
             "hits": {
                 "items": [
                     {
-                        "id": "tt0383385",
+                        "id": "tt0111161",
                         "fields": {
-                            "type": "game",
-                            "title": "Grand Theft Auto: San Andreas"
+                            "rated": "R",
+                            "title": "The Shawshank Redemption"
                         }
                     },
                     {
-                        "id": "tt0802999",
+                        "id": "tt0068646",
                         "fields": {
-                            "type": "game",
-                            "title": "Grand Theft Auto IV"
+                            "rated": "R",
+                            "title": "The Godfather"
                         }
                     },
                     {
-                        "id": "tt1568322",
+                        "id": "tt0110912",
                         "fields": {
-                            "type": "game",
-                            "title": "Batman: Arkham City"
+                            "rated": "R",
+                            "title": "Pulp Fiction"
                         }
                     },
                     {
-                        "id": "tt1540125",
+                        "id": "tt0137523",
                         "fields": {
-                            "type": "game",
-                            "title": "Mass Effect 2"
+                            "rated": "R",
+                            "title": "Fight Club"
                         }
                     },
                     {
-                        "id": "tt1282022",
+                        "id": "tt0133093",
                         "fields": {
-                            "type": "game",
-                            "title": "Batman: Arkham Asylum"
+                            "rated": "R",
+                            "title": "The Matrix"
                         }
                     },
                     {
-                        "id": "tt0374692",
+                        "id": "tt0071562",
                         "fields": {
-                            "type": "game",
-                            "title": "Half-Life 2"
+                            "rated": "R",
+                            "title": "The Godfather: Part II"
                         }
                     },
                     {
-                        "id": "tt0314123",
+                        "id": "tt0108052",
                         "fields": {
-                            "type": "game",
-                            "title": "Grand Theft Auto: Vice City"
+                            "rated": "R",
+                            "title": "Schindler's List"
                         }
                     },
                     {
-                        "id": "tt1814884",
+                        "id": "tt0114369",
                         "fields": {
-                            "type": "game",
-                            "title": "The Elder Scrolls V: Skyrim"
+                            "rated": "R",
+                            "title": "Se7en"
                         }
                     },
                     {
-                        "id": "tt1125798",
+                        "id": "tt0099685",
                         "fields": {
-                            "type": "game",
-                            "title": "Call of Duty 4: Modern Warfare"
+                            "rated": "R",
+                            "title": "Goodfellas"
                         }
                     },
                     {
-                        "id": "tt1073668",
+                        "id": "tt0102926",
                         "fields": {
-                            "type": "game",
-                            "title": "Mass Effect"
+                            "rated": "R",
+                            "title": "The Silence of the Lambs"
                         }
                     }
                 ]
@@ -83,6 +83,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -111,12 +112,154 @@
                                 "metascore"
                             ]
                         },
-                        "highlight": {
-                            "fields": {
-                                "name": [],
-                                "description": [],
-                                "category": [],
-                                "kind": []
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "rated": {
+                                        "terms": {
+                                            "field": "rated",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "directors": {
+                                        "terms": {
+                                            "field": "directors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "writers": {
+                                        "terms": {
+                                            "field": "writers.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "actors": {
+                                        "terms": {
+                                            "field": "actors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "countries": {
+                                        "terms": {
+                                            "field": "countries.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    },
+                                    "metascore": {
+                                        "histogram": {
+                                            "field": "metascore",
+                                            "interval": 5,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 100
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "rated": "R"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "facet_bucket_type": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "rated": "R"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "aggs": {
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "rated": "R"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         },
                         "query": {
@@ -129,10 +272,10 @@
                                 "must": [
                                     {
                                         "bool": {
-                                            "should": [
+                                            "must": [
                                                 {
                                                     "term": {
-                                                        "type": "game"
+                                                        "rated": "R"
                                                     }
                                                 }
                                             ]
@@ -143,6 +286,7 @@
                         }
                     },
                     "response": {
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -152,7 +296,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 11,
+                                "value": 397,
                                 "relation": "eq"
                             },
                             "max_score": 1,
@@ -160,391 +304,682 @@
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt0383385",
+                                    "_id": "tt0111161",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 2004,
+                                        "year": 1994,
                                         "directors": [
-                                            "Dan Houser",
-                                            "Navid Khonsari"
+                                            "Frank Darabont"
                                         ],
                                         "writers": [
-                                            "Dan Houser",
-                                            "James Worrall",
-                                            "DJ Pooh",
-                                            "Dan Houser"
-                                        ],
-                                        "countries": [
-                                            "UK",
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Grand Theft Auto: San Andreas",
-                                        "rated": null,
-                                        "actors": [
-                                            "Young Maylay",
-                                            "Faizon Love",
-                                            "Yolanda Whittaker",
-                                            "Clifton Powell"
-                                        ],
-                                        "plot": "A family tragedy prompts a man to return home, only to find it overrun by crime and corruption, which he must regain control of the streets before it gets even worse.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Comedy"
-                                        ],
-                                        "id": "tt0383385",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTcyMDc2NDE4OV5BMl5BanBnXkFtZTcwNTg5NTcyMQ@@._V1_SX300.jpg",
-                                        "released": "2004-10-26T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0802999",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2008,
-                                        "directors": [
-                                            "Rod Edge",
-                                            "John Zurhellen"
-                                        ],
-                                        "writers": [
-                                            "Dan Houser",
-                                            "Rupert Humphries",
-                                            "John Zurhellen"
-                                        ],
-                                        "countries": [
-                                            "UK",
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Grand Theft Auto IV",
-                                        "rated": null,
-                                        "actors": [
-                                            "Michael Hollick",
-                                            "Jason Zumwalt",
-                                            "Timothy Adams",
-                                            "Moti Margolin"
-                                        ],
-                                        "plot": "Niko Bellic comes to Liberty City, America to live the good life, but ends up having to assist his dangerously indebted cousin Roman with his financial troubles, by any  means necessary.",
-                                        "genres": [
-                                            "Action",
-                                            "Comedy",
-                                            "Crime"
-                                        ],
-                                        "id": "tt0802999",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY4OTY0ODE1OF5BMl5BanBnXkFtZTcwMDY0MjAxNA@@._V1_SX300.jpg",
-                                        "released": "2008-04-29T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1568322",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2011,
-                                        "directors": [
-                                            "Sefton Hill"
-                                        ],
-                                        "writers": [
-                                            "Bob Kane",
-                                            "Paul Dini",
-                                            "Paul Crocker",
-                                            "Sefton Hill"
+                                            "Stephen King",
+                                            "Frank Darabont"
                                         ],
                                         "countries": [
                                             "USA"
                                         ],
-                                        "type": "game",
-                                        "title": "Batman: Arkham City",
-                                        "rated": null,
+                                        "type": "movie",
+                                        "title": "The Shawshank Redemption",
+                                        "rated": "R",
                                         "actors": [
-                                            "Kevin Conroy",
-                                            "Grey DeLisle",
-                                            "Troy Baker",
-                                            "Kimberly Brooks"
+                                            "Tim Robbins",
+                                            "Morgan Freeman",
+                                            "Bob Gunton",
+                                            "William Sadler"
                                         ],
-                                        "plot": "When part of Gotham is turned into a private reserve for criminals, all hell is sure to break loose, and the Dark Knight is the only one who can stop it.",
+                                        "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                                         "genres": [
-                                            "Action",
                                             "Crime",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt1568322",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDE4NzIwNzA0OF5BMl5BanBnXkFtZTcwMzk4MzU5Ng@@._V1_SX300.jpg",
-                                        "released": "2011-10-18T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1540125",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2010,
-                                        "directors": [
-                                            "Casey Hudson"
-                                        ],
-                                        "writers": [
-                                            "Chris Hepler",
-                                            "Drew Karpyshyn",
-                                            "Brian Kindregan",
-                                            "Lukas Kristjanson",
-                                            "Chris L'Etoile",
-                                            "Cathleen Rootsaert",
-                                            "Patrick Weekes"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Canada"
-                                        ],
-                                        "type": "game",
-                                        "title": "Mass Effect 2",
-                                        "rated": null,
-                                        "actors": [
-                                            "Shohreh Aghdashloo",
-                                            "Maggie Baird",
-                                            "Adam Baldwin",
-                                            "Michael Beattie"
-                                        ],
-                                        "plot": "After being revived from death and having to join a pro-human organization without a choice, Commander Shepard must assemble a team, battle a new threat, and make tough choices in order to save the galaxy from total annihilation once more.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Sci-Fi"
-                                        ],
-                                        "id": "tt1540125",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MTQwMjM1N15BMl5BanBnXkFtZTcwNjMzNjc2Mw@@._V1_SX300.jpg",
-                                        "released": "2010-01-26T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1282022",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2009,
-                                        "directors": [
-                                            "Sefton Hill",
-                                            "Paul Boulden",
-                                            "Jamie Walker"
-                                        ],
-                                        "writers": [
-                                            "Bob Kane"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Batman: Arkham Asylum",
-                                        "rated": null,
-                                        "actors": [
-                                            "Kevin Conroy",
-                                            "Kimberly Brooks",
-                                            "Tom Kane",
-                                            "Mark Hamill"
-                                        ],
-                                        "plot": "You control Batman as he fights to subdue The Joker and his fellows when they seize control of the forensic mental hospital.",
-                                        "genres": [
-                                            "Action",
-                                            "Crime",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt1282022",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTUyMzMzMTU0MF5BMl5BanBnXkFtZTcwNDM3MTcxMw@@._V1_SX300.jpg",
-                                        "released": "2009-08-25T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0374692",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2004,
-                                        "directors": [
-                                            "David Speyrer"
-                                        ],
-                                        "writers": [
-                                            "Marc Laidlaw"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Half-Life 2",
-                                        "rated": null,
-                                        "actors": [
-                                            "Robert Guillaume",
-                                            "Robert Culp",
-                                            "Louis Gossett Jr.",
-                                            "Michelle Forbes"
-                                        ],
-                                        "plot": "Assume the role of Gordon Freeman as he fights to free humanity from the oppressive Combine.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Sci-Fi"
-                                        ],
-                                        "id": "tt0374692",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNzEwNDk5NzIxM15BMl5BanBnXkFtZTgwNDA3NzE2MDE@._V1_SX300.jpg",
-                                        "released": "2004-11-16T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0314123",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2002,
-                                        "directors": [
-                                            "Navid Khonsari"
-                                        ],
-                                        "writers": [
-                                            "Dan Houser",
-                                            "James Worrall",
-                                            "Dan Houser"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "UK"
-                                        ],
-                                        "type": "game",
-                                        "title": "Grand Theft Auto: Vice City",
-                                        "rated": null,
-                                        "actors": [
-                                            "Ray Liotta",
-                                            "William Fichtner",
-                                            "Tom Sizemore",
-                                            "Dennis Hopper"
-                                        ],
-                                        "plot": "After being released from jail, Tommy Vercetti left Liberty City for Vice City--a city overrun by the mob. Now, Tommy is out to make the Vice City his home.",
-                                        "genres": [
-                                            "Action",
-                                            "Comedy",
-                                            "Crime"
-                                        ],
-                                        "id": "tt0314123",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTczNTI5ODI3NF5BMl5BanBnXkFtZTgwNjMyMDU0MDE@._V1_SX300.jpg",
-                                        "released": "2002-11-08T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1814884",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2011,
-                                        "directors": [
-                                            "Todd Howard"
-                                        ],
-                                        "writers": [],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "The Elder Scrolls V: Skyrim",
-                                        "rated": null,
-                                        "actors": [
-                                            "Max von Sydow",
-                                            "Christopher Plummer",
-                                            "Joan Allen",
-                                            "Michael Hogan"
-                                        ],
-                                        "plot": "The Empire of Tamriel is on the edge. The High King of Skyrim has been murdered. Alliances form as claims to the throne are made. In the midst of this conflict, a far more dangerous, ...",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
                                             "Drama"
                                         ],
-                                        "id": "tt1814884",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU3OTY0MTA2NF5BMl5BanBnXkFtZTgwNDczMDU0MDE@._V1_SX300.jpg",
-                                        "released": "2011-11-11T00:00:00Z"
+                                        "id": "tt0111161",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1125798",
+                                    "_id": "tt0068646",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 2007,
+                                        "year": 1972,
                                         "directors": [
-                                            "Keith Arem"
+                                            "Francis Ford Coppola"
                                         ],
                                         "writers": [
-                                            "Jesse Stern"
+                                            "Mario Puzo",
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo"
                                         ],
                                         "countries": [
                                             "USA"
                                         ],
-                                        "type": "game",
-                                        "title": "Call of Duty 4: Modern Warfare",
-                                        "rated": null,
+                                        "type": "movie",
+                                        "title": "The Godfather",
+                                        "rated": "R",
                                         "actors": [
-                                            "Billy Murray",
-                                            "Craig Fairbrass",
-                                            "David Sobolov",
-                                            "Zach Hanks"
+                                            "Marlon Brando",
+                                            "Al Pacino",
+                                            "James Caan",
+                                            "Richard S. Castellano"
                                         ],
-                                        "plot": "The Call of Duty series returns this time into a modern day setting. The player takes control of a character nicknamed \"Soap,\" for the majority of the campaign and will need to progress through many modern warfare scenarios.",
+                                        "plot": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
                                         "genres": [
-                                            "Action",
-                                            "Thriller"
+                                            "Crime",
+                                            "Drama"
                                         ],
-                                        "id": "tt1125798",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjI3ODYxMDQwMl5BMl5BanBnXkFtZTgwMjc2NzE2MDE@._V1_SX300.jpg",
-                                        "released": "2007-11-05T00:00:00Z"
+                                        "id": "tt0068646",
+                                        "metascore": 100,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1972-03-24T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1073668",
+                                    "_id": "tt0110912",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 2007,
+                                        "year": 1994,
                                         "directors": [
-                                            "Casey Hudson"
+                                            "Quentin Tarantino"
                                         ],
                                         "writers": [
-                                            "Drew Karpyshyn",
-                                            "Lukas Kristjanson",
-                                            "Chris L'Etoile",
-                                            "Mike Laidlaw",
-                                            "Mac Walters",
-                                            "Patrick Weekes"
+                                            "Quentin Tarantino",
+                                            "Roger Avary",
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Pulp Fiction",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Tim Roth",
+                                            "Amanda Plummer",
+                                            "Laura Lovelace",
+                                            "John Travolta"
+                                        ],
+                                        "plot": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0110912",
+                                        "metascore": 94,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SX300.jpg",
+                                        "released": "1994-10-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0137523",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Chuck Palahniuk",
+                                            "Jim Uhls"
                                         ],
                                         "countries": [
                                             "USA",
-                                            "Canada"
+                                            "Germany"
                                         ],
-                                        "type": "game",
-                                        "title": "Mass Effect",
-                                        "rated": null,
+                                        "type": "movie",
+                                        "title": "Fight Club",
+                                        "rated": "R",
                                         "actors": [
-                                            "Steven Barr",
-                                            "Kimberly Brooks",
-                                            "Keith David",
-                                            "Seth Green"
+                                            "Edward Norton",
+                                            "Brad Pitt",
+                                            "Helena Bonham Carter",
+                                            "Meat Loaf"
                                         ],
-                                        "plot": "In a future time, you play an emotionally scarred soldier who must stop a plot to exterminate humanity throughout the galaxy.",
+                                        "plot": "An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...",
                                         "genres": [
+                                            "Drama"
+                                        ],
+                                        "id": "tt0137523",
+                                        "metascore": 66,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1999-10-15T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0133093",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1999,
+                                        "directors": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "writers": [
+                                            "Andy Wachowski",
+                                            "Lana Wachowski"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Australia"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Matrix",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Keanu Reeves",
+                                            "Laurence Fishburne",
+                                            "Carrie-Anne Moss",
+                                            "Hugo Weaving"
+                                        ],
+                                        "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+                                        "genres": [
+                                            "Action",
                                             "Adventure",
-                                            "Mystery",
                                             "Sci-Fi"
                                         ],
-                                        "id": "tt1073668",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTI4NzYxMDM2Ml5BMl5BanBnXkFtZTcwMzA1MTU2MQ@@._V1_SX300.jpg",
-                                        "released": "2007-11-20T00:00:00Z"
+                                        "id": "tt0133093",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
+                                        "released": "1999-03-31T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0071562",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1974,
+                                        "directors": [
+                                            "Francis Ford Coppola"
+                                        ],
+                                        "writers": [
+                                            "Francis Ford Coppola",
+                                            "Mario Puzo",
+                                            "Mario Puzo"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Godfather: Part II",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert Duvall",
+                                            "Diane Keaton",
+                                            "Robert De Niro"
+                                        ],
+                                        "plot": "The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0071562",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1974-12-20T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0108052",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1993,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Thomas Keneally",
+                                            "Steven Zaillian"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Schindler's List",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Liam Neeson",
+                                            "Ben Kingsley",
+                                            "Ralph Fiennes",
+                                            "Caroline Goodall"
+                                        ],
+                                        "plot": "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                                        "genres": [
+                                            "Biography",
+                                            "Drama",
+                                            "History"
+                                        ],
+                                        "id": "tt0108052",
+                                        "metascore": 93,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX300.jpg",
+                                        "released": "1993-12-15T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114369",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1995,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Andrew Kevin Walker"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Se7en",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Morgan Freeman",
+                                            "Andrew Kevin Walker",
+                                            "Daniel Zacapa",
+                                            "Brad Pitt"
+                                        ],
+                                        "plot": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi.",
+                                        "genres": [
+                                            "Crime",
+                                            "Mystery",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0114369",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQwNTU3MTE4NF5BMl5BanBnXkFtZTcwOTgxNDM2Mg@@._V1_SX300.jpg",
+                                        "released": "1995-09-22T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0099685",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1990,
+                                        "directors": [
+                                            "Martin Scorsese"
+                                        ],
+                                        "writers": [
+                                            "Nicholas Pileggi",
+                                            "Nicholas Pileggi",
+                                            "Martin Scorsese"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Goodfellas",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Robert De Niro",
+                                            "Ray Liotta",
+                                            "Joe Pesci",
+                                            "Lorraine Bracco"
+                                        ],
+                                        "plot": "Henry Hill and his friends work their way up through the mob hierarchy.",
+                                        "genres": [
+                                            "Biography",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0099685",
+                                        "metascore": 89,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY2OTE5MzQ3MV5BMl5BanBnXkFtZTgwMTY2NTYxMTE@._V1_SX300.jpg",
+                                        "released": "1990-09-19T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0102926",
+                                    "_score": 1,
+                                    "_source": {
+                                        "year": 1991,
+                                        "directors": [
+                                            "Jonathan Demme"
+                                        ],
+                                        "writers": [
+                                            "Thomas Harris",
+                                            "Ted Tally"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Silence of the Lambs",
+                                        "rated": "R",
+                                        "actors": [
+                                            "Jodie Foster",
+                                            "Lawrence A. Bonney",
+                                            "Kasi Lemmons",
+                                            "Lawrence T. Wrentz"
+                                        ],
+                                        "plot": "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0102926",
+                                        "metascore": 84,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SX300.jpg",
+                                        "released": "1991-02-14T00:00:00Z"
                                     }
                                 }
                             ]
+                        },
+                        "aggregations": {
+                            "facet_bucket_type": {
+                                "doc_count": 397,
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 397
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_all": {
+                                "doc_count": 397,
+                                "rated": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "R",
+                                            "doc_count": 397
+                                        }
+                                    ]
+                                },
+                                "actors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1582,
+                                    "buckets": [
+                                        {
+                                            "key": "Aaron Eckhart",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Taylor-Johnson",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Abigail Breslin",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Adam Baldwin",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam C. Edwards",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "directors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 425,
+                                    "buckets": [
+                                        {
+                                            "key": "Akira Kurosawa",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Alan J. Pakula",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Alan Mak",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Alan Parker",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Alejandro Amen\u00e1bar",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "metascore": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 15,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 20,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 25,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 30,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 35,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 40,
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": 45,
+                                            "doc_count": 9
+                                        },
+                                        {
+                                            "key": 50,
+                                            "doc_count": 12
+                                        },
+                                        {
+                                            "key": 55,
+                                            "doc_count": 32
+                                        },
+                                        {
+                                            "key": 60,
+                                            "doc_count": 41
+                                        },
+                                        {
+                                            "key": 65,
+                                            "doc_count": 52
+                                        },
+                                        {
+                                            "key": 70,
+                                            "doc_count": 52
+                                        },
+                                        {
+                                            "key": 75,
+                                            "doc_count": 45
+                                        },
+                                        {
+                                            "key": 80,
+                                            "doc_count": 50
+                                        },
+                                        {
+                                            "key": 85,
+                                            "doc_count": 36
+                                        },
+                                        {
+                                            "key": 90,
+                                            "doc_count": 19
+                                        },
+                                        {
+                                            "key": 95,
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": 100,
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "countries": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 608,
+                                    "buckets": [
+                                        {
+                                            "key": "Argentina",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Australia",
+                                            "doc_count": 10
+                                        },
+                                        {
+                                            "key": "Austria",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Belgium",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Brazil",
+                                            "doc_count": 3
+                                        }
+                                    ]
+                                },
+                                "writers": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 843,
+                                    "buckets": [
+                                        {
+                                            "key": "A.J. Quinnell",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Sorkin",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Stockard",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Abdel Raouf Dafri",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Herz",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 258
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 132
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "doc_count": 397,
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 753,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 77
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 33
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Biography",
+                                            "doc_count": 30
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 79
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

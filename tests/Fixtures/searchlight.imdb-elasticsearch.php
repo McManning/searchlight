@@ -111,25 +111,26 @@ return [
                     'identifier' => 'genres',
                     'label' => 'Genres',
                     'field' => 'genres.keyword',
+                    'multiple_select' => true,
                 ]),
                 new RefinementSelectFacet([
                     'identifier' => 'directors',
-                    'label' => 'Directors',
+                    'label' => 'Director',
                     'field' => 'directors.keyword',
                 ]),
                 new RefinementSelectFacet([
                     'identifier' => 'writers',
-                    'label' => 'Writers',
+                    'label' => 'Writer',
                     'field' => 'writers.keyword',
                 ]),
                 new RefinementSelectFacet([
                     'identifier' => 'actors',
-                    'label' => 'Actors',
+                    'label' => 'Actor',
                     'field' => 'actors.keyword',
                 ]),
                 new RefinementSelectFacet([
                     'identifier' => 'countries',
-                    'label' => 'Countries',
+                    'label' => 'Country',
                     'field' => 'countries.keyword',
                 ]),
 
@@ -148,14 +149,6 @@ return [
                     'max' => 100,
                     'interval' => 5,
                 ]),
-
-                // new RefinementSelectFacet([
-                //     'identifier' => 'kind',
-                //     'label' => 'Kind',
-                //     'field' => 'kind.keyword',
-                //     'multiple_select' => true,
-                // ]),
-
 
                 // new HierarchicalMenu([
                 //     'identifier' => 'categories',

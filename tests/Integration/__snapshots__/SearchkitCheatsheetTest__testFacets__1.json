@@ -9,8 +9,20 @@
                     "display": "ListFacet",
                     "entries": [
                         {
+                            "label": "episode",
+                            "count": 4
+                        },
+                        {
+                            "label": "game",
+                            "count": 11
+                        },
+                        {
                             "label": "movie",
                             "count": 852
+                        },
+                        {
+                            "label": "series",
+                            "count": 133
                         }
                     ]
                 },
@@ -72,7 +84,7 @@
                 },
                 {
                     "identifier": "directors",
-                    "label": "Directors",
+                    "label": "Director",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -100,7 +112,7 @@
                 },
                 {
                     "identifier": "writers",
-                    "label": "Writers",
+                    "label": "Writer",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -128,7 +140,7 @@
                 },
                 {
                     "identifier": "actors",
-                    "label": "Actors",
+                    "label": "Actor",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -156,7 +168,7 @@
                 },
                 {
                     "identifier": "countries",
-                    "label": "Countries",
+                    "label": "Country",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
                     "entries": [
@@ -332,6 +344,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -355,38 +368,12 @@
                                 "metascore"
                             ]
                         },
-                        "highlight": {
-                            "fields": {
-                                "name": [],
-                                "description": [],
-                                "category": [],
-                                "kind": []
-                            }
-                        },
                         "aggs": {
                             "facet_bucket_all": {
                                 "aggs": {
-                                    "type": {
-                                        "terms": {
-                                            "field": "type",
-                                            "size": 5,
-                                            "order": {
-                                                "_key": "asc"
-                                            }
-                                        }
-                                    },
                                     "rated": {
                                         "terms": {
                                             "field": "rated",
-                                            "size": 5,
-                                            "order": {
-                                                "_key": "asc"
-                                            }
-                                        }
-                                    },
-                                    "genres": {
-                                        "terms": {
-                                            "field": "genres.keyword",
                                             "size": 5,
                                             "order": {
                                                 "_key": "asc"
@@ -469,6 +456,54 @@
                                         ]
                                     }
                                 }
+                            },
+                            "facet_bucket_type": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "aggs": {
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "should": [
+                                                        {
+                                                            "term": {
+                                                                "type": "movie"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         },
                         "query": {
@@ -495,6 +530,7 @@
                         }
                     },
                     "response": {
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -511,6 +547,32 @@
                             "hits": []
                         },
                         "aggregations": {
+                            "facet_bucket_type": {
+                                "meta": [],
+                                "doc_count": 1000,
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "episode",
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": "game",
+                                            "doc_count": 11
+                                        },
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 852
+                                        },
+                                        {
+                                            "key": "series",
+                                            "doc_count": 133
+                                        }
+                                    ]
+                                }
+                            },
                             "facet_bucket_all": {
                                 "doc_count": 852,
                                 "rated": {
@@ -562,32 +624,6 @@
                                         {
                                             "key": "Abdel Ahmed Ghili",
                                             "doc_count": 1
-                                        }
-                                    ]
-                                },
-                                "genres": {
-                                    "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 1462,
-                                    "buckets": [
-                                        {
-                                            "key": "Action",
-                                            "doc_count": 185
-                                        },
-                                        {
-                                            "key": "Adventure",
-                                            "doc_count": 181
-                                        },
-                                        {
-                                            "key": "Animation",
-                                            "doc_count": 58
-                                        },
-                                        {
-                                            "key": "Biography",
-                                            "doc_count": 63
-                                        },
-                                        {
-                                            "key": "Comedy",
-                                            "doc_count": 191
                                         }
                                     ]
                                 },
@@ -757,16 +793,6 @@
                                         }
                                     ]
                                 },
-                                "type": {
-                                    "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 0,
-                                    "buckets": [
-                                        {
-                                            "key": "movie",
-                                            "doc_count": 852
-                                        }
-                                    ]
-                                },
                                 "imdbrating": {
                                     "buckets": [
                                         {
@@ -812,6 +838,35 @@
                                         {
                                             "key": 10,
                                             "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "doc_count": 852,
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1462,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 185
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 181
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 58
+                                        },
+                                        {
+                                            "key": "Biography",
+                                            "doc_count": 63
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 191
                                         }
                                     ]
                                 }

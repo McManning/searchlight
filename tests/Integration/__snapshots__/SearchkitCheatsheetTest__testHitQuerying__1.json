@@ -81,12 +81,100 @@
                                 "metascore"
                             ]
                         },
-                        "highlight": {
-                            "fields": {
-                                "name": [],
-                                "description": [],
-                                "category": [],
-                                "kind": []
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "rated": {
+                                        "terms": {
+                                            "field": "rated",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "directors": {
+                                        "terms": {
+                                            "field": "directors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "writers": {
+                                        "terms": {
+                                            "field": "writers.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "actors": {
+                                        "terms": {
+                                            "field": "actors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "countries": {
+                                        "terms": {
+                                            "field": "countries.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    },
+                                    "metascore": {
+                                        "histogram": {
+                                            "field": "metascore",
+                                            "interval": 5,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 100
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
                             }
                         },
                         "query": {
@@ -508,6 +596,306 @@
                                     }
                                 }
                             ]
+                        },
+                        "aggregations": {
+                            "facet_bucket_all": {
+                                "meta": [],
+                                "doc_count": 8,
+                                "rated": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "Approved",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "G",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "PG-13",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "R",
+                                            "doc_count": 4
+                                        }
+                                    ]
+                                },
+                                "actors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 25,
+                                    "buckets": [
+                                        {
+                                            "key": "Aaron Eckhart",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Al Pacino",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Amanda Wyss",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Christian Bale",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Deems Taylor",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 7,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Crime",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Drama",
+                                            "doc_count": 6
+                                        }
+                                    ]
+                                },
+                                "directors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 13,
+                                    "buckets": [
+                                        {
+                                            "key": "Ang Lee",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Ben Sharpsteen",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Bill Roberts",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Christopher Nolan",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Ford Beebe Jr.",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "metascore": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 15,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 20,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 25,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 30,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 35,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 40,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 45,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 50,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 55,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 60,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 65,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 70,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 75,
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": 80,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 85,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 90,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 95,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 100,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                },
+                                "countries": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "Canada",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Germany",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "UK",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "USA",
+                                            "doc_count": 8
+                                        }
+                                    ]
+                                },
+                                "writers": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 33,
+                                    "buckets": [
+                                        {
+                                            "key": "Albert Heath",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Annie Proulx",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Arthur Heinemann",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Bianca Majolie",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Bill Peet",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 8
+                                        }
+                                    ]
+                                },
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

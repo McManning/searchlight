@@ -15,6 +15,7 @@ use Nuwave\Lighthouse\Testing\MocksResolvers;
 use Spatie\Snapshots\MatchesSnapshots;
 
 use McManning\Searchlight\SearchlightServiceProvider;
+use Tests\Fixtures\GraphQLDriver;
 
 /**
  * Base test case for setting up a Lighthouse instance configured for Searchlight.
@@ -134,17 +135,15 @@ class TestCase extends BaseTestCase
             DebugFlag::INCLUDE_DEBUG_MESSAGE
             | DebugFlag::INCLUDE_TRACE
             // | Debug::RETHROW_INTERNAL_EXCEPTIONS
-            | DebugFlag::RETHROW_UNSAFE_EXCEPTIONS
+            // | DebugFlag::RETHROW_UNSAFE_EXCEPTIONS
         );
 
         $config->set('lighthouse.cache.enable', false);
         // $config->set('lighthouse.guard', null);
 
-        // Configuration assumes Docker networking.
-        // $config->set('searchlight.providers.default.host', 'elasticsearch:9200');
-        // $config->set('searchlight.providers.default.index', 'imdb');
-
-        $config->set('searchlight', require(__DIR__.'/Fixtures/searchlight.php'));
+        $config->set('searchlight', require(
+            __DIR__.'/Fixtures/searchlight.imdb-elasticsearch.php'
+        ));
     }
 
     /**
@@ -177,15 +176,6 @@ class TestCase extends BaseTestCase
 
         $this->assertArrayNotHasKey(
             'errors',
-            $response,
-            $assertionMessage ?? "Expected response without errors but got [{$actual}]"
-        );
-
-        // TODO: Under some test conditions we end up with a payload with
-        // { message, exception, file, line, trace, extensions } which
-        // does not align with the expected GraphQL error response.
-        $this->assertArrayNotHasKey(
-            'exception',
             $response,
             $assertionMessage ?? "Expected response without errors but got [{$actual}]"
         );
@@ -323,16 +313,9 @@ class TestCase extends BaseTestCase
      */
     protected function assertSnapshot()
     {
-        $this->assertNotGraphQLError();
-
         $response = $this->response->json();
 
-        // Omit timing information from the comparison
-        unset($response['extensions']['searchlight_inspection']['took']);
-        foreach ($response['extensions']['searchlight_inspection']['trips'] as &$trip) {
-            unset($trip['response']['took']);
-        }
-
-        $this->assertMatchesJsonSnapshot($response);
+        $this->assertNotGraphQLError();
+        $this->assertMatchesSnapshot($response, new GraphQLDriver());
     }
 }

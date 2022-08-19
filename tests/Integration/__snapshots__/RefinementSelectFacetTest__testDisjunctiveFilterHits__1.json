@@ -17,18 +17,18 @@
                         "display": "ListFacet",
                         "label": "Type",
                         "value": "game"
+                    },
+                    {
+                        "id": "countries_UK",
+                        "identifier": "countries",
+                        "display": "ListFacet",
+                        "label": "Country",
+                        "value": "UK"
                     }
                 ]
             },
             "hits": {
                 "items": [
-                    {
-                        "id": "tt2178784",
-                        "fields": {
-                            "type": "episode",
-                            "title": "The Rains of Castamere"
-                        }
-                    },
                     {
                         "id": "tt0383385",
                         "fields": {
@@ -44,34 +44,6 @@
                         }
                     },
                     {
-                        "id": "tt1568322",
-                        "fields": {
-                            "type": "game",
-                            "title": "Batman: Arkham City"
-                        }
-                    },
-                    {
-                        "id": "tt1540125",
-                        "fields": {
-                            "type": "game",
-                            "title": "Mass Effect 2"
-                        }
-                    },
-                    {
-                        "id": "tt1282022",
-                        "fields": {
-                            "type": "game",
-                            "title": "Batman: Arkham Asylum"
-                        }
-                    },
-                    {
-                        "id": "tt0374692",
-                        "fields": {
-                            "type": "game",
-                            "title": "Half-Life 2"
-                        }
-                    },
-                    {
                         "id": "tt0314123",
                         "fields": {
                             "type": "game",
@@ -79,17 +51,17 @@
                         }
                     },
                     {
-                        "id": "tt1814884",
+                        "id": "tt1942612",
                         "fields": {
-                            "type": "game",
-                            "title": "The Elder Scrolls V: Skyrim"
+                            "type": "episode",
+                            "title": "A Scandal in Belgravia"
                         }
                     },
                     {
-                        "id": "tt1683088",
+                        "id": "tt1942614",
                         "fields": {
                             "type": "episode",
-                            "title": "Face Off"
+                            "title": "The Reichenbach Fall"
                         }
                     }
                 ]
@@ -99,6 +71,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
+            "took": 2,
             "trips": [
                 {
                     "query": {
@@ -127,12 +100,186 @@
                                 "metascore"
                             ]
                         },
-                        "highlight": {
-                            "fields": {
-                                "name": [],
-                                "description": [],
-                                "category": [],
-                                "kind": []
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "rated": {
+                                        "terms": {
+                                            "field": "rated",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "directors": {
+                                        "terms": {
+                                            "field": "directors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "writers": {
+                                        "terms": {
+                                            "field": "writers.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "actors": {
+                                        "terms": {
+                                            "field": "actors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "countries": {
+                                        "terms": {
+                                            "field": "countries.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    },
+                                    "metascore": {
+                                        "histogram": {
+                                            "field": "metascore",
+                                            "interval": 5,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 100
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "should": [
+                                                        {
+                                                            "term": {
+                                                                "type": "episode"
+                                                            }
+                                                        },
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "facet_bucket_type": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "aggs": {
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "should": [
+                                                        {
+                                                            "term": {
+                                                                "type": "episode"
+                                                            }
+                                                        },
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         },
                         "query": {
@@ -158,12 +305,24 @@
                                                 }
                                             ]
                                         }
+                                    },
+                                    {
+                                        "bool": {
+                                            "must": [
+                                                {
+                                                    "term": {
+                                                        "countries.keyword": "UK"
+                                                    }
+                                                }
+                                            ]
+                                        }
                                     }
                                 ]
                             }
                         }
                     },
                     "response": {
+                        "took": 2,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -173,47 +332,11 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 15,
+                                "value": 5,
                                 "relation": "eq"
                             },
                             "max_score": 1,
                             "hits": [
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt2178784",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2013,
-                                        "directors": [
-                                            "David Nutter"
-                                        ],
-                                        "writers": [
-                                            "George R.R. Martin"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "episode",
-                                        "title": "The Rains of Castamere",
-                                        "rated": "TV-MA",
-                                        "actors": [
-                                            "Emilia Clarke",
-                                            "Kit Harington",
-                                            "Richard Madden",
-                                            "Iain Glen"
-                                        ],
-                                        "plot": "Robb and Catelyn arrive at the Twins for the wedding. Jon is put to the test to see where his loyalties truly lie. Bran's group decides to split up. Daenerys plans an invasion of Yunkai.",
-                                        "genres": [
-                                            "Adventure",
-                                            "Drama",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt2178784",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU5ODU0OTYzOV5BMl5BanBnXkFtZTcwMjQxNDM2OQ@@._V1_SX300.jpg",
-                                        "released": "2013-06-02T00:00:00+01:00"
-                                    }
-                                },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
@@ -298,162 +421,6 @@
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1568322",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2011,
-                                        "directors": [
-                                            "Sefton Hill"
-                                        ],
-                                        "writers": [
-                                            "Bob Kane",
-                                            "Paul Dini",
-                                            "Paul Crocker",
-                                            "Sefton Hill"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Batman: Arkham City",
-                                        "rated": null,
-                                        "actors": [
-                                            "Kevin Conroy",
-                                            "Grey DeLisle",
-                                            "Troy Baker",
-                                            "Kimberly Brooks"
-                                        ],
-                                        "plot": "When part of Gotham is turned into a private reserve for criminals, all hell is sure to break loose, and the Dark Knight is the only one who can stop it.",
-                                        "genres": [
-                                            "Action",
-                                            "Crime",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt1568322",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDE4NzIwNzA0OF5BMl5BanBnXkFtZTcwMzk4MzU5Ng@@._V1_SX300.jpg",
-                                        "released": "2011-10-18T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1540125",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2010,
-                                        "directors": [
-                                            "Casey Hudson"
-                                        ],
-                                        "writers": [
-                                            "Chris Hepler",
-                                            "Drew Karpyshyn",
-                                            "Brian Kindregan",
-                                            "Lukas Kristjanson",
-                                            "Chris L'Etoile",
-                                            "Cathleen Rootsaert",
-                                            "Patrick Weekes"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Canada"
-                                        ],
-                                        "type": "game",
-                                        "title": "Mass Effect 2",
-                                        "rated": null,
-                                        "actors": [
-                                            "Shohreh Aghdashloo",
-                                            "Maggie Baird",
-                                            "Adam Baldwin",
-                                            "Michael Beattie"
-                                        ],
-                                        "plot": "After being revived from death and having to join a pro-human organization without a choice, Commander Shepard must assemble a team, battle a new threat, and make tough choices in order to save the galaxy from total annihilation once more.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Sci-Fi"
-                                        ],
-                                        "id": "tt1540125",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MTQwMjM1N15BMl5BanBnXkFtZTcwNjMzNjc2Mw@@._V1_SX300.jpg",
-                                        "released": "2010-01-26T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1282022",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2009,
-                                        "directors": [
-                                            "Sefton Hill",
-                                            "Paul Boulden",
-                                            "Jamie Walker"
-                                        ],
-                                        "writers": [
-                                            "Bob Kane"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Batman: Arkham Asylum",
-                                        "rated": null,
-                                        "actors": [
-                                            "Kevin Conroy",
-                                            "Kimberly Brooks",
-                                            "Tom Kane",
-                                            "Mark Hamill"
-                                        ],
-                                        "plot": "You control Batman as he fights to subdue The Joker and his fellows when they seize control of the forensic mental hospital.",
-                                        "genres": [
-                                            "Action",
-                                            "Crime",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt1282022",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTUyMzMzMTU0MF5BMl5BanBnXkFtZTcwNDM3MTcxMw@@._V1_SX300.jpg",
-                                        "released": "2009-08-25T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0374692",
-                                    "_score": 1,
-                                    "_source": {
-                                        "year": 2004,
-                                        "directors": [
-                                            "David Speyrer"
-                                        ],
-                                        "writers": [
-                                            "Marc Laidlaw"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "game",
-                                        "title": "Half-Life 2",
-                                        "rated": null,
-                                        "actors": [
-                                            "Robert Guillaume",
-                                            "Robert Culp",
-                                            "Louis Gossett Jr.",
-                                            "Michelle Forbes"
-                                        ],
-                                        "plot": "Assume the role of Gordon Freeman as he fights to free humanity from the oppressive Combine.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Sci-Fi"
-                                        ],
-                                        "id": "tt0374692",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNzEwNDk5NzIxM15BMl5BanBnXkFtZTgwNDA3NzE2MDE@._V1_SX300.jpg",
-                                        "released": "2004-11-16T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
                                     "_id": "tt0314123",
                                     "_score": 1,
                                     "_source": {
@@ -493,75 +460,375 @@
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1814884",
+                                    "_id": "tt1942612",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 2011,
+                                        "year": 2012,
                                         "directors": [
-                                            "Todd Howard"
+                                            "Paul McGuigan"
                                         ],
-                                        "writers": [],
+                                        "writers": [
+                                            "Steven Moffat",
+                                            "Mark Gatiss"
+                                        ],
                                         "countries": [
-                                            "USA"
+                                            "UK"
                                         ],
-                                        "type": "game",
-                                        "title": "The Elder Scrolls V: Skyrim",
-                                        "rated": null,
+                                        "type": "episode",
+                                        "title": "A Scandal in Belgravia",
+                                        "rated": "TV-14",
                                         "actors": [
-                                            "Max von Sydow",
-                                            "Christopher Plummer",
-                                            "Joan Allen",
-                                            "Michael Hogan"
+                                            "Benedict Cumberbatch",
+                                            "Martin Freeman",
+                                            "Una Stubbs",
+                                            "Rupert Graves"
                                         ],
-                                        "plot": "The Empire of Tamriel is on the edge. The High King of Skyrim has been murdered. Alliances form as claims to the throne are made. In the midst of this conflict, a far more dangerous, ...",
+                                        "plot": "The government hires Sherlock and John to confiscate something of importance from a mysterious woman, named Irene Adler. But she may be more than Sherlock can handle.",
                                         "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Drama"
+                                            "Crime",
+                                            "Drama",
+                                            "Mystery"
                                         ],
-                                        "id": "tt1814884",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU3OTY0MTA2NF5BMl5BanBnXkFtZTgwNDczMDU0MDE@._V1_SX300.jpg",
-                                        "released": "2011-11-11T00:00:00Z"
+                                        "id": "tt1942612",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY2MjU3NTYwMV5BMl5BanBnXkFtZTcwNjYzMzU3Nw@@._V1_SX300.jpg",
+                                        "released": "2012-05-06T00:00:00+01:00"
                                     }
                                 },
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt1683088",
+                                    "_id": "tt1942614",
                                     "_score": 1,
                                     "_source": {
-                                        "year": 2011,
+                                        "year": 2012,
                                         "directors": [
-                                            "Vince Gilligan"
+                                            "Toby Haynes"
                                         ],
                                         "writers": [
-                                            "Vince Gilligan",
-                                            "Vince Gilligan"
+                                            "Steve Thompson",
+                                            "Mark Gatiss"
                                         ],
                                         "countries": [
-                                            "USA"
+                                            "UK"
                                         ],
                                         "type": "episode",
-                                        "title": "Face Off",
+                                        "title": "The Reichenbach Fall",
                                         "rated": "TV-14",
                                         "actors": [
-                                            "Bryan Cranston",
-                                            "Anna Gunn",
-                                            "Aaron Paul",
-                                            "Dean Norris"
+                                            "Benedict Cumberbatch",
+                                            "Martin Freeman",
+                                            "Una Stubbs",
+                                            "Rupert Graves"
                                         ],
-                                        "plot": "Jesse is brought to the FBI for questioning on his knowledge of Ricin. In a last effort to kill Gus, Walt must ask for help from an old enemy.",
+                                        "plot": "Moriarty turns the whole city against Sherlock.",
                                         "genres": [
                                             "Crime",
                                             "Drama",
-                                            "Thriller"
+                                            "Mystery"
                                         ],
-                                        "id": "tt1683088",
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkzMDU5MTcxNF5BMl5BanBnXkFtZTcwOTI2NTg4Ng@@._V1_SX300.jpg",
-                                        "released": "2011-10-09T00:00:00+01:00"
+                                        "id": "tt1942614",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA2MTE1NDI5OV5BMl5BanBnXkFtZTcwNzM2MzU3Nw@@._V1_SX300.jpg",
+                                        "released": "2012-05-20T00:00:00+01:00"
                                     }
                                 }
                             ]
+                        },
+                        "aggregations": {
+                            "facet_bucket_type": {
+                                "doc_count": 183,
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "episode",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "game",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 149
+                                        },
+                                        {
+                                            "key": "series",
+                                            "doc_count": 29
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_all": {
+                                "doc_count": 5,
+                                "rated": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "TV-14",
+                                            "doc_count": 2
+                                        }
+                                    ]
+                                },
+                                "actors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 14,
+                                    "buckets": [
+                                        {
+                                            "key": "Benedict Cumberbatch",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Clifton Powell",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Dennis Hopper",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Faizon Love",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Jason Zumwalt",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "directors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1,
+                                    "buckets": [
+                                        {
+                                            "key": "Dan Houser",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "John Zurhellen",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Navid Khonsari",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Paul McGuigan",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Rod Edge",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "metascore": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 15,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 20,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 25,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 30,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 35,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 40,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 45,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 50,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 55,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 60,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 65,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 70,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 75,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 80,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 85,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 90,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 95,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 100,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                },
+                                "countries": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "UK",
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": "USA",
+                                            "doc_count": 3
+                                        }
+                                    ]
+                                },
+                                "writers": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 3,
+                                    "buckets": [
+                                        {
+                                            "key": "DJ Pooh",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Dan Houser",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "James Worrall",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "John Zurhellen",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Mark Gatiss",
+                                            "doc_count": 2
+                                        }
+                                    ]
+                                },
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            },
+                            "facet_bucket_genres": {
+                                "doc_count": 5,
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 2,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Crime",
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": "Drama",
+                                            "doc_count": 2
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     }
                 }

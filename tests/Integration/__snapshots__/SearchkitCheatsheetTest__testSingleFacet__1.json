@@ -3,7 +3,7 @@
         "results": {
             "facet": {
                 "identifier": "actors",
-                "label": "Actors",
+                "label": "Actor",
                 "type": "RefinementSelectFacet",
                 "display": "ListFacet",
                 "entries": [
@@ -34,6 +34,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
+            "took": 0,
             "trips": [
                 {
                     "query": {
@@ -56,14 +57,6 @@
                                 "id",
                                 "metascore"
                             ]
-                        },
-                        "highlight": {
-                            "fields": {
-                                "name": [],
-                                "description": [],
-                                "category": [],
-                                "kind": []
-                            }
                         },
                         "aggs": {
                             "facet_bucket_all": {
@@ -93,6 +86,7 @@
                         }
                     },
                     "response": {
+                        "took": 0,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,

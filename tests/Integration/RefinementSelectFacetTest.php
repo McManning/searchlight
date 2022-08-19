@@ -11,7 +11,7 @@ final class RefinementSelectFacetTest extends TestCase
         query {
             results(
                 filters: [
-                    {identifier: "type", value: "game"}
+                    {identifier: "rated", value: "R"}
                 ]
             ) {
                 summary {
@@ -22,7 +22,7 @@ final class RefinementSelectFacetTest extends TestCase
                         id
                         ... on ResultHit {
                             fields {
-                                type
+                                rated
                                 title
                             }
                         }
@@ -35,7 +35,7 @@ final class RefinementSelectFacetTest extends TestCase
         $this->assertSnapshot();
     }
 
-    public function testListAvailableFacets()
+    public function testListFacets()
     {
         $this->graphQL('
         query {
@@ -89,7 +89,8 @@ final class RefinementSelectFacetTest extends TestCase
         $this->graphQL('
         query {
             results(filters: [
-                {identifier: "type", value: "game"}
+                {identifier: "type", value: "movie"}
+                {identifier: "countries", value: "UK"}
             ]) {
                 summary {
                     query
@@ -103,17 +104,6 @@ final class RefinementSelectFacetTest extends TestCase
                         }
                     }
                 }
-                hits {
-                    items {
-                        id
-                        ... on ResultHit {
-                            fields {
-                                type
-                                title
-                            }
-                        }
-                    }
-                }
             }
         }
         ');
@@ -121,6 +111,10 @@ final class RefinementSelectFacetTest extends TestCase
         $this->assertSnapshot();
     }
 
+    /**
+     * Ensure that disjunctive facets (type) are all properly
+     * applied alongside typical refinement facets
+     */
     public function testDisjunctiveFilterHits()
     {
         $this->graphQL('
@@ -128,6 +122,7 @@ final class RefinementSelectFacetTest extends TestCase
             results(filters: [
                 {identifier: "type", value: "episode"}
                 {identifier: "type", value: "game"}
+                {identifier: "countries", value: "UK"}
             ]) {
                 summary {
                     query
