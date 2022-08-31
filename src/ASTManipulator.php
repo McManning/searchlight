@@ -6,6 +6,10 @@ use Nuwave\Lighthouse\Events\ManipulateAST;
 use Nuwave\Lighthouse\Schema\AST\DocumentAST;
 use Nuwave\Lighthouse\Schema\RootType;
 
+/**
+ * Performs dynamic injections of result types into the GraphQL schema
+ * based on the configurations per each Searchlight provider.
+ */
 class ASTManipulator
 {
     const DEFAULT_RESULT_TYPE = 'ResultSet';
@@ -27,14 +31,14 @@ class ASTManipulator
 
         foreach ($resultTypes as $resultType) {
             $documentAST->setTypeDefinition(
-                Parser::objectTypeDefinition(<<<GRAPHQL
+                Parser::objectTypeDefinition(<<<GQL
 type {$resultType} {
     summary: SKSummary
     hits(page: SKPageInput, sortBy: String): SKHitResults
     facets: [SKFacetSet]
     facet(identifier: String!, query: String, size: Float): SKFacetSet
 }
-GRAPHQL
+GQL
                 )
             );
         }
@@ -55,22 +59,21 @@ GRAPHQL
         );
 
         foreach ($providers as $name => &$provider) {
-            $type = data_get($provider, 'query_type');
-            $resultType = data_get($provider, 'result_type');
             $add = data_get($provider, 'add_to_query_type', true);
-
             if (!$add) {
                 continue;
             }
 
-            $queryType->fields[] = Parser::fieldDefinition(<<<GRAPHQL
+            $type = data_get($provider, 'query_type');
+            $resultType = data_get($provider, 'result_type');
+
+            $queryType->fields[] = Parser::fieldDefinition(<<<GQL
 $type(
-    query: String,
-    queryOptions: SKQueryOptions,
-    filters: [SKFiltersSet],
-    # page: SKPageInput - OMIT, page is defined (and documented) at the hits level
+    query: String
+    queryOptions: SKQueryOptions
+    filters: [SKFiltersSet]
 ): $resultType @searchlight(provider: "$name")
-GRAPHQL
+GQL
             );
         }
     }
