@@ -9,11 +9,15 @@ class FacetCriteria
     protected ?string $query;
     protected ?float $size;
 
+    /** @var FilterCriteria[] */
+    protected array $filterCriteria;
+
     public function __construct(string $identifier, ?string $query = null, ?float $size = null)
     {
         $this->identifier = $identifier;
         $this->query = $query;
         $this->size = $size;
+        $this->filterCriteria = [];
     }
 
     /**
@@ -63,6 +67,25 @@ class FacetCriteria
     public function getSize(): ?int
     {
         return $this->size;
+    }
+
+    /**
+     * Retrieve filtering criteria that has been applied
+     * alongside this faceting criteria for the same identifier
+     *
+     * @return FilterCriteria[]
+     */
+    public function getFilterCriteria(): array
+    {
+        return $this->filterCriteria;
+    }
+
+    /**
+     * @param FilterCriteria[]
+     */
+    public function setFilterCriteria(array $criteria)
+    {
+        $this->filterCriteria = $criteria;
     }
 }
 
