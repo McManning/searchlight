@@ -65,7 +65,10 @@ GQL;
     protected function search(array $args)
     {
         /** @var string */
-        $query = data_get($args, 'query', '');
+        $terms = data_get($args, 'query', '');
+
+        /** @var array */
+        $options = data_get($args, 'queryOptions', []);
 
         /** @var FilterCriteria[] filter inputs from `[SKFiltersSet]` input type */
         $filters = array_map(
@@ -73,18 +76,11 @@ GQL;
             data_get($args, 'filters', [])
         );
 
-        /** @var null|string[] */
-        $fields = data_get($args, 'queryOptions.fields', null);
-
         // Construct a request to Elastic
         $this->request = new SearchRequest($this->provider);
 
         $this->request->setFilterCriteria($filters);
-        $this->request->setQuery($query);
-
-        if ($fields !== null) {
-            $this->request->setFields($fields);
-        }
+        $this->request->setQuery(new QueryCriteria($terms, $options));
 
         return $this->resolveResultSet();
     }

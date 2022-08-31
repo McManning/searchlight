@@ -1,7 +1,18 @@
 <?php namespace Searchlight\Interfaces;
 
+use Searchlight\QueryCriteria;
 
 interface IQuery
 {
-    public function getFilter(string $query): array;
+    /**
+     * Create an ElasticSearch query from input criteria
+     *
+     * @param QueryCriteria $criteria
+     */
+    public function getQuery(QueryCriteria $criteria): array;
+
+    /**
+     * Create ElasticSearch highlights from input criteria
+     */
+    public function getHighlights(QueryCriteria $criteria): array;
 }

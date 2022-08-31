@@ -26,7 +26,7 @@ class SearchRequest
 
     protected bool $usesFacets = false;
 
-    protected string $query = '';
+    protected ?QueryCriteria $query = null;
 
     /** @var Array<string, IFilter> Combination of facets and filters that are usable */
     protected array $availableFilters = [];
@@ -72,6 +72,7 @@ class SearchRequest
         }
 
         $this->baseFilters = $provider->get('base_filters', []);
+        $this->query = new QueryCriteria('', []);
 
         // TODO: https://github.com/jeskew/amazon-es-php
         $this->client = $builder->build();
@@ -82,7 +83,7 @@ class SearchRequest
         $this->usesFacets = $enable;
     }
 
-    public function setQuery(string $query)
+    public function setQuery(QueryCriteria $query)
     {
         $this->query = $query;
     }
@@ -131,7 +132,7 @@ class SearchRequest
         return $this->sortId;
     }
 
-    public function getQuery(): string
+    public function getQuery(): QueryCriteria
     {
         return $this->query;
     }
@@ -233,7 +234,8 @@ class SearchRequest
         catch (\Throwable $e) {
             // Rethrow any service exceptions
             throw new GenericException(
-                'Failed to execute search', null, null, [], null, $e
+                'Failed to execute search: ' . $e->getMessage(),
+                null, null, [], null, $e
             );
         }
 
@@ -393,14 +395,20 @@ class SearchRequest
             }
         }
 
-        return ['aggs' => $buckets];
+        // If nothing was added to the combined facet,
+        // omit entirely to optimize the query a bit.
+        if (empty($buckets['facet_bucket_all']['aggs'])) {
+            unset($buckets['facet_bucket_all']);
+        }
+
+        return ['aggs' => (object)$buckets];
     }
 
     protected function buildQuery(): array
     {
         /** @var IQuery */
         $queryBuilder = $this->provider->get('query');
-        $queryFilter = $queryBuilder->getFilter($this->query);
+        $queryFilter = $queryBuilder->getQuery($this->query);
 
         // Start with raw Lucene filters if we got 'em
         $baseFilters = $this->baseFilters;
@@ -506,36 +514,62 @@ class SearchRequest
 
     protected function buildHighlighting(): array
     {
+        /** @var IQuery */
+        $queryBuilder = $this->provider->get('query');
+
+        $fields = $queryBuilder->getHighlights($this->query);
+
         $highlight = [];
 
-        // if (true) { // TODO: Condition (probably just whether or not the array config is empty)
-        //             // TODO: searchkit does a direct copy of "advanced" config for highlights right into ES.
-        //             // Ref: https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/core/RequestBodyBuilder.ts#L78
-        //     $highlight = [
-        //         'highlight' => [
-        //             'fields' => [
-        //                 'name' => (object)[],
-        //                 'description' => (object)[],
-        //                 'category' => (object)[],
-        //                 'kind' => (object)[],
-        //             ]
-        //         ]
-        //     ];
+        // TODO: Does this transform make more sense to implement
+        // in the request or in the IQuery::getHighlights?
+        // My immediate assumption is that Imost IQuery classes will
+        // handle highlights the same way and configuration of the
+        // highlighting is a global setting.
 
-        //     // TODO: Pull from query fields. Combine with the override rule(s).
-        // }
+        if ($fields) {
+            $map = [];
+            foreach ($fields as $field) {
+                $map[$field] = (object)[];
+            };
+
+            $highlight = [
+                'highlight' => [
+                    'fields' => $map
+                ]
+            ];
+        }
 
         return $highlight;
     }
 
     protected function getFacetCriteria(string $identifier): FacetCriteria
     {
+        $filters = $this->getFilterCriteria($identifier);
+
         foreach ($this->facetCriteria as $criteria) {
             if ($criteria->getIdentifier() === $identifier) {
+                $criteria->setFilterCriteria($filters);
                 return $criteria;
             }
         }
 
-        return new FacetCriteria($identifier);
+        $criteria = new FacetCriteria($identifier);
+        $criteria->setFilterCriteria($filters);
+        return $criteria;
+    }
+
+    /**
+     * Get all applied FilterCriteria for an identifier.
+     *
+     * @return FilterCriteria[] If none are applied, this will return an empty array.
+     */
+    protected function getFilterCriteria(string $identifier): array
+    {
+        if (isset($this->filterCriteria[$identifier])) {
+            return $this->filterCriteria[$identifier];
+        }
+
+        return [];
     }
 }

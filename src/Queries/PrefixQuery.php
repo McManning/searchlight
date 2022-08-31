@@ -23,22 +23,42 @@ class PrefixQuery implements IQuery
         }
     }
 
-    public function getFilter(string $query): array
+    /**
+     * {@inheritDoc}
+     */
+    public function getQuery(QueryCriteria $criteria): array
     {
-        if (strlen($query) < 1) {
+        if (strlen($criteria->terms) < 1) {
             return [];
         }
+
+        // Criteria may override default fields
+        $fields = $criteria->fields ?? $this->fields;
 
         return [
             'bool' => [
                 'must' => [
                     [ 'multi_match' => [
-                        'query' => $query,
-                        'fields' => $this->fields,
+                        'query' => $criteria->terms,
+                        'fields' => $fields,
                         'type' => 'bool_prefix',
                     ]],
                 ],
             ]
         ];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getHighlights(QueryCriteria $criteria): array
+    {
+        $fields = $criteria->fields ?? $this->fields;
+
+        // Strip weights from fields
+        return array_map(
+            fn ($f) => preg_replace('/\^\d+/', '', $f),
+            $fields
+        );
     }
 }

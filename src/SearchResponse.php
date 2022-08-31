@@ -75,7 +75,7 @@ class SearchResponse
     {
         return [
             'total' => $this->getTotalHits(),
-            'query' => $this->request->getQuery(),
+            'query' => $this->request->getQuery()->terms,
             'appliedFilters' => $this->request->getAppliedFilters(),
             'disabledFilters' => $this->request->getDisabledFilters(),
             'sortOptions' => $this->getSortOptions(),
