@@ -1,6 +1,6 @@
-<?php namespace McManning\Searchlight\Interfaces;
+<?php namespace Searchlight\Interfaces;
 
-use McManning\Searchlight\FacetCriteria;
+use Searchlight\FacetCriteria;
 
 interface IFacet
 {

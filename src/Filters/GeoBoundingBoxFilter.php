@@ -1,8 +1,8 @@
-<?php namespace McManning\Searchlight\Filters;
+<?php namespace Searchlight\Filters;
 
-use McManning\Searchlight\Interfaces\IFilter;
-use McManning\Searchlight\FilterCriteria;
-use McManning\Searchlight\Exceptions\ConfigurationException;
+use Searchlight\Interfaces\IFilter;
+use Searchlight\FilterCriteria;
+use Searchlight\Exceptions\ConfigurationException;
 
 /**
  * Apply a geo bounding box filter to a specific field when searching
@@ -53,10 +53,10 @@ class GeoBoundingBoxFilter implements IFilter
     {
         $field = $this->field;
 
-        // TODO: The reference implementation only supports a single 
+        // TODO: The reference implementation only supports a single
         // filter criteria. Should this be rewritten to support multiple?
         // https://github.com/searchkit/searchkit/blob/9a603095a55c724c839ee35302a24318c4e9b1b3/packages/searchkit-sdk/src/filters/GeoBoundingBoxFilter.ts#L23
-        
+
         $corners = [];
         $bb = $criteria[0]->geoBoundingBox;
         if ($bb->topLeft) {

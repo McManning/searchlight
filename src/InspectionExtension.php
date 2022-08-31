@@ -1,6 +1,6 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
-use McManning\Searchlight\Events\ExecuteSearch;
+use Searchlight\Events\ExecuteSearch;
 use Nuwave\Lighthouse\Events\BuildExtensionsResponse;
 use Nuwave\Lighthouse\Events\StartExecution;
 use Nuwave\Lighthouse\Execution\ExtensionsResponse;
@@ -9,6 +9,8 @@ class InspectionExtension
 {
     /** @var int Aggregate time took for all ElasticSearch queries */
     protected int $took = 0;
+
+    // TODO: Sum of time it took *outside* Elastic (PHP execution time, network latency, etc)
 
     /** @var array Aggregation of request + response trips and the body payloads in each */
     protected array $trips = [];

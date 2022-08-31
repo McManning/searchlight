@@ -1,4 +1,5 @@
-<?php namespace McManning\Searchlight\Interfaces;
+<?php namespace Searchlight\Interfaces;
+
 
 interface IQuery
 {

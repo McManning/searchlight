@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight\Exceptions;
+<?php namespace Searchlight\Exceptions;
 
 class ConfigurationException extends GenericException
 {

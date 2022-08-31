@@ -1,8 +1,8 @@
-<?php namespace McManning\Searchlight\Filters;
+<?php namespace Searchlight\Filters;
 
-use McManning\Searchlight\Interfaces\IFilter;
-use McManning\Searchlight\FilterCriteria;
-use McManning\Searchlight\Exceptions\ConfigurationException;
+use Searchlight\Interfaces\IFilter;
+use Searchlight\FilterCriteria;
+use Searchlight\Exceptions\ConfigurationException;
 
 /**
  * Apply a date range filter to a specific field when searching

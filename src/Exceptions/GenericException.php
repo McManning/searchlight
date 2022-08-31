@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight\Exceptions;
+<?php namespace Searchlight\Exceptions;
 
 use Nuwave\Lighthouse\Exceptions\GenericException as LighthouseGenericException;
 

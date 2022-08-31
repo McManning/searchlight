@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 use GraphQL\Language\AST\ObjectTypeDefinitionNode;
 use GraphQL\Language\Parser;

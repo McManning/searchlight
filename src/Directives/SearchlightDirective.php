@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight\Directives;
+<?php namespace Searchlight\Directives;
 
 use GraphQL\Deferred;
 use GraphQL\Type\Definition\ResolveInfo;
@@ -7,11 +7,12 @@ use Nuwave\Lighthouse\Schema\Directives\BaseDirective;
 use Nuwave\Lighthouse\Support\Contracts\FieldResolver;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 
-use McManning\Searchlight\Exceptions\ConfigurationException;
-use McManning\Searchlight\ConfigProvider;
-use McManning\Searchlight\SearchRequest;
-use McManning\Searchlight\FilterCriteria;
-use McManning\Searchlight\FacetCriteria;
+use Searchlight\Exceptions\ConfigurationException;
+use Searchlight\ConfigProvider;
+use Searchlight\SearchRequest;
+use Searchlight\FilterCriteria;
+use Searchlight\FacetCriteria;
+use Searchlight\QueryCriteria;
 
 class SearchlightDirective extends BaseDirective implements FieldResolver
 {

@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 // TODO: Move this elsewhere. I don't like this AND ASTManipulator
 // Searchkit GQL schema aligned with https://github.com/searchkit/searchkit/blob/next/packages/searchkit-schema/src/schema.ts
@@ -27,7 +27,7 @@ type SKDisabledFilter {
 }
 
 interface SKSelectedFilter @interface(
-    resolveType: "McManning\\\\Searchlight\\\\Resolvers\\\\SKSelectedFilter@resolveType"
+    resolveType: "Searchlight\\\\Resolvers\\\\SKSelectedFilter@resolveType"
 ) {
     id: ID!
     identifier: String!
@@ -100,8 +100,13 @@ type SKHitResults {
     sortedBy: String
 }
 
+type SKHighlight {
+    field: String!
+    fragments: [String!]!
+}
+
 interface SKHit @interface(
-    resolveType: "McManning\\\\Searchlight\\\\Resolvers\\\\SKHit@resolveType"
+    resolveType: "Searchlight\\\\Resolvers\\\\SKHit@resolveType"
 ) {
     id: ID!
 }
@@ -139,7 +144,7 @@ input SKGeoPointInput {
 }
 
 interface SKFacetSet @interface(
-    resolveType: "McManning\\\\Searchlight\\\\Resolvers\\\\SKFacetSet@resolveType"
+    resolveType: "Searchlight\\\\Resolvers\\\\SKFacetSet@resolveType"
 ) {
     identifier: String
     label: String

@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight\Resolvers;
+<?php namespace Searchlight\Resolvers;
 
 use GraphQL\Type\Definition\Type;
 use GraphQL\Type\Definition\ResolveInfo;

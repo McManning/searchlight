@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 /**
  * Input criteria provided by an API request for a specific facet

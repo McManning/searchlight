@@ -1,18 +1,22 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
-use McManning\Searchlight\Events\ExecuteSearch;
 use Nuwave\Lighthouse\Events\BuildExtensionsResponse;
 use Nuwave\Lighthouse\Events\RegisterDirectiveNamespaces;
 use Nuwave\Lighthouse\Events\ManipulateAST;
 use Nuwave\Lighthouse\Events\BuildSchemaString;
+use Searchlight\Events\ExecuteSearch;
 
 class SearchlightServiceProvider extends IlluminateServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/searchlight.php', 'searchlight');
+        // Omitting config merging for now. All configurations are encapsulated into
+        // a provider; so an end user would need to setup a full provider's worth of settings.
+        // This may change in the future if we add more global settings.
+        // e.g. security may be moved to the `searchlight.security` level
+        // $this->mergeConfigFrom(__DIR__.'/../config/searchlight.php', 'searchlight');
 
         $this->app->singleton(InspectionExtension::class);
     }

@@ -1,5 +1,5 @@
 {
-    "name": "mcmanning/searchlight",
+    "name": "searchlight/searchlight",
     "description": "Searchkit GraphQL API support for Lighthouse",
     "license": "MIT",
     "support": {
@@ -9,7 +9,7 @@
     "authors": [
         {
             "name": "Chase McManning",
-            "email": "mcmanning.1@osu.edu"
+            "email": "chase@sybolt.com"
         }
     ],
     "scripts": {
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "McManning\\Searchlight\\": "src/"
+            "Searchlight\\": "src/"
         }
     },
     "autoload-dev": {
@@ -40,7 +40,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "McManning\\Searchlight\\SearchlightServiceProvider"
+                "Searchlight\\SearchlightServiceProvider"
             ]
         }
     }

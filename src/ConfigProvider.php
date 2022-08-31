@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 class ConfigProvider
 {

@@ -1,6 +1,6 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
-use McManning\Searchlight\Interfaces\IFacet;
+use Searchlight\Interfaces\IFacet;
 
 class SearchResponse
 {

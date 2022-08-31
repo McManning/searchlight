@@ -1,10 +1,11 @@
 <?php
 
-use McManning\Searchlight\Queries\MultiMatchQuery;
-use McManning\Searchlight\Facets\RefinementSelectFacet;
-use McManning\Searchlight\Facets\RangeFacet;
-use McManning\Searchlight\Facets\DateRangeFacet;
-use McManning\Searchlight\Filters\TermFilter;
+use Searchlight\Queries\MultiMatchQuery;
+use Searchlight\Facets\RefinementSelectFacet;
+use Searchlight\Facets\RangeFacet;
+use Searchlight\Facets\DateRangeFacet;
+use Searchlight\Facets\HierarchicalMenuFacet;
+use Searchlight\Filters\TermFilter;
 
 return [
     'providers' => [

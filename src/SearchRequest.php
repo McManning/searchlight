@@ -1,15 +1,17 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\Facades\Event;
 use Elasticsearch\ClientBuilder;
 use Elasticsearch\Client;
 
-use McManning\Searchlight\Interfaces\IFacet;
-use McManning\Searchlight\Interfaces\IQuery;
-use McManning\Searchlight\Interfaces\IFilter;
-use McManning\Searchlight\Events\ExecuteSearch;
-use McManning\Searchlight\Exceptions\GenericException;
+use Searchlight\Interfaces\IFacet;
+use Searchlight\Interfaces\IQuery;
+use Searchlight\Interfaces\IFilter;
+use Searchlight\Events\ExecuteSearch;
+use Searchlight\Exceptions\ConfigurationException;
+use Searchlight\Exceptions\GenericException;
+use Searchlight\Exceptions\ValidationException;
 
 /**
  * Request state for a new query against ElasticSearch

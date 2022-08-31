@@ -1,7 +1,8 @@
-<?php namespace McManning\Searchlight\Queries;
+<?php namespace Searchlight\Queries;
 
-use McManning\Searchlight\Interfaces\IQuery;
-use McManning\Searchlight\Exceptions\ConfigurationException;
+use Searchlight\Interfaces\IQuery;
+use Searchlight\Exceptions\ConfigurationException;
+use Searchlight\QueryCriteria;
 
 /**
  * Query builder for executing a multi_match.bool_prefix query

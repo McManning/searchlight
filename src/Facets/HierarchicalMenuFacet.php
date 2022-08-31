@@ -1,10 +1,10 @@
-<?php namespace McManning\Searchlight\Facets;
+<?php namespace Searchlight\Facets;
 
-use McManning\Searchlight\Interfaces\IFacet;
-use McManning\Searchlight\Interfaces\IFilter;
-use McManning\Searchlight\FacetCriteria;
-use McManning\Searchlight\FilterCriteria;
-use McManning\Searchlight\Exceptions\ConfigurationException;
+use Searchlight\Interfaces\IFacet;
+use Searchlight\Interfaces\IFilter;
+use Searchlight\FacetCriteria;
+use Searchlight\FilterCriteria;
+use Searchlight\Exceptions\ConfigurationException;
 
 class HierarchicalMenuFacet implements IFacet, IFilter
 {

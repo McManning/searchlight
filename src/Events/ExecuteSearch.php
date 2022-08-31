@@ -1,7 +1,7 @@
-<?php namespace McManning\Searchlight\Events;
+<?php namespace Searchlight\Events;
 
-use McManning\Searchlight\SearchRequest;
-use McManning\Searchlight\SearchResponse;
+use Searchlight\SearchRequest;
+use Searchlight\SearchResponse;
 
 /**
  * Event containing a single request-response cycle with ElasticSearch

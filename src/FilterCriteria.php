@@ -1,4 +1,4 @@
-<?php namespace McManning\Searchlight;
+<?php namespace Searchlight;
 
 /**
  * Input filtering provided by the API consumer.

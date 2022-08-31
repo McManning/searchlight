@@ -1,6 +1,6 @@
-<?php namespace McManning\Searchlight\Interfaces;
+<?php namespace Searchlight\Interfaces;
 
-use McManning\Searchlight\FilterCriteria;
+use Searchlight\FilterCriteria;
 
 interface IFilter
 {
