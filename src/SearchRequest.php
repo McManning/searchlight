@@ -99,8 +99,8 @@ class SearchRequest
             if ($filter) {
                 $this->addFilterCriteria($filter, $entry);
             } else {
-                throw new GenericException(
-                    'Unknown filter identifier: ' . $entry->identifier
+                throw new ValidationException(
+                    "Unknown filter identifier \"{$entry->identifier}\""
                 );
             }
         }
@@ -152,11 +152,26 @@ class SearchRequest
 
     public function addFacetCriteria(FacetCriteria $criteria)
     {
+
+        $limit = $this->provider->get('security.max_facet_size', -1);
+        if ($limit >= 0 && $criteria->getSize() > $limit) {
+            throw new ValidationException(
+                'Requested facet size exceeds the maximum allowed value'
+            );
+        }
+
         $this->facetCriteria[] = $criteria;
     }
 
     public function setPage(?int $size, ?int $from)
     {
+        $limit = $this->provider->get('security.max_page_size', -1);
+        if ($limit >= 0 && $size > $limit) {
+            throw new ValidationException(
+                'Requested page size exceeds the maximum allowed value'
+            );
+        }
+
         $this->size = $size;
         $this->from = $from;
     }
@@ -275,7 +290,7 @@ class SearchRequest
             $id = $filter->getIdentifier();
 
             if (isset($this->availableFilters[$id])) {
-                throw new GenericException(
+                throw new ConfigurationException(
                     'Duplicate identifier: "' . $id .
                     '". Identifiers must be unique across both facets and filters'
                 );
