@@ -1,0 +1,345 @@
+{
+    "data": {
+        "results": {
+            "facet": {
+                "identifier": "genre",
+                "label": "Genre",
+                "type": "HierarchicalMenuFacet",
+                "display": "HierarchicalMenu",
+                "entries": [
+                    {
+                        "label": "Action",
+                        "count": 200,
+                        "isSelected": null,
+                        "level": 1,
+                        "entries": null
+                    },
+                    {
+                        "label": "Adventure",
+                        "count": 75,
+                        "isSelected": null,
+                        "level": 1,
+                        "entries": [
+                            {
+                                "label": "desert",
+                                "count": 3,
+                                "isSelected": null,
+                                "level": 2,
+                                "entries": null
+                            },
+                            {
+                                "label": "dinosaur",
+                                "count": 1,
+                                "isSelected": null,
+                                "level": 2,
+                                "entries": null
+                            },
+                            {
+                                "label": "epic",
+                                "count": 8,
+                                "isSelected": null,
+                                "level": 2,
+                                "entries": null
+                            },
+                            {
+                                "label": "forest",
+                                "count": 4,
+                                "isSelected": null,
+                                "level": 2,
+                                "entries": null
+                            },
+                            {
+                                "label": "island",
+                                "count": 2,
+                                "isSelected": null,
+                                "level": 2,
+                                "entries": null
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Animation",
+                        "count": 74,
+                        "isSelected": null,
+                        "level": 1,
+                        "entries": null
+                    },
+                    {
+                        "label": "Biography",
+                        "count": 53,
+                        "isSelected": null,
+                        "level": 1,
+                        "entries": null
+                    },
+                    {
+                        "label": "Comedy",
+                        "count": 184,
+                        "isSelected": null,
+                        "level": 1,
+                        "entries": null
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 0,
+            "trips": [
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "aggs": {
+                            "facet_bucket_genre": {
+                                "aggs": {
+                                    "genre": {
+                                        "filter": {
+                                            "match_all": []
+                                        },
+                                        "aggs": {
+                                            "lvl_1": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre1.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "lvl_2": {
+                                                "filter": {
+                                                    "bool": {
+                                                        "must": [
+                                                            {
+                                                                "term": {
+                                                                    "primary_genre1.keyword": "Adventure"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre2.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": "Adventure"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "lvl_3": {
+                                                "filter": {
+                                                    "bool": {
+                                                        "must": [
+                                                            {
+                                                                "term": {
+                                                                    "primary_genre1.keyword": "Adventure"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre3.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "term": {
+                                                    "primary_genre1.keyword": "Adventure"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 0,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 75,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        },
+                        "aggregations": {
+                            "facet_bucket_genre": {
+                                "meta": [],
+                                "doc_count": 1000,
+                                "genre": {
+                                    "doc_count": 1000,
+                                    "lvl_2": {
+                                        "doc_count": 75,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": "Adventure"
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 56,
+                                            "buckets": [
+                                                {
+                                                    "key": "desert",
+                                                    "doc_count": 3
+                                                },
+                                                {
+                                                    "key": "dinosaur",
+                                                    "doc_count": 1
+                                                },
+                                                {
+                                                    "key": "epic",
+                                                    "doc_count": 8
+                                                },
+                                                {
+                                                    "key": "forest",
+                                                    "doc_count": 4
+                                                },
+                                                {
+                                                    "key": "island",
+                                                    "doc_count": 2
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_1": {
+                                        "doc_count": 1000,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 414,
+                                            "buckets": [
+                                                {
+                                                    "key": "Action",
+                                                    "doc_count": 200
+                                                },
+                                                {
+                                                    "key": "Adventure",
+                                                    "doc_count": 75
+                                                },
+                                                {
+                                                    "key": "Animation",
+                                                    "doc_count": 74
+                                                },
+                                                {
+                                                    "key": "Biography",
+                                                    "doc_count": 53
+                                                },
+                                                {
+                                                    "key": "Comedy",
+                                                    "doc_count": 184
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_3": {
+                                        "doc_count": 75,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 0,
+                                            "buckets": []
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

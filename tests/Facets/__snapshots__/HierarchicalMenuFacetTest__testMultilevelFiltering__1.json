@@ -1,0 +1,573 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "total": 8
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0060196",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "epic",
+                                "quest",
+                                "desert"
+                            ],
+                            "title": "The Good, the Bad and the Ugly"
+                        }
+                    },
+                    {
+                        "id": "tt0071853",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "quest",
+                                "epic"
+                            ],
+                            "title": "Monty Python and the Holy Grail"
+                        }
+                    },
+                    {
+                        "id": "tt0062622",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "space",
+                                "epic"
+                            ],
+                            "title": "2001: A Space Odyssey"
+                        }
+                    },
+                    {
+                        "id": "tt0903624",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "quest",
+                                "epic"
+                            ],
+                            "title": "The Hobbit: An Unexpected Journey"
+                        }
+                    },
+                    {
+                        "id": "tt0454876",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "sea",
+                                "survival",
+                                "epic"
+                            ],
+                            "title": "Life of Pi"
+                        }
+                    },
+                    {
+                        "id": "tt0093779",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "swashbuckler",
+                                "epic",
+                                "quest"
+                            ],
+                            "title": "The Princess Bride"
+                        }
+                    },
+                    {
+                        "id": "tt0096874",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "epic",
+                                "teen"
+                            ],
+                            "title": "Back to the Future Part II"
+                        }
+                    },
+                    {
+                        "id": "tt0052618",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "epic",
+                                "desert"
+                            ],
+                            "title": "Ben-Hur"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "term": {
+                                                    "primary_genre1.keyword": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "term": {
+                                                    "primary_genre2.keyword": "epic"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 1,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 8,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0060196",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "quest",
+                                            "desert"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1966,
+                                        "directors": [
+                                            "Sergio Leone"
+                                        ],
+                                        "writers": [
+                                            "Luciano Vincenzoni",
+                                            "Sergio Leone",
+                                            "Agenore Incrocci",
+                                            "Furio Scarpelli",
+                                            "Luciano Vincenzoni",
+                                            "Sergio Leone",
+                                            "Mickey Knox"
+                                        ],
+                                        "countries": [
+                                            "Italy",
+                                            "Spain",
+                                            "West Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Good, the Bad and the Ugly",
+                                        "imdbrating": 9,
+                                        "rated": "Approved",
+                                        "actors": [
+                                            "Eli Wallach",
+                                            "Clint Eastwood",
+                                            "Lee Van Cleef",
+                                            "Aldo Giuffr\u00e8"
+                                        ],
+                                        "plot": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Western"
+                                        ],
+                                        "id": "tt0060196",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SX300.jpg",
+                                        "released": "1967-12-29T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0071853",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "quest",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1975,
+                                        "directors": [
+                                            "Terry Gilliam",
+                                            "Terry Jones"
+                                        ],
+                                        "writers": [
+                                            "Graham Chapman",
+                                            "John Cleese",
+                                            "Eric Idle",
+                                            "Terry Gilliam",
+                                            "Terry Jones",
+                                            "Michael Palin"
+                                        ],
+                                        "countries": [
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Monty Python and the Holy Grail",
+                                        "imdbrating": 8.4,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Graham Chapman",
+                                            "John Cleese",
+                                            "Eric Idle",
+                                            "Terry Gilliam"
+                                        ],
+                                        "plot": "King Arthur and his knights embark on a low-budget search for the Grail, encountering many very silly obstacles.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Comedy",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0071853",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkzODczMTgwM15BMl5BanBnXkFtZTYwNTAwODI5._V1_SX300.jpg",
+                                        "released": "1975-05-25T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0062622",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "space",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1968,
+                                        "directors": [
+                                            "Stanley Kubrick"
+                                        ],
+                                        "writers": [
+                                            "Stanley Kubrick",
+                                            "Arthur C. Clarke"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "2001: A Space Odyssey",
+                                        "imdbrating": 8.3,
+                                        "rated": "G",
+                                        "actors": [
+                                            "Keir Dullea",
+                                            "Gary Lockwood",
+                                            "William Sylvester",
+                                            "Daniel Richter"
+                                        ],
+                                        "plot": "Humanity finds a mysterious, obviously artificial, object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Mystery",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0062622",
+                                        "metascore": 86,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDYyMDgxNDQ5Nl5BMl5BanBnXkFtZTcwMjc1ODg3OA@@._V1_SX300.jpg",
+                                        "released": "1968-04-11T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0903624",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "quest",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson",
+                                            "Guillermo del Toro",
+                                            "J.R.R. Tolkien"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "New Zealand"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Hobbit: An Unexpected Journey",
+                                        "imdbrating": 8.1,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Ian McKellen",
+                                            "Martin Freeman",
+                                            "Richard Armitage",
+                                            "Ken Stott"
+                                        ],
+                                        "plot": "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0903624",
+                                        "metascore": 58,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX300.jpg",
+                                        "released": "2012-12-14T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0454876",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "sea",
+                                            "survival",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Ang Lee"
+                                        ],
+                                        "writers": [
+                                            "Yann Martel",
+                                            "David Magee"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Taiwan",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Life of Pi",
+                                        "imdbrating": 8.1,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Suraj Sharma",
+                                            "Irrfan Khan",
+                                            "Ayush Tandon",
+                                            "Gautam Belur"
+                                        ],
+                                        "plot": "A young man who survives a disaster at sea is hurtled into an epic journey of adventure and discovery. While cast away, he forms an unexpected connection with another survivor: a fearsome Bengal tiger.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0454876",
+                                        "metascore": 79,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTg2OTY2ODg5OF5BMl5BanBnXkFtZTcwODM5MTYxOA@@._V1_SX300.jpg",
+                                        "released": "2012-11-21T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0093779",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "swashbuckler",
+                                            "epic",
+                                            "quest"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1987,
+                                        "directors": [
+                                            "Rob Reiner"
+                                        ],
+                                        "writers": [
+                                            "William Goldman",
+                                            "William Goldman"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Princess Bride",
+                                        "imdbrating": 8.2,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Cary Elwes",
+                                            "Mandy Patinkin",
+                                            "Chris Sarandon",
+                                            "Christopher Guest"
+                                        ],
+                                        "plot": "A classic fairy tale, with swordplay, giants, an evil prince, a beautiful princess, and yes, some kissing .",
+                                        "genres": [
+                                            "Adventure",
+                                            "Comedy",
+                                            "Family"
+                                        ],
+                                        "id": "tt0093779",
+                                        "metascore": 77,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkzMDgyNjQwM15BMl5BanBnXkFtZTgwNTg2Mjc1MDE@._V1_SX300.jpg",
+                                        "released": "1987-10-09T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0096874",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "teen"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1989,
+                                        "directors": [
+                                            "Robert Zemeckis"
+                                        ],
+                                        "writers": [
+                                            "Robert Zemeckis",
+                                            "Bob Gale",
+                                            "Robert Zemeckis",
+                                            "Bob Gale",
+                                            "Bob Gale"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Back to the Future Part II",
+                                        "imdbrating": 7.8,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Michael J. Fox",
+                                            "Christopher Lloyd",
+                                            "Lea Thompson",
+                                            "Thomas F. Wilson"
+                                        ],
+                                        "plot": "After visiting 2015, Marty McFly must repeat his visit to 1955 to prevent disastrous changes to 1985... without interfering with his first trip.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Comedy",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0096874",
+                                        "metascore": 57,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNjE5ODg4NzY1MF5BMl5BanBnXkFtZTcwMjI3MzYwMg@@._V1_SX300.jpg",
+                                        "released": "1989-11-22T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0052618",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "desert"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1959,
+                                        "directors": [
+                                            "William Wyler"
+                                        ],
+                                        "writers": [
+                                            "Lew Wallace",
+                                            "Karl Tunberg"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Ben-Hur",
+                                        "imdbrating": 8.2,
+                                        "rated": "TV-PG",
+                                        "actors": [
+                                            "Charlton Heston",
+                                            "Jack Hawkins",
+                                            "Haya Harareet",
+                                            "Stephen Boyd"
+                                        ],
+                                        "plot": "When a Jewish prince is betrayed and sent into slavery by a Roman friend, he regains his freedom and comes back for revenge.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0052618",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNjg2NjA3NDY2OV5BMl5BanBnXkFtZTgwNzE3NTkxMTE@._V1_SX300.jpg",
+                                        "released": "1960-01-29T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

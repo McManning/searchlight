@@ -1,0 +1,639 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "total": 75
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0944947",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "snow"
+                            ],
+                            "title": "Game of Thrones"
+                        }
+                    },
+                    {
+                        "id": "tt0060196",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "epic",
+                                "quest",
+                                "desert"
+                            ],
+                            "title": "The Good, the Bad and the Ugly"
+                        }
+                    },
+                    {
+                        "id": "tt0088763",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "teen"
+                            ],
+                            "title": "Back to the Future"
+                        }
+                    },
+                    {
+                        "id": "tt1853728",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": null,
+                            "title": "Django Unchained"
+                        }
+                    },
+                    {
+                        "id": "tt0361748",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": null,
+                            "title": "Inglourious Basterds"
+                        }
+                    },
+                    {
+                        "id": "tt0303461",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "space"
+                            ],
+                            "title": "Firefly"
+                        }
+                    },
+                    {
+                        "id": "tt0071853",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "quest",
+                                "epic"
+                            ],
+                            "title": "Monty Python and the Holy Grail"
+                        }
+                    },
+                    {
+                        "id": "tt0062622",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "space",
+                                "epic"
+                            ],
+                            "title": "2001: A Space Odyssey"
+                        }
+                    },
+                    {
+                        "id": "tt0064116",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": null,
+                            "title": "Once Upon a Time in the West"
+                        }
+                    },
+                    {
+                        "id": "tt0903624",
+                        "fields": {
+                            "primary_genre1": "Adventure",
+                            "primary_genre2": [
+                                "quest",
+                                "epic"
+                            ],
+                            "title": "The Hobbit: An Unexpected Journey"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 1,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "term": {
+                                                    "primary_genre1.keyword": "Adventure"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 1,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 75,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0944947",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "snow"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2011,
+                                        "directors": [],
+                                        "writers": [
+                                            "David Benioff",
+                                            "D.B. Weiss"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "series",
+                                        "title": "Game of Thrones",
+                                        "imdbrating": 9.5,
+                                        "rated": "TV-MA",
+                                        "actors": [
+                                            "Peter Dinklage",
+                                            "Lena Headey",
+                                            "Maisie Williams",
+                                            "Emilia Clarke"
+                                        ],
+                                        "plot": "Seven noble families fight for control of the mythical land of Westeros.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0944947",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA5NzY4MTM0N15BMl5BanBnXkFtZTcwMTA0MDkxOQ@@._V1_SX300.jpg",
+                                        "released": "2011-04-17T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0060196",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "quest",
+                                            "desert"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1966,
+                                        "directors": [
+                                            "Sergio Leone"
+                                        ],
+                                        "writers": [
+                                            "Luciano Vincenzoni",
+                                            "Sergio Leone",
+                                            "Agenore Incrocci",
+                                            "Furio Scarpelli",
+                                            "Luciano Vincenzoni",
+                                            "Sergio Leone",
+                                            "Mickey Knox"
+                                        ],
+                                        "countries": [
+                                            "Italy",
+                                            "Spain",
+                                            "West Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Good, the Bad and the Ugly",
+                                        "imdbrating": 9,
+                                        "rated": "Approved",
+                                        "actors": [
+                                            "Eli Wallach",
+                                            "Clint Eastwood",
+                                            "Lee Van Cleef",
+                                            "Aldo Giuffr\u00e8"
+                                        ],
+                                        "plot": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Western"
+                                        ],
+                                        "id": "tt0060196",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SX300.jpg",
+                                        "released": "1967-12-29T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0088763",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "teen"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1985,
+                                        "directors": [
+                                            "Robert Zemeckis"
+                                        ],
+                                        "writers": [
+                                            "Robert Zemeckis",
+                                            "Bob Gale"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Back to the Future",
+                                        "imdbrating": 8.5,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Michael J. Fox",
+                                            "Christopher Lloyd",
+                                            "Lea Thompson",
+                                            "Crispin Glover"
+                                        ],
+                                        "plot": "A teenager is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown, and must make sure his high-school-age parents unite in order to save his own existence.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Comedy",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0088763",
+                                        "metascore": 86,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTk4OTQ1OTMwN15BMl5BanBnXkFtZTcwOTIwMzM3MQ@@._V1_SX300.jpg",
+                                        "released": "1985-07-03T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1853728",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Adventure",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Django Unchained",
+                                        "imdbrating": 8.5,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Jamie Foxx",
+                                            "Christoph Waltz",
+                                            "Leonardo DiCaprio",
+                                            "Kerry Washington"
+                                        ],
+                                        "plot": "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Western"
+                                        ],
+                                        "id": "tt1853728",
+                                        "metascore": 81,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg",
+                                        "released": "2012-12-25T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0361748",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Adventure",
+                                        "year": 2009,
+                                        "directors": [
+                                            "Quentin Tarantino",
+                                            "Eli Roth"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Inglourious Basterds",
+                                        "imdbrating": 8.3,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Brad Pitt",
+                                            "M\u00e9lanie Laurent",
+                                            "Christoph Waltz",
+                                            "Eli Roth"
+                                        ],
+                                        "plot": "In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owner's vengeful plans for the same.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "War"
+                                        ],
+                                        "id": "tt0361748",
+                                        "metascore": 69,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIzMDI4MTUzOV5BMl5BanBnXkFtZTcwNDY3NjA3Mg@@._V1_SX300.jpg",
+                                        "released": "2009-08-21T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0303461",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "space"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2002,
+                                        "directors": [],
+                                        "writers": [
+                                            "Joss Whedon"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "series",
+                                        "title": "Firefly",
+                                        "imdbrating": 9.2,
+                                        "rated": null,
+                                        "actors": [
+                                            "Nathan Fillion",
+                                            "Gina Torres",
+                                            "Alan Tudyk",
+                                            "Morena Baccarin"
+                                        ],
+                                        "plot": "Five hundred years in the future, a renegade crew aboard a small spacecraft tries to survive as they travel the unknown parts of the galaxy and evade warring factions as well as authority agents out to get them.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0303461",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTIzNzQ5MjMxN15BMl5BanBnXkFtZTcwNzgxMzE2MQ@@._V1_SX300.jpg",
+                                        "released": "2002-09-20T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0071853",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "quest",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1975,
+                                        "directors": [
+                                            "Terry Gilliam",
+                                            "Terry Jones"
+                                        ],
+                                        "writers": [
+                                            "Graham Chapman",
+                                            "John Cleese",
+                                            "Eric Idle",
+                                            "Terry Gilliam",
+                                            "Terry Jones",
+                                            "Michael Palin"
+                                        ],
+                                        "countries": [
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Monty Python and the Holy Grail",
+                                        "imdbrating": 8.4,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Graham Chapman",
+                                            "John Cleese",
+                                            "Eric Idle",
+                                            "Terry Gilliam"
+                                        ],
+                                        "plot": "King Arthur and his knights embark on a low-budget search for the Grail, encountering many very silly obstacles.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Comedy",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0071853",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkzODczMTgwM15BMl5BanBnXkFtZTYwNTAwODI5._V1_SX300.jpg",
+                                        "released": "1975-05-25T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0062622",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "space",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1968,
+                                        "directors": [
+                                            "Stanley Kubrick"
+                                        ],
+                                        "writers": [
+                                            "Stanley Kubrick",
+                                            "Arthur C. Clarke"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "2001: A Space Odyssey",
+                                        "imdbrating": 8.3,
+                                        "rated": "G",
+                                        "actors": [
+                                            "Keir Dullea",
+                                            "Gary Lockwood",
+                                            "William Sylvester",
+                                            "Daniel Richter"
+                                        ],
+                                        "plot": "Humanity finds a mysterious, obviously artificial, object buried beneath the Lunar surface and, with the intelligent computer H.A.L. 9000, sets off on a quest.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Mystery",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0062622",
+                                        "metascore": 86,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDYyMDgxNDQ5Nl5BMl5BanBnXkFtZTcwMjc1ODg3OA@@._V1_SX300.jpg",
+                                        "released": "1968-04-11T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0064116",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Adventure",
+                                        "year": 1968,
+                                        "directors": [
+                                            "Sergio Leone"
+                                        ],
+                                        "writers": [
+                                            "Sergio Leone",
+                                            "Sergio Donati",
+                                            "Dario Argento"
+                                        ],
+                                        "countries": [
+                                            "Italy",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Once Upon a Time in the West",
+                                        "imdbrating": 8.7,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Claudia Cardinale",
+                                            "Henry Fonda",
+                                            "Jason Robards",
+                                            "Charles Bronson"
+                                        ],
+                                        "plot": "Epic story of a mysterious stranger with a harmonica who joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Western"
+                                        ],
+                                        "id": "tt0064116",
+                                        "metascore": 80,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTgwMzU1MDEyMl5BMl5BanBnXkFtZTcwNDc5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1968-12-21T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0903624",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "quest",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Peter Jackson"
+                                        ],
+                                        "writers": [
+                                            "Fran Walsh",
+                                            "Philippa Boyens",
+                                            "Peter Jackson",
+                                            "Guillermo del Toro",
+                                            "J.R.R. Tolkien"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "New Zealand"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Hobbit: An Unexpected Journey",
+                                        "imdbrating": 8.1,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Ian McKellen",
+                                            "Martin Freeman",
+                                            "Richard Armitage",
+                                            "Ken Stott"
+                                        ],
+                                        "plot": "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0903624",
+                                        "metascore": 58,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX300.jpg",
+                                        "released": "2012-12-14T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
