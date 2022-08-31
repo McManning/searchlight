@@ -126,11 +126,6 @@ class SearchResponse
         $flattened = [];
         foreach ($buckets as $key => &$data) {
             if (strpos($key, 'facet_bucket_') === 0) {
-
-                // Ignore metadata from ElasticSearch
-                unset($data['doc_count']);
-                unset($data['meta']);
-
                 $flattened = array_merge($flattened, $data);
             }
         }
