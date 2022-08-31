@@ -1,6 +1,32 @@
 {
     "data": {
         "results": {
+            "summary": {
+                "query": "",
+                "appliedFilters": [
+                    {
+                        "id": "type_episode",
+                        "identifier": "type",
+                        "display": "ListFacet",
+                        "label": "Type",
+                        "value": "episode"
+                    },
+                    {
+                        "id": "type_game",
+                        "identifier": "type",
+                        "display": "ListFacet",
+                        "label": "Type",
+                        "value": "game"
+                    },
+                    {
+                        "id": "countries_UK",
+                        "identifier": "countries",
+                        "display": "ListFacet",
+                        "label": "Country",
+                        "value": "UK"
+                    }
+                ]
+            },
             "facets": [
                 {
                     "identifier": "type",
@@ -10,19 +36,19 @@
                     "entries": [
                         {
                             "label": "episode",
-                            "count": 4
+                            "count": 2
                         },
                         {
                             "label": "game",
-                            "count": 11
+                            "count": 3
                         },
                         {
                             "label": "movie",
-                            "count": 852
+                            "count": 149
                         },
                         {
                             "label": "series",
-                            "count": 133
+                            "count": 29
                         }
                     ]
                 },
@@ -33,24 +59,8 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Approved",
-                            "count": 24
-                        },
-                        {
-                            "label": "G",
-                            "count": 26
-                        },
-                        {
-                            "label": "NC-17",
-                            "count": 3
-                        },
-                        {
-                            "label": "Not Rated",
-                            "count": 49
-                        },
-                        {
-                            "label": "PG",
-                            "count": 106
+                            "label": "TV-14",
+                            "count": 2
                         }
                     ]
                 },
@@ -62,23 +72,23 @@
                     "entries": [
                         {
                             "label": "Action",
-                            "count": 185
+                            "count": 3
                         },
                         {
                             "label": "Adventure",
-                            "count": 181
-                        },
-                        {
-                            "label": "Animation",
-                            "count": 58
-                        },
-                        {
-                            "label": "Biography",
-                            "count": 63
+                            "count": 1
                         },
                         {
                             "label": "Comedy",
-                            "count": 191
+                            "count": 3
+                        },
+                        {
+                            "label": "Crime",
+                            "count": 4
+                        },
+                        {
+                            "label": "Drama",
+                            "count": 2
                         }
                     ]
                 },
@@ -89,24 +99,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Aamir Khan",
+                            "label": "Dan Houser",
                             "count": 1
                         },
                         {
-                            "label": "Adam Elliot",
+                            "label": "John Zurhellen",
                             "count": 1
                         },
                         {
-                            "label": "Adam McKay",
+                            "label": "Navid Khonsari",
+                            "count": 2
+                        },
+                        {
+                            "label": "Paul McGuigan",
                             "count": 1
                         },
                         {
-                            "label": "Adam Shankman",
+                            "label": "Rod Edge",
                             "count": 1
-                        },
-                        {
-                            "label": "Akira Kurosawa",
-                            "count": 5
                         }
                     ]
                 },
@@ -117,24 +127,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "A.J. Quinnell",
+                            "label": "DJ Pooh",
                             "count": 1
                         },
                         {
-                            "label": "Aaron Sorkin",
+                            "label": "Dan Houser",
                             "count": 3
                         },
                         {
-                            "label": "Aaron Stockard",
+                            "label": "James Worrall",
                             "count": 2
                         },
                         {
-                            "label": "Abby Mann",
+                            "label": "John Zurhellen",
                             "count": 1
                         },
                         {
-                            "label": "Abdel Raouf Dafri",
-                            "count": 1
+                            "label": "Mark Gatiss",
+                            "count": 2
                         }
                     ]
                 },
@@ -145,23 +155,23 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Aamir Khan",
-                            "count": 3
-                        },
-                        {
-                            "label": "Aaron Eckhart",
+                            "label": "Benedict Cumberbatch",
                             "count": 2
                         },
                         {
-                            "label": "Aaron Taylor-Johnson",
+                            "label": "Clifton Powell",
                             "count": 1
                         },
                         {
-                            "label": "Abbie Cornish",
+                            "label": "Dennis Hopper",
                             "count": 1
                         },
                         {
-                            "label": "Abdel Ahmed Ghili",
+                            "label": "Faizon Love",
+                            "count": 1
+                        },
+                        {
+                            "label": "Jason Zumwalt",
                             "count": 1
                         }
                     ]
@@ -173,24 +183,12 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Algeria",
-                            "count": 1
+                            "label": "UK",
+                            "count": 5
                         },
                         {
-                            "label": "Argentina",
+                            "label": "USA",
                             "count": 3
-                        },
-                        {
-                            "label": "Australia",
-                            "count": 14
-                        },
-                        {
-                            "label": "Austria",
-                            "count": 2
-                        },
-                        {
-                            "label": "Bahamas",
-                            "count": 1
                         }
                     ]
                 },
@@ -226,19 +224,19 @@
                         },
                         {
                             "label": "6",
-                            "count": 14
+                            "count": 0
                         },
                         {
                             "label": "7",
-                            "count": 476
+                            "count": 0
                         },
                         {
                             "label": "8",
-                            "count": 352
+                            "count": 0
                         },
                         {
                             "label": "9",
-                            "count": 10
+                            "count": 5
                         },
                         {
                             "label": "10",
@@ -274,67 +272,67 @@
                         },
                         {
                             "label": "25",
-                            "count": 1
+                            "count": 0
                         },
                         {
                             "label": "30",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "35",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "40",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "45",
-                            "count": 15
+                            "count": 0
                         },
                         {
                             "label": "50",
-                            "count": 25
+                            "count": 0
                         },
                         {
                             "label": "55",
-                            "count": 58
+                            "count": 0
                         },
                         {
                             "label": "60",
-                            "count": 76
+                            "count": 0
                         },
                         {
                             "label": "65",
-                            "count": 93
+                            "count": 0
                         },
                         {
                             "label": "70",
-                            "count": 102
+                            "count": 0
                         },
                         {
                             "label": "75",
-                            "count": 79
+                            "count": 0
                         },
                         {
                             "label": "80",
-                            "count": 88
+                            "count": 0
                         },
                         {
                             "label": "85",
-                            "count": 61
+                            "count": 0
                         },
                         {
                             "label": "90",
-                            "count": 43
+                            "count": 0
                         },
                         {
                             "label": "95",
-                            "count": 13
+                            "count": 0
                         },
                         {
                             "label": "100",
-                            "count": 3
+                            "count": 0
                         }
                     ]
                 },
@@ -346,38 +344,70 @@
                     "entries": [
                         {
                             "label": "Action",
-                            "count": 174
+                            "count": 3
                         },
                         {
-                            "label": "Adventure",
-                            "count": 67
-                        },
-                        {
-                            "label": "Animation",
-                            "count": 58
-                        },
-                        {
-                            "label": "Biography",
-                            "count": 53
-                        },
-                        {
-                            "label": "Comedy",
-                            "count": 132
+                            "label": "Crime",
+                            "count": 2
                         }
                     ]
                 }
-            ]
+            ],
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0383385",
+                        "fields": {
+                            "type": "game",
+                            "title": "Grand Theft Auto: San Andreas"
+                        }
+                    },
+                    {
+                        "id": "tt0802999",
+                        "fields": {
+                            "type": "game",
+                            "title": "Grand Theft Auto IV"
+                        }
+                    },
+                    {
+                        "id": "tt0314123",
+                        "fields": {
+                            "type": "game",
+                            "title": "Grand Theft Auto: Vice City"
+                        }
+                    },
+                    {
+                        "id": "tt1942612",
+                        "fields": {
+                            "type": "episode",
+                            "title": "A Scandal in Belgravia"
+                        }
+                    },
+                    {
+                        "id": "tt1942614",
+                        "fields": {
+                            "type": "episode",
+                            "title": "The Reichenbach Fall"
+                        }
+                    }
+                ]
+            }
         }
     },
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 1,
+            "took": 3,
             "trips": [
                 {
                     "query": {
-                        "size": 0,
+                        "size": 10,
                         "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
                         "_source": {
                             "includes": [
                                 "type",
@@ -490,7 +520,23 @@
                                                     "should": [
                                                         {
                                                             "term": {
-                                                                "type": "movie"
+                                                                "type": "episode"
+                                                            }
+                                                        },
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
                                                             }
                                                         }
                                                     ]
@@ -514,7 +560,19 @@
                                 },
                                 "filter": {
                                     "bool": {
-                                        "must": []
+                                        "must": [
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -538,7 +596,23 @@
                                                     "should": [
                                                         {
                                                             "term": {
-                                                                "type": "movie"
+                                                                "type": "episode"
+                                                            }
+                                                        },
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
                                                             }
                                                         }
                                                     ]
@@ -623,7 +697,23 @@
                                                     "should": [
                                                         {
                                                             "term": {
-                                                                "type": "movie"
+                                                                "type": "episode"
+                                                            }
+                                                        },
+                                                        {
+                                                            "term": {
+                                                                "type": "game"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "bool": {
+                                                    "must": [
+                                                        {
+                                                            "term": {
+                                                                "countries.keyword": "UK"
                                                             }
                                                         }
                                                     ]
@@ -647,7 +737,23 @@
                                             "should": [
                                                 {
                                                     "term": {
-                                                        "type": "movie"
+                                                        "type": "episode"
+                                                    }
+                                                },
+                                                {
+                                                    "term": {
+                                                        "type": "game"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "bool": {
+                                            "must": [
+                                                {
+                                                    "term": {
+                                                        "countries.keyword": "UK"
                                                     }
                                                 }
                                             ]
@@ -658,7 +764,7 @@
                         }
                     },
                     "response": {
-                        "took": 1,
+                        "took": 3,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -668,116 +774,307 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 852,
+                                "value": 5,
                                 "relation": "eq"
                             },
-                            "max_score": null,
-                            "hits": []
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0383385",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "killed in"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2004,
+                                        "directors": [
+                                            "Dan Houser",
+                                            "Navid Khonsari"
+                                        ],
+                                        "writers": [
+                                            "Dan Houser",
+                                            "James Worrall",
+                                            "DJ Pooh",
+                                            "Dan Houser"
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "Grand Theft Auto: San Andreas",
+                                        "imdbrating": 9.5,
+                                        "rated": null,
+                                        "actors": [
+                                            "Young Maylay",
+                                            "Faizon Love",
+                                            "Yolanda Whittaker",
+                                            "Clifton Powell"
+                                        ],
+                                        "plot": "A family tragedy prompts a man to return home, only to find it overrun by crime and corruption, which he must regain control of the streets before it gets even worse.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Comedy"
+                                        ],
+                                        "id": "tt0383385",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTcyMDc2NDE4OV5BMl5BanBnXkFtZTcwNTg5NTcyMQ@@._V1_SX300.jpg",
+                                        "released": "2004-10-26T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0802999",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 2008,
+                                        "directors": [
+                                            "Rod Edge",
+                                            "John Zurhellen"
+                                        ],
+                                        "writers": [
+                                            "Dan Houser",
+                                            "Rupert Humphries",
+                                            "John Zurhellen"
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "USA"
+                                        ],
+                                        "type": "game",
+                                        "title": "Grand Theft Auto IV",
+                                        "imdbrating": 9.4,
+                                        "rated": null,
+                                        "actors": [
+                                            "Michael Hollick",
+                                            "Jason Zumwalt",
+                                            "Timothy Adams",
+                                            "Moti Margolin"
+                                        ],
+                                        "plot": "Niko Bellic comes to Liberty City, America to live the good life, but ends up having to assist his dangerously indebted cousin Roman with his financial troubles, by any  means necessary.",
+                                        "genres": [
+                                            "Action",
+                                            "Comedy",
+                                            "Crime"
+                                        ],
+                                        "id": "tt0802999",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY4OTY0ODE1OF5BMl5BanBnXkFtZTcwMDY0MjAxNA@@._V1_SX300.jpg",
+                                        "released": "2008-04-29T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0314123",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 2002,
+                                        "directors": [
+                                            "Navid Khonsari"
+                                        ],
+                                        "writers": [
+                                            "Dan Houser",
+                                            "James Worrall",
+                                            "Dan Houser"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "game",
+                                        "title": "Grand Theft Auto: Vice City",
+                                        "imdbrating": 9.4,
+                                        "rated": null,
+                                        "actors": [
+                                            "Ray Liotta",
+                                            "William Fichtner",
+                                            "Tom Sizemore",
+                                            "Dennis Hopper"
+                                        ],
+                                        "plot": "After being released from jail, Tommy Vercetti left Liberty City for Vice City--a city overrun by the mob. Now, Tommy is out to make the Vice City his home.",
+                                        "genres": [
+                                            "Action",
+                                            "Comedy",
+                                            "Crime"
+                                        ],
+                                        "id": "tt0314123",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTczNTI5ODI3NF5BMl5BanBnXkFtZTgwNjMyMDU0MDE@._V1_SX300.jpg",
+                                        "released": "2002-11-08T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1942612",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Crime",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Paul McGuigan"
+                                        ],
+                                        "writers": [
+                                            "Steven Moffat",
+                                            "Mark Gatiss"
+                                        ],
+                                        "countries": [
+                                            "UK"
+                                        ],
+                                        "type": "episode",
+                                        "title": "A Scandal in Belgravia",
+                                        "imdbrating": 9.5,
+                                        "rated": "TV-14",
+                                        "actors": [
+                                            "Benedict Cumberbatch",
+                                            "Martin Freeman",
+                                            "Una Stubbs",
+                                            "Rupert Graves"
+                                        ],
+                                        "plot": "The government hires Sherlock and John to confiscate something of importance from a mysterious woman, named Irene Adler. But she may be more than Sherlock can handle.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt1942612",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY2MjU3NTYwMV5BMl5BanBnXkFtZTcwNjYzMzU3Nw@@._V1_SX300.jpg",
+                                        "released": "2012-05-06T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1942614",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Crime",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Toby Haynes"
+                                        ],
+                                        "writers": [
+                                            "Steve Thompson",
+                                            "Mark Gatiss"
+                                        ],
+                                        "countries": [
+                                            "UK"
+                                        ],
+                                        "type": "episode",
+                                        "title": "The Reichenbach Fall",
+                                        "imdbrating": 9.6,
+                                        "rated": "TV-14",
+                                        "actors": [
+                                            "Benedict Cumberbatch",
+                                            "Martin Freeman",
+                                            "Una Stubbs",
+                                            "Rupert Graves"
+                                        ],
+                                        "plot": "Moriarty turns the whole city against Sherlock.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt1942614",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA2MTE1NDI5OV5BMl5BanBnXkFtZTcwNzM2MzU3Nw@@._V1_SX300.jpg",
+                                        "released": "2012-05-20T00:00:00+01:00"
+                                    }
+                                }
+                            ]
                         },
                         "aggregations": {
                             "facet_bucket_type": {
-                                "meta": [],
-                                "doc_count": 1000,
+                                "doc_count": 183,
                                 "type": {
                                     "doc_count_error_upper_bound": 0,
                                     "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
                                             "key": "episode",
-                                            "doc_count": 4
+                                            "doc_count": 2
                                         },
                                         {
                                             "key": "game",
-                                            "doc_count": 11
+                                            "doc_count": 3
                                         },
                                         {
                                             "key": "movie",
-                                            "doc_count": 852
+                                            "doc_count": 149
                                         },
                                         {
                                             "key": "series",
-                                            "doc_count": 133
+                                            "doc_count": 29
                                         }
                                     ]
                                 }
                             },
                             "facet_bucket_all": {
-                                "doc_count": 852,
+                                "doc_count": 5,
                                 "rated": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 634,
+                                    "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
-                                            "key": "Approved",
-                                            "doc_count": 24
-                                        },
-                                        {
-                                            "key": "G",
-                                            "doc_count": 26
-                                        },
-                                        {
-                                            "key": "NC-17",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Not Rated",
-                                            "doc_count": 49
-                                        },
-                                        {
-                                            "key": "PG",
-                                            "doc_count": 106
+                                            "key": "TV-14",
+                                            "doc_count": 2
                                         }
                                     ]
                                 },
                                 "actors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 3384,
+                                    "sum_other_doc_count": 14,
                                     "buckets": [
                                         {
-                                            "key": "Aamir Khan",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Aaron Eckhart",
+                                            "key": "Benedict Cumberbatch",
                                             "doc_count": 2
                                         },
                                         {
-                                            "key": "Aaron Taylor-Johnson",
+                                            "key": "Clifton Powell",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abbie Cornish",
+                                            "key": "Dennis Hopper",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abdel Ahmed Ghili",
+                                            "key": "Faizon Love",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Jason Zumwalt",
                                             "doc_count": 1
                                         }
                                     ]
                                 },
                                 "directors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 937,
+                                    "sum_other_doc_count": 1,
                                     "buckets": [
                                         {
-                                            "key": "Aamir Khan",
+                                            "key": "Dan Houser",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam Elliot",
+                                            "key": "John Zurhellen",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam McKay",
+                                            "key": "Navid Khonsari",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Paul McGuigan",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam Shankman",
+                                            "key": "Rod Edge",
                                             "doc_count": 1
-                                        },
-                                        {
-                                            "key": "Akira Kurosawa",
-                                            "doc_count": 5
                                         }
                                     ]
                                 },
@@ -805,119 +1102,107 @@
                                         },
                                         {
                                             "key": 25,
-                                            "doc_count": 1
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 30,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 35,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 40,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 45,
-                                            "doc_count": 15
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 50,
-                                            "doc_count": 25
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 55,
-                                            "doc_count": 58
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 60,
-                                            "doc_count": 76
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 65,
-                                            "doc_count": 93
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 70,
-                                            "doc_count": 102
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 75,
-                                            "doc_count": 79
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 80,
-                                            "doc_count": 88
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 85,
-                                            "doc_count": 61
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 90,
-                                            "doc_count": 43
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 95,
-                                            "doc_count": 13
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 100,
-                                            "doc_count": 3
+                                            "doc_count": 0
                                         }
                                     ]
                                 },
                                 "countries": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 1222,
+                                    "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
-                                            "key": "Algeria",
-                                            "doc_count": 1
+                                            "key": "UK",
+                                            "doc_count": 5
                                         },
                                         {
-                                            "key": "Argentina",
+                                            "key": "USA",
                                             "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Australia",
-                                            "doc_count": 14
-                                        },
-                                        {
-                                            "key": "Austria",
-                                            "doc_count": 2
-                                        },
-                                        {
-                                            "key": "Bahamas",
-                                            "doc_count": 1
                                         }
                                     ]
                                 },
                                 "writers": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 2016,
+                                    "sum_other_doc_count": 3,
                                     "buckets": [
                                         {
-                                            "key": "A.J. Quinnell",
+                                            "key": "DJ Pooh",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Aaron Sorkin",
+                                            "key": "Dan Houser",
                                             "doc_count": 3
                                         },
                                         {
-                                            "key": "Aaron Stockard",
+                                            "key": "James Worrall",
                                             "doc_count": 2
                                         },
                                         {
-                                            "key": "Abby Mann",
+                                            "key": "John Zurhellen",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abdel Raouf Dafri",
-                                            "doc_count": 1
+                                            "key": "Mark Gatiss",
+                                            "doc_count": 2
                                         }
                                     ]
                                 },
@@ -949,19 +1234,19 @@
                                         },
                                         {
                                             "key": 6,
-                                            "doc_count": 14
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 7,
-                                            "doc_count": 476
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 8,
-                                            "doc_count": 352
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 9,
-                                            "doc_count": 10
+                                            "doc_count": 5
                                         },
                                         {
                                             "key": 10,
@@ -971,104 +1256,76 @@
                                 }
                             },
                             "facet_bucket_genres": {
-                                "doc_count": 852,
+                                "doc_count": 5,
                                 "genres": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 1462,
+                                    "sum_other_doc_count": 2,
                                     "buckets": [
                                         {
                                             "key": "Action",
-                                            "doc_count": 185
+                                            "doc_count": 3
                                         },
                                         {
                                             "key": "Adventure",
-                                            "doc_count": 181
-                                        },
-                                        {
-                                            "key": "Animation",
-                                            "doc_count": 58
-                                        },
-                                        {
-                                            "key": "Biography",
-                                            "doc_count": 63
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": "Comedy",
-                                            "doc_count": 191
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Crime",
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": "Drama",
+                                            "doc_count": 2
                                         }
                                     ]
                                 }
                             },
                             "facet_bucket_genre": {
-                                "doc_count": 852,
+                                "doc_count": 5,
                                 "genre": {
-                                    "doc_count": 852,
+                                    "doc_count": 5,
                                     "lvl_2": {
-                                        "doc_count": 852,
+                                        "doc_count": 5,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null
                                             },
                                             "doc_count_error_upper_bound": 0,
-                                            "sum_other_doc_count": 1031,
+                                            "sum_other_doc_count": 0,
                                             "buckets": [
                                                 {
-                                                    "key": "2d",
-                                                    "doc_count": 18
-                                                },
-                                                {
-                                                    "key": "3d",
-                                                    "doc_count": 11
-                                                },
-                                                {
-                                                    "key": "absurd",
-                                                    "doc_count": 17
-                                                },
-                                                {
-                                                    "key": "academia",
-                                                    "doc_count": 3
-                                                },
-                                                {
-                                                    "key": "adult",
-                                                    "doc_count": 8
+                                                    "key": "killed in",
+                                                    "doc_count": 1
                                                 }
                                             ]
                                         }
                                     },
                                     "lvl_1": {
-                                        "doc_count": 852,
+                                        "doc_count": 5,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null
                                             },
                                             "doc_count_error_upper_bound": 0,
-                                            "sum_other_doc_count": 368,
+                                            "sum_other_doc_count": 0,
                                             "buckets": [
                                                 {
                                                     "key": "Action",
-                                                    "doc_count": 174
+                                                    "doc_count": 3
                                                 },
                                                 {
-                                                    "key": "Adventure",
-                                                    "doc_count": 67
-                                                },
-                                                {
-                                                    "key": "Animation",
-                                                    "doc_count": 58
-                                                },
-                                                {
-                                                    "key": "Biography",
-                                                    "doc_count": 53
-                                                },
-                                                {
-                                                    "key": "Comedy",
-                                                    "doc_count": 132
+                                                    "key": "Crime",
+                                                    "doc_count": 2
                                                 }
                                             ]
                                         }
                                     },
                                     "lvl_3": {
-                                        "doc_count": 852,
+                                        "doc_count": 5,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null

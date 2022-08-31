@@ -5,18 +5,12 @@
                 "query": "",
                 "appliedFilters": [
                     {
-                        "id": "type_movie",
-                        "identifier": "type",
-                        "display": "ListFacet",
-                        "label": "Type",
-                        "value": "movie"
-                    },
-                    {
-                        "id": "countries_UK",
-                        "identifier": "countries",
-                        "display": "ListFacet",
-                        "label": "Country",
-                        "value": "UK"
+                        "id": "imdbrating_6_8",
+                        "identifier": "imdbrating",
+                        "display": "RangeSliderFacet",
+                        "label": "IMDb Rating",
+                        "min": 6,
+                        "max": 8
                     }
                 ]
             }
@@ -46,8 +40,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -58,25 +67,11 @@
                             "bool": {
                                 "must": [
                                     {
-                                        "bool": {
-                                            "should": [
-                                                {
-                                                    "term": {
-                                                        "type": "movie"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "bool": {
-                                            "must": [
-                                                {
-                                                    "term": {
-                                                        "countries.keyword": "UK"
-                                                    }
-                                                }
-                                            ]
+                                        "range": {
+                                            "imdbrating": {
+                                                "gte": 6,
+                                                "lte": 8
+                                            }
                                         }
                                     }
                                 ]
@@ -94,7 +89,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 149,
+                                "value": 565,
                                 "relation": "eq"
                             },
                             "max_score": null,

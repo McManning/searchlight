@@ -109,8 +109,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -157,6 +172,7 @@
                                     "_id": "tt0111161",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Frank Darabont"
@@ -170,6 +186,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Shawshank Redemption",
+                                        "imdbrating": 9.3,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Robbins",
@@ -194,6 +211,12 @@
                                     "_id": "tt0068646",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "organized",
+                                            "gangland",
+                                            "gangster"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1972,
                                         "directors": [
                                             "Francis Ford Coppola"
@@ -208,6 +231,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Godfather",
+                                        "imdbrating": 9.2,
                                         "rated": "R",
                                         "actors": [
                                             "Marlon Brando",
@@ -232,6 +256,7 @@
                                     "_id": "tt0110912",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Quentin Tarantino"
@@ -246,6 +271,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Pulp Fiction",
+                                        "imdbrating": 9,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Roth",
@@ -271,6 +297,10 @@
                                     "_id": "tt0137523",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "psychological"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 1999,
                                         "directors": [
                                             "David Fincher"
@@ -285,6 +315,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Fight Club",
+                                        "imdbrating": 8.9,
                                         "rated": "R",
                                         "actors": [
                                             "Edward Norton",
@@ -308,6 +339,10 @@
                                     "_id": "tt0133093",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "martial arts"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1999,
                                         "directors": [
                                             "Andy Wachowski",
@@ -323,6 +358,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Matrix",
+                                        "imdbrating": 8.7,
                                         "rated": "R",
                                         "actors": [
                                             "Keanu Reeves",
@@ -348,6 +384,11 @@
                                     "_id": "tt0071562",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "organized",
+                                            "gangster"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1974,
                                         "directors": [
                                             "Francis Ford Coppola"
@@ -362,6 +403,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Godfather: Part II",
+                                        "imdbrating": 9.1,
                                         "rated": "R",
                                         "actors": [
                                             "Al Pacino",
@@ -386,6 +428,7 @@
                                     "_id": "tt0108052",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Biography",
                                         "year": 1993,
                                         "directors": [
                                             "Steven Spielberg"
@@ -399,6 +442,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Schindler's List",
+                                        "imdbrating": 8.9,
                                         "rated": "R",
                                         "actors": [
                                             "Liam Neeson",
@@ -424,6 +468,12 @@
                                     "_id": "tt0114369",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "scene of the",
+                                            "serial killer",
+                                            "police procedural"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1995,
                                         "directors": [
                                             "David Fincher"
@@ -436,6 +486,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Se7en",
+                                        "imdbrating": 8.7,
                                         "rated": "R",
                                         "actors": [
                                             "Morgan Freeman",
@@ -461,6 +512,7 @@
                                     "_id": "tt0099685",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Biography",
                                         "year": 1990,
                                         "directors": [
                                             "Martin Scorsese"
@@ -475,6 +527,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Goodfellas",
+                                        "imdbrating": 8.8,
                                         "rated": "R",
                                         "actors": [
                                             "Robert De Niro",
@@ -500,6 +553,10 @@
                                     "_id": "tt0102926",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "serial killer"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1991,
                                         "directors": [
                                             "Jonathan Demme"
@@ -513,6 +570,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Silence of the Lambs",
+                                        "imdbrating": 8.6,
                                         "rated": "R",
                                         "actors": [
                                             "Jodie Foster",

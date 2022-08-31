@@ -1,0 +1,917 @@
+{
+    "data": {
+        "results": {
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0113277",
+                        "fields": {
+                            "title": "Heat",
+                            "plot": "A group of professional bank robbers start to feel the heat from police when they unknowingly leave a clue at their latest heist."
+                        }
+                    },
+                    {
+                        "id": "tt0061811",
+                        "fields": {
+                            "title": "In the Heat of the Night",
+                            "plot": "An African American police detective is asked to investigate a murder in a racially hostile southern town."
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 4,
+            "trips": [
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 0,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 1000,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        }
+                    }
+                },
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "type": {
+                                        "terms": {
+                                            "field": "type",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "rated": {
+                                        "terms": {
+                                            "field": "rated",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "genres": {
+                                        "terms": {
+                                            "field": "genres.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "directors": {
+                                        "terms": {
+                                            "field": "directors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "writers": {
+                                        "terms": {
+                                            "field": "writers.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "actors": {
+                                        "terms": {
+                                            "field": "actors.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "countries": {
+                                        "terms": {
+                                            "field": "countries.keyword",
+                                            "size": 5,
+                                            "order": {
+                                                "_key": "asc"
+                                            }
+                                        }
+                                    },
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    },
+                                    "metascore": {
+                                        "histogram": {
+                                            "field": "metascore",
+                                            "interval": 5,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 100
+                                            }
+                                        }
+                                    },
+                                    "genre": {
+                                        "filter": {
+                                            "match_all": []
+                                        },
+                                        "aggs": {
+                                            "lvl_1": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre1.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "lvl_2": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre2.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "lvl_3": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre3.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 3,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 1000,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        },
+                        "aggregations": {
+                            "facet_bucket_all": {
+                                "meta": [],
+                                "doc_count": 1000,
+                                "rated": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 731,
+                                    "buckets": [
+                                        {
+                                            "key": "Approved",
+                                            "doc_count": 24
+                                        },
+                                        {
+                                            "key": "G",
+                                            "doc_count": 26
+                                        },
+                                        {
+                                            "key": "NC-17",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Not Rated",
+                                            "doc_count": 49
+                                        },
+                                        {
+                                            "key": "PG",
+                                            "doc_count": 108
+                                        }
+                                    ]
+                                },
+                                "actors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 3956,
+                                    "buckets": [
+                                        {
+                                            "key": "Aamir Khan",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Aaron Dismuke",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Eckhart",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Aaron Paul",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Aaron Taylor-Johnson",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "genres": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1670,
+                                    "buckets": [
+                                        {
+                                            "key": "Action",
+                                            "doc_count": 220
+                                        },
+                                        {
+                                            "key": "Adventure",
+                                            "doc_count": 208
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 74
+                                        },
+                                        {
+                                            "key": "Biography",
+                                            "doc_count": 64
+                                        },
+                                        {
+                                            "key": "Comedy",
+                                            "doc_count": 255
+                                        }
+                                    ]
+                                },
+                                "directors": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 956,
+                                    "buckets": [
+                                        {
+                                            "key": "Aamir Khan",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Elliot",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam McKay",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Shankman",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Akira Kurosawa",
+                                            "doc_count": 5
+                                        }
+                                    ]
+                                },
+                                "genre": {
+                                    "doc_count": 1000,
+                                    "lvl_2": {
+                                        "doc_count": 1000,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 1245,
+                                            "buckets": [
+                                                {
+                                                    "key": "2d",
+                                                    "doc_count": 27
+                                                },
+                                                {
+                                                    "key": "3d",
+                                                    "doc_count": 11
+                                                },
+                                                {
+                                                    "key": "absurd",
+                                                    "doc_count": 19
+                                                },
+                                                {
+                                                    "key": "academia",
+                                                    "doc_count": 3
+                                                },
+                                                {
+                                                    "key": "adult",
+                                                    "doc_count": 13
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_1": {
+                                        "doc_count": 1000,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 414,
+                                            "buckets": [
+                                                {
+                                                    "key": "Action",
+                                                    "doc_count": 200
+                                                },
+                                                {
+                                                    "key": "Adventure",
+                                                    "doc_count": 75
+                                                },
+                                                {
+                                                    "key": "Animation",
+                                                    "doc_count": 74
+                                                },
+                                                {
+                                                    "key": "Biography",
+                                                    "doc_count": 53
+                                                },
+                                                {
+                                                    "key": "Comedy",
+                                                    "doc_count": 184
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_3": {
+                                        "doc_count": 1000,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 0,
+                                            "buckets": []
+                                        }
+                                    }
+                                },
+                                "metascore": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 15,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 20,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 25,
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": 30,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 35,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 40,
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": 45,
+                                            "doc_count": 15
+                                        },
+                                        {
+                                            "key": 50,
+                                            "doc_count": 25
+                                        },
+                                        {
+                                            "key": 55,
+                                            "doc_count": 58
+                                        },
+                                        {
+                                            "key": 60,
+                                            "doc_count": 76
+                                        },
+                                        {
+                                            "key": 65,
+                                            "doc_count": 93
+                                        },
+                                        {
+                                            "key": 70,
+                                            "doc_count": 102
+                                        },
+                                        {
+                                            "key": 75,
+                                            "doc_count": 79
+                                        },
+                                        {
+                                            "key": 80,
+                                            "doc_count": 88
+                                        },
+                                        {
+                                            "key": 85,
+                                            "doc_count": 61
+                                        },
+                                        {
+                                            "key": 90,
+                                            "doc_count": 43
+                                        },
+                                        {
+                                            "key": 95,
+                                            "doc_count": 13
+                                        },
+                                        {
+                                            "key": 100,
+                                            "doc_count": 3
+                                        }
+                                    ]
+                                },
+                                "countries": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 1402,
+                                    "buckets": [
+                                        {
+                                            "key": "Algeria",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Argentina",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Australia",
+                                            "doc_count": 14
+                                        },
+                                        {
+                                            "key": "Austria",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Bahamas",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "writers": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 2186,
+                                    "buckets": [
+                                        {
+                                            "key": "A.J. Quinnell",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Korsh",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Sorkin",
+                                            "doc_count": 5
+                                        },
+                                        {
+                                            "key": "Aaron Stockard",
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "Abby Mann",
+                                            "doc_count": 1
+                                        }
+                                    ]
+                                },
+                                "type": {
+                                    "doc_count_error_upper_bound": 0,
+                                    "sum_other_doc_count": 0,
+                                    "buckets": [
+                                        {
+                                            "key": "episode",
+                                            "doc_count": 4
+                                        },
+                                        {
+                                            "key": "game",
+                                            "doc_count": 11
+                                        },
+                                        {
+                                            "key": "movie",
+                                            "doc_count": 852
+                                        },
+                                        {
+                                            "key": "series",
+                                            "doc_count": 133
+                                        }
+                                    ]
+                                },
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 14
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 478
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 457
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 51
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "should": [
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title^2",
+                                                "plot^1"
+                                            ],
+                                            "type": "best_fields",
+                                            "operator": "and"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title^2",
+                                                "plot^1"
+                                            ],
+                                            "type": "cross_fields"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title^2",
+                                                "plot^1"
+                                            ],
+                                            "type": "phrase"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "title^2",
+                                                "plot^1"
+                                            ],
+                                            "type": "phrase_prefix"
+                                        }
+                                    }
+                                ],
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 1,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 2,
+                                "relation": "eq"
+                            },
+                            "max_score": 64.793365,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0113277",
+                                    "_score": 64.793365,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "team"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 1995,
+                                        "directors": [
+                                            "Michael Mann"
+                                        ],
+                                        "writers": [
+                                            "Michael Mann"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Heat",
+                                        "imdbrating": 8.3,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Al Pacino",
+                                            "Robert De Niro",
+                                            "Val Kilmer",
+                                            "Jon Voight"
+                                        ],
+                                        "plot": "A group of professional bank robbers start to feel the heat from police when they unknowingly leave a clue at their latest heist.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0113277",
+                                        "metascore": 76,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM1NDc4ODkxNV5BMl5BanBnXkFtZTcwNTI4ODE3MQ@@._V1_SX300.jpg",
+                                        "released": "1995-12-15T00:00:00Z"
+                                    },
+                                    "highlight": {
+                                        "plot": [
+                                            "A group of professional bank robbers start to feel the <em>heat<\/em> from police when they unknowingly leave a"
+                                        ],
+                                        "title": [
+                                            "<em>Heat<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0061811",
+                                    "_score": 32.287613,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "police procedural"
+                                        ],
+                                        "primary_genre1": "Crime",
+                                        "year": 1967,
+                                        "directors": [
+                                            "Norman Jewison"
+                                        ],
+                                        "writers": [
+                                            "Stirling Silliphant",
+                                            "John Ball"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "In the Heat of the Night",
+                                        "imdbrating": 8,
+                                        "rated": "Approved",
+                                        "actors": [
+                                            "Sidney Poitier",
+                                            "Rod Steiger",
+                                            "Warren Oates",
+                                            "Lee Grant"
+                                        ],
+                                        "plot": "An African American police detective is asked to investigate a murder in a racially hostile southern town.",
+                                        "genres": [
+                                            "Crime",
+                                            "Drama",
+                                            "Mystery"
+                                        ],
+                                        "id": "tt0061811",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTk3NjkxMDc1MV5BMl5BanBnXkFtZTcwMDIwMjI0NA@@._V1_SX300.jpg",
+                                        "released": "1967-10-14T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "title": [
+                                            "In the <em>Heat<\/em> of the Night"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

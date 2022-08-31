@@ -1,0 +1,117 @@
+{
+    "data": {
+        "results": {
+            "hits": {
+                "items": []
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 0,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "foobar": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "should": [
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "foobar"
+                                            ],
+                                            "type": "best_fields",
+                                            "operator": "and"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "foobar"
+                                            ],
+                                            "type": "cross_fields"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "foobar"
+                                            ],
+                                            "type": "phrase"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "heat",
+                                            "fields": [
+                                                "foobar"
+                                            ],
+                                            "type": "phrase_prefix"
+                                        }
+                                    }
+                                ],
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 0,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 0,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

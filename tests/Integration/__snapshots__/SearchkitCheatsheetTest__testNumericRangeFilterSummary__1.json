@@ -79,8 +79,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -124,6 +139,7 @@
                                     "_id": "tt0111161",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Frank Darabont"
@@ -137,6 +153,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Shawshank Redemption",
+                                        "imdbrating": 9.3,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Robbins",
@@ -161,6 +178,12 @@
                                     "_id": "tt0068646",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "organized",
+                                            "gangland",
+                                            "gangster"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1972,
                                         "directors": [
                                             "Francis Ford Coppola"
@@ -175,6 +198,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Godfather",
+                                        "imdbrating": 9.2,
                                         "rated": "R",
                                         "actors": [
                                             "Marlon Brando",
@@ -199,6 +223,10 @@
                                     "_id": "tt0468569",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "superhero"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2008,
                                         "directors": [
                                             "Christopher Nolan"
@@ -216,6 +244,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Dark Knight",
+                                        "imdbrating": 9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Christian Bale",
@@ -241,6 +270,7 @@
                                     "_id": "tt0110912",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Quentin Tarantino"
@@ -255,6 +285,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Pulp Fiction",
+                                        "imdbrating": 9,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Roth",
@@ -280,6 +311,10 @@
                                     "_id": "tt0137523",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "psychological"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 1999,
                                         "directors": [
                                             "David Fincher"
@@ -294,6 +329,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Fight Club",
+                                        "imdbrating": 8.9,
                                         "rated": "R",
                                         "actors": [
                                             "Edward Norton",
@@ -317,6 +353,10 @@
                                     "_id": "tt0167260",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2003,
                                         "directors": [
                                             "Peter Jackson"
@@ -333,6 +373,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Lord of the Rings: The Return of the King",
+                                        "imdbrating": 8.9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Noel Appleby",
@@ -358,6 +399,10 @@
                                     "_id": "tt1375666",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2010,
                                         "directors": [
                                             "Christopher Nolan"
@@ -371,6 +416,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Inception",
+                                        "imdbrating": 8.8,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Leonardo DiCaprio",
@@ -396,6 +442,7 @@
                                     "_id": "tt0120737",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 2001,
                                         "directors": [
                                             "Peter Jackson"
@@ -412,6 +459,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Lord of the Rings: The Fellowship of the Ring",
+                                        "imdbrating": 8.9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Alan Howard",
@@ -437,6 +485,10 @@
                                     "_id": "tt0133093",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "martial arts"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1999,
                                         "directors": [
                                             "Andy Wachowski",
@@ -452,6 +504,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Matrix",
+                                        "imdbrating": 8.7,
                                         "rated": "R",
                                         "actors": [
                                             "Keanu Reeves",
@@ -477,6 +530,11 @@
                                     "_id": "tt0071562",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "organized",
+                                            "gangster"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1974,
                                         "directors": [
                                             "Francis Ford Coppola"
@@ -491,6 +549,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Godfather: Part II",
+                                        "imdbrating": 9.1,
                                         "rated": "R",
                                         "actors": [
                                             "Al Pacino",

@@ -87,7 +87,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 1,
+            "took": 3,
             "trips": [
                 {
                     "query": {
@@ -113,8 +113,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -123,7 +138,7 @@
                         }
                     },
                     "response": {
-                        "took": 1,
+                        "took": 3,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -144,6 +159,10 @@
                                     "_id": "tt0066921",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "sex"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1971,
                                         "directors": [
                                             "Stanley Kubrick"
@@ -158,6 +177,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "A Clockwork Orange",
+                                        "imdbrating": 8.4,
                                         "rated": "X",
                                         "actors": [
                                             "Malcolm McDowell",
@@ -186,6 +206,14 @@
                                     "_id": "tt0092991",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "dark",
+                                            "splatter",
+                                            "slapstick",
+                                            "gross out",
+                                            "black"
+                                        ],
+                                        "primary_genre1": "Comedy",
                                         "year": 1987,
                                         "directors": [
                                             "Sam Raimi"
@@ -199,6 +227,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Evil Dead II",
+                                        "imdbrating": 7.9,
                                         "rated": "X",
                                         "actors": [
                                             "Bruce Campbell",
@@ -226,6 +255,7 @@
                                     "_id": "tt0064665",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre1": "Drama",
                                         "year": 1969,
                                         "directors": [
                                             "John Schlesinger"
@@ -239,6 +269,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Midnight Cowboy",
+                                        "imdbrating": 8,
                                         "rated": "X",
                                         "actors": [
                                             "Dustin Hoffman",
@@ -264,6 +295,11 @@
                                     "_id": "tt0047478",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "team"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1954,
                                         "directors": [
                                             "Akira Kurosawa"
@@ -278,6 +314,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Seven Samurai",
+                                        "imdbrating": 8.8,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Toshir\u00f4 Mifune",
@@ -305,6 +342,7 @@
                                     "_id": "tt0057115",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre1": "Adventure",
                                         "year": 1963,
                                         "directors": [
                                             "John Sturges"
@@ -319,6 +357,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Great Escape",
+                                        "imdbrating": 8.3,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Steve McQueen",
@@ -346,6 +385,12 @@
                                     "_id": "tt0095327",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "2d",
+                                            "anime",
+                                            "mature"
+                                        ],
+                                        "primary_genre1": "Animation",
                                         "year": 1988,
                                         "directors": [
                                             "Isao Takahata"
@@ -359,6 +404,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Grave of the Fireflies",
+                                        "imdbrating": 8.5,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Tsutomu Tatsumi",
@@ -386,6 +432,7 @@
                                     "_id": "tt0042876",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1950,
                                         "directors": [
                                             "Akira Kurosawa"
@@ -400,6 +447,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Rashomon",
+                                        "imdbrating": 8.4,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Toshir\u00f4 Mifune",
@@ -426,6 +474,7 @@
                                     "_id": "tt0055630",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 1961,
                                         "directors": [
                                             "Akira Kurosawa"
@@ -440,6 +489,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Yojimbo",
+                                        "imdbrating": 8.4,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Toshir\u00f4 Mifune",
@@ -466,6 +516,14 @@
                                     "_id": "tt0077402",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "independent",
+                                            "survival",
+                                            "american",
+                                            "italian",
+                                            "zombie"
+                                        ],
+                                        "primary_genre1": "Horror",
                                         "year": 1978,
                                         "directors": [
                                             "George A. Romero"
@@ -479,6 +537,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Dawn of the Dead",
+                                        "imdbrating": 8.1,
                                         "rated": "Unrated",
                                         "actors": [
                                             "David Emge",
@@ -504,6 +563,13 @@
                                     "_id": "tt0063350",
                                     "_score": null,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "american",
+                                            "zombie",
+                                            "independent",
+                                            "survival"
+                                        ],
+                                        "primary_genre1": "Horror",
                                         "year": 1968,
                                         "directors": [
                                             "George A. Romero"
@@ -517,6 +583,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Night of the Living Dead",
+                                        "imdbrating": 8,
                                         "rated": "Unrated",
                                         "actors": [
                                             "Duane Jones",

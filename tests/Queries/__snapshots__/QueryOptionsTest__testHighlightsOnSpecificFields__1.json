@@ -1,0 +1,793 @@
+{
+    "data": {
+        "results": {
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0082971",
+                        "fields": {
+                            "title": "Raiders of the Lost Ark",
+                            "plot": "Archeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis.",
+                            "genres": [
+                                "Action",
+                                "Adventure"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0848228",
+                        "fields": {
+                            "title": "The Avengers",
+                            "plot": "Nick Fury of S.H.I.E.L.D. assembles a team of superhumans to save the planet from Loki and his army.",
+                            "genres": [
+                                "Action",
+                                "Fantasy"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0266697",
+                        "fields": {
+                            "title": "Kill Bill: Vol. 1",
+                            "plot": "The Bride wakens from a four-year coma. The child she carried in her womb is gone. Now she must wreak vengeance on the team of assassins who betrayed her - a team she was once part of.",
+                            "genres": [
+                                "Action",
+                                "Crime"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0095016",
+                        "fields": {
+                            "title": "Die Hard",
+                            "plot": "John McClane, officer of the NYPD, tries to save wife Holly Gennaro and several others, taken hostage by German terrorist Hans Gruber during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+                            "genres": [
+                                "Action",
+                                "Thriller"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0097576",
+                        "fields": {
+                            "title": "Indiana Jones and the Last Crusade",
+                            "plot": "When Dr. Henry Jones Sr. suddenly goes missing while pursuing the Holy Grail, eminent archaeologist Indiana Jones must follow in his father's footsteps and stop the Nazis.",
+                            "genres": [
+                                "Action",
+                                "Adventure"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0047478",
+                        "fields": {
+                            "title": "Seven Samurai",
+                            "plot": "A poor village under attack by bandits recruits seven unemployed samurai to help them defend themselves.",
+                            "genres": [
+                                "Action",
+                                "Drama"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt1250777",
+                        "fields": {
+                            "title": "Kick-Ass",
+                            "plot": "Dave Lizewski is an unnoticed high school student and comic book fan who one day decides to become a super-hero, even though he has no powers, training or meaningful reason to do so.",
+                            "genres": [
+                                "Action",
+                                "Comedy"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0425112",
+                        "fields": {
+                            "title": "Hot Fuzz",
+                            "plot": "Exceptional London cop Nicholas Angel is involuntarily transferred to a quaint English village and paired with a witless new partner. While on the beat, Nicholas suspects a sinister conspiracy is afoot with the residents.",
+                            "genres": [
+                                "Action",
+                                "Comedy"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0145487",
+                        "fields": {
+                            "title": "Spider-Man",
+                            "plot": "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.",
+                            "genres": [
+                                "Action",
+                                "Fantasy"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tt0087469",
+                        "fields": {
+                            "title": "Indiana Jones and the Temple of Doom",
+                            "plot": "After arriving in India, Indiana Jones is asked by a desperate village to find a mystical stone. He agrees, and stumbles upon a secret cult plotting a terrible plan in the catacombs of an ancient palace.",
+                            "genres": [
+                                "Action",
+                                "Adventure"
+                            ]
+                        },
+                        "highlights": [
+                            {
+                                "field": "genres",
+                                "fragments": [
+                                    "<em>Action<\/em>"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 3,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "should": [
+                                    {
+                                        "multi_match": {
+                                            "query": "action",
+                                            "fields": [
+                                                "title^2",
+                                                "genres^1"
+                                            ],
+                                            "type": "best_fields",
+                                            "operator": "and"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "action",
+                                            "fields": [
+                                                "title^2",
+                                                "genres^1"
+                                            ],
+                                            "type": "cross_fields"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "action",
+                                            "fields": [
+                                                "title^2",
+                                                "genres^1"
+                                            ],
+                                            "type": "phrase"
+                                        }
+                                    },
+                                    {
+                                        "multi_match": {
+                                            "query": "action",
+                                            "fields": [
+                                                "title^2",
+                                                "genres^1"
+                                            ],
+                                            "type": "phrase_prefix"
+                                        }
+                                    }
+                                ],
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 3,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 220,
+                                "relation": "eq"
+                            },
+                            "max_score": 6.692958,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0082971",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 1981,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Lawrence Kasdan",
+                                            "George Lucas",
+                                            "Philip Kaufman"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Raiders of the Lost Ark",
+                                        "imdbrating": 8.6,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Harrison Ford",
+                                            "Karen Allen",
+                                            "Paul Freeman",
+                                            "Ronald Lacey"
+                                        ],
+                                        "plot": "Archeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure"
+                                        ],
+                                        "id": "tt0082971",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX300.jpg",
+                                        "released": "1981-06-12T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0848228",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "superhero",
+                                            "epic",
+                                            "team"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2012,
+                                        "directors": [
+                                            "Joss Whedon"
+                                        ],
+                                        "writers": [
+                                            "Joss Whedon",
+                                            "Zak Penn",
+                                            "Joss Whedon"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Avengers",
+                                        "imdbrating": 8.2,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Robert Downey Jr.",
+                                            "Chris Evans",
+                                            "Mark Ruffalo",
+                                            "Chris Hemsworth"
+                                        ],
+                                        "plot": "Nick Fury of S.H.I.E.L.D. assembles a team of superhumans to save the planet from Loki and his army.",
+                                        "genres": [
+                                            "Action",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0848228",
+                                        "metascore": 69,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_SX300.jpg",
+                                        "released": "2012-05-04T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0266697",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "one person army",
+                                            "martial arts",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2003,
+                                        "directors": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino",
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Kill Bill: Vol. 1",
+                                        "imdbrating": 8.2,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Uma Thurman",
+                                            "Lucy Liu",
+                                            "Vivica A. Fox",
+                                            "Daryl Hannah"
+                                        ],
+                                        "plot": "The Bride wakens from a four-year coma. The child she carried in her womb is gone. Now she must wreak vengeance on the team of assassins who betrayed her - a team she was once part of.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime"
+                                        ],
+                                        "id": "tt0266697",
+                                        "metascore": 69,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU1NDg1Mzg4M15BMl5BanBnXkFtZTYwMDExOTc3._V1_SX300.jpg",
+                                        "released": "2003-10-10T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0095016",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "one person army"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 1988,
+                                        "directors": [
+                                            "John McTiernan"
+                                        ],
+                                        "writers": [
+                                            "Roderick Thorp",
+                                            "Jeb Stuart",
+                                            "Steven E. de Souza"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Die Hard",
+                                        "imdbrating": 8.3,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Bruce Willis",
+                                            "Bonnie Bedelia",
+                                            "Reginald VelJohnson",
+                                            "Paul Gleason"
+                                        ],
+                                        "plot": "John McClane, officer of the NYPD, tries to save wife Holly Gennaro and several others, taken hostage by German terrorist Hans Gruber during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+                                        "genres": [
+                                            "Action",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0095016",
+                                        "metascore": 70,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY4ODM0OTc2M15BMl5BanBnXkFtZTcwNzE0MTk3OA@@._V1_SX300.jpg",
+                                        "released": "1988-07-22T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0097576",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 1989,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Jeffrey Boam",
+                                            "George Lucas",
+                                            "Menno Meyjes",
+                                            "George Lucas",
+                                            "Philip Kaufman"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Indiana Jones and the Last Crusade",
+                                        "imdbrating": 8.3,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Harrison Ford",
+                                            "Sean Connery",
+                                            "Denholm Elliott",
+                                            "Alison Doody"
+                                        ],
+                                        "plot": "When Dr. Henry Jones Sr. suddenly goes missing while pursuing the Holy Grail, eminent archaeologist Indiana Jones must follow in his father's footsteps and stop the Nazis.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure"
+                                        ],
+                                        "id": "tt0097576",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQxMTUyODg2OF5BMl5BanBnXkFtZTcwNDM2MjAxNA@@._V1_SX300.jpg",
+                                        "released": "1989-05-24T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0047478",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic",
+                                            "team"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 1954,
+                                        "directors": [
+                                            "Akira Kurosawa"
+                                        ],
+                                        "writers": [
+                                            "Akira Kurosawa",
+                                            "Shinobu Hashimoto",
+                                            "Hideo Oguni"
+                                        ],
+                                        "countries": [
+                                            "Japan"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Seven Samurai",
+                                        "imdbrating": 8.8,
+                                        "rated": "Unrated",
+                                        "actors": [
+                                            "Toshir\u00f4 Mifune",
+                                            "Takashi Shimura",
+                                            "Keiko Tsushima",
+                                            "Yukiko Shimazaki"
+                                        ],
+                                        "plot": "A poor village under attack by bandits recruits seven unemployed samurai to help them defend themselves.",
+                                        "genres": [
+                                            "Action",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0047478",
+                                        "metascore": 99,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNzg5Mzk5Nzc0NF5BMl5BanBnXkFtZTcwNjg3MDQzMQ@@._V1_SX300.jpg",
+                                        "released": "1956-11-19T00:00:00Z"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1250777",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "superhero"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2010,
+                                        "directors": [
+                                            "Matthew Vaughn"
+                                        ],
+                                        "writers": [
+                                            "Jane Goldman",
+                                            "Matthew Vaughn",
+                                            "Mark Millar",
+                                            "John Romita Jr."
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Kick-Ass",
+                                        "imdbrating": 7.8,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Aaron Taylor-Johnson",
+                                            "Garrett M. Brown",
+                                            "Evan Peters",
+                                            "Deborah Twiss"
+                                        ],
+                                        "plot": "Dave Lizewski is an unnoticed high school student and comic book fan who one day decides to become a super-hero, even though he has no powers, training or meaningful reason to do so.",
+                                        "genres": [
+                                            "Action",
+                                            "Comedy"
+                                        ],
+                                        "id": "tt1250777",
+                                        "metascore": 66,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMzNzEzMDYxM15BMl5BanBnXkFtZTcwMTc0NTMxMw@@._V1_SX300.jpg",
+                                        "released": "2010-04-16T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0425112",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 2007,
+                                        "directors": [
+                                            "Edgar Wright"
+                                        ],
+                                        "writers": [
+                                            "Edgar Wright",
+                                            "Simon Pegg"
+                                        ],
+                                        "countries": [
+                                            "UK",
+                                            "France",
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Hot Fuzz",
+                                        "imdbrating": 7.9,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Simon Pegg",
+                                            "Martin Freeman",
+                                            "Bill Nighy",
+                                            "Robert Popper"
+                                        ],
+                                        "plot": "Exceptional London cop Nicholas Angel is involuntarily transferred to a quaint English village and paired with a witless new partner. While on the beat, Nicholas suspects a sinister conspiracy is afoot with the residents.",
+                                        "genres": [
+                                            "Action",
+                                            "Comedy"
+                                        ],
+                                        "id": "tt0425112",
+                                        "metascore": 81,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTIxODg2NDU1MF5BMl5BanBnXkFtZTcwOTc3MDM0MQ@@._V1_SX300.jpg",
+                                        "released": "2007-02-14T00:00:00Z"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0145487",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "superhero"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2002,
+                                        "directors": [
+                                            "Sam Raimi"
+                                        ],
+                                        "writers": [
+                                            "Stan Lee",
+                                            "David Koepp"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Spider-Man",
+                                        "imdbrating": 7.3,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Tobey Maguire",
+                                            "Willem Dafoe",
+                                            "Kirsten Dunst",
+                                            "James Franco"
+                                        ],
+                                        "plot": "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.",
+                                        "genres": [
+                                            "Action",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0145487",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzk3MTE5MDU5NV5BMl5BanBnXkFtZTYwMjY3NTY3._V1_SX300.jpg",
+                                        "released": "2002-05-03T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0087469",
+                                    "_score": 6.692958,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 1984,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Willard Huyck",
+                                            "Gloria Katz",
+                                            "George Lucas"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Indiana Jones and the Temple of Doom",
+                                        "imdbrating": 7.6,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Harrison Ford",
+                                            "Kate Capshaw",
+                                            "Jonathan Ke Quan",
+                                            "Amrish Puri"
+                                        ],
+                                        "plot": "After arriving in India, Indiana Jones is asked by a desperate village to find a mystical stone. He agrees, and stumbles upon a secret cult plotting a terrible plan in the catacombs of an ancient palace.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure"
+                                        ],
+                                        "id": "tt0087469",
+                                        "metascore": 57,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMyNzI4OTA5OV5BMl5BanBnXkFtZTcwMDQ2MjAxNA@@._V1_SX300.jpg",
+                                        "released": "1984-05-23T00:00:00+01:00"
+                                    },
+                                    "highlight": {
+                                        "genres": [
+                                            "<em>Action<\/em>"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

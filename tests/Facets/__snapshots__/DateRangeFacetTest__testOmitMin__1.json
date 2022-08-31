@@ -2,48 +2,79 @@
     "data": {
         "results": {
             "summary": {
-                "query": "",
-                "appliedFilters": [
-                    {
-                        "id": "type_movie",
-                        "identifier": "type",
-                        "display": "ListFacet",
-                        "label": "Type",
-                        "value": "movie"
-                    }
-                ]
+                "total": 346
             },
             "hits": {
                 "items": [
                     {
-                        "id": "tt0111161"
+                        "id": "tt0111161",
+                        "fields": {
+                            "released": "1994-10-14T00:00:00+01:00",
+                            "title": "The Shawshank Redemption"
+                        }
                     },
                     {
-                        "id": "tt0068646"
+                        "id": "tt0068646",
+                        "fields": {
+                            "released": "1972-03-24T00:00:00+01:00",
+                            "title": "The Godfather"
+                        }
                     },
                     {
-                        "id": "tt0468569"
+                        "id": "tt0110912",
+                        "fields": {
+                            "released": "1994-10-14T00:00:00+01:00",
+                            "title": "Pulp Fiction"
+                        }
                     },
                     {
-                        "id": "tt0110912"
+                        "id": "tt0071562",
+                        "fields": {
+                            "released": "1974-12-20T00:00:00Z",
+                            "title": "The Godfather: Part II"
+                        }
                     },
                     {
-                        "id": "tt0137523"
+                        "id": "tt0108052",
+                        "fields": {
+                            "released": "1993-12-15T00:00:00Z",
+                            "title": "Schindler's List"
+                        }
                     },
                     {
-                        "id": "tt0167260"
+                        "id": "tt0109830",
+                        "fields": {
+                            "released": "1994-07-06T00:00:00+01:00",
+                            "title": "Forrest Gump"
+                        }
                     },
                     {
-                        "id": "tt1375666"
+                        "id": "tt0076759",
+                        "fields": {
+                            "released": "1977-05-25T00:00:00+01:00",
+                            "title": "Star Wars: Episode IV - A New Hope"
+                        }
                     },
                     {
-                        "id": "tt0120737"
+                        "id": "tt0114369",
+                        "fields": {
+                            "released": "1995-09-22T00:00:00+01:00",
+                            "title": "Se7en"
+                        }
                     },
                     {
-                        "id": "tt0133093"
+                        "id": "tt0080684",
+                        "fields": {
+                            "released": "1980-05-21T00:00:00+01:00",
+                            "title": "Star Wars: Episode V - The Empire Strikes Back"
+                        }
                     },
                     {
-                        "id": "tt0071562"
+                        "id": "tt0099685",
+                        "fields": {
+                            "released": "1990-09-19T00:00:00+01:00",
+                            "title": "Goodfellas"
+                        }
                     }
                 ]
             }
@@ -105,14 +136,10 @@
                             "bool": {
                                 "must": [
                                     {
-                                        "bool": {
-                                            "should": [
-                                                {
-                                                    "term": {
-                                                        "type": "movie"
-                                                    }
-                                                }
-                                            ]
+                                        "range": {
+                                            "released": {
+                                                "lte": "1996-01-01T00:00:00+00:00"
+                                            }
                                         }
                                     }
                                 ]
@@ -130,7 +157,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 852,
+                                "value": 346,
                                 "relation": "eq"
                             },
                             "max_score": 1,
@@ -222,53 +249,6 @@
                                 {
                                     "_index": "imdb_movies",
                                     "_type": "_doc",
-                                    "_id": "tt0468569",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "superhero"
-                                        ],
-                                        "primary_genre1": "Action",
-                                        "year": 2008,
-                                        "directors": [
-                                            "Christopher Nolan"
-                                        ],
-                                        "writers": [
-                                            "Jonathan Nolan",
-                                            "Christopher Nolan",
-                                            "Christopher Nolan",
-                                            "David S. Goyer",
-                                            "Bob Kane"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "UK"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Dark Knight",
-                                        "imdbrating": 9,
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Christian Bale",
-                                            "Heath Ledger",
-                                            "Aaron Eckhart",
-                                            "Michael Caine"
-                                        ],
-                                        "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.",
-                                        "genres": [
-                                            "Action",
-                                            "Crime",
-                                            "Drama"
-                                        ],
-                                        "id": "tt0468569",
-                                        "metascore": 82,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
-                                        "released": "2008-07-18T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
                                     "_id": "tt0110912",
                                     "_score": 1,
                                     "_source": {
@@ -305,225 +285,6 @@
                                         "metascore": 94,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE0ODk2NjczOV5BMl5BanBnXkFtZTYwNDQ0NDg4._V1_SX300.jpg",
                                         "released": "1994-10-14T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0137523",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "psychological"
-                                        ],
-                                        "primary_genre1": "Drama",
-                                        "year": 1999,
-                                        "directors": [
-                                            "David Fincher"
-                                        ],
-                                        "writers": [
-                                            "Chuck Palahniuk",
-                                            "Jim Uhls"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Germany"
-                                        ],
-                                        "type": "movie",
-                                        "title": "Fight Club",
-                                        "imdbrating": 8.9,
-                                        "rated": "R",
-                                        "actors": [
-                                            "Edward Norton",
-                                            "Brad Pitt",
-                                            "Helena Bonham Carter",
-                                            "Meat Loaf"
-                                        ],
-                                        "plot": "An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...",
-                                        "genres": [
-                                            "Drama"
-                                        ],
-                                        "id": "tt0137523",
-                                        "metascore": 66,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX300.jpg",
-                                        "released": "1999-10-15T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0167260",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "epic"
-                                        ],
-                                        "primary_genre1": "Action",
-                                        "year": 2003,
-                                        "directors": [
-                                            "Peter Jackson"
-                                        ],
-                                        "writers": [
-                                            "J.R.R. Tolkien",
-                                            "Fran Walsh",
-                                            "Philippa Boyens",
-                                            "Peter Jackson"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "New Zealand"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Lord of the Rings: The Return of the King",
-                                        "imdbrating": 8.9,
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Noel Appleby",
-                                            "Alexandra Astin",
-                                            "Sean Astin",
-                                            "David Aston"
-                                        ],
-                                        "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt0167260",
-                                        "metascore": 94,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg",
-                                        "released": "2003-12-17T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt1375666",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "epic"
-                                        ],
-                                        "primary_genre1": "Action",
-                                        "year": 2010,
-                                        "directors": [
-                                            "Christopher Nolan"
-                                        ],
-                                        "writers": [
-                                            "Christopher Nolan"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "UK"
-                                        ],
-                                        "type": "movie",
-                                        "title": "Inception",
-                                        "imdbrating": 8.8,
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Leonardo DiCaprio",
-                                            "Joseph Gordon-Levitt",
-                                            "Ellen Page",
-                                            "Tom Hardy"
-                                        ],
-                                        "plot": "A skilled extractor is offered a chance to regain his old life as payment for a task considered to be impossible.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Mystery"
-                                        ],
-                                        "id": "tt1375666",
-                                        "metascore": 74,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
-                                        "released": "2010-07-16T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0120737",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre1": "Action",
-                                        "year": 2001,
-                                        "directors": [
-                                            "Peter Jackson"
-                                        ],
-                                        "writers": [
-                                            "J.R.R. Tolkien",
-                                            "Fran Walsh",
-                                            "Philippa Boyens",
-                                            "Peter Jackson"
-                                        ],
-                                        "countries": [
-                                            "New Zealand",
-                                            "USA"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Lord of the Rings: The Fellowship of the Ring",
-                                        "imdbrating": 8.9,
-                                        "rated": "PG-13",
-                                        "actors": [
-                                            "Alan Howard",
-                                            "Elijah Wood",
-                                            "Noel Appleby",
-                                            "Sean Astin"
-                                        ],
-                                        "plot": "A meek hobbit of The Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Fantasy"
-                                        ],
-                                        "id": "tt0120737",
-                                        "metascore": 92,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg",
-                                        "released": "2001-12-19T00:00:00Z"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0133093",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "martial arts"
-                                        ],
-                                        "primary_genre1": "Action",
-                                        "year": 1999,
-                                        "directors": [
-                                            "Andy Wachowski",
-                                            "Lana Wachowski"
-                                        ],
-                                        "writers": [
-                                            "Andy Wachowski",
-                                            "Lana Wachowski"
-                                        ],
-                                        "countries": [
-                                            "USA",
-                                            "Australia"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Matrix",
-                                        "imdbrating": 8.7,
-                                        "rated": "R",
-                                        "actors": [
-                                            "Keanu Reeves",
-                                            "Laurence Fishburne",
-                                            "Carrie-Anne Moss",
-                                            "Hugo Weaving"
-                                        ],
-                                        "plot": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-                                        "genres": [
-                                            "Action",
-                                            "Adventure",
-                                            "Sci-Fi"
-                                        ],
-                                        "id": "tt0133093",
-                                        "metascore": 73,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
-                                        "released": "1999-03-31T00:00:00+01:00"
                                     }
                                 },
                                 {
@@ -568,6 +329,253 @@
                                         "metascore": 80,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
                                         "released": "1974-12-20T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0108052",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Biography",
+                                        "year": 1993,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Thomas Keneally",
+                                            "Steven Zaillian"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Schindler's List",
+                                        "imdbrating": 8.9,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Liam Neeson",
+                                            "Ben Kingsley",
+                                            "Ralph Fiennes",
+                                            "Caroline Goodall"
+                                        ],
+                                        "plot": "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+                                        "genres": [
+                                            "Biography",
+                                            "Drama",
+                                            "History"
+                                        ],
+                                        "id": "tt0108052",
+                                        "metascore": 93,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX300.jpg",
+                                        "released": "1993-12-15T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0109830",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Drama",
+                                        "year": 1994,
+                                        "directors": [
+                                            "Robert Zemeckis"
+                                        ],
+                                        "writers": [
+                                            "Winston Groom",
+                                            "Eric Roth"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Forrest Gump",
+                                        "imdbrating": 8.8,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Tom Hanks",
+                                            "Rebecca Williams",
+                                            "Sally Field",
+                                            "Michael Conner Humphreys"
+                                        ],
+                                        "plot": "Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him.",
+                                        "genres": [
+                                            "Drama",
+                                            "Romance"
+                                        ],
+                                        "id": "tt0109830",
+                                        "metascore": 82,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQwMTA5MzI1MF5BMl5BanBnXkFtZTcwMzY5Mzg3OA@@._V1_SX300.jpg",
+                                        "released": "1994-07-06T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0076759",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 1977,
+                                        "directors": [
+                                            "George Lucas"
+                                        ],
+                                        "writers": [
+                                            "George Lucas"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Star Wars: Episode IV - A New Hope",
+                                        "imdbrating": 8.8,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Mark Hamill",
+                                            "Harrison Ford",
+                                            "Carrie Fisher",
+                                            "Peter Cushing"
+                                        ],
+                                        "plot": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0076759",
+                                        "metascore": 91,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU4NTczODkwM15BMl5BanBnXkFtZTcwMzEyMTIyMw@@._V1_SX300.jpg",
+                                        "released": "1977-05-25T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114369",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "scene of the",
+                                            "serial killer",
+                                            "police procedural"
+                                        ],
+                                        "primary_genre1": "Crime",
+                                        "year": 1995,
+                                        "directors": [
+                                            "David Fincher"
+                                        ],
+                                        "writers": [
+                                            "Andrew Kevin Walker"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Se7en",
+                                        "imdbrating": 8.7,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Morgan Freeman",
+                                            "Andrew Kevin Walker",
+                                            "Daniel Zacapa",
+                                            "Brad Pitt"
+                                        ],
+                                        "plot": "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi.",
+                                        "genres": [
+                                            "Crime",
+                                            "Mystery",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0114369",
+                                        "metascore": 65,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQwNTU3MTE4NF5BMl5BanBnXkFtZTcwOTgxNDM2Mg@@._V1_SX300.jpg",
+                                        "released": "1995-09-22T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0080684",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 1980,
+                                        "directors": [
+                                            "Irvin Kershner"
+                                        ],
+                                        "writers": [
+                                            "Leigh Brackett",
+                                            "Lawrence Kasdan",
+                                            "George Lucas"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Star Wars: Episode V - The Empire Strikes Back",
+                                        "imdbrating": 8.8,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Mark Hamill",
+                                            "Harrison Ford",
+                                            "Carrie Fisher",
+                                            "Billy Dee Williams"
+                                        ],
+                                        "plot": "After the rebels have been brutally overpowered by the Empire on their newly established base, Luke Skywalker takes advanced Jedi training with Master Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0080684",
+                                        "metascore": 78,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjE2MzQwMTgxN15BMl5BanBnXkFtZTcwMDQzNjk2OQ@@._V1_SX300.jpg",
+                                        "released": "1980-05-21T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0099685",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Biography",
+                                        "year": 1990,
+                                        "directors": [
+                                            "Martin Scorsese"
+                                        ],
+                                        "writers": [
+                                            "Nicholas Pileggi",
+                                            "Nicholas Pileggi",
+                                            "Martin Scorsese"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Goodfellas",
+                                        "imdbrating": 8.8,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Robert De Niro",
+                                            "Ray Liotta",
+                                            "Joe Pesci",
+                                            "Lorraine Bracco"
+                                        ],
+                                        "plot": "Henry Hill and his friends work their way up through the mob hierarchy.",
+                                        "genres": [
+                                            "Biography",
+                                            "Crime",
+                                            "Drama"
+                                        ],
+                                        "id": "tt0099685",
+                                        "metascore": 89,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY2OTE5MzQ3MV5BMl5BanBnXkFtZTgwMTY2NTYxMTE@._V1_SX300.jpg",
+                                        "released": "1990-09-19T00:00:00+01:00"
                                     }
                                 }
                             ]

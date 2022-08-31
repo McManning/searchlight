@@ -94,7 +94,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 0,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -161,7 +161,7 @@
                         }
                     },
                     "response": {
-                        "took": 0,
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,

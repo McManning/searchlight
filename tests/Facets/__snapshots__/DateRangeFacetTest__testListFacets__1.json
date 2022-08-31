@@ -9,20 +9,8 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "episode",
-                            "count": 4
-                        },
-                        {
-                            "label": "game",
-                            "count": 11
-                        },
-                        {
                             "label": "movie",
-                            "count": 852
-                        },
-                        {
-                            "label": "series",
-                            "count": 133
+                            "count": 12
                         }
                     ]
                 },
@@ -33,24 +21,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Approved",
-                            "count": 24
-                        },
-                        {
                             "label": "G",
-                            "count": 26
-                        },
-                        {
-                            "label": "NC-17",
-                            "count": 3
-                        },
-                        {
-                            "label": "Not Rated",
-                            "count": 49
+                            "count": 1
                         },
                         {
                             "label": "PG",
-                            "count": 106
+                            "count": 2
+                        },
+                        {
+                            "label": "PG-13",
+                            "count": 1
+                        },
+                        {
+                            "label": "R",
+                            "count": 7
+                        },
+                        {
+                            "label": "Unrated",
+                            "count": 1
                         }
                     ]
                 },
@@ -62,23 +50,23 @@
                     "entries": [
                         {
                             "label": "Action",
-                            "count": 185
+                            "count": 4
                         },
                         {
                             "label": "Adventure",
-                            "count": 181
+                            "count": 2
                         },
                         {
                             "label": "Animation",
-                            "count": 58
+                            "count": 2
                         },
                         {
                             "label": "Biography",
-                            "count": 63
+                            "count": 2
                         },
                         {
                             "label": "Comedy",
-                            "count": 191
+                            "count": 2
                         }
                     ]
                 },
@@ -89,24 +77,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Aamir Khan",
+                            "label": "Ang Lee",
                             "count": 1
                         },
                         {
-                            "label": "Adam Elliot",
+                            "label": "Bryan Singer",
                             "count": 1
                         },
                         {
-                            "label": "Adam McKay",
+                            "label": "David Fincher",
                             "count": 1
                         },
                         {
-                            "label": "Adam Shankman",
+                            "label": "John Lasseter",
                             "count": 1
                         },
                         {
-                            "label": "Akira Kurosawa",
-                            "count": 5
+                            "label": "John McTiernan",
+                            "count": 1
                         }
                     ]
                 },
@@ -117,23 +105,23 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "A.J. Quinnell",
+                            "label": "Al Reinert",
                             "count": 1
                         },
                         {
-                            "label": "Aaron Sorkin",
-                            "count": 3
-                        },
-                        {
-                            "label": "Aaron Stockard",
-                            "count": 2
-                        },
-                        {
-                            "label": "Abby Mann",
+                            "label": "Alec Sokolow",
                             "count": 1
                         },
                         {
-                            "label": "Abdel Raouf Dafri",
+                            "label": "Andrew Kevin Walker",
+                            "count": 1
+                        },
+                        {
+                            "label": "Andrew Stanton",
+                            "count": 1
+                        },
+                        {
+                            "label": "Bob Baker",
                             "count": 1
                         }
                     ]
@@ -145,23 +133,23 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Aamir Khan",
-                            "count": 3
-                        },
-                        {
-                            "label": "Aaron Eckhart",
-                            "count": 2
-                        },
-                        {
-                            "label": "Aaron Taylor-Johnson",
+                            "label": "Al Pacino",
                             "count": 1
                         },
                         {
-                            "label": "Abbie Cornish",
+                            "label": "Andrea Eckert",
                             "count": 1
                         },
                         {
-                            "label": "Abdel Ahmed Ghili",
+                            "label": "Andrew Kevin Walker",
+                            "count": 1
+                        },
+                        {
+                            "label": "Anne Reid",
+                            "count": 1
+                        },
+                        {
+                            "label": "Benicio Del Toro",
                             "count": 1
                         }
                     ]
@@ -173,24 +161,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Algeria",
-                            "count": 1
-                        },
-                        {
-                            "label": "Argentina",
-                            "count": 3
-                        },
-                        {
-                            "label": "Australia",
-                            "count": 14
-                        },
-                        {
                             "label": "Austria",
-                            "count": 2
+                            "count": 1
                         },
                         {
-                            "label": "Bahamas",
+                            "label": "France",
                             "count": 1
+                        },
+                        {
+                            "label": "Germany",
+                            "count": 1
+                        },
+                        {
+                            "label": "Switzerland",
+                            "count": 1
+                        },
+                        {
+                            "label": "UK",
+                            "count": 3
                         }
                     ]
                 },
@@ -226,19 +214,19 @@
                         },
                         {
                             "label": "6",
-                            "count": 14
+                            "count": 0
                         },
                         {
                             "label": "7",
-                            "count": 476
+                            "count": 4
                         },
                         {
                             "label": "8",
-                            "count": 352
+                            "count": 8
                         },
                         {
                             "label": "9",
-                            "count": 10
+                            "count": 0
                         },
                         {
                             "label": "10",
@@ -274,67 +262,67 @@
                         },
                         {
                             "label": "25",
-                            "count": 1
+                            "count": 0
                         },
                         {
                             "label": "30",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "35",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "40",
-                            "count": 4
+                            "count": 0
                         },
                         {
                             "label": "45",
-                            "count": 15
+                            "count": 0
                         },
                         {
                             "label": "50",
-                            "count": 25
+                            "count": 0
                         },
                         {
                             "label": "55",
-                            "count": 58
+                            "count": 1
                         },
                         {
                             "label": "60",
-                            "count": 76
+                            "count": 0
                         },
                         {
                             "label": "65",
-                            "count": 93
+                            "count": 3
                         },
                         {
                             "label": "70",
-                            "count": 102
+                            "count": 1
                         },
                         {
                             "label": "75",
-                            "count": 79
+                            "count": 4
                         },
                         {
                             "label": "80",
-                            "count": 88
+                            "count": 1
                         },
                         {
                             "label": "85",
-                            "count": 61
+                            "count": 0
                         },
                         {
                             "label": "90",
-                            "count": 43
+                            "count": 1
                         },
                         {
                             "label": "95",
-                            "count": 13
+                            "count": 0
                         },
                         {
                             "label": "100",
-                            "count": 3
+                            "count": 0
                         }
                     ]
                 },
@@ -346,23 +334,23 @@
                     "entries": [
                         {
                             "label": "Action",
-                            "count": 174
+                            "count": 4
                         },
                         {
                             "label": "Adventure",
-                            "count": 67
+                            "count": 1
                         },
                         {
                             "label": "Animation",
-                            "count": 58
+                            "count": 2
                         },
                         {
                             "label": "Biography",
-                            "count": 53
+                            "count": 1
                         },
                         {
-                            "label": "Comedy",
-                            "count": 132
+                            "label": "Crime",
+                            "count": 2
                         }
                     ]
                 }
@@ -486,14 +474,11 @@
                                     "bool": {
                                         "must": [
                                             {
-                                                "bool": {
-                                                    "should": [
-                                                        {
-                                                            "term": {
-                                                                "type": "movie"
-                                                            }
-                                                        }
-                                                    ]
+                                                "range": {
+                                                    "released": {
+                                                        "gte": "1995-01-01T00:00:00+00:00",
+                                                        "lte": "1996-01-01T00:00:00+00:00"
+                                                    }
                                                 }
                                             }
                                         ]
@@ -514,7 +499,16 @@
                                 },
                                 "filter": {
                                     "bool": {
-                                        "must": []
+                                        "must": [
+                                            {
+                                                "range": {
+                                                    "released": {
+                                                        "gte": "1995-01-01T00:00:00+00:00",
+                                                        "lte": "1996-01-01T00:00:00+00:00"
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -534,14 +528,11 @@
                                     "bool": {
                                         "must": [
                                             {
-                                                "bool": {
-                                                    "should": [
-                                                        {
-                                                            "term": {
-                                                                "type": "movie"
-                                                            }
-                                                        }
-                                                    ]
+                                                "range": {
+                                                    "released": {
+                                                        "gte": "1995-01-01T00:00:00+00:00",
+                                                        "lte": "1996-01-01T00:00:00+00:00"
+                                                    }
                                                 }
                                             }
                                         ]
@@ -619,14 +610,11 @@
                                     "bool": {
                                         "must": [
                                             {
-                                                "bool": {
-                                                    "should": [
-                                                        {
-                                                            "term": {
-                                                                "type": "movie"
-                                                            }
-                                                        }
-                                                    ]
+                                                "range": {
+                                                    "released": {
+                                                        "gte": "1995-01-01T00:00:00+00:00",
+                                                        "lte": "1996-01-01T00:00:00+00:00"
+                                                    }
                                                 }
                                             }
                                         ]
@@ -643,14 +631,11 @@
                             "bool": {
                                 "must": [
                                     {
-                                        "bool": {
-                                            "should": [
-                                                {
-                                                    "term": {
-                                                        "type": "movie"
-                                                    }
-                                                }
-                                            ]
+                                        "range": {
+                                            "released": {
+                                                "gte": "1995-01-01T00:00:00+00:00",
+                                                "lte": "1996-01-01T00:00:00+00:00"
+                                            }
                                         }
                                     }
                                 ]
@@ -668,7 +653,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 852,
+                                "value": 12,
                                 "relation": "eq"
                             },
                             "max_score": null,
@@ -676,108 +661,95 @@
                         },
                         "aggregations": {
                             "facet_bucket_type": {
-                                "meta": [],
-                                "doc_count": 1000,
+                                "doc_count": 12,
                                 "type": {
                                     "doc_count_error_upper_bound": 0,
                                     "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
-                                            "key": "episode",
-                                            "doc_count": 4
-                                        },
-                                        {
-                                            "key": "game",
-                                            "doc_count": 11
-                                        },
-                                        {
                                             "key": "movie",
-                                            "doc_count": 852
-                                        },
-                                        {
-                                            "key": "series",
-                                            "doc_count": 133
+                                            "doc_count": 12
                                         }
                                     ]
                                 }
                             },
                             "facet_bucket_all": {
-                                "doc_count": 852,
+                                "doc_count": 12,
                                 "rated": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 634,
+                                    "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
-                                            "key": "Approved",
-                                            "doc_count": 24
-                                        },
-                                        {
                                             "key": "G",
-                                            "doc_count": 26
-                                        },
-                                        {
-                                            "key": "NC-17",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Not Rated",
-                                            "doc_count": 49
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": "PG",
-                                            "doc_count": 106
+                                            "doc_count": 2
+                                        },
+                                        {
+                                            "key": "PG-13",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "R",
+                                            "doc_count": 7
+                                        },
+                                        {
+                                            "key": "Unrated",
+                                            "doc_count": 1
                                         }
                                     ]
                                 },
                                 "actors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 3384,
+                                    "sum_other_doc_count": 41,
                                     "buckets": [
                                         {
-                                            "key": "Aamir Khan",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Aaron Eckhart",
-                                            "doc_count": 2
-                                        },
-                                        {
-                                            "key": "Aaron Taylor-Johnson",
+                                            "key": "Al Pacino",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abbie Cornish",
+                                            "key": "Andrea Eckert",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abdel Ahmed Ghili",
+                                            "key": "Andrew Kevin Walker",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Anne Reid",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Benicio Del Toro",
                                             "doc_count": 1
                                         }
                                     ]
                                 },
                                 "directors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 937,
+                                    "sum_other_doc_count": 7,
                                     "buckets": [
                                         {
-                                            "key": "Aamir Khan",
+                                            "key": "Ang Lee",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam Elliot",
+                                            "key": "Bryan Singer",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam McKay",
+                                            "key": "David Fincher",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Adam Shankman",
+                                            "key": "John Lasseter",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Akira Kurosawa",
-                                            "doc_count": 5
+                                            "key": "John McTiernan",
+                                            "doc_count": 1
                                         }
                                     ]
                                 },
@@ -805,118 +777,118 @@
                                         },
                                         {
                                             "key": 25,
-                                            "doc_count": 1
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 30,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 35,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 40,
-                                            "doc_count": 4
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 45,
-                                            "doc_count": 15
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 50,
-                                            "doc_count": 25
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 55,
-                                            "doc_count": 58
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": 60,
-                                            "doc_count": 76
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 65,
-                                            "doc_count": 93
+                                            "doc_count": 3
                                         },
                                         {
                                             "key": 70,
-                                            "doc_count": 102
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": 75,
-                                            "doc_count": 79
+                                            "doc_count": 4
                                         },
                                         {
                                             "key": 80,
-                                            "doc_count": 88
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": 85,
-                                            "doc_count": 61
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 90,
-                                            "doc_count": 43
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": 95,
-                                            "doc_count": 13
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 100,
-                                            "doc_count": 3
+                                            "doc_count": 0
                                         }
                                     ]
                                 },
                                 "countries": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 1222,
+                                    "sum_other_doc_count": 11,
                                     "buckets": [
                                         {
-                                            "key": "Algeria",
-                                            "doc_count": 1
-                                        },
-                                        {
-                                            "key": "Argentina",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Australia",
-                                            "doc_count": 14
-                                        },
-                                        {
                                             "key": "Austria",
-                                            "doc_count": 2
+                                            "doc_count": 1
                                         },
                                         {
-                                            "key": "Bahamas",
+                                            "key": "France",
                                             "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Germany",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Switzerland",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "UK",
+                                            "doc_count": 3
                                         }
                                     ]
                                 },
                                 "writers": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 2016,
+                                    "sum_other_doc_count": 24,
                                     "buckets": [
                                         {
-                                            "key": "A.J. Quinnell",
+                                            "key": "Al Reinert",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Aaron Sorkin",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Aaron Stockard",
-                                            "doc_count": 2
-                                        },
-                                        {
-                                            "key": "Abby Mann",
+                                            "key": "Alec Sokolow",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Abdel Raouf Dafri",
+                                            "key": "Andrew Kevin Walker",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Andrew Stanton",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Bob Baker",
                                             "doc_count": 1
                                         }
                                     ]
@@ -949,19 +921,19 @@
                                         },
                                         {
                                             "key": 6,
-                                            "doc_count": 14
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 7,
-                                            "doc_count": 476
+                                            "doc_count": 4
                                         },
                                         {
                                             "key": 8,
-                                            "doc_count": 352
+                                            "doc_count": 8
                                         },
                                         {
                                             "key": 9,
-                                            "doc_count": 10
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 10,
@@ -971,104 +943,104 @@
                                 }
                             },
                             "facet_bucket_genres": {
-                                "doc_count": 852,
+                                "doc_count": 12,
                                 "genres": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 1462,
+                                    "sum_other_doc_count": 22,
                                     "buckets": [
                                         {
                                             "key": "Action",
-                                            "doc_count": 185
+                                            "doc_count": 4
                                         },
                                         {
                                             "key": "Adventure",
-                                            "doc_count": 181
+                                            "doc_count": 2
                                         },
                                         {
                                             "key": "Animation",
-                                            "doc_count": 58
+                                            "doc_count": 2
                                         },
                                         {
                                             "key": "Biography",
-                                            "doc_count": 63
+                                            "doc_count": 2
                                         },
                                         {
                                             "key": "Comedy",
-                                            "doc_count": 191
+                                            "doc_count": 2
                                         }
                                     ]
                                 }
                             },
                             "facet_bucket_genre": {
-                                "doc_count": 852,
+                                "doc_count": 12,
                                 "genre": {
-                                    "doc_count": 852,
+                                    "doc_count": 12,
                                     "lvl_2": {
-                                        "doc_count": 852,
+                                        "doc_count": 12,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null
                                             },
                                             "doc_count_error_upper_bound": 0,
-                                            "sum_other_doc_count": 1031,
+                                            "sum_other_doc_count": 13,
                                             "buckets": [
                                                 {
-                                                    "key": "2d",
-                                                    "doc_count": 18
+                                                    "key": "british",
+                                                    "doc_count": 1
                                                 },
                                                 {
-                                                    "key": "3d",
-                                                    "doc_count": 11
+                                                    "key": "cg",
+                                                    "doc_count": 1
                                                 },
                                                 {
-                                                    "key": "absurd",
-                                                    "doc_count": 17
+                                                    "key": "cgi",
+                                                    "doc_count": 1
                                                 },
                                                 {
-                                                    "key": "academia",
-                                                    "doc_count": 3
+                                                    "key": "computer",
+                                                    "doc_count": 1
                                                 },
                                                 {
-                                                    "key": "adult",
-                                                    "doc_count": 8
+                                                    "key": "costume",
+                                                    "doc_count": 1
                                                 }
                                             ]
                                         }
                                     },
                                     "lvl_1": {
-                                        "doc_count": 852,
+                                        "doc_count": 12,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null
                                             },
                                             "doc_count_error_upper_bound": 0,
-                                            "sum_other_doc_count": 368,
+                                            "sum_other_doc_count": 2,
                                             "buckets": [
                                                 {
                                                     "key": "Action",
-                                                    "doc_count": 174
+                                                    "doc_count": 4
                                                 },
                                                 {
                                                     "key": "Adventure",
-                                                    "doc_count": 67
+                                                    "doc_count": 1
                                                 },
                                                 {
                                                     "key": "Animation",
-                                                    "doc_count": 58
+                                                    "doc_count": 2
                                                 },
                                                 {
                                                     "key": "Biography",
-                                                    "doc_count": 53
+                                                    "doc_count": 1
                                                 },
                                                 {
-                                                    "key": "Comedy",
-                                                    "doc_count": 132
+                                                    "key": "Crime",
+                                                    "doc_count": 2
                                                 }
                                             ]
                                         }
                                     },
                                     "lvl_3": {
-                                        "doc_count": 852,
+                                        "doc_count": 12,
                                         "aggs": {
                                             "meta": {
                                                 "parent": null

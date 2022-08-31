@@ -1,0 +1,103 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "query": "",
+                "appliedFilters": [
+                    {
+                        "id": "released_1995-01-01T00:00:00+00:00_1996-01-01T00:00:00+00:00",
+                        "identifier": "released",
+                        "display": "DateRange",
+                        "label": "Released",
+                        "dateMin": "1995-01-01T00:00:00+00:00",
+                        "dateMax": "1996-01-01T00:00:00+00:00"
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 0,
+            "trips": [
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "range": {
+                                            "released": {
+                                                "gte": "1995-01-01T00:00:00+00:00",
+                                                "lte": "1996-01-01T00:00:00+00:00"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 0,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 12,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

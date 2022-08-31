@@ -17,6 +17,14 @@ return [
             'host' => env('SEARCHLIGHT_DEFAULT_HOST', 'elasticsearch:9200'),
             'index' => env('SEARCHLIGHT_DEFAULT_INDEX', 'imdb_movies'),
 
+            /*
+             * Optional HTTP Basic Auth credentials
+             */
+            'http_basic_auth' => [
+                'username' => env('SEARCHLIGHT_DEFAULT_AUTH_USERNAME'),
+                'password' => env('SEARCHLIGHT_DEFAULT_AUTH_PASSWORD'),
+            ],
+
             'query_type' => 'results',
             'result_type' => 'ResultSet',
             'hit_type' => 'ResultHit',
@@ -56,17 +64,10 @@ return [
                     'poster',
                     'id',
                     'metascore',
-                ],
-                'highlightedFields' => [
-                    // Technically would be the same as the query fields.
-                    // Automate this away?
-                    'title',
-                    'genres',
-                    'directors',
-                    'writers',
-                    'actors',
-                    'countries',
-                    'plot',
+                    'imdbrating',
+                    'primary_genre1',
+                    'primary_genre2',
+                    'primary_genre3',
                 ],
             ],
 
@@ -102,11 +103,6 @@ return [
                     'identifier' => 'rated',
                     'label' => 'Rated',
                     'field' => 'rated',
-                ]),
-                new DateRangeFacet([
-                    'identifier' => 'released',
-                    'label' => 'Released',
-                    'field' => 'released',
                 ]),
                 new RefinementSelectFacet([
                     'identifier' => 'genres',
@@ -151,29 +147,39 @@ return [
                     'interval' => 5,
                 ]),
 
-                // new HierarchicalMenu([
-                //     'identifier' => 'categories',
-                //     'label' => 'Categories',
-                //     'fields' => ['categories1', 'categories2', 'categories3'],
-                // ]),
+                new HierarchicalMenuFacet([
+                    'identifier' => 'genre',
+                    'label' => 'Genre',
+                    'fields' => [
+                        'primary_genre1.keyword',
+                        'primary_genre2.keyword',
+                        'primary_genre3.keyword'
+                    ],
+                ]),
+
+                new DateRangeFacet([
+                    'identifier' => 'released',
+                    'label' => 'Released',
+                    'field' => 'released',
+                ]),
             ],
 
             // 'base_filters' => [
             //     ['term' => ['_type' => '_doc']],
             // ],
-        ],
 
-        'filters' => [
-            // new TermFilter([
-            //     'identifier' => 'location',
-            //     'label' => 'Location',
-            //     'field' => 'location.keyword',
-            // ]),
-            // new TermFilter([
-            //     'identifier' => 'category_term',
-            //     'label' => 'Category Term',
-            //     'field' => 'category.keyword',
-            // ]),
+            // 'filters' => [
+            //     new TermFilter([
+            //         'identifier' => 'location',
+            //         'label' => 'Location',
+            //         'field' => 'location.keyword',
+            //     ]),
+            //     new TermFilter([
+            //         'identifier' => 'category_term',
+            //         'label' => 'Category Term',
+            //         'field' => 'category.keyword',
+            //     ]),
+            // ],
         ],
     ],
 ];

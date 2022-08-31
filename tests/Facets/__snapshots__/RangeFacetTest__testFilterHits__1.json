@@ -1,0 +1,609 @@
+{
+    "data": {
+        "results": {
+            "summary": {
+                "total": 565
+            },
+            "hits": {
+                "items": [
+                    {
+                        "id": "tt0499549",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "Avatar"
+                        }
+                    },
+                    {
+                        "id": "tt0120382",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "The Truman Show"
+                        }
+                    },
+                    {
+                        "id": "tt1136608",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "District 9"
+                        }
+                    },
+                    {
+                        "id": "tt0371746",
+                        "fields": {
+                            "imdbrating": 7.9,
+                            "title": "Iron Man"
+                        }
+                    },
+                    {
+                        "id": "tt0378194",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "Kill Bill: Vol. 2"
+                        }
+                    },
+                    {
+                        "id": "tt0107290",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "Jurassic Park"
+                        }
+                    },
+                    {
+                        "id": "tt0317705",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "The Incredibles"
+                        }
+                    },
+                    {
+                        "id": "tt0382932",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "Ratatouille"
+                        }
+                    },
+                    {
+                        "id": "tt1119646",
+                        "fields": {
+                            "imdbrating": 7.8,
+                            "title": "The Hangover"
+                        }
+                    },
+                    {
+                        "id": "tt0319061",
+                        "fields": {
+                            "imdbrating": 8,
+                            "title": "Big Fish"
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 2,
+            "trips": [
+                {
+                    "query": {
+                        "size": 10,
+                        "from": 0,
+                        "sort": [
+                            {
+                                "_score": "desc"
+                            }
+                        ],
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        },
+                        "post_filter": {
+                            "bool": {
+                                "must": [
+                                    {
+                                        "range": {
+                                            "imdbrating": {
+                                                "gte": 6,
+                                                "lte": 8
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 2,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 565,
+                                "relation": "eq"
+                            },
+                            "max_score": 1,
+                            "hits": [
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0499549",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 2009,
+                                        "directors": [
+                                            "James Cameron"
+                                        ],
+                                        "writers": [
+                                            "James Cameron"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Avatar",
+                                        "imdbrating": 8,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Sam Worthington",
+                                            "Zoe Saldana",
+                                            "Sigourney Weaver",
+                                            "Stephen Lang"
+                                        ],
+                                        "plot": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0499549",
+                                        "metascore": 83,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg",
+                                        "released": "2009-12-18T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0120382",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "high concept",
+                                            "satire"
+                                        ],
+                                        "primary_genre1": "Comedy",
+                                        "year": 1998,
+                                        "directors": [
+                                            "Peter Weir"
+                                        ],
+                                        "writers": [
+                                            "Andrew Niccol"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Truman Show",
+                                        "imdbrating": 8,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Jim Carrey",
+                                            "Laura Linney",
+                                            "Noah Emmerich",
+                                            "Natascha McElhone"
+                                        ],
+                                        "plot": "An insurance salesman\/adjuster discovers his entire life is actually a T.V. show.",
+                                        "genres": [
+                                            "Comedy",
+                                            "Drama",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0120382",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM4NjY2MTEzM15BMl5BanBnXkFtZTcwMTk2Njk3OA@@._V1_SX300.jpg",
+                                        "released": "1998-06-05T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1136608",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Action",
+                                        "year": 2009,
+                                        "directors": [
+                                            "Neill Blomkamp"
+                                        ],
+                                        "writers": [
+                                            "Neill Blomkamp",
+                                            "Terri Tatchell"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "New Zealand",
+                                            "Canada",
+                                            "South Africa"
+                                        ],
+                                        "type": "movie",
+                                        "title": "District 9",
+                                        "imdbrating": 8,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Sharlto Copley",
+                                            "Jason Cope",
+                                            "Nathalie Boltt",
+                                            "Sylvaine Strike"
+                                        ],
+                                        "plot": "An extraterrestrial race forced to live in slum-like conditions on Earth suddenly finds a kindred spirit in a government agent who is exposed to their biotechnology.",
+                                        "genres": [
+                                            "Action",
+                                            "Sci-Fi",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt1136608",
+                                        "metascore": 81,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTM4OTI1OTM5NF5BMl5BanBnXkFtZTcwMzk5MTU1Mg@@._V1_SX300.jpg",
+                                        "released": "2009-08-14T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0371746",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "superhero"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2008,
+                                        "directors": [
+                                            "Jon Favreau"
+                                        ],
+                                        "writers": [
+                                            "Mark Fergus",
+                                            "Hawk Ostby",
+                                            "Art Marcum",
+                                            "Matt Holloway",
+                                            "Stan Lee",
+                                            "Don Heck",
+                                            "Larry Lieber",
+                                            "Jack Kirby"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Iron Man",
+                                        "imdbrating": 7.9,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Robert Downey Jr.",
+                                            "Terrence Howard",
+                                            "Jeff Bridges",
+                                            "Gwyneth Paltrow"
+                                        ],
+                                        "plot": "When wealthy industrialist Tony Stark is forced to build an armored suit after a life-threatening incident, he ultimately decides to use its technology to fight against evil.",
+                                        "genres": [
+                                            "Action",
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0371746",
+                                        "metascore": 79,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg",
+                                        "released": "2008-05-02T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0378194",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "one person army"
+                                        ],
+                                        "primary_genre1": "Action",
+                                        "year": 2004,
+                                        "directors": [
+                                            "Quentin Tarantino"
+                                        ],
+                                        "writers": [
+                                            "Quentin Tarantino",
+                                            "Quentin Tarantino"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Kill Bill: Vol. 2",
+                                        "imdbrating": 8,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Vivica A. Fox",
+                                            "Ambrosia Kelley",
+                                            "Michael Parks",
+                                            "James Parks"
+                                        ],
+                                        "plot": "The Bride continues her quest of vengeance against her former boss and lover Bill, the reclusive bouncer Budd and the treacherous, one-eyed Elle.",
+                                        "genres": [
+                                            "Action",
+                                            "Crime",
+                                            "Thriller"
+                                        ],
+                                        "id": "tt0378194",
+                                        "metascore": 83,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTIwNzQ3MDIxMV5BMl5BanBnXkFtZTcwMDIxMzUyMQ@@._V1_SX300.jpg",
+                                        "released": "2004-04-16T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0107290",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "dinosaur",
+                                            "island"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 1993,
+                                        "directors": [
+                                            "Steven Spielberg"
+                                        ],
+                                        "writers": [
+                                            "Michael Crichton",
+                                            "Michael Crichton",
+                                            "David Koepp"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Jurassic Park",
+                                        "imdbrating": 8,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Sam Neill",
+                                            "Laura Dern",
+                                            "Jeff Goldblum",
+                                            "Richard Attenborough"
+                                        ],
+                                        "plot": "During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Sci-Fi"
+                                        ],
+                                        "id": "tt0107290",
+                                        "metascore": 68,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMjQzODQyMzk2Nl5BMl5BanBnXkFtZTcwNTg4MjQ3OA@@._V1_SX300.jpg",
+                                        "released": "1993-06-11T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0317705",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "cgi",
+                                            "computer",
+                                            "cg"
+                                        ],
+                                        "primary_genre1": "Animation",
+                                        "year": 2004,
+                                        "directors": [
+                                            "Brad Bird"
+                                        ],
+                                        "writers": [
+                                            "Brad Bird"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Incredibles",
+                                        "imdbrating": 8,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "Craig T. Nelson",
+                                            "Holly Hunter",
+                                            "Samuel L. Jackson",
+                                            "Jason Lee"
+                                        ],
+                                        "plot": "A family of undercover superheroes, while trying to live the quiet suburban life, are forced into action to save the world.",
+                                        "genres": [
+                                            "Animation",
+                                            "Action",
+                                            "Adventure"
+                                        ],
+                                        "id": "tt0317705",
+                                        "metascore": 90,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_SX300.jpg",
+                                        "released": "2004-11-05T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0382932",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "cgi",
+                                            "computer",
+                                            "3d"
+                                        ],
+                                        "primary_genre1": "Animation",
+                                        "year": 2007,
+                                        "directors": [
+                                            "Brad Bird",
+                                            "Jan Pinkava"
+                                        ],
+                                        "writers": [
+                                            "Brad Bird"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Ratatouille",
+                                        "imdbrating": 8,
+                                        "rated": "G",
+                                        "actors": [
+                                            "Patton Oswalt",
+                                            "Ian Holm",
+                                            "Lou Romano",
+                                            "Brian Dennehy"
+                                        ],
+                                        "plot": "With dreams of becoming a chef, a culinary genius in the form of a mouse, makes an unusual alliance with a young kitchen worker at a famed restaurant.",
+                                        "genres": [
+                                            "Animation",
+                                            "Comedy",
+                                            "Family"
+                                        ],
+                                        "id": "tt0382932",
+                                        "metascore": 96,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg",
+                                        "released": "2007-06-29T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt1119646",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "absurd",
+                                            "gross out",
+                                            "crude humor",
+                                            "neo screwball"
+                                        ],
+                                        "primary_genre1": "Comedy",
+                                        "year": 2009,
+                                        "directors": [
+                                            "Todd Phillips"
+                                        ],
+                                        "writers": [
+                                            "Jon Lucas",
+                                            "Scott Moore"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "Germany"
+                                        ],
+                                        "type": "movie",
+                                        "title": "The Hangover",
+                                        "imdbrating": 7.8,
+                                        "rated": "R",
+                                        "actors": [
+                                            "Bradley Cooper",
+                                            "Ed Helms",
+                                            "Zach Galifianakis",
+                                            "Justin Bartha"
+                                        ],
+                                        "plot": "Three buddies wake up from a bachelor party in Las Vegas, with no memory of the previous night and the bachelor missing. They make their way around the city in order to find their friend before his wedding.",
+                                        "genres": [
+                                            "Comedy"
+                                        ],
+                                        "id": "tt1119646",
+                                        "metascore": 73,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTU1MDA1MTYwMF5BMl5BanBnXkFtZTcwMDcxMzA1Mg@@._V1_SX300.jpg",
+                                        "released": "2009-06-05T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0319061",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre1": "Adventure",
+                                        "year": 2003,
+                                        "directors": [
+                                            "Tim Burton"
+                                        ],
+                                        "writers": [
+                                            "Daniel Wallace",
+                                            "John August"
+                                        ],
+                                        "countries": [
+                                            "USA"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Big Fish",
+                                        "imdbrating": 8,
+                                        "rated": "PG-13",
+                                        "actors": [
+                                            "Ewan McGregor",
+                                            "Albert Finney",
+                                            "Billy Crudup",
+                                            "Jessica Lange"
+                                        ],
+                                        "plot": "A son tries to learn more about his dying father by reliving stories and myths he told about his life.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0319061",
+                                        "metascore": 58,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTYyMzM3MzgyNV5BMl5BanBnXkFtZTcwMTI4MzUyMQ@@._V1_SX300.jpg",
+                                        "released": "2004-01-09T00:00:00Z"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

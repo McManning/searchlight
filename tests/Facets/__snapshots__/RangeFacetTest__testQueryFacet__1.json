@@ -1,0 +1,204 @@
+{
+    "data": {
+        "results": {
+            "facet": {
+                "identifier": "imdbrating",
+                "label": "IMDb Rating",
+                "type": "RangeFacet",
+                "display": "RangeSliderFacet",
+                "entries": [
+                    {
+                        "label": "0",
+                        "count": 0
+                    },
+                    {
+                        "label": "1",
+                        "count": 0
+                    },
+                    {
+                        "label": "2",
+                        "count": 0
+                    },
+                    {
+                        "label": "3",
+                        "count": 0
+                    },
+                    {
+                        "label": "4",
+                        "count": 0
+                    },
+                    {
+                        "label": "5",
+                        "count": 0
+                    },
+                    {
+                        "label": "6",
+                        "count": 14
+                    },
+                    {
+                        "label": "7",
+                        "count": 478
+                    },
+                    {
+                        "label": "8",
+                        "count": 457
+                    },
+                    {
+                        "label": "9",
+                        "count": 51
+                    },
+                    {
+                        "label": "10",
+                        "count": 0
+                    }
+                ]
+            }
+        }
+    },
+    "extensions": {
+        "searchlight_inspection": {
+            "version": 1,
+            "took": 0,
+            "trips": [
+                {
+                    "query": {
+                        "size": 0,
+                        "from": 0,
+                        "_source": {
+                            "includes": [
+                                "type",
+                                "title",
+                                "year",
+                                "rated",
+                                "released",
+                                "genres",
+                                "directors",
+                                "writers",
+                                "actors",
+                                "countries",
+                                "plot",
+                                "poster",
+                                "id",
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
+                            ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
+                        },
+                        "aggs": {
+                            "facet_bucket_all": {
+                                "aggs": {
+                                    "imdbrating": {
+                                        "histogram": {
+                                            "field": "imdbrating",
+                                            "interval": 1,
+                                            "min_doc_count": 0,
+                                            "extended_bounds": {
+                                                "min": 0,
+                                                "max": 10
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": []
+                                    }
+                                }
+                            }
+                        },
+                        "query": {
+                            "bool": {
+                                "filter": []
+                            }
+                        }
+                    },
+                    "response": {
+                        "took": 0,
+                        "timed_out": false,
+                        "_shards": {
+                            "total": 1,
+                            "successful": 1,
+                            "skipped": 0,
+                            "failed": 0
+                        },
+                        "hits": {
+                            "total": {
+                                "value": 1000,
+                                "relation": "eq"
+                            },
+                            "max_score": null,
+                            "hits": []
+                        },
+                        "aggregations": {
+                            "facet_bucket_all": {
+                                "meta": [],
+                                "doc_count": 1000,
+                                "imdbrating": {
+                                    "buckets": [
+                                        {
+                                            "key": 0,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 1,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 2,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 3,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 4,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 5,
+                                            "doc_count": 0
+                                        },
+                                        {
+                                            "key": 6,
+                                            "doc_count": 14
+                                        },
+                                        {
+                                            "key": 7,
+                                            "doc_count": 478
+                                        },
+                                        {
+                                            "key": 8,
+                                            "doc_count": 457
+                                        },
+                                        {
+                                            "key": 9,
+                                            "doc_count": 51
+                                        },
+                                        {
+                                            "key": 10,
+                                            "doc_count": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

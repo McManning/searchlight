@@ -10,70 +10,70 @@
                         "id": "tt0111161",
                         "fields": {
                             "title": "The Shawshank Redemption",
-                            "year": "1994"
+                            "year": 1994
                         }
                     },
                     {
                         "id": "tt0068646",
                         "fields": {
                             "title": "The Godfather",
-                            "year": "1972"
+                            "year": 1972
                         }
                     },
                     {
                         "id": "tt0468569",
                         "fields": {
                             "title": "The Dark Knight",
-                            "year": "2008"
+                            "year": 2008
                         }
                     },
                     {
                         "id": "tt0944947",
                         "fields": {
                             "title": "Game of Thrones",
-                            "year": "2011"
+                            "year": 2011
                         }
                     },
                     {
                         "id": "tt0110912",
                         "fields": {
                             "title": "Pulp Fiction",
-                            "year": "1994"
+                            "year": 1994
                         }
                     },
                     {
                         "id": "tt0137523",
                         "fields": {
                             "title": "Fight Club",
-                            "year": "1999"
+                            "year": 1999
                         }
                     },
                     {
                         "id": "tt0167260",
                         "fields": {
                             "title": "The Lord of the Rings: The Return of the King",
-                            "year": "2003"
+                            "year": 2003
                         }
                     },
                     {
                         "id": "tt1375666",
                         "fields": {
                             "title": "Inception",
-                            "year": "2010"
+                            "year": 2010
                         }
                     },
                     {
                         "id": "tt0120737",
                         "fields": {
                             "title": "The Lord of the Rings: The Fellowship of the Ring",
-                            "year": "2001"
+                            "year": 2001
                         }
                     },
                     {
                         "id": "tt0133093",
                         "fields": {
                             "title": "The Matrix",
-                            "year": "1999"
+                            "year": 1999
                         }
                     }
                 ]
@@ -83,7 +83,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 2,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -109,8 +109,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -119,7 +134,7 @@
                         }
                     },
                     "response": {
-                        "took": 2,
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -140,6 +155,7 @@
                                     "_id": "tt0111161",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Frank Darabont"
@@ -153,6 +169,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Shawshank Redemption",
+                                        "imdbrating": 9.3,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Robbins",
@@ -177,6 +194,12 @@
                                     "_id": "tt0068646",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "organized",
+                                            "gangland",
+                                            "gangster"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1972,
                                         "directors": [
                                             "Francis Ford Coppola"
@@ -191,6 +214,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Godfather",
+                                        "imdbrating": 9.2,
                                         "rated": "R",
                                         "actors": [
                                             "Marlon Brando",
@@ -215,6 +239,10 @@
                                     "_id": "tt0468569",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "superhero"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2008,
                                         "directors": [
                                             "Christopher Nolan"
@@ -232,6 +260,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Dark Knight",
+                                        "imdbrating": 9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Christian Bale",
@@ -257,6 +286,10 @@
                                     "_id": "tt0944947",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "snow"
+                                        ],
+                                        "primary_genre1": "Adventure",
                                         "year": 2011,
                                         "directors": [],
                                         "writers": [
@@ -269,6 +302,7 @@
                                         ],
                                         "type": "series",
                                         "title": "Game of Thrones",
+                                        "imdbrating": 9.5,
                                         "rated": "TV-MA",
                                         "actors": [
                                             "Peter Dinklage",
@@ -293,6 +327,7 @@
                                     "_id": "tt0110912",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1994,
                                         "directors": [
                                             "Quentin Tarantino"
@@ -307,6 +342,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Pulp Fiction",
+                                        "imdbrating": 9,
                                         "rated": "R",
                                         "actors": [
                                             "Tim Roth",
@@ -332,6 +368,10 @@
                                     "_id": "tt0137523",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "psychological"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 1999,
                                         "directors": [
                                             "David Fincher"
@@ -346,6 +386,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Fight Club",
+                                        "imdbrating": 8.9,
                                         "rated": "R",
                                         "actors": [
                                             "Edward Norton",
@@ -369,6 +410,10 @@
                                     "_id": "tt0167260",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2003,
                                         "directors": [
                                             "Peter Jackson"
@@ -385,6 +430,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Lord of the Rings: The Return of the King",
+                                        "imdbrating": 8.9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Noel Appleby",
@@ -410,6 +456,10 @@
                                     "_id": "tt1375666",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 2010,
                                         "directors": [
                                             "Christopher Nolan"
@@ -423,6 +473,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Inception",
+                                        "imdbrating": 8.8,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Leonardo DiCaprio",
@@ -448,6 +499,7 @@
                                     "_id": "tt0120737",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 2001,
                                         "directors": [
                                             "Peter Jackson"
@@ -464,6 +516,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Lord of the Rings: The Fellowship of the Ring",
+                                        "imdbrating": 8.9,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Alan Howard",
@@ -489,6 +542,10 @@
                                     "_id": "tt0133093",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "martial arts"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1999,
                                         "directors": [
                                             "Andy Wachowski",
@@ -504,6 +561,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Matrix",
+                                        "imdbrating": 8.7,
                                         "rated": "R",
                                         "actors": [
                                             "Keanu Reeves",

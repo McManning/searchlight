@@ -91,7 +91,7 @@ final class SearchkitCheatsheetTest extends TestCase
         }
         ');
 
-        $this->assertGraphQLError('Unknown filter identifier: foobar');
+        $this->assertGraphQLError('Unknown filter identifier "foobar"');
     }
 
     public function testHitFiltering()
@@ -335,26 +335,24 @@ final class SearchkitCheatsheetTest extends TestCase
         $this->assertSnapshot();
     }
 
-    // public function testQueryOptionsUsage()
-    // {
-    //     $this->graphQL('
-    //     query {
-    //         results(query: "heat", queryOptions: {
-    //             fields: ["title^2", "description^1"]
-    //         }) {
-    //             hits {
-    //                 items {
-    //                     id
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     ');
+    public function testQueryOptionsFields()
+    {
+        $this->graphQL('
+        query {
+            results(query: "heat", queryOptions: {
+                fields: ["title^2", "plot^1"]
+            }) {
+                hits {
+                    items {
+                        id
+                    }
+                }
+            }
+        }
+        ');
 
-    //     $this->assertSnapshot();
-
-    //     $this->markTestIncomplete('TODO: queryOptions are ignored');
-    // }
+        $this->assertSnapshot();
+    }
 
     // TODO: Geo location filtering and hierarchical menu faceting.
     // This requires non-IMDb datasets - or enhancement to indexed IMDb data

@@ -2,48 +2,79 @@
     "data": {
         "results": {
             "summary": {
-                "query": "",
-                "appliedFilters": [
-                    {
-                        "id": "type_movie",
-                        "identifier": "type",
-                        "display": "ListFacet",
-                        "label": "Type",
-                        "value": "movie"
-                    }
-                ]
+                "total": 508
             },
             "hits": {
                 "items": [
                     {
-                        "id": "tt0111161"
+                        "id": "tt0111161",
+                        "fields": {
+                            "imdbrating": 9.3,
+                            "title": "The Shawshank Redemption"
+                        }
                     },
                     {
-                        "id": "tt0068646"
+                        "id": "tt0068646",
+                        "fields": {
+                            "imdbrating": 9.2,
+                            "title": "The Godfather"
+                        }
                     },
                     {
-                        "id": "tt0468569"
+                        "id": "tt0468569",
+                        "fields": {
+                            "imdbrating": 9,
+                            "title": "The Dark Knight"
+                        }
                     },
                     {
-                        "id": "tt0110912"
+                        "id": "tt0944947",
+                        "fields": {
+                            "imdbrating": 9.5,
+                            "title": "Game of Thrones"
+                        }
                     },
                     {
-                        "id": "tt0137523"
+                        "id": "tt0110912",
+                        "fields": {
+                            "imdbrating": 9,
+                            "title": "Pulp Fiction"
+                        }
                     },
                     {
-                        "id": "tt0167260"
+                        "id": "tt0137523",
+                        "fields": {
+                            "imdbrating": 8.9,
+                            "title": "Fight Club"
+                        }
                     },
                     {
-                        "id": "tt1375666"
+                        "id": "tt0167260",
+                        "fields": {
+                            "imdbrating": 8.9,
+                            "title": "The Lord of the Rings: The Return of the King"
+                        }
                     },
                     {
-                        "id": "tt0120737"
+                        "id": "tt1375666",
+                        "fields": {
+                            "imdbrating": 8.8,
+                            "title": "Inception"
+                        }
                     },
                     {
-                        "id": "tt0133093"
+                        "id": "tt0120737",
+                        "fields": {
+                            "imdbrating": 8.9,
+                            "title": "The Lord of the Rings: The Fellowship of the Ring"
+                        }
                     },
                     {
-                        "id": "tt0071562"
+                        "id": "tt0133093",
+                        "fields": {
+                            "imdbrating": 8.7,
+                            "title": "The Matrix"
+                        }
                     }
                 ]
             }
@@ -105,14 +136,10 @@
                             "bool": {
                                 "must": [
                                     {
-                                        "bool": {
-                                            "should": [
-                                                {
-                                                    "term": {
-                                                        "type": "movie"
-                                                    }
-                                                }
-                                            ]
+                                        "range": {
+                                            "imdbrating": {
+                                                "gte": 8
+                                            }
                                         }
                                     }
                                 ]
@@ -130,7 +157,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 852,
+                                "value": 508,
                                 "relation": "eq"
                             },
                             "max_score": 1,
@@ -264,6 +291,47 @@
                                         "metascore": 82,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
                                         "released": "2008-07-18T00:00:00+01:00"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0944947",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "snow"
+                                        ],
+                                        "primary_genre1": "Adventure",
+                                        "year": 2011,
+                                        "directors": [],
+                                        "writers": [
+                                            "David Benioff",
+                                            "D.B. Weiss"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "series",
+                                        "title": "Game of Thrones",
+                                        "imdbrating": 9.5,
+                                        "rated": "TV-MA",
+                                        "actors": [
+                                            "Peter Dinklage",
+                                            "Lena Headey",
+                                            "Maisie Williams",
+                                            "Emilia Clarke"
+                                        ],
+                                        "plot": "Seven noble families fight for control of the mythical land of Westeros.",
+                                        "genres": [
+                                            "Adventure",
+                                            "Drama",
+                                            "Fantasy"
+                                        ],
+                                        "id": "tt0944947",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNTA5NzY4MTM0N15BMl5BanBnXkFtZTcwMTA0MDkxOQ@@._V1_SX300.jpg",
+                                        "released": "2011-04-17T00:00:00+01:00"
                                     }
                                 },
                                 {
@@ -524,50 +592,6 @@
                                         "metascore": 73,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTkxNDYxOTA4M15BMl5BanBnXkFtZTgwNTk0NzQxMTE@._V1_SX300.jpg",
                                         "released": "1999-03-31T00:00:00+01:00"
-                                    }
-                                },
-                                {
-                                    "_index": "imdb_movies",
-                                    "_type": "_doc",
-                                    "_id": "tt0071562",
-                                    "_score": 1,
-                                    "_source": {
-                                        "primary_genre2": [
-                                            "organized",
-                                            "gangster"
-                                        ],
-                                        "primary_genre1": "Crime",
-                                        "year": 1974,
-                                        "directors": [
-                                            "Francis Ford Coppola"
-                                        ],
-                                        "writers": [
-                                            "Francis Ford Coppola",
-                                            "Mario Puzo",
-                                            "Mario Puzo"
-                                        ],
-                                        "countries": [
-                                            "USA"
-                                        ],
-                                        "type": "movie",
-                                        "title": "The Godfather: Part II",
-                                        "imdbrating": 9.1,
-                                        "rated": "R",
-                                        "actors": [
-                                            "Al Pacino",
-                                            "Robert Duvall",
-                                            "Diane Keaton",
-                                            "Robert De Niro"
-                                        ],
-                                        "plot": "The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.",
-                                        "genres": [
-                                            "Crime",
-                                            "Drama"
-                                        ],
-                                        "id": "tt0071562",
-                                        "metascore": 80,
-                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
-                                        "released": "1974-12-20T00:00:00Z"
                                     }
                                 }
                             ]

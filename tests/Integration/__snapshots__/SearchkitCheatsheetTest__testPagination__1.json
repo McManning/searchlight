@@ -77,7 +77,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 2,
+            "took": 3,
             "trips": [
                 {
                     "query": {
@@ -103,8 +103,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -113,7 +128,7 @@
                         }
                     },
                     "response": {
-                        "took": 2,
+                        "took": 3,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -134,6 +149,10 @@
                                     "_id": "tt0113277",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "team"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1995,
                                         "directors": [
                                             "Michael Mann"
@@ -146,6 +165,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Heat",
+                                        "imdbrating": 8.3,
                                         "rated": "R",
                                         "actors": [
                                             "Al Pacino",
@@ -171,6 +191,15 @@
                                     "_id": "tt0121955",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "adult",
+                                            "computer",
+                                            "cutout",
+                                            "for grown ups",
+                                            "2d",
+                                            "mature"
+                                        ],
+                                        "primary_genre1": "Animation",
                                         "year": 1997,
                                         "directors": [],
                                         "writers": [
@@ -182,6 +211,7 @@
                                         ],
                                         "type": "series",
                                         "title": "South Park",
+                                        "imdbrating": 8.9,
                                         "rated": "TV-MA",
                                         "actors": [
                                             "Trey Parker",
@@ -205,6 +235,10 @@
                                     "_id": "tt0246578",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "psychological"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 2001,
                                         "directors": [
                                             "Richard Kelly"
@@ -217,6 +251,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Donnie Darko",
+                                        "imdbrating": 8.2,
                                         "rated": "R",
                                         "actors": [
                                             "Jake Gyllenhaal",
@@ -242,6 +277,11 @@
                                     "_id": "tt0033467",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "domestic",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 1941,
                                         "directors": [
                                             "Orson Welles"
@@ -254,6 +294,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Citizen Kane",
+                                        "imdbrating": 8.5,
                                         "rated": "Approved",
                                         "actors": [
                                             "Joseph Cotten",
@@ -277,6 +318,7 @@
                                     "_id": "tt1675434",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Biography",
                                         "year": 2011,
                                         "directors": [
                                             "Olivier Nakache",
@@ -291,6 +333,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Intouchables",
+                                        "imdbrating": 8.6,
                                         "rated": "R",
                                         "actors": [
                                             "Fran\u00e7ois Cluzet",
@@ -316,6 +359,10 @@
                                     "_id": "tt0795176",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "nature"
+                                        ],
+                                        "primary_genre1": "Documentary",
                                         "year": 2006,
                                         "directors": [],
                                         "writers": [],
@@ -328,6 +375,7 @@
                                         ],
                                         "type": "series",
                                         "title": "Planet Earth",
+                                        "imdbrating": 9.5,
                                         "rated": "TV-G",
                                         "actors": [
                                             "David Attenborough",
@@ -348,6 +396,7 @@
                                     "_id": "tt0088247",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 1984,
                                         "directors": [
                                             "James Cameron"
@@ -363,6 +412,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Terminator",
+                                        "imdbrating": 8.1,
                                         "rated": "R",
                                         "actors": [
                                             "Arnold Schwarzenegger",
@@ -387,6 +437,10 @@
                                     "_id": "tt0947798",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "psychological"
+                                        ],
+                                        "primary_genre1": "Drama",
                                         "year": 2010,
                                         "directors": [
                                             "Darren Aronofsky"
@@ -402,6 +456,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Black Swan",
+                                        "imdbrating": 8.1,
                                         "rated": "R",
                                         "actors": [
                                             "Natalie Portman",
@@ -427,6 +482,11 @@
                                     "_id": "tt0062622",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "space",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
                                         "year": 1968,
                                         "directors": [
                                             "Stanley Kubrick"
@@ -441,6 +501,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "2001: A Space Odyssey",
+                                        "imdbrating": 8.3,
                                         "rated": "G",
                                         "actors": [
                                             "Keir Dullea",
@@ -466,6 +527,7 @@
                                     "_id": "tt1130884",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Drama",
                                         "year": 2010,
                                         "directors": [
                                             "Martin Scorsese"
@@ -479,6 +541,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Shutter Island",
+                                        "imdbrating": 8.1,
                                         "rated": "R",
                                         "actors": [
                                             "Leonardo DiCaprio",
@@ -504,6 +567,7 @@
                                     "_id": "tt0117951",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Crime",
                                         "year": 1996,
                                         "directors": [
                                             "Danny Boyle"
@@ -517,6 +581,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Trainspotting",
+                                        "imdbrating": 8.2,
                                         "rated": "R",
                                         "actors": [
                                             "Ewan McGregor",
@@ -541,6 +606,7 @@
                                     "_id": "tt0064116",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Adventure",
                                         "year": 1968,
                                         "directors": [
                                             "Sergio Leone"
@@ -556,6 +622,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Once Upon a Time in the West",
+                                        "imdbrating": 8.7,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Claudia Cardinale",
@@ -580,6 +647,11 @@
                                     "_id": "tt0903624",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "quest",
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Adventure",
                                         "year": 2012,
                                         "directors": [
                                             "Peter Jackson"
@@ -597,6 +669,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Hobbit: An Unexpected Journey",
+                                        "imdbrating": 8.1,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Ian McKellen",
@@ -621,6 +694,11 @@
                                     "_id": "tt0120382",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "high concept",
+                                            "satire"
+                                        ],
+                                        "primary_genre1": "Comedy",
                                         "year": 1998,
                                         "directors": [
                                             "Peter Weir"
@@ -633,6 +711,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "The Truman Show",
+                                        "imdbrating": 8,
                                         "rated": "PG",
                                         "actors": [
                                             "Jim Carrey",
@@ -658,6 +737,12 @@
                                     "_id": "tt0098904",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "based on standup",
+                                            "observational",
+                                            "stand up"
+                                        ],
+                                        "primary_genre1": "Comedy",
                                         "year": 1989,
                                         "directors": [],
                                         "writers": [
@@ -669,6 +754,7 @@
                                         ],
                                         "type": "series",
                                         "title": "Seinfeld",
+                                        "imdbrating": 9,
                                         "rated": "TV-PG",
                                         "actors": [
                                             "Jerry Seinfeld",
@@ -691,6 +777,7 @@
                                     "_id": "tt0268978",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Biography",
                                         "year": 2001,
                                         "directors": [
                                             "Ron Howard"
@@ -704,6 +791,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "A Beautiful Mind",
+                                        "imdbrating": 8.2,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Russell Crowe",
@@ -728,6 +816,7 @@
                                     "_id": "tt0364569",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Drama",
                                         "year": 2003,
                                         "directors": [
                                             "Chan-wook Park"
@@ -745,6 +834,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Oldboy",
+                                        "imdbrating": 8.4,
                                         "rated": "R",
                                         "actors": [
                                             "Min-sik Choi",
@@ -770,6 +860,7 @@
                                     "_id": "tt0455275",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 2005,
                                         "directors": [],
                                         "writers": [
@@ -780,6 +871,7 @@
                                         ],
                                         "type": "series",
                                         "title": "Prison Break",
+                                        "imdbrating": 8.6,
                                         "rated": "TV-14",
                                         "actors": [
                                             "Dominic Purcell",
@@ -804,6 +896,12 @@
                                     "_id": "tt0116282",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "botched",
+                                            "scene of the",
+                                            "police procedural"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1996,
                                         "directors": [
                                             "Joel Coen",
@@ -819,6 +917,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Fargo",
+                                        "imdbrating": 8.2,
                                         "rated": "R",
                                         "actors": [
                                             "William H. Macy",
@@ -844,6 +943,7 @@
                                     "_id": "tt1136608",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre1": "Action",
                                         "year": 2009,
                                         "directors": [
                                             "Neill Blomkamp"
@@ -860,6 +960,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "District 9",
+                                        "imdbrating": 8,
                                         "rated": "R",
                                         "actors": [
                                             "Sharlto Copley",

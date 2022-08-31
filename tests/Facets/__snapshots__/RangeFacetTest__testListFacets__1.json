@@ -9,20 +9,12 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "episode",
-                            "count": 4
-                        },
-                        {
-                            "label": "game",
-                            "count": 11
-                        },
-                        {
                             "label": "movie",
-                            "count": 852
+                            "count": 558
                         },
                         {
                             "label": "series",
-                            "count": 133
+                            "count": 7
                         }
                     ]
                 },
@@ -31,7 +23,28 @@
                     "label": "Rated",
                     "type": "RefinementSelectFacet",
                     "display": "ListFacet",
-                    "entries": []
+                    "entries": [
+                        {
+                            "label": "Approved",
+                            "count": 8
+                        },
+                        {
+                            "label": "G",
+                            "count": 15
+                        },
+                        {
+                            "label": "NC-17",
+                            "count": 3
+                        },
+                        {
+                            "label": "Not Rated",
+                            "count": 6
+                        },
+                        {
+                            "label": "PG",
+                            "count": 65
+                        }
+                    ]
                 },
                 {
                     "identifier": "genres",
@@ -41,23 +54,23 @@
                     "entries": [
                         {
                             "label": "Action",
-                            "count": 10
+                            "count": 140
                         },
                         {
                             "label": "Adventure",
-                            "count": 5
+                            "count": 121
+                        },
+                        {
+                            "label": "Animation",
+                            "count": 36
+                        },
+                        {
+                            "label": "Biography",
+                            "count": 38
                         },
                         {
                             "label": "Comedy",
-                            "count": 3
-                        },
-                        {
-                            "label": "Crime",
-                            "count": 5
-                        },
-                        {
-                            "label": "Drama",
-                            "count": 2
+                            "count": 141
                         }
                     ]
                 },
@@ -68,24 +81,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Casey Hudson",
+                            "label": "Adam McKay",
+                            "count": 1
+                        },
+                        {
+                            "label": "Adam Shankman",
+                            "count": 1
+                        },
+                        {
+                            "label": "Alan J. Pakula",
+                            "count": 1
+                        },
+                        {
+                            "label": "Alan Parker",
                             "count": 2
                         },
                         {
-                            "label": "Dan Houser",
-                            "count": 1
-                        },
-                        {
-                            "label": "David Speyrer",
-                            "count": 1
-                        },
-                        {
-                            "label": "Jamie Walker",
-                            "count": 1
-                        },
-                        {
-                            "label": "John Zurhellen",
-                            "count": 1
+                            "label": "Alejandro Amen\u00e1bar",
+                            "count": 2
                         }
                     ]
                 },
@@ -96,24 +109,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Bob Kane",
+                            "label": "A.J. Quinnell",
+                            "count": 1
+                        },
+                        {
+                            "label": "Aaron Sorkin",
+                            "count": 3
+                        },
+                        {
+                            "label": "Aaron Stockard",
                             "count": 2
                         },
                         {
-                            "label": "Brian Kindregan",
+                            "label": "Abdel Raouf Dafri",
                             "count": 1
                         },
                         {
-                            "label": "Cathleen Rootsaert",
+                            "label": "Abi Morgan",
                             "count": 1
-                        },
-                        {
-                            "label": "Chris Hepler",
-                            "count": 1
-                        },
-                        {
-                            "label": "Chris L'Etoile",
-                            "count": 2
                         }
                     ]
                 },
@@ -124,23 +137,23 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Adam Baldwin",
+                            "label": "Aaron Eckhart",
                             "count": 1
                         },
                         {
-                            "label": "Billy Murray",
+                            "label": "Aaron Taylor-Johnson",
                             "count": 1
                         },
                         {
-                            "label": "Chris Phillips",
+                            "label": "Abbie Cornish",
                             "count": 1
                         },
                         {
-                            "label": "Christopher Plummer",
-                            "count": 1
+                            "label": "Abigail Breslin",
+                            "count": 3
                         },
                         {
-                            "label": "Clifton Powell",
+                            "label": "Adam C. Edwards",
                             "count": 1
                         }
                     ]
@@ -152,20 +165,24 @@
                     "display": "ListFacet",
                     "entries": [
                         {
-                            "label": "Canada",
+                            "label": "Argentina",
                             "count": 2
                         },
                         {
-                            "label": "Finland",
+                            "label": "Australia",
+                            "count": 11
+                        },
+                        {
+                            "label": "Bahamas",
                             "count": 1
                         },
                         {
-                            "label": "UK",
+                            "label": "Belgium",
                             "count": 3
                         },
                         {
-                            "label": "USA",
-                            "count": 11
+                            "label": "Brazil",
+                            "count": 1
                         }
                     ]
                 },
@@ -201,19 +218,19 @@
                         },
                         {
                             "label": "6",
-                            "count": 0
+                            "count": 14
                         },
                         {
                             "label": "7",
-                            "count": 0
+                            "count": 478
                         },
                         {
                             "label": "8",
-                            "count": 0
+                            "count": 73
                         },
                         {
                             "label": "9",
-                            "count": 11
+                            "count": 0
                         },
                         {
                             "label": "10",
@@ -249,67 +266,95 @@
                         },
                         {
                             "label": "25",
-                            "count": 0
+                            "count": 1
                         },
                         {
                             "label": "30",
-                            "count": 0
+                            "count": 3
                         },
                         {
                             "label": "35",
-                            "count": 0
+                            "count": 4
                         },
                         {
                             "label": "40",
-                            "count": 0
+                            "count": 4
                         },
                         {
                             "label": "45",
-                            "count": 0
+                            "count": 15
                         },
                         {
                             "label": "50",
-                            "count": 0
+                            "count": 24
                         },
                         {
                             "label": "55",
-                            "count": 0
+                            "count": 51
                         },
                         {
                             "label": "60",
-                            "count": 0
+                            "count": 66
                         },
                         {
                             "label": "65",
-                            "count": 0
+                            "count": 77
                         },
                         {
                             "label": "70",
-                            "count": 0
+                            "count": 81
                         },
                         {
                             "label": "75",
-                            "count": 0
+                            "count": 52
                         },
                         {
                             "label": "80",
-                            "count": 0
+                            "count": 63
                         },
                         {
                             "label": "85",
-                            "count": 0
+                            "count": 35
                         },
                         {
                             "label": "90",
-                            "count": 0
+                            "count": 14
                         },
                         {
                             "label": "95",
-                            "count": 0
+                            "count": 6
                         },
                         {
                             "label": "100",
                             "count": 0
+                        }
+                    ]
+                },
+                {
+                    "identifier": "genre",
+                    "label": "Genre",
+                    "type": "HierarchicalMenuFacet",
+                    "display": "HierarchicalMenu",
+                    "entries": [
+                        {
+                            "label": "Action",
+                            "count": 132
+                        },
+                        {
+                            "label": "Adventure",
+                            "count": 44
+                        },
+                        {
+                            "label": "Animation",
+                            "count": 36
+                        },
+                        {
+                            "label": "Biography",
+                            "count": 35
+                        },
+                        {
+                            "label": "Comedy",
+                            "count": 99
                         }
                     ]
                 }
@@ -319,7 +364,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 0,
+            "took": 1,
             "trips": [
                 {
                     "query": {
@@ -340,8 +385,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "aggs": {
                             "facet_bucket_all": {
@@ -418,14 +478,11 @@
                                     "bool": {
                                         "must": [
                                             {
-                                                "bool": {
-                                                    "should": [
-                                                        {
-                                                            "term": {
-                                                                "type": "game"
-                                                            }
-                                                        }
-                                                    ]
+                                                "range": {
+                                                    "imdbrating": {
+                                                        "gte": 6,
+                                                        "lte": 8
+                                                    }
                                                 }
                                             }
                                         ]
@@ -446,7 +503,16 @@
                                 },
                                 "filter": {
                                     "bool": {
-                                        "must": []
+                                        "must": [
+                                            {
+                                                "range": {
+                                                    "imdbrating": {
+                                                        "gte": 6,
+                                                        "lte": 8
+                                                    }
+                                                }
+                                            }
+                                        ]
                                     }
                                 }
                             },
@@ -466,14 +532,93 @@
                                     "bool": {
                                         "must": [
                                             {
-                                                "bool": {
-                                                    "should": [
-                                                        {
-                                                            "term": {
-                                                                "type": "game"
+                                                "range": {
+                                                    "imdbrating": {
+                                                        "gte": 6,
+                                                        "lte": 8
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "facet_bucket_genre": {
+                                "aggs": {
+                                    "genre": {
+                                        "filter": {
+                                            "match_all": []
+                                        },
+                                        "aggs": {
+                                            "lvl_1": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre1.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
                                                             }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
                                                         }
-                                                    ]
+                                                    }
+                                                }
+                                            },
+                                            "lvl_2": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre2.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "lvl_3": {
+                                                "filter": {
+                                                    "match_all": []
+                                                },
+                                                "aggs": {
+                                                    "aggs": {
+                                                        "terms": {
+                                                            "field": "primary_genre3.keyword",
+                                                            "size": 5,
+                                                            "order": {
+                                                                "_key": "asc"
+                                                            }
+                                                        },
+                                                        "meta": {
+                                                            "parent": null
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "filter": {
+                                    "bool": {
+                                        "must": [
+                                            {
+                                                "range": {
+                                                    "imdbrating": {
+                                                        "gte": 6,
+                                                        "lte": 8
+                                                    }
                                                 }
                                             }
                                         ]
@@ -490,14 +635,11 @@
                             "bool": {
                                 "must": [
                                     {
-                                        "bool": {
-                                            "should": [
-                                                {
-                                                    "term": {
-                                                        "type": "game"
-                                                    }
-                                                }
-                                            ]
+                                        "range": {
+                                            "imdbrating": {
+                                                "gte": 6,
+                                                "lte": 8
+                                            }
                                         }
                                     }
                                 ]
@@ -505,7 +647,7 @@
                         }
                     },
                     "response": {
-                        "took": 0,
+                        "took": 1,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -515,7 +657,7 @@
                         },
                         "hits": {
                             "total": {
-                                "value": 11,
+                                "value": 565,
                                 "relation": "eq"
                             },
                             "max_score": null,
@@ -523,87 +665,99 @@
                         },
                         "aggregations": {
                             "facet_bucket_type": {
-                                "meta": [],
-                                "doc_count": 1000,
+                                "doc_count": 565,
                                 "type": {
                                     "doc_count_error_upper_bound": 0,
                                     "sum_other_doc_count": 0,
                                     "buckets": [
                                         {
-                                            "key": "episode",
-                                            "doc_count": 4
-                                        },
-                                        {
-                                            "key": "game",
-                                            "doc_count": 11
-                                        },
-                                        {
                                             "key": "movie",
-                                            "doc_count": 852
+                                            "doc_count": 558
                                         },
                                         {
                                             "key": "series",
-                                            "doc_count": 133
+                                            "doc_count": 7
                                         }
                                     ]
                                 }
                             },
                             "facet_bucket_all": {
-                                "doc_count": 11,
+                                "doc_count": 565,
                                 "rated": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 0,
-                                    "buckets": []
+                                    "sum_other_doc_count": 467,
+                                    "buckets": [
+                                        {
+                                            "key": "Approved",
+                                            "doc_count": 8
+                                        },
+                                        {
+                                            "key": "G",
+                                            "doc_count": 15
+                                        },
+                                        {
+                                            "key": "NC-17",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Not Rated",
+                                            "doc_count": 6
+                                        },
+                                        {
+                                            "key": "PG",
+                                            "doc_count": 65
+                                        }
+                                    ]
                                 },
                                 "actors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 39,
+                                    "sum_other_doc_count": 2249,
                                     "buckets": [
                                         {
-                                            "key": "Adam Baldwin",
+                                            "key": "Aaron Eckhart",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Billy Murray",
+                                            "key": "Aaron Taylor-Johnson",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Chris Phillips",
+                                            "key": "Abbie Cornish",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Christopher Plummer",
-                                            "doc_count": 1
+                                            "key": "Abigail Breslin",
+                                            "doc_count": 3
                                         },
                                         {
-                                            "key": "Clifton Powell",
+                                            "key": "Adam C. Edwards",
                                             "doc_count": 1
                                         }
                                     ]
                                 },
                                 "directors": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 9,
+                                    "sum_other_doc_count": 621,
                                     "buckets": [
                                         {
-                                            "key": "Casey Hudson",
+                                            "key": "Adam McKay",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Adam Shankman",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Alan J. Pakula",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Alan Parker",
                                             "doc_count": 2
                                         },
                                         {
-                                            "key": "Dan Houser",
-                                            "doc_count": 1
-                                        },
-                                        {
-                                            "key": "David Speyrer",
-                                            "doc_count": 1
-                                        },
-                                        {
-                                            "key": "Jamie Walker",
-                                            "doc_count": 1
-                                        },
-                                        {
-                                            "key": "John Zurhellen",
-                                            "doc_count": 1
+                                            "key": "Alejandro Amen\u00e1bar",
+                                            "doc_count": 2
                                         }
                                     ]
                                 },
@@ -631,63 +785,63 @@
                                         },
                                         {
                                             "key": 25,
-                                            "doc_count": 0
+                                            "doc_count": 1
                                         },
                                         {
                                             "key": 30,
-                                            "doc_count": 0
+                                            "doc_count": 3
                                         },
                                         {
                                             "key": 35,
-                                            "doc_count": 0
+                                            "doc_count": 4
                                         },
                                         {
                                             "key": 40,
-                                            "doc_count": 0
+                                            "doc_count": 4
                                         },
                                         {
                                             "key": 45,
-                                            "doc_count": 0
+                                            "doc_count": 15
                                         },
                                         {
                                             "key": 50,
-                                            "doc_count": 0
+                                            "doc_count": 24
                                         },
                                         {
                                             "key": 55,
-                                            "doc_count": 0
+                                            "doc_count": 51
                                         },
                                         {
                                             "key": 60,
-                                            "doc_count": 0
+                                            "doc_count": 66
                                         },
                                         {
                                             "key": 65,
-                                            "doc_count": 0
+                                            "doc_count": 77
                                         },
                                         {
                                             "key": 70,
-                                            "doc_count": 0
+                                            "doc_count": 81
                                         },
                                         {
                                             "key": 75,
-                                            "doc_count": 0
+                                            "doc_count": 52
                                         },
                                         {
                                             "key": 80,
-                                            "doc_count": 0
+                                            "doc_count": 63
                                         },
                                         {
                                             "key": 85,
-                                            "doc_count": 0
+                                            "doc_count": 35
                                         },
                                         {
                                             "key": 90,
-                                            "doc_count": 0
+                                            "doc_count": 14
                                         },
                                         {
                                             "key": 95,
-                                            "doc_count": 0
+                                            "doc_count": 6
                                         },
                                         {
                                             "key": 100,
@@ -697,49 +851,53 @@
                                 },
                                 "countries": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 0,
+                                    "sum_other_doc_count": 826,
                                     "buckets": [
                                         {
-                                            "key": "Canada",
+                                            "key": "Argentina",
                                             "doc_count": 2
                                         },
                                         {
-                                            "key": "Finland",
+                                            "key": "Australia",
+                                            "doc_count": 11
+                                        },
+                                        {
+                                            "key": "Bahamas",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "UK",
+                                            "key": "Belgium",
                                             "doc_count": 3
                                         },
                                         {
-                                            "key": "USA",
-                                            "doc_count": 11
+                                            "key": "Brazil",
+                                            "doc_count": 1
                                         }
                                     ]
                                 },
                                 "writers": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 22,
+                                    "sum_other_doc_count": 1343,
                                     "buckets": [
                                         {
-                                            "key": "Bob Kane",
+                                            "key": "A.J. Quinnell",
+                                            "doc_count": 1
+                                        },
+                                        {
+                                            "key": "Aaron Sorkin",
+                                            "doc_count": 3
+                                        },
+                                        {
+                                            "key": "Aaron Stockard",
                                             "doc_count": 2
                                         },
                                         {
-                                            "key": "Brian Kindregan",
+                                            "key": "Abdel Raouf Dafri",
                                             "doc_count": 1
                                         },
                                         {
-                                            "key": "Cathleen Rootsaert",
+                                            "key": "Abi Morgan",
                                             "doc_count": 1
-                                        },
-                                        {
-                                            "key": "Chris Hepler",
-                                            "doc_count": 1
-                                        },
-                                        {
-                                            "key": "Chris L'Etoile",
-                                            "doc_count": 2
                                         }
                                     ]
                                 },
@@ -771,19 +929,19 @@
                                         },
                                         {
                                             "key": 6,
-                                            "doc_count": 0
+                                            "doc_count": 14
                                         },
                                         {
                                             "key": 7,
-                                            "doc_count": 0
+                                            "doc_count": 478
                                         },
                                         {
                                             "key": 8,
-                                            "doc_count": 0
+                                            "doc_count": 73
                                         },
                                         {
                                             "key": 9,
-                                            "doc_count": 11
+                                            "doc_count": 0
                                         },
                                         {
                                             "key": 10,
@@ -793,32 +951,113 @@
                                 }
                             },
                             "facet_bucket_genres": {
-                                "doc_count": 11,
+                                "doc_count": 565,
                                 "genres": {
                                     "doc_count_error_upper_bound": 0,
-                                    "sum_other_doc_count": 7,
+                                    "sum_other_doc_count": 967,
                                     "buckets": [
                                         {
                                             "key": "Action",
-                                            "doc_count": 10
+                                            "doc_count": 140
                                         },
                                         {
                                             "key": "Adventure",
-                                            "doc_count": 5
+                                            "doc_count": 121
+                                        },
+                                        {
+                                            "key": "Animation",
+                                            "doc_count": 36
+                                        },
+                                        {
+                                            "key": "Biography",
+                                            "doc_count": 38
                                         },
                                         {
                                             "key": "Comedy",
-                                            "doc_count": 3
-                                        },
-                                        {
-                                            "key": "Crime",
-                                            "doc_count": 5
-                                        },
-                                        {
-                                            "key": "Drama",
-                                            "doc_count": 2
+                                            "doc_count": 141
                                         }
                                     ]
+                                }
+                            },
+                            "facet_bucket_genre": {
+                                "doc_count": 565,
+                                "genre": {
+                                    "doc_count": 565,
+                                    "lvl_2": {
+                                        "doc_count": 565,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 693,
+                                            "buckets": [
+                                                {
+                                                    "key": "2d",
+                                                    "doc_count": 11
+                                                },
+                                                {
+                                                    "key": "3d",
+                                                    "doc_count": 8
+                                                },
+                                                {
+                                                    "key": "absurd",
+                                                    "doc_count": 13
+                                                },
+                                                {
+                                                    "key": "academia",
+                                                    "doc_count": 2
+                                                },
+                                                {
+                                                    "key": "adult",
+                                                    "doc_count": 4
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_1": {
+                                        "doc_count": 565,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 219,
+                                            "buckets": [
+                                                {
+                                                    "key": "Action",
+                                                    "doc_count": 132
+                                                },
+                                                {
+                                                    "key": "Adventure",
+                                                    "doc_count": 44
+                                                },
+                                                {
+                                                    "key": "Animation",
+                                                    "doc_count": 36
+                                                },
+                                                {
+                                                    "key": "Biography",
+                                                    "doc_count": 35
+                                                },
+                                                {
+                                                    "key": "Comedy",
+                                                    "doc_count": 99
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "lvl_3": {
+                                        "doc_count": 565,
+                                        "aggs": {
+                                            "meta": {
+                                                "parent": null
+                                            },
+                                            "doc_count_error_upper_bound": 0,
+                                            "sum_other_doc_count": 0,
+                                            "buckets": []
+                                        }
+                                    }
                                 }
                             }
                         }

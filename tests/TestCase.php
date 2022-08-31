@@ -14,7 +14,7 @@ use Nuwave\Lighthouse\Schema\SchemaBuilder;
 use Nuwave\Lighthouse\Testing\MocksResolvers;
 use Spatie\Snapshots\MatchesSnapshots;
 
-use McManning\Searchlight\SearchlightServiceProvider;
+use Searchlight\SearchlightServiceProvider;
 use Tests\Fixtures\GraphQLDriver;
 
 /**
@@ -37,23 +37,27 @@ class TestCase extends BaseTestCase
         type ResultHit implements SKHit {
             id: ID!
             fields: HitFields!
+            highlights: [SKHighlight!]
         }
 
         type HitFields {
+            id: ID!
             type: String
             title: String
-            year: String
+            year: Int
             rated: String
             released: String
-            genres: String
-            directors: String
-            writers: String
-            actors: String
-            countries: String
+            genres: [String]
+            directors: [String]
+            writers: [String]
+            actors: [String]
+            countries: [String]
             plot: String
             poster: String
-            id: String
-            metascore: String
+            metascore: Float
+            imdbrating: Float
+            primary_genre1: String
+            primary_genre2: [String]
         }
     ';
 
@@ -169,16 +173,62 @@ class TestCase extends BaseTestCase
         return $schemaBuilder->schema();
     }
 
+    protected function formatStackEntry(array $f): string
+    {
+        return (isset($f['call']) ? $f['call'] : $f['function'])
+            . (isset($f['file']) ? (' at ' . basename($f['file']) . ':' . $f['line']) : '');
+    }
+
+    /**
+     * A really hacky method to clean up stack traces to something useful in PHPUnit
+     */
+    protected function prettyPrintGraphQLErrors(array $response): string
+    {
+        $errors = [];
+        try {
+            foreach ($response['errors'] as $err) {
+
+                if (isset($err['debugMessage'])) {
+                    $message = "\t" . $err['debugMessage'] . ' at ' . implode('.', $err['path']);
+                } else {
+                    $message = "\t" . $err['message'];
+                }
+
+                if (isset($err['trace'])) {
+                    $stackCount = count($err['trace']);
+
+                    $message .= array_reduce(
+                        array_slice($err['trace'], 0, 5),
+                        fn ($agg, $f) => $agg .= "\n\t\t" . $this->formatStackEntry($f),
+                        "\n\t\tTrace: "
+                    );
+
+                    if ($stackCount > 5) {
+                        $message .= "\n\t\t... omitting " . ($stackCount - 5) . ' additional calls ...';
+                    }
+                }
+
+                $errors[] = $message;
+            }
+        } catch (\Throwable $e) {
+            $errors[] = "Ironic error parsing GraphQL error: "
+                . $e->getMessage() . " from response:\n"
+                . json_encode($response, JSON_PRETTY_PRINT);
+        }
+
+        return implode("\n\n", $errors);
+    }
+
     protected function assertNotGraphQLError(?string $assertionMessage = null)
     {
-        $actual = $this->response->getContent();
-        $response = json_decode($actual, true);
+        $actual = $this->response->json();
 
-        $this->assertArrayNotHasKey(
-            'errors',
-            $response,
-            $assertionMessage ?? "Expected response without errors but got [{$actual}]"
-        );
+        if (isset($actual['errors'])) {
+            $this->fail(
+                ($assertionMessage ?? "Failed asserting that the GraphQL response does not contain errors") .
+                ":\n" . $this->prettyPrintGraphQLErrors($actual)
+            );
+        }
     }
 
     /**

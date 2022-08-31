@@ -2,49 +2,93 @@
     "data": {
         "results": {
             "summary": {
-                "query": "",
-                "appliedFilters": [
-                    {
-                        "id": "released_1995-01-01T00:00:00.000Z_1996-01-01T00:00:00.000Z",
-                        "identifier": "released",
-                        "display": "DateRange",
-                        "label": "Released",
-                        "dateMin": "1995-01-01T00:00:00.000Z",
-                        "dateMax": "1996-01-01T00:00:00.000Z"
-                    }
-                ]
+                "total": 12
             },
             "hits": {
                 "items": [
                     {
-                        "id": "tt0114369"
+                        "id": "tt0114369",
+                        "fields": {
+                            "released": "1995-09-22T00:00:00+01:00",
+                            "title": "Se7en"
+                        }
                     },
                     {
-                        "id": "tt0114814"
+                        "id": "tt0114814",
+                        "fields": {
+                            "released": "1995-08-16T00:00:00+01:00",
+                            "title": "The Usual Suspects"
+                        }
                     },
                     {
-                        "id": "tt0112573"
+                        "id": "tt0112573",
+                        "fields": {
+                            "released": "1995-05-24T00:00:00+01:00",
+                            "title": "Braveheart"
+                        }
                     },
                     {
-                        "id": "tt0114709"
+                        "id": "tt0114709",
+                        "fields": {
+                            "released": "1995-11-22T00:00:00Z",
+                            "title": "Toy Story"
+                        }
                     },
                     {
-                        "id": "tt0113277"
+                        "id": "tt0113277",
+                        "fields": {
+                            "released": "1995-12-15T00:00:00Z",
+                            "title": "Heat"
+                        }
                     },
                     {
-                        "id": "tt0112641"
+                        "id": "tt0112641",
+                        "fields": {
+                            "released": "1995-11-22T00:00:00Z",
+                            "title": "Casino"
+                        }
                     },
                     {
-                        "id": "tt0112864"
+                        "id": "tt0112864",
+                        "fields": {
+                            "released": "1995-05-19T00:00:00+01:00",
+                            "title": "Die Hard: With a Vengeance"
+                        }
                     },
                     {
-                        "id": "tt0112471"
+                        "id": "tt0112471",
+                        "fields": {
+                            "released": "1995-01-27T00:00:00Z",
+                            "title": "Before Sunrise"
+                        }
                     },
                     {
-                        "id": "tt0112384"
+                        "id": "tt0112384",
+                        "fields": {
+                            "released": "1995-06-30T00:00:00+01:00",
+                            "title": "Apollo 13"
+                        }
                     },
                     {
-                        "id": "tt0113189"
+                        "id": "tt0113189",
+                        "fields": {
+                            "released": "1995-11-17T00:00:00Z",
+                            "title": "GoldenEye"
+                        }
+                    },
+                    {
+                        "id": "tt0112691",
+                        "fields": {
+                            "released": "1995-12-29T00:00:00Z",
+                            "title": "A Close Shave"
+                        }
+                    },
+                    {
+                        "id": "tt0114388",
+                        "fields": {
+                            "released": "1995-12-13T00:00:00Z",
+                            "title": "Sense and Sensibility"
+                        }
                     }
                 ]
             }
@@ -57,7 +101,7 @@
             "trips": [
                 {
                     "query": {
-                        "size": 10,
+                        "size": 20,
                         "from": 0,
                         "sort": [
                             {
@@ -108,8 +152,8 @@
                                     {
                                         "range": {
                                             "released": {
-                                                "gte": "1995-01-01T00:00:00.000Z",
-                                                "lte": "1996-01-01T00:00:00.000Z"
+                                                "gte": "1995-01-01T00:00:00+00:00",
+                                                "lte": "1996-01-01T00:00:00+00:00"
                                             }
                                         }
                                     }
@@ -572,6 +616,91 @@
                                         "metascore": 65,
                                         "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMzk2OTg4MTk1NF5BMl5BanBnXkFtZTcwNjExNTgzNA@@._V1_SX300.jpg",
                                         "released": "1995-11-17T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0112691",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "stop motion",
+                                            "british"
+                                        ],
+                                        "primary_genre1": "Animation",
+                                        "year": 1995,
+                                        "directors": [
+                                            "Nick Park"
+                                        ],
+                                        "writers": [
+                                            "Bob Baker",
+                                            "Nick Park"
+                                        ],
+                                        "countries": [
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "A Close Shave",
+                                        "imdbrating": 8.3,
+                                        "rated": "Unrated",
+                                        "actors": [
+                                            "Peter Sallis",
+                                            "Anne Reid"
+                                        ],
+                                        "plot": "Wallace falls for Wendolene, a wool shop owner, while Gromit is framed for the sheep rustling.",
+                                        "genres": [
+                                            "Animation",
+                                            "Short",
+                                            "Comedy"
+                                        ],
+                                        "id": "tt0112691",
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BMTQyMzY5NjQ1NF5BMl5BanBnXkFtZTcwNTk5MTMyMQ@@._V1_SX300.jpg",
+                                        "released": "1995-12-29T00:00:00Z"
+                                    }
+                                },
+                                {
+                                    "_index": "imdb_movies",
+                                    "_type": "_doc",
+                                    "_id": "tt0114388",
+                                    "_score": 1,
+                                    "_source": {
+                                        "primary_genre2": [
+                                            "period",
+                                            "costume"
+                                        ],
+                                        "primary_genre1": "Drama",
+                                        "year": 1995,
+                                        "directors": [
+                                            "Ang Lee"
+                                        ],
+                                        "writers": [
+                                            "Jane Austen",
+                                            "Emma Thompson"
+                                        ],
+                                        "countries": [
+                                            "USA",
+                                            "UK"
+                                        ],
+                                        "type": "movie",
+                                        "title": "Sense and Sensibility",
+                                        "imdbrating": 7.7,
+                                        "rated": "PG",
+                                        "actors": [
+                                            "James Fleet",
+                                            "Tom Wilkinson",
+                                            "Harriet Walter",
+                                            "Kate Winslet"
+                                        ],
+                                        "plot": "Rich Mr. Dashwood dies, leaving his second wife and her three daughters poor by the rules of inheritance. The two eldest daughters are the titular opposites.",
+                                        "genres": [
+                                            "Drama",
+                                            "Romance"
+                                        ],
+                                        "id": "tt0114388",
+                                        "metascore": 84,
+                                        "poster": "https:\/\/s3-eu-west-1.amazonaws.com\/imdbimages\/images\/MV5BNzk1MjU3MDQyMl5BMl5BanBnXkFtZTcwNjc1OTM2MQ@@._V1_SX300.jpg",
+                                        "released": "1995-12-13T00:00:00Z"
                                     }
                                 }
                             ]

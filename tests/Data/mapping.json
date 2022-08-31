@@ -69,6 +69,22 @@
     },
     "imdbrating": {
       "type": "float"
+    },
+    "primary_genre1": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
+    },
+    "primary_genre2": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword"
+        }
+      }
     }
   }
 }

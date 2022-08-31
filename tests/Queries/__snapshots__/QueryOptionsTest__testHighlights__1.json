@@ -1,50 +1,133 @@
 {
     "data": {
         "results": {
-            "summary": {
-                "total": 8
-            },
             "hits": {
                 "items": [
                     {
+                        "id": "tt0113277",
                         "fields": {
-                            "title": "Heat"
-                        }
+                            "title": "Heat",
+                            "plot": "A group of professional bank robbers start to feel the heat from police when they unknowingly leave a clue at their latest heist."
+                        },
+                        "highlights": [
+                            {
+                                "field": "plot",
+                                "fragments": [
+                                    "A group of professional bank robbers start to feel the <em>heat<\/em> from police when they unknowingly leave a"
+                                ]
+                            },
+                            {
+                                "field": "title",
+                                "fragments": [
+                                    "<em>Heat<\/em>"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0061811",
                         "fields": {
-                            "title": "In the Heat of the Night"
-                        }
+                            "title": "In the Heat of the Night",
+                            "plot": "An African American police detective is asked to investigate a murder in a racially hostile southern town."
+                        },
+                        "highlights": [
+                            {
+                                "field": "title",
+                                "fragments": [
+                                    "In the <em>Heat<\/em> of the Night"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0087800",
                         "fields": {
-                            "title": "A Nightmare on Elm Street"
-                        }
+                            "title": "A Nightmare on Elm Street",
+                            "plot": "In the dreams of his victims, a spectral child murderer stalks the children of the members of the lynch mob that killed him."
+                        },
+                        "highlights": [
+                            {
+                                "field": "actors",
+                                "fragments": [
+                                    "<em>Heather<\/em> Langenkamp"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0468569",
                         "fields": {
-                            "title": "The Dark Knight"
-                        }
+                            "title": "The Dark Knight",
+                            "plot": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level."
+                        },
+                        "highlights": [
+                            {
+                                "field": "actors",
+                                "fragments": [
+                                    "<em>Heath<\/em> Ledger"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0388795",
                         "fields": {
-                            "title": "Brokeback Mountain"
-                        }
+                            "title": "Brokeback Mountain",
+                            "plot": "The story of a forbidden and secretive relationship between two cowboys and their lives over the years."
+                        },
+                        "highlights": [
+                            {
+                                "field": "actors",
+                                "fragments": [
+                                    "<em>Heath<\/em> Ledger"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0187393",
                         "fields": {
-                            "title": "The Patriot"
-                        }
+                            "title": "The Patriot",
+                            "plot": "Peaceful farmer Benjamin Martin is driven to lead the Colonial Militia during the American Revolution when a sadistic British officer murders his son."
+                        },
+                        "highlights": [
+                            {
+                                "field": "actors",
+                                "fragments": [
+                                    "<em>Heath<\/em> Ledger"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0147800",
                         "fields": {
-                            "title": "10 Things I Hate About You"
-                        }
+                            "title": "10 Things I Hate About You",
+                            "plot": "A new kid must find a guy to date the meanest girl in school, the older sister of the girl he has a crush on, who cannot date until her older sister does."
+                        },
+                        "highlights": [
+                            {
+                                "field": "actors",
+                                "fragments": [
+                                    "<em>Heath<\/em> Ledger"
+                                ]
+                            }
+                        ]
                     },
                     {
+                        "id": "tt0032455",
                         "fields": {
-                            "title": "Fantasia"
-                        }
+                            "title": "Fantasia",
+                            "plot": "A collection of animated interpretations of great works of Western classical music."
+                        },
+                        "highlights": [
+                            {
+                                "field": "writers",
+                                "fragments": [
+                                    "Albert <em>Heath<\/em>"
+                                ]
+                            }
+                        ]
                     }
                 ]
             }

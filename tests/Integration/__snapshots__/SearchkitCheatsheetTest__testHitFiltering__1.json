@@ -11,7 +11,7 @@
                         "fields": {
                             "title": "Se7en",
                             "released": "1995-09-22T00:00:00+01:00",
-                            "metascore": "65"
+                            "metascore": 65
                         }
                     },
                     {
@@ -19,7 +19,7 @@
                         "fields": {
                             "title": "Braveheart",
                             "released": "1995-05-24T00:00:00+01:00",
-                            "metascore": "68"
+                            "metascore": 68
                         }
                     },
                     {
@@ -27,7 +27,7 @@
                         "fields": {
                             "title": "Die Hard: With a Vengeance",
                             "released": "1995-05-19T00:00:00+01:00",
-                            "metascore": "58"
+                            "metascore": 58
                         }
                     },
                     {
@@ -35,7 +35,7 @@
                         "fields": {
                             "title": "GoldenEye",
                             "released": "1995-11-17T00:00:00Z",
-                            "metascore": "65"
+                            "metascore": 65
                         }
                     }
                 ]
@@ -45,7 +45,7 @@
     "extensions": {
         "searchlight_inspection": {
             "version": 1,
-            "took": 1,
+            "took": 2,
             "trips": [
                 {
                     "query": {
@@ -71,8 +71,23 @@
                                 "plot",
                                 "poster",
                                 "id",
-                                "metascore"
+                                "metascore",
+                                "imdbrating",
+                                "primary_genre1",
+                                "primary_genre2",
+                                "primary_genre3"
                             ]
+                        },
+                        "highlight": {
+                            "fields": {
+                                "title": [],
+                                "genres": [],
+                                "directors": [],
+                                "writers": [],
+                                "actors": [],
+                                "countries": [],
+                                "plot": []
+                            }
                         },
                         "query": {
                             "bool": {
@@ -114,7 +129,7 @@
                         }
                     },
                     "response": {
-                        "took": 1,
+                        "took": 2,
                         "timed_out": false,
                         "_shards": {
                             "total": 1,
@@ -135,6 +150,12 @@
                                     "_id": "tt0114369",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "scene of the",
+                                            "serial killer",
+                                            "police procedural"
+                                        ],
+                                        "primary_genre1": "Crime",
                                         "year": 1995,
                                         "directors": [
                                             "David Fincher"
@@ -147,6 +168,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Se7en",
+                                        "imdbrating": 8.7,
                                         "rated": "R",
                                         "actors": [
                                             "Morgan Freeman",
@@ -172,6 +194,10 @@
                                     "_id": "tt0112573",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "epic"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1995,
                                         "directors": [
                                             "Mel Gibson"
@@ -184,6 +210,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Braveheart",
+                                        "imdbrating": 8.4,
                                         "rated": "R",
                                         "actors": [
                                             "James Robinson",
@@ -209,6 +236,10 @@
                                     "_id": "tt0112864",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "one person army"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1995,
                                         "directors": [
                                             "John McTiernan"
@@ -222,6 +253,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "Die Hard: With a Vengeance",
+                                        "imdbrating": 7.6,
                                         "rated": "R",
                                         "actors": [
                                             "Bruce Willis",
@@ -247,6 +279,10 @@
                                     "_id": "tt0113189",
                                     "_score": 1,
                                     "_source": {
+                                        "primary_genre2": [
+                                            "spy"
+                                        ],
+                                        "primary_genre1": "Action",
                                         "year": 1995,
                                         "directors": [
                                             "Martin Campbell"
@@ -263,6 +299,7 @@
                                         ],
                                         "type": "movie",
                                         "title": "GoldenEye",
+                                        "imdbrating": 7.2,
                                         "rated": "PG-13",
                                         "actors": [
                                             "Pierce Brosnan",
