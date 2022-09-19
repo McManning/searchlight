@@ -69,3 +69,24 @@ jobs:
         SEARCHLIGHT_DEFAULT_HOST: http://localhost:${{ job.services.elasticsearch.ports[9200] }}
       run: composer run-script ci
 
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v3
+      with:
+        semantic_version: 18
+        branches: |
+          [
+          'main'
+          ]
+        extra_plugins: |
+          @semantic-release/changelog
+          @semantic-release/git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
