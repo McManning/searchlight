@@ -15,10 +15,19 @@ jobs:
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v3
       with:
+        semantic_version: 18
+        branches: |
+          [
+          'main'
+          ]
+        dry_run: true
         extra_plugins: |
           @semantic-release/changelog
-          @semantic-release/github
-        branches: ['main']
-        dry_run: true
+          @semantic-release/git
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Semantic Version
+      if: steps.semantic.outputs.new_release_published == 'true'
+      run: |
+        echo ${{ steps.semantic.outputs.new_release_version }}

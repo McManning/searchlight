@@ -1,9 +1,9 @@
 {
     "tagFormat": "v${version}",
     "plugins": [
-        ["@semantic-release/commit-analyzer", { "preset": "angular" }],
+        "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
-        ["@semantic-release/changelog", { "preset": "angular" }],
-        "@semantic-release/github"
+        "@semantic-release/changelog",
+        "@semantic-release/git"
     ]
 }
