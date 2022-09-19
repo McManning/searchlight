@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+    - name: Checkout
+    - uses: actions/checkout@v3
+
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v3
+      with:
+        extra_plugins: |
+          @semantic-release/changelog
+          @semantic-release/github
+        branches: ['main']
+        dry_run: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

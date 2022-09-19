@@ -1,4 +1,4 @@
-name: Run tests
+name: Tests
 
 on:
   push:
@@ -32,6 +32,7 @@ jobs:
           --health-retries=10
 
     steps:
+    - name: Checkout
     - uses: actions/checkout@v3
 
     - name: Setup PHP
@@ -68,4 +69,3 @@ jobs:
         SEARCHLIGHT_DEFAULT_HOST: http://localhost:${{ job.services.elasticsearch.ports[9200] }}
       run: composer run-script ci
 
-    # TODO: Semantic Release bot
