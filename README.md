@@ -1,16 +1,58 @@
 
 # Searchlight
 
+![example workflow](https://github.com/mcmanning/searchlight/actions/workflows/ci.yml/badge.svg)
+
 [Searchkit](https://www.searchkit.co/) compatible GraphQL API extensions for applications built with [Lighthouse PHP](https://lighthouse-php.com/).
 
->This project is still an early draft and not production ready.
+## Requirements
 
-## Project Goals
+* PHP ^7.4, ^8
+* [Lighthouse PHP](https://lighthouse-php.com/) ^5
 
-- PHP 7.4+ support
-- ElasticSearch 7+ and OpenSearch 2+ support
-- 100% Searchkit compatible GraphQL API
-- Serverside configuration in a sort of "if you've used Searchkit with Apollo this should feel familiar" way.
-- Set of directives to help drive search configuration per provider
-- Maybe a tie-in/compatibility layer for Laravel Scout (sans faceting, most likely)
-- Maybe some integrations with Lighthouse access control features (i.e. restricting ES document access through access-driven filters)
+## Installation
+
+Install the package via Composer:
+
+```sh
+composer require searchlight/searchlight
+```
+
+This package uses Laravel auto-discovery to register the service provider.
+
+Publish a copy of the configuration file to your local config:
+
+```sh
+php artisan vendor:publish --provider="Searchlight\SearchlightServiceProvider"
+```
+
+### Lumen
+
+You can register the service provider in `bootstrap/app.php`:
+
+```php
+$app->register(Searchlight\SearchlightServiceProvider::class);
+```
+
+To change the configuration, copy `searchlight.example.php` the file to your config folder and enable it:
+
+```php
+$app->configure('searchlight');
+```
+
+## Configuration
+
+:snail:
+
+## Usage
+
+:snail:
+
+## Contributing
+
+PRs welcome for additional compatibility with Searchkit or bug fixes. Or if you have a cool idea, let me know!
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Searchlight, please send an email to security@sybolt.com.
+
