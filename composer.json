@@ -29,7 +29,7 @@
     },
     "require": {
         "elasticsearch/elasticsearch": "^7",
-        "nuwave/lighthouse": "^5.26"
+        "nuwave/lighthouse": "^5"
     },
     "require-dev": {
         "illuminate/support": "^8.83",
